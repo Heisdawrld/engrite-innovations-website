@@ -384,27 +384,7 @@ footer { background: var(--navy3); }
 .mobile-backdrop { position: fixed; inset: 0; background: rgba(8,21,52,.55); backdrop-filter: blur(4px); opacity: 0; pointer-events: none; transition: opacity .3s; z-index: 1098; }
 .mobile-backdrop.open { opacity: 1; pointer-events: auto; }
 
-/* INSTAGRAM FEED */
-.ig-sec { padding: 100px 60px; background: var(--white); }
-.ig-hdr { text-align: center; margin-bottom: 48px; }
-.ig-hdr .sec-label { justify-content: center; display: flex; }
-.ig-hdr h2 { color: var(--navy); }
-.ig-handle { display: inline-block; color: var(--green); font-size: 13px; font-weight: 600; letter-spacing: .14em; margin-top: 12px; text-decoration: none; transition: color .2s; }
-.ig-handle:hover { color: var(--navy); }
-.ig-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; max-width: 1200px; margin: 0 auto; }
-.ig-tile { position: relative; aspect-ratio: 1/1; overflow: hidden; background: var(--off); cursor: pointer; }
-.ig-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
-.ig-tile:hover img { transform: scale(1.08); }
-.ig-tile::after {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(8,21,52,0) 50%, rgba(8,21,52,.4) 100%);
-  opacity: 0; transition: opacity .3s;
-}
-.ig-tile:hover::after { opacity: 1; }
-.ig-tile-icon { position: absolute; bottom: 12px; right: 12px; color: #fff; opacity: 0; transition: opacity .3s; z-index: 2; }
-.ig-tile:hover .ig-tile-icon { opacity: 1; }
-.ig-cta { text-align: center; margin-top: 48px; }
-.ig-empty-note { background: var(--off); padding: 30px; text-align: center; color: var(--muted); font-size: 13px; max-width: 700px; margin: 0 auto; border-left: 3px solid var(--green); }
+
 
 /* PRIVACY LINK */
 .fb-links { display: flex; gap: 18px; flex-wrap: wrap; }
@@ -415,8 +395,7 @@ footer { background: var(--navy3); }
 @media (max-width: 960px) {
   .nav-toggle { display: block; }
   .nav-links, .nav-cta { display: none !important; }
-  .ig-grid { grid-template-columns: repeat(2, 1fr); }
-  .ig-sec { padding: 72px 24px; }
+
   .wa-float { width: 56px; height: 56px; bottom: 18px; right: 18px; }
   .wa-float svg { width: 28px; height: 28px; }
   nav { padding: 0 20px; }
