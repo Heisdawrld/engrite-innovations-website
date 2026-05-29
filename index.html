@@ -4,282 +4,267 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Engrite Innovations Ltd. — Real Estate Development & Investment</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --black: #050608;
-  --dark: #0b0d10;
-  --surface: #111318;
-  --navy: #0f1e35;
-  --green: #1a3d27;
-  --gold: #c9a84c;
-  --gold2: #e8c96a;
-  --gold3: rgba(201,168,76,0.15);
-  --white: #ffffff;
-  --off: #f0ede6;
-  --muted: rgba(255,255,255,0.45);
-  --dim: rgba(255,255,255,0.08);
+  --navy:    #1c2d6e;
+  --navy2:   #152259;
+  --navy3:   #0e1940;
+  --navy-bg: #111936;
+  --green:   #3a7c45;
+  --green2:  #2e6338;
+  --green3:  #4a9a57;
+  --white:   #ffffff;
+  --off:     #f4f6fb;
+  --text:    #1a1f2e;
+  --muted:   #6b7280;
+  --border:  rgba(28,45,110,.1);
 }
 html { scroll-behavior: smooth; }
-body { background: var(--black); color: var(--white); font-family: 'Jost', sans-serif; overflow-x: hidden; }
+body { background: var(--white); color: var(--text); font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
 * { cursor: none !important; }
 
 /* CURSOR */
-#c { position: fixed; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; pointer-events: none; z-index: 99999; transform: translate(-50%,-50%); transition: transform .12s, opacity .2s; }
-#cr { position: fixed; width: 32px; height: 32px; border: 1px solid rgba(201,168,76,.5); border-radius: 50%; pointer-events: none; z-index: 99998; transform: translate(-50%,-50%); transition: all .15s ease; }
+#c { position: fixed; width: 8px; height: 8px; background: var(--green); border-radius: 50%; pointer-events: none; z-index: 99999; transform: translate(-50%,-50%); transition: transform .1s; }
+#cr { position: fixed; width: 34px; height: 34px; border: 1.5px solid rgba(58,124,69,.5); border-radius: 50%; pointer-events: none; z-index: 99998; transform: translate(-50%,-50%); transition: all .13s ease; }
 
 /* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  padding: 0 56px; height: 76px;
-  display: flex; justify-content: space-between; align-items: center;
-  transition: background .4s, border-color .4s;
-  border-bottom: 1px solid transparent;
+  height: 74px; padding: 0 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255,255,255,.97);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  transition: box-shadow .3s;
 }
-nav.scrolled { background: rgba(5,6,8,.97); border-color: rgba(201,168,76,.12); backdrop-filter: blur(16px); }
-.logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-.logo-text { font-size: 11px; font-weight: 500; letter-spacing: .28em; text-transform: uppercase; color: var(--white); line-height: 1.3; }
-.logo-text small { display: block; font-size: 9px; color: var(--gold); letter-spacing: .22em; font-weight: 300; margin-top: 2px; }
-.nav-links { display: flex; gap: 40px; list-style: none; }
-.nav-links a { color: var(--muted); text-decoration: none; font-size: 11px; font-weight: 400; letter-spacing: .2em; text-transform: uppercase; transition: color .25s; }
-.nav-links a:hover { color: var(--white); }
-.nav-btn { border: 1px solid var(--gold); color: var(--gold); background: transparent; padding: 10px 24px; font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; text-decoration: none; transition: all .3s; }
-.nav-btn:hover { background: var(--gold); color: var(--black); }
+nav.shadow { box-shadow: 0 2px 30px rgba(28,45,110,.08); }
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo-name { font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--navy); line-height: 1.25; }
+.logo-name small { display: block; font-size: 9px; font-weight: 500; letter-spacing: .2em; color: var(--green); margin-top: 1px; }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; transition: color .2s; }
+.nav-links a:hover { color: var(--navy); }
+.nav-cta { background: var(--navy); color: var(--white); padding: 11px 28px; font-family: 'Montserrat',sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; border: 2px solid var(--navy); transition: all .25s; }
+.nav-cta:hover { background: transparent; color: var(--navy); }
 
 /* HERO */
 .hero {
-  position: relative; height: 100vh; min-height: 700px;
+  position: relative; height: 100vh; min-height: 680px;
   display: flex; align-items: flex-end;
-  overflow: hidden;
+  overflow: hidden; padding-top: 74px;
 }
-.hero-img {
+.hero-bg {
   position: absolute; inset: 0;
   background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1800&q=85');
-  background-size: cover; background-position: center 30%;
-  transform: scale(1.06); animation: heroZoom 14s ease forwards;
+  background-size: cover; background-position: center 35%;
+  transform: scale(1.05); animation: hzoom 16s ease forwards;
 }
-@keyframes heroZoom { to { transform: scale(1); } }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(5,6,8,.92) 30%, rgba(5,6,8,.6) 60%, rgba(5,6,8,.25) 100%), linear-gradient(to top, rgba(5,6,8,.7) 0%, transparent 50%); }
-.hero-grain { position: absolute; inset: 0; opacity: .03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E"); }
-.hero-content { position: relative; z-index: 2; padding: 0 56px 100px; max-width: 760px; }
-.hero-eyebrow { display: flex; align-items: center; gap: 16px; font-size: 10px; font-weight: 400; letter-spacing: .35em; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; opacity: 0; animation: fadeUp .8s .2s forwards; }
-.hero-eyebrow::before { content: ''; display: block; width: 48px; height: 1px; background: var(--gold); }
-.hero-h1 { font-family: 'Playfair Display', serif; font-size: clamp(56px, 7.5vw, 104px); font-weight: 400; line-height: .98; letter-spacing: -.02em; margin-bottom: 36px; opacity: 0; animation: fadeUp .9s .4s forwards; }
-.hero-h1 em { font-style: italic; color: var(--gold); }
-.hero-h1 span { display: block; font-weight: 300; font-size: .72em; color: rgba(255,255,255,.7); }
-.hero-sub { font-size: 15px; font-weight: 300; line-height: 1.85; color: rgba(255,255,255,.55); max-width: 440px; margin-bottom: 52px; opacity: 0; animation: fadeUp .9s .6s forwards; }
-.hero-actions { display: flex; align-items: center; gap: 24px; opacity: 0; animation: fadeUp .9s .75s forwards; }
-.btn-gold { display: inline-block; background: var(--gold); color: var(--black); padding: 17px 44px; font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; text-decoration: none; transition: all .3s; }
-.btn-gold:hover { background: var(--gold2); transform: translateY(-2px); box-shadow: 0 20px 40px rgba(201,168,76,.2); }
-.btn-line { color: rgba(255,255,255,.65); font-size: 11px; font-weight: 400; letter-spacing: .18em; text-decoration: none; display: flex; align-items: center; gap: 12px; transition: all .3s; }
-.btn-line::after { content: '→'; font-size: 16px; transition: transform .3s; }
-.btn-line:hover { color: var(--gold); }
-.btn-line:hover::after { transform: translateX(5px); }
-.hero-stats { position: absolute; bottom: 0; right: 0; display: flex; background: rgba(5,6,8,.85); backdrop-filter: blur(20px); border-top: 1px solid rgba(201,168,76,.15); border-left: 1px solid rgba(201,168,76,.15); z-index: 3; }
-.hstat { padding: 28px 40px; border-right: 1px solid rgba(255,255,255,.06); }
-.hstat:last-child { border-right: none; }
-.hstat-n { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 400; color: var(--white); line-height: 1; }
-.hstat-n b { color: var(--gold); }
-.hstat-l { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+@keyframes hzoom { to { transform: scale(1); } }
+.hero-navy { position: absolute; inset: 0; background: linear-gradient(to right, rgba(14,25,64,.9) 0%, rgba(14,25,64,.75) 50%, rgba(14,25,64,.3) 100%); }
+.hero-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 160px; background: linear-gradient(to top, rgba(14,25,64,.9), transparent); }
+.hero-content { position: relative; z-index: 2; padding: 0 60px 80px; max-width: 720px; }
+.tag { display: inline-flex; align-items: center; gap: 10px; font-size: 10px; font-weight: 600; letter-spacing: .3em; text-transform: uppercase; color: var(--white); opacity: .65; margin-bottom: 28px; }
+.tag::before { content: ''; display: block; width: 32px; height: 1.5px; background: var(--green3); }
+h1 { font-family: 'Playfair Display', serif; font-size: clamp(48px, 6.8vw, 96px); font-weight: 400; line-height: .98; color: var(--white); margin-bottom: 30px; }
+h1 em { font-style: italic; color: #7fd89a; }
+.hero-p { font-size: 15px; font-weight: 300; line-height: 1.85; color: rgba(255,255,255,.62); max-width: 420px; margin-bottom: 48px; }
+.btns { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.btn-g { display: inline-block; background: var(--green); color: var(--white); padding: 16px 42px; font-family: 'Montserrat',sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; border: 2px solid var(--green); transition: all .25s; }
+.btn-g:hover { background: transparent; border-color: var(--white); }
+.btn-w { display: inline-block; background: transparent; color: var(--white); padding: 16px 42px; font-family: 'Montserrat',sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; border: 2px solid rgba(255,255,255,.4); transition: all .25s; }
+.btn-w:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+
+/* STATS BAR */
+.stats-bar {
+  background: var(--navy);
+  display: grid; grid-template-columns: repeat(4,1fr);
+}
+.sbar { padding: 30px 40px; border-right: 1px solid rgba(255,255,255,.07); text-align: center; }
+.sbar:last-child { border-right: none; }
+.sbar-n { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 400; color: var(--white); line-height: 1; }
+.sbar-n b { color: #7fd89a; }
+.sbar-l { font-size: 9px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-top: 7px; }
 
 /* TICKER */
-.ticker { height: 46px; background: var(--green); overflow: hidden; display: flex; align-items: center; border-top: 1px solid rgba(201,168,76,.12); border-bottom: 1px solid rgba(201,168,76,.12); }
-.ticker-track { display: flex; animation: tick 35s linear infinite; white-space: nowrap; }
-.ticker-item { font-size: 10px; font-weight: 500; letter-spacing: .28em; text-transform: uppercase; color: rgba(255,255,255,.6); padding: 0 28px; }
-.ticker-item span { color: var(--gold); }
+.ticker { background: var(--green); overflow: hidden; height: 42px; display: flex; align-items: center; }
+.ticker-track { display: flex; animation: tick 30s linear infinite; white-space: nowrap; }
+.ticker-item { font-size: 10px; font-weight: 600; letter-spacing: .26em; text-transform: uppercase; color: rgba(255,255,255,.75); padding: 0 24px; }
+.ticker-dot { color: rgba(255,255,255,.35); padding: 0 4px; }
 @keyframes tick { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 /* SECTIONS */
-.sec { padding: 130px 56px; }
-.sec-label { font-size: 10px; font-weight: 500; letter-spacing: .32em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
-.sec-label::before { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
-h2 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 4.8vw, 68px); font-weight: 400; line-height: 1.1; }
-h2 em { font-style: italic; color: var(--gold); }
-.hr { height: 1px; background: linear-gradient(to right, transparent, rgba(255,255,255,.08), transparent); margin: 0; }
+.sec { padding: 120px 60px; }
+.sec-alt { background: var(--off); }
+.sec-navy { background: var(--navy); color: var(--white); }
+.sec-navy h2 em { color: #7fd89a; }
+.sec-navy .sec-label { color: rgba(255,255,255,.5); }
+.sec-navy .sec-label::before { background: var(--green3); }
+.sec-label { font-size: 10px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--green); margin-bottom: 18px; display: flex; align-items: center; gap: 14px; }
+.sec-label::before { content: ''; display: block; width: 36px; height: 2px; background: var(--green); }
+h2 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 4.4vw, 60px); font-weight: 400; line-height: 1.12; color: var(--navy); }
+h2 em { font-style: italic; color: var(--green); }
+.hr { height: 1px; background: linear-gradient(to right, transparent, rgba(28,45,110,.12), transparent); }
 
 /* ABOUT */
-.about-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
-.about-body { font-size: 15px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,.55); margin-top: 28px; }
-.about-body + .about-body { margin-top: 16px; }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 48px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.04); }
-.aval { padding: 28px 24px; background: var(--dark); transition: background .3s; }
-.aval:hover { background: #13161b; }
-.aval-t { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; margin: 12px 0 8px; }
-.aval-d { font-size: 12px; color: rgba(255,255,255,.4); line-height: 1.7; }
-.aval-icon { font-size: 18px; }
-/* right column */
-.about-right { position: relative; }
-.about-photo {
-  width: 100%; aspect-ratio: 3/4;
-  background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=85');
-  background-size: cover; background-position: center;
-  position: relative;
-}
-.about-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 50%, rgba(5,6,8,.8) 100%); }
-.about-badge {
-  position: absolute; bottom: -24px; left: -28px;
-  background: var(--surface); border: 1px solid rgba(201,168,76,.25);
-  padding: 28px 32px; z-index: 2;
-}
-.about-badge-n { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 400; color: var(--gold); line-height: 1; display: block; }
-.about-badge-l { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+.about-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: center; }
+.about-p { font-size: 15px; font-weight: 300; line-height: 1.9; color: var(--muted); margin-top: 24px; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 44px; background: var(--border); }
+.aval { padding: 26px 22px; background: var(--white); transition: background .25s; }
+.aval:hover { background: #f0f4ff; }
+.aval-icon { font-size: 20px; margin-bottom: 10px; }
+.aval-t { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--navy); margin-bottom: 7px; }
+.aval-d { font-size: 12px; color: var(--muted); line-height: 1.7; }
+.about-photo { width: 100%; aspect-ratio: 3/4; background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=85'); background-size: cover; background-position: center; position: relative; }
+.about-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 60%, rgba(28,45,110,.5) 100%); }
+.about-badge { position: absolute; bottom: -20px; left: -24px; background: var(--navy); padding: 24px 28px; z-index: 2; }
+.about-badge-n { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 400; color: #7fd89a; display: block; line-height: 1; }
+.about-badge-l { font-size: 9px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.5); margin-top: 6px; }
 
 /* PROJECTS */
-.projects-sec { background: var(--dark); padding: 100px 0; }
-.projects-hdr { display: flex; justify-content: space-between; align-items: flex-end; padding: 0 56px; margin-bottom: 60px; }
-.proj-more { font-size: 11px; font-weight: 400; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); text-decoration: none; display: flex; align-items: center; gap: 10px; transition: gap .3s; }
+.proj-sec { padding: 100px 0; background: var(--off); }
+.proj-hdr { padding: 0 60px; margin-bottom: 52px; display: flex; justify-content: space-between; align-items: flex-end; }
+.proj-hdr h2 { color: var(--navy); }
+.proj-more { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--green); text-decoration: none; display: flex; align-items: center; gap: 10px; transition: gap .25s; }
 .proj-more:hover { gap: 18px; }
-.proj-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 2px; padding: 0 56px; }
+.proj-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 3px; padding: 0 60px; }
 .pcard { position: relative; overflow: hidden; }
-.pcard-img {
-  width: 100%; height: 540px;
-  background-size: cover; background-position: center;
-  transition: transform .7s ease;
-}
-.pcard:hover .pcard-img { transform: scale(1.05); }
-.pcard-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,6,8,.96) 0%, rgba(5,6,8,.4) 45%, rgba(5,6,8,.1) 100%); }
-.pcard-badge { position: absolute; top: 22px; left: 22px; font-size: 9px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; padding: 6px 14px; border: 1px solid; }
-.badge-active { color: #7fcf9a; border-color: rgba(127,207,154,.4); background: rgba(127,207,154,.08); }
-.badge-urgent { color: #f0c060; border-color: rgba(240,192,96,.4); background: rgba(240,192,96,.08); }
-.badge-new { color: #7ab8f5; border-color: rgba(122,184,245,.4); background: rgba(122,184,245,.08); }
-.pcard-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 32px; }
-.pcard-name { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; margin-bottom: 6px; }
-.pcard-loc { font-size: 10px; font-weight: 400; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
-.pcard-loc::before { content: '●'; font-size: 5px; color: var(--gold); }
-.pcard-price { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 400; color: var(--gold); }
-.pcard-psub { font-size: 11px; color: rgba(255,255,255,.35); margin-top: 4px; letter-spacing: .06em; }
-.pcard-tags { display: flex; gap: 6px; margin-top: 16px; flex-wrap: wrap; }
-.ptag { font-size: 9px; letter-spacing: .12em; text-transform: uppercase; border: 1px solid rgba(255,255,255,.1); padding: 4px 10px; color: rgba(255,255,255,.45); }
+.pcard-img { width: 100%; height: 520px; background-size: cover; background-position: center; transition: transform .65s ease; }
+.pcard:hover .pcard-img { transform: scale(1.04); }
+.pov { position: absolute; inset: 0; background: linear-gradient(to top, rgba(14,25,64,.95) 0%, rgba(14,25,64,.35) 45%, rgba(14,25,64,.05) 100%); }
+.pbadge { position: absolute; top: 20px; left: 20px; font-size: 9px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; padding: 6px 14px; border: 1.5px solid; }
+.pb-green { color: #7fd89a; border-color: rgba(127,216,154,.45); background: rgba(127,216,154,.1); }
+.pb-yellow { color: #ffd97a; border-color: rgba(255,217,122,.45); background: rgba(255,217,122,.1); }
+.pb-blue { color: #7ab8f5; border-color: rgba(122,184,245,.45); background: rgba(122,184,245,.1); }
+.pinfo { position: absolute; bottom: 0; left: 0; right: 0; padding: 28px; }
+.pname { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 500; color: var(--white); margin-bottom: 6px; }
+.ploc { font-size: 10px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 18px; display: flex; align-items: center; gap: 7px; }
+.ploc::before { content: '●'; font-size: 5px; color: #7fd89a; }
+.pprice { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; color: #7fd89a; }
+.psub { font-size: 11px; color: rgba(255,255,255,.35); margin-top: 4px; }
+.ptags { display: flex; gap: 6px; margin-top: 14px; flex-wrap: wrap; }
+.ptag { font-size: 9px; letter-spacing: .1em; text-transform: uppercase; border: 1px solid rgba(255,255,255,.15); padding: 4px 10px; color: rgba(255,255,255,.45); }
 
 /* INVEST */
-.invest-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
-.ret-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 44px 0; }
-.ret { padding: 32px 28px; background: var(--surface); border: 1px solid rgba(255,255,255,.05); transition: all .3s; }
-.ret:hover { border-color: rgba(201,168,76,.2); }
-.ret.big { grid-column: span 2; background: linear-gradient(135deg, var(--green) 0%, #0f2418 100%); border-color: rgba(45,107,63,.4); }
-.ret-n { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 400; color: var(--white); line-height: 1; display: block; }
-.ret.big .ret-n { color: var(--gold2); }
-.ret-l { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 10px; }
-.lease-box {
-  background: var(--surface); border: 1px solid rgba(201,168,76,.14);
-  position: relative; overflow: hidden;
-}
-.lease-box::before {
-  content: '17'; position: absolute; top: -40px; right: -20px;
-  font-family: 'Playfair Display', serif; font-size: 260px; font-weight: 700;
-  color: rgba(255,255,255,.025); line-height: 1; pointer-events: none; user-select: none;
-}
-.lease-head { padding: 44px 44px 32px; border-bottom: 1px solid rgba(255,255,255,.06); }
-.lease-eye { font-size: 10px; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
-.lease-title { font-family: 'Playfair Display', serif; font-size: 44px; font-weight: 400; margin-bottom: 6px; }
-.lease-sub { color: var(--gold); font-size: 14px; font-weight: 300; letter-spacing: .04em; }
-.lease-rows { padding: 0 44px 44px; }
-.lrow { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,.05); transition: all .25s; }
+.inv-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: start; }
+.ret-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 40px 0; }
+.ret { padding: 30px 26px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); transition: border-color .3s; }
+.ret:hover { border-color: rgba(127,216,154,.3); }
+.ret.big { grid-column: span 2; background: var(--green); border-color: var(--green2); }
+.ret-n { font-family: 'Playfair Display', serif; font-size: 50px; font-weight: 400; color: var(--white); line-height: 1; display: block; }
+.ret-l { font-size: 9px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-top: 9px; }
+.btn-green-outline { display: inline-block; background: transparent; color: #7fd89a; padding: 15px 40px; font-family: 'Montserrat',sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; border: 2px solid var(--green3); transition: all .25s; }
+.btn-green-outline:hover { background: var(--green3); color: var(--white); }
+
+/* LEASE CARD */
+.lease-box { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); overflow: hidden; position: relative; }
+.lease-box::before { content: '17'; position: absolute; top: -50px; right: -20px; font-family: 'Playfair Display', serif; font-size: 280px; font-weight: 700; color: rgba(255,255,255,.025); line-height: 1; pointer-events: none; }
+.lh { padding: 40px 40px 28px; border-bottom: 1px solid rgba(255,255,255,.07); }
+.lh-eye { font-size: 9px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 14px; }
+.lh-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 400; color: var(--white); margin-bottom: 6px; }
+.lh-sub { color: #7fd89a; font-size: 14px; font-weight: 400; letter-spacing: .05em; }
+.lrows { padding: 0 40px 40px; }
+.lrow { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,.06); transition: padding-left .2s; }
 .lrow:last-child { border-bottom: none; }
-.lrow:hover { padding-left: 8px; }
-.lrow-name { font-size: 14px; font-weight: 400; margin-bottom: 3px; }
-.lrow-type { font-size: 11px; color: rgba(255,255,255,.35); }
-.lrow-price { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--gold); text-align: right; }
-.lrow-yield { font-size: 11px; color: rgba(255,255,255,.35); text-align: right; margin-top: 3px; }
+.lrow:hover { padding-left: 10px; }
+.ln { font-size: 14px; font-weight: 500; color: var(--white); margin-bottom: 3px; }
+.lt { font-size: 11px; color: rgba(255,255,255,.35); }
+.lp { font-family: 'Playfair Display', serif; font-size: 24px; color: #7fd89a; text-align: right; }
+.ly { font-size: 11px; color: rgba(255,255,255,.35); text-align: right; margin-top: 3px; }
 
 /* WHY */
-.why-sec { background: var(--dark); }
-.why-head { text-align: center; margin-bottom: 80px; }
-.why-head .sec-label { justify-content: center; }
-.why-head .sec-label::before { display: none; }
-.why-head .sec-label::after { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
-.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-.why-card { padding: 52px 40px; background: var(--black); border: 1px solid rgba(255,255,255,.04); position: relative; overflow: hidden; transition: all .4s; }
-.why-card::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, var(--gold), var(--gold2)); transform: scaleX(0); transform-origin: left; transition: transform .5s; }
-.why-card:hover::before { transform: scaleX(1); }
-.why-card:hover { background: #0d0f12; }
-.why-num { font-family: 'Playfair Display', serif; font-size: 88px; font-weight: 400; color: rgba(201,168,76,.07); line-height: 1; margin-bottom: 24px; display: block; }
-.why-title { font-size: 14px; font-weight: 500; letter-spacing: .06em; margin-bottom: 16px; }
-.why-txt { font-size: 13px; color: rgba(255,255,255,.4); line-height: 1.85; }
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 60px; }
+.wcard { padding: 48px 36px; background: var(--white); border: 1px solid var(--border); position: relative; overflow: hidden; transition: all .35s; }
+.wcard::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--green); transform: scaleY(0); transform-origin: bottom; transition: transform .4s; }
+.wcard:hover::after { transform: scaleY(1); }
+.wcard:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(28,45,110,.08); }
+.wnum { font-family: 'Playfair Display', serif; font-size: 80px; font-weight: 400; color: rgba(28,45,110,.07); line-height: 1; margin-bottom: 20px; display: block; }
+.wtitle { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--navy); margin-bottom: 14px; }
+.wtxt { font-size: 13px; color: var(--muted); line-height: 1.85; font-weight: 300; }
 
-/* MARQUEE QUOTE */
-.quote-sec { padding: 110px 56px; overflow: hidden; position: relative; }
-.quote-sec::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(201,168,76,.04) 0%, transparent 70%); }
-.quote-mark { font-family: 'Playfair Display', serif; font-size: 160px; color: rgba(201,168,76,.08); line-height: .5; display: block; margin-bottom: -20px; }
-.quote-text { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.8vw, 48px); font-weight: 400; font-style: italic; line-height: 1.4; color: rgba(255,255,255,.85); max-width: 900px; margin: 0 auto; text-align: center; }
-.quote-text em { color: var(--gold); font-style: normal; }
-.quote-attr { text-align: center; font-size: 10px; letter-spacing: .28em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-top: 36px; }
+/* QUOTE */
+.quote-sec { background: var(--navy); padding: 100px 60px; text-align: center; position: relative; overflow: hidden; }
+.quote-sec::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(58,124,69,.15) 0%, transparent 65%); }
+.qmark { font-family: 'Playfair Display', serif; font-size: 140px; color: rgba(127,216,154,.12); line-height: .5; display: block; margin-bottom: -20px; }
+.qtxt { font-family: 'Playfair Display', serif; font-size: clamp(24px,3.4vw,46px); font-weight: 400; font-style: italic; color: var(--white); max-width: 860px; margin: 0 auto; line-height: 1.4; position: relative; }
+.qtxt strong { color: #7fd89a; font-style: normal; font-weight: 500; }
+.qattr { font-size: 10px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-top: 36px; }
 
 /* NEWSLETTER */
-.nl-sec {
-  padding: 0;
-  display: grid; grid-template-columns: 1fr 1fr;
-  min-height: 520px;
-}
-.nl-left {
-  background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=900&q=85');
-  background-size: cover; background-position: center;
-  position: relative;
-}
-.nl-left::after { content: ''; position: absolute; inset: 0; background: rgba(5,6,8,.65); }
-.nl-right { background: var(--surface); padding: 72px 64px; display: flex; flex-direction: column; justify-content: center; border: 1px solid rgba(201,168,76,.08); }
-.nl-form { display: flex; flex-direction: column; gap: 12px; margin-top: 36px; }
-.nl-input { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); padding: 16px 20px; color: var(--white); font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 300; outline: none; transition: border-color .25s; }
-.nl-input::placeholder { color: rgba(255,255,255,.25); }
-.nl-input:focus { border-color: rgba(201,168,76,.4); }
-.nl-note { font-size: 11px; color: rgba(255,255,255,.25); margin-top: 10px; letter-spacing: .06em; }
+.nl-sec { display: grid; grid-template-columns: 1fr 1fr; min-height: 500px; }
+.nl-photo { background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=900&q=85'); background-size: cover; background-position: center; position: relative; }
+.nl-photo::after { content: 'YOUR FUTURE HOME STARTS HERE'; position: absolute; bottom: 36px; left: 36px; font-size: 9px; font-weight: 700; letter-spacing: .28em; color: rgba(255,255,255,.5); }
+.nl-content { background: var(--navy-bg); padding: 72px 60px; display: flex; flex-direction: column; justify-content: center; }
+.nl-content .sec-label { color: rgba(255,255,255,.45); }
+.nl-content .sec-label::before { background: var(--green3); }
+.nl-content h2 { color: var(--white); font-size: clamp(28px,2.8vw,44px); }
+.nl-content h2 em { color: #7fd89a; }
+.nl-sub { font-size: 14px; font-weight: 300; color: rgba(255,255,255,.45); line-height: 1.85; margin-top: 16px; max-width: 360px; }
+.nl-form { display: flex; flex-direction: column; gap: 10px; margin-top: 32px; }
+.nl-inp { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); padding: 15px 18px; color: var(--white); font-family: 'Montserrat',sans-serif; font-size: 13px; font-weight: 300; outline: none; transition: border-color .25s; }
+.nl-inp::placeholder { color: rgba(255,255,255,.25); }
+.nl-inp:focus { border-color: rgba(58,124,69,.6); }
+.nl-note { font-size: 11px; color: rgba(255,255,255,.22); margin-top: 8px; }
 
 /* CONTACT */
-.contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
-.contact-info { margin-top: 40px; display: flex; flex-direction: column; gap: 28px; }
-.ci-row { display: flex; flex-direction: column; gap: 5px; }
-.ci-label { font-size: 9px; letter-spacing: .28em; text-transform: uppercase; color: rgba(255,255,255,.3); }
-.ci-val { font-size: 15px; font-weight: 300; color: rgba(255,255,255,.8); }
-.contact-form { display: flex; flex-direction: column; gap: 12px; }
+.contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; }
+.contact-info { margin-top: 36px; display: flex; flex-direction: column; gap: 28px; }
+.ci-l { font-size: 9px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: var(--green); margin-bottom: 5px; }
+.ci-v { font-size: 15px; font-weight: 300; color: var(--text); }
+.cform { display: flex; flex-direction: column; gap: 12px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.f-input { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); padding: 16px 18px; color: var(--white); font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 300; outline: none; transition: border-color .25s; width: 100%; }
-.f-input::placeholder { color: rgba(255,255,255,.22); }
-.f-input:focus { border-color: rgba(201,168,76,.35); }
-select.f-input { background: rgba(11,13,16,.95); color: rgba(255,255,255,.5); }
-select.f-input option { background: #111318; }
-textarea.f-input { resize: none; }
+.fi { background: var(--off); border: 1px solid var(--border); padding: 15px 18px; color: var(--text); font-family: 'Montserrat',sans-serif; font-size: 13px; font-weight: 300; outline: none; transition: border-color .25s; width: 100%; }
+.fi::placeholder { color: rgba(100,100,120,.4); }
+.fi:focus { border-color: var(--green); background: var(--white); }
+select.fi { background: var(--off); color: var(--muted); }
+select.fi option { background: var(--white); }
+textarea.fi { resize: none; }
 
 /* FOOTER */
-footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,.05); }
-.footer-top { padding: 72px 56px 56px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 56px; }
-.footer-brand p { font-size: 13px; font-weight: 300; color: rgba(255,255,255,.35); line-height: 1.85; max-width: 280px; margin-top: 20px; }
-.footer-social { display: flex; gap: 10px; margin-top: 28px; }
-.fs { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.4); font-size: 11px; text-decoration: none; font-weight: 500; letter-spacing: .08em; transition: all .25s; }
-.fs:hover { border-color: var(--gold); color: var(--gold); }
-.f-col-title { font-size: 10px; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 22px; font-weight: 500; }
-.f-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-.f-links a { color: rgba(255,255,255,.4); text-decoration: none; font-size: 13px; font-weight: 300; transition: color .25s; }
-.f-links a:hover { color: var(--gold); }
-.footer-bottom { padding: 24px 56px; border-top: 1px solid rgba(255,255,255,.05); display: flex; justify-content: space-between; align-items: center; }
-.footer-copy { font-size: 11px; color: rgba(255,255,255,.2); font-weight: 300; }
-.footer-tag { font-family: 'Playfair Display', serif; font-size: 13px; font-style: italic; color: rgba(255,255,255,.15); }
+footer { background: var(--navy3); }
+.ft { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 52px; padding: 68px 60px 52px; }
+.fb-p { font-size: 13px; font-weight: 300; color: rgba(255,255,255,.35); line-height: 1.85; max-width: 280px; margin-top: 18px; }
+.fsoc { display: flex; gap: 10px; margin-top: 24px; }
+.fsl { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.35); font-size: 10px; font-weight: 700; text-decoration: none; letter-spacing: .06em; transition: all .25s; }
+.fsl:hover { border-color: var(--green3); color: #7fd89a; }
+.fc-title { font-size: 9px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 20px; }
+.fl { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.fl a { color: rgba(255,255,255,.4); text-decoration: none; font-size: 13px; font-weight: 300; transition: color .2s; }
+.fl a:hover { color: #7fd89a; }
+.fb { padding: 22px 60px; border-top: 1px solid rgba(255,255,255,.06); display: flex; justify-content: space-between; align-items: center; background: var(--green2); }
+.fb-copy { font-size: 11px; color: rgba(255,255,255,.55); font-weight: 300; }
+.fb-tag { font-family: 'Playfair Display', serif; font-size: 13px; font-style: italic; color: rgba(255,255,255,.5); }
 
 /* ANIMS */
-@keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
-.fu { opacity: 0; transform: translateY(24px); transition: opacity .75s ease, transform .75s ease; }
+.fu { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
 .fu.in { opacity: 1; transform: translateY(0); }
+.hero-content > * { opacity: 0; animation: fup .8s ease forwards; }
+.hero-content > *:nth-child(1) { animation-delay: .1s; }
+.hero-content > *:nth-child(2) { animation-delay: .3s; }
+.hero-content > *:nth-child(3) { animation-delay: .5s; }
+.hero-content > *:nth-child(4) { animation-delay: .68s; }
+@keyframes fup { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
 /* RESPONSIVE */
 @media (max-width: 960px) {
-  nav { padding: 0 24px; }
-  .nav-links, .nav-btn { display: none; }
-  .sec { padding: 80px 24px; }
-  .about-wrap, .invest-wrap, .contact-wrap { grid-template-columns: 1fr; gap: 52px; }
+  nav { padding: 0 20px; }
+  .nav-links, .nav-cta { display: none; }
+  .sec { padding: 72px 24px; }
+  .about-wrap, .inv-wrap, .contact-wrap { grid-template-columns: 1fr; gap: 48px; }
   .about-right { display: none; }
-  .projects-hdr { padding: 0 24px; flex-direction: column; align-items: flex-start; gap: 20px; }
   .proj-grid { grid-template-columns: 1fr; padding: 0 24px; }
+  .proj-hdr { padding: 0 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
   .why-grid { grid-template-columns: 1fr; }
   .nl-sec { grid-template-columns: 1fr; }
-  .nl-left { min-height: 240px; }
-  .nl-right { padding: 52px 32px; }
-  .footer-top { grid-template-columns: 1fr; gap: 36px; padding: 52px 24px 40px; }
-  .footer-bottom { flex-direction: column; gap: 10px; text-align: center; padding: 20px 24px; }
-  .hero-content { padding: 0 24px 120px; }
-  .hero-stats { flex-direction: row; flex-wrap: wrap; }
-  .hstat { padding: 20px 24px; }
+  .nl-photo { min-height: 220px; }
+  .nl-content { padding: 48px 28px; }
   .ret-grid { grid-template-columns: 1fr; }
   .ret.big { grid-column: span 1; }
+  .stats-bar { grid-template-columns: repeat(2,1fr); }
+  .ft { grid-template-columns: 1fr; gap: 32px; padding: 48px 24px 36px; }
+  .fb { flex-direction: column; gap: 8px; text-align: center; padding: 18px 24px; }
+  .hero-content { padding: 0 24px 120px; }
 }
 </style>
 </head>
@@ -292,15 +277,15 @@ footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,.05); }
 <nav id="nav">
   <a href="#" class="logo">
     <svg width="46" height="42" viewBox="0 0 92 84" fill="none">
-      <rect x="5" y="30" width="19" height="50" stroke="#2d6b3f" stroke-width="2" fill="none"/>
-      <rect x="37" y="10" width="19" height="70" stroke="#1b3a5c" stroke-width="2" fill="none"/>
-      <line x1="37" y1="10" x2="24" y2="30" stroke="#2d6b3f" stroke-width="2"/>
-      <rect x="56" y="24" width="14" height="56" stroke="#2d6b3f" stroke-width="2" fill="none"/>
-      <line x1="56" y1="24" x2="70" y2="38" stroke="#1b3a5c" stroke-width="2"/>
-      <rect x="70" y="38" width="15" height="42" stroke="#1b3a5c" stroke-width="2" fill="none"/>
-      <line x1="2" y1="80" x2="88" y2="80" stroke="#c9a84c" stroke-width="1.8"/>
+      <rect x="5" y="30" width="19" height="50" stroke="#3a7c45" stroke-width="2.2" fill="none"/>
+      <rect x="37" y="10" width="19" height="70" stroke="#1c2d6e" stroke-width="2.2" fill="none"/>
+      <line x1="37" y1="10" x2="24" y2="30" stroke="#3a7c45" stroke-width="2.2"/>
+      <rect x="56" y="24" width="14" height="56" stroke="#3a7c45" stroke-width="2.2" fill="none"/>
+      <line x1="56" y1="24" x2="70" y2="38" stroke="#1c2d6e" stroke-width="2.2"/>
+      <rect x="70" y="38" width="15" height="42" stroke="#1c2d6e" stroke-width="2.2" fill="none"/>
+      <line x1="2" y1="80" x2="88" y2="80" stroke="#1c2d6e" stroke-width="1.8"/>
     </svg>
-    <div class="logo-text">ENGRITE INNOVATIONS
+    <div class="logo-name">ENGRITE INNOVATIONS
       <small>LTD. — REAL ESTATE</small>
     </div>
   </a>
@@ -310,71 +295,57 @@ footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,.05); }
     <li><a href="#invest">Invest</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="#newsletter" class="nav-btn">Get Updates</a>
+  <a href="#newsletter" class="nav-cta">Get Updates</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-img"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-grain"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-navy"></div>
+  <div class="hero-bottom"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">Lagos · Nigeria · Est. 2020</div>
-    <h1 class="hero-h1">
-      Own An Address<br>
-      That <em>Pays</em><br>
-      <span>You Back.</span>
-    </h1>
-    <p class="hero-sub">Your trusted partner in the journey towards home ownership. Premium real estate development and investment opportunities across Lagos.</p>
-    <div class="hero-actions">
-      <a href="#projects" class="btn-gold">Explore Properties</a>
-      <a href="#invest" class="btn-line">Investment Returns</a>
-    </div>
-  </div>
-  <div class="hero-stats">
-    <div class="hstat">
-      <div class="hstat-n"><b>7.1</b>%</div>
-      <div class="hstat-l">Annual Returns</div>
-    </div>
-    <div class="hstat">
-      <div class="hstat-n">17</div>
-      <div class="hstat-l">Year Lease</div>
-    </div>
-    <div class="hstat">
-      <div class="hstat-n">3<b>+</b></div>
-      <div class="hstat-l">Active Projects</div>
-    </div>
-    <div class="hstat">
-      <div class="hstat-n">5%</div>
-      <div class="hstat-l">Legal Fees Only</div>
+    <div class="tag">Lagos · Nigeria · Est. 2020</div>
+    <h1>Own An Address<br>That <em>Pays</em><br>You Back.</h1>
+    <p class="hero-p">Your trusted partner in the journey towards home ownership. Premium real estate development and investment opportunities across Lagos.</p>
+    <div class="btns">
+      <a href="#projects" class="btn-g">Explore Properties</a>
+      <a href="#invest" class="btn-w">Investment Returns</a>
     </div>
   </div>
 </section>
 
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="sbar"><div class="sbar-n"><b>7.1</b>%</div><div class="sbar-l">Annual Returns</div></div>
+  <div class="sbar"><div class="sbar-n">17</div><div class="sbar-l">Year Lease</div></div>
+  <div class="sbar"><div class="sbar-n">3<b>+</b></div><div class="sbar-l">Active Projects</div></div>
+  <div class="sbar"><div class="sbar-n">5%</div><div class="sbar-l">Legal Fees Only</div></div>
+</div>
+
 <!-- TICKER -->
 <div class="ticker">
   <div class="ticker-track">
-    <span class="ticker-item">Sinai Spaces</span><span class="ticker-item"><span>◆</span></span>
-    <span class="ticker-item">Sinai Residence</span><span class="ticker-item"><span>◆</span></span>
-    <span class="ticker-item">Crest Residence</span><span class="ticker-item"><span>◆</span></span>
-    <span class="ticker-item">Gbagada Phase One</span><span class="ticker-item"><span>◆</span></span>
-    <span class="ticker-item">Yaba Lagos</span><span class="ticker-item"><span>◆</span></span>
-    <span class="ticker-item">Live or Earn</span><span class="ticker-item"><span>◆</span></span>
-    <span class="ticker-item">17-Year Lease</span><span class="ticker-item"><span>◆</span></span>
-    <span class="ticker-item">7.1% Returns</span><span class="ticker-item"><span>◆</span></span>
-    <span class="ticker-item">Off-Plan Investment</span><span class="ticker-item"><span>◆</span></span>
-    <span class="ticker-item">Real Estate Development</span><span class="ticker-item"><span>◆</span></span>
-    <!-- duplicate for seamless loop -->
-    <span class="ticker-item">Sinai Spaces</span><span class="ticker-item"><span>◆</span></span>
-    <span class="ticker-item">Sinai Residence</span><span class="ticker-item"><span>◆</span></span>
-    <span class="ticker-item">Crest Residence</span><span class="ticker-item"><span>◆</span></span>
-    <span class="ticker-item">Gbagada Phase One</span><span class="ticker-item"><span>◆</span></span>
-    <span class="ticker-item">Yaba Lagos</span><span class="ticker-item"><span>◆</span></span>
-    <span class="ticker-item">Live or Earn</span><span class="ticker-item"><span>◆</span></span>
-    <span class="ticker-item">17-Year Lease</span><span class="ticker-item"><span>◆</span></span>
-    <span class="ticker-item">7.1% Returns</span><span class="ticker-item"><span>◆</span></span>
-    <span class="ticker-item">Off-Plan Investment</span><span class="ticker-item"><span>◆</span></span>
-    <span class="ticker-item">Real Estate Development</span><span class="ticker-item"><span>◆</span></span>
+    <span class="ticker-item">Sinai Spaces</span><span class="ticker-dot">◆</span>
+    <span class="ticker-item">Sinai Residence</span><span class="ticker-dot">◆</span>
+    <span class="ticker-item">Crest Residence</span><span class="ticker-dot">◆</span>
+    <span class="ticker-item">Gbagada Phase One</span><span class="ticker-dot">◆</span>
+    <span class="ticker-item">Yaba Lagos</span><span class="ticker-dot">◆</span>
+    <span class="ticker-item">Live or Earn</span><span class="ticker-dot">◆</span>
+    <span class="ticker-item">17-Year Lease</span><span class="ticker-dot">◆</span>
+    <span class="ticker-item">7.1% Returns</span><span class="ticker-dot">◆</span>
+    <span class="ticker-item">Off-Plan Investment</span><span class="ticker-dot">◆</span>
+    <span class="ticker-item">Real Estate Development</span><span class="ticker-dot">◆</span>
+    <!-- duplicate -->
+    <span class="ticker-item">Sinai Spaces</span><span class="ticker-dot">◆</span>
+    <span class="ticker-item">Sinai Residence</span><span class="ticker-dot">◆</span>
+    <span class="ticker-item">Crest Residence</span><span class="ticker-dot">◆</span>
+    <span class="ticker-item">Gbagada Phase One</span><span class="ticker-dot">◆</span>
+    <span class="ticker-item">Yaba Lagos</span><span class="ticker-dot">◆</span>
+    <span class="ticker-item">Live or Earn</span><span class="ticker-dot">◆</span>
+    <span class="ticker-item">17-Year Lease</span><span class="ticker-dot">◆</span>
+    <span class="ticker-item">7.1% Returns</span><span class="ticker-dot">◆</span>
+    <span class="ticker-item">Off-Plan Investment</span><span class="ticker-dot">◆</span>
+    <span class="ticker-item">Real Estate Development</span><span class="ticker-dot">◆</span>
   </div>
 </div>
 
@@ -384,16 +355,16 @@ footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,.05); }
     <div class="fu">
       <div class="sec-label">Who We Are</div>
       <h2>Building Lagos,<br>One <em>Legacy</em><br>At a Time.</h2>
-      <p class="about-body">Engrite Innovations is a premier real estate development and investment company headquartered in Yaba, Lagos. We specialise in crafting spaces that don't just house people — they generate lasting wealth.</p>
-      <p class="about-body">From groundbreaking to handover, every development is built on structural excellence, creative design, and an unwavering commitment to the futures of our investors and homeowners.</p>
+      <p class="about-p">Engrite Innovations is a premier real estate development and investment company headquartered in Yaba, Lagos. We specialise in crafting spaces that don't just house people — they generate lasting wealth.</p>
+      <p class="about-p" style="margin-top:14px">From groundbreaking to handover, every development is built on structural excellence, creative design, and an unwavering commitment to the futures of our investors and homeowners.</p>
       <div class="about-grid">
         <div class="aval"><div class="aval-icon">🏗</div><div class="aval-t">Development</div><div class="aval-d">End-to-end construction with engineering precision</div></div>
-        <div class="aval"><div class="aval-icon">📈</div><div class="aval-t">Investment</div><div class="aval-d">Properties engineered to grow in value and yield</div></div>
+        <div class="aval"><div class="aval-icon">📈</div><div class="aval-t">Investment</div><div class="aval-d">Properties built to grow in value and yield</div></div>
         <div class="aval"><div class="aval-icon">🔑</div><div class="aval-t">Ownership</div><div class="aval-d">Guided paths to home ownership for every budget</div></div>
         <div class="aval"><div class="aval-icon">🤝</div><div class="aval-t">Partnership</div><div class="aval-d">Transparent, long-term investor relationships</div></div>
       </div>
     </div>
-    <div class="about-right fu">
+    <div class="about-right fu" style="position:relative">
       <div class="about-photo"></div>
       <div class="about-badge">
         <span class="about-badge-n">757</span>
@@ -406,89 +377,93 @@ footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,.05); }
 <div class="hr"></div>
 
 <!-- PROJECTS -->
-<section class="projects-sec" id="projects">
-  <div class="projects-hdr fu">
+<section class="proj-sec" id="projects">
+  <div class="proj-hdr fu">
     <div>
       <div class="sec-label">Our Portfolio</div>
       <h2>Landmark<br>Developments</h2>
     </div>
-    <a href="#contact" class="proj-more">View All Projects →</a>
+    <a href="#contact" class="proj-more">View All Properties →</a>
   </div>
   <div class="proj-grid">
+
     <div class="pcard fu">
-      <div class="pcard-img" style="background-image:url('https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=900&q=85')"></div>
-      <div class="pcard-overlay"></div>
-      <div class="pcard-badge badge-active">Under Construction</div>
-      <div class="pcard-info">
-        <div class="pcard-name">Sinai Spaces</div>
-        <div class="pcard-loc">Abule Ijesha, Yaba Lagos</div>
-        <div class="pcard-price">From ₦17M</div>
-        <div class="pcard-psub">Studio Apartment · 17-Year Lease</div>
-        <div class="pcard-psub" style="color:rgba(201,168,76,.7);margin-top:6px">₦5M down payment · 1BR from ₦28M</div>
-        <div class="pcard-tags"><span class="ptag">17yr Lease</span><span class="ptag">Live or Earn</span><span class="ptag">₦2–4M/yr</span></div>
+      <div class="pcard-img" style="background-image:url('https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=1000&q=85')"></div>
+      <div class="pov"></div>
+      <div class="pbadge pb-green">Under Construction</div>
+      <div class="pinfo">
+        <div class="pname">Sinai Spaces</div>
+        <div class="ploc">Abule Ijesha, Yaba Lagos</div>
+        <div class="pprice">From ₦17M</div>
+        <div class="psub">Studio Apartment · 17-Year Lease · ₦5M Down Payment</div>
+        <div class="psub" style="color:rgba(127,216,154,.75);margin-top:5px">1 Bedroom from ₦28M · ₦2–4M/yr rental</div>
+        <div class="ptags"><span class="ptag">17yr Lease</span><span class="ptag">Live or Earn</span><span class="ptag">₦2–4M/yr</span></div>
       </div>
     </div>
+
     <div class="pcard fu">
       <div class="pcard-img" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&q=85')"></div>
-      <div class="pcard-overlay"></div>
-      <div class="pcard-badge badge-urgent">Last Units Available</div>
-      <div class="pcard-info">
-        <div class="pcard-name">Sinai Residence</div>
-        <div class="pcard-loc">Morocco Road, Yaba Lagos</div>
-        <div class="pcard-price">From ₦100M</div>
-        <div class="pcard-psub">1BR + Home Office · 2BR + Home Office</div>
-        <div class="pcard-psub" style="color:rgba(201,168,76,.7);margin-top:6px">5% Legal Fees · Registered Conveyance</div>
-        <div class="pcard-tags"><span class="ptag">Solar Power</span><span class="ptag">Smart Home</span><span class="ptag">CCTV</span></div>
+      <div class="pov"></div>
+      <div class="pbadge pb-yellow">Last Units Available</div>
+      <div class="pinfo">
+        <div class="pname">Sinai Residence</div>
+        <div class="ploc">Morocco Road, Yaba Lagos</div>
+        <div class="pprice">From ₦100M</div>
+        <div class="psub">1BR + Home Office · 2BR + Home Office</div>
+        <div class="psub" style="color:rgba(127,216,154,.75);margin-top:5px">5% Legal Fees · Registered Conveyance</div>
+        <div class="ptags"><span class="ptag">Solar Power</span><span class="ptag">Smart Home</span><span class="ptag">CCTV</span></div>
       </div>
     </div>
+
     <div class="pcard fu">
       <div class="pcard-img" style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&q=85')"></div>
-      <div class="pcard-overlay"></div>
-      <div class="pcard-badge badge-new">Off-Plan · New Launch</div>
-      <div class="pcard-info">
-        <div class="pcard-name">Crest Residence</div>
-        <div class="pcard-loc">Gbagada Phase 1, Lagos</div>
-        <div class="pcard-price">From ₦40M</div>
-        <div class="pcard-psub">Studio · 1BR · 2BR</div>
-        <div class="pcard-psub" style="color:rgba(201,168,76,.7);margin-top:6px">50% equity in 9 months · 12-month plan</div>
-        <div class="pcard-tags"><span class="ptag">Rooftop Gym</span><span class="ptag">Pool</span><span class="ptag">Elevator</span></div>
+      <div class="pov"></div>
+      <div class="pbadge pb-blue">Off-Plan · New Launch</div>
+      <div class="pinfo">
+        <div class="pname">Crest Residence</div>
+        <div class="ploc">Gbagada Phase 1, Lagos</div>
+        <div class="pprice">From ₦40M</div>
+        <div class="psub">Studio · 1BR · 2BR</div>
+        <div class="psub" style="color:rgba(127,216,154,.75);margin-top:5px">50% equity in 9 months · 12-month plan</div>
+        <div class="ptags"><span class="ptag">Rooftop Gym</span><span class="ptag">Pool</span><span class="ptag">Elevator</span><span class="ptag">Smart Home</span></div>
       </div>
     </div>
+
   </div>
 </section>
 
 <!-- INVEST -->
-<section class="sec" id="invest">
-  <div class="invest-wrap">
+<section class="sec sec-navy" id="invest">
+  <div class="inv-wrap">
     <div class="fu">
       <div class="sec-label">For Investors</div>
       <h2>Your Money Should<br><em>Work</em> As Hard<br>As You Do.</h2>
-      <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(255,255,255,.5);margin-top:28px">Engrite Innovations offers a proven Live or Earn model — buy a property, move in, or let us generate rental income for you. Either way, you build wealth.</p>
+      <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(255,255,255,.5);margin-top:24px">Engrite Innovations offers a proven Live or Earn model — buy a property, move in, or let us generate rental income for you. Either way, you build wealth.</p>
       <div class="ret-grid">
         <div class="ret big fu"><span class="ret-n">7.1%</span><div class="ret-l">Annual Investment Returns</div></div>
         <div class="ret fu"><span class="ret-n">₦2–6M</span><div class="ret-l">Yearly Rental Revenue</div></div>
         <div class="ret fu"><span class="ret-n">5%</span><div class="ret-l">Legal Fees Only</div></div>
       </div>
-      <a href="#contact" class="btn-gold">Start Investing Today</a>
+      <a href="#contact" class="btn-green-outline">Start Investing Today</a>
     </div>
     <div class="lease-box fu">
-      <div class="lease-head">
-        <div class="lease-eye">Our Signature Offering</div>
-        <div class="lease-title">17-Year Lease</div>
-        <div class="lease-sub">Live or Earn — Your Choice.</div>
+      <div class="lh">
+        <div class="lh-eye">Our Signature Offering</div>
+        <div class="lh-title">17-Year Lease</div>
+        <div class="lh-sub">Live or Earn — Your Choice.</div>
       </div>
-      <div class="lease-rows">
+      <div class="lrows">
         <div class="lrow">
-          <div><div class="lrow-name">Studio Apartment</div><div class="lrow-type">Sinai Spaces · Yaba</div></div>
-          <div><div class="lrow-price">₦17M</div><div class="lrow-yield">₦2–4M/yr rental</div></div>
+          <div><div class="ln">Studio Apartment</div><div class="lt">Sinai Spaces · Yaba</div></div>
+          <div><div class="lp">₦17M</div><div class="ly">₦2–4M/yr rental</div></div>
         </div>
         <div class="lrow">
-          <div><div class="lrow-name">1 Bedroom + Home Office</div><div class="lrow-type">Sinai Residence · Morocco Road</div></div>
-          <div><div class="lrow-price">₦100M</div><div class="lrow-yield">High rental yield</div></div>
+          <div><div class="ln">1 Bedroom + Home Office</div><div class="lt">Sinai Residence · Morocco Rd</div></div>
+          <div><div class="lp">₦100M</div><div class="ly">High rental yield</div></div>
         </div>
         <div class="lrow">
-          <div><div class="lrow-name">Studio — Off-Plan</div><div class="lrow-type">Crest Residence · Gbagada</div></div>
-          <div><div class="lrow-price">₦40M</div><div class="lrow-yield">50% equity in 9mo</div></div>
+          <div><div class="ln">Studio — Off-Plan</div><div class="lt">Crest Residence · Gbagada</div></div>
+          <div><div class="lp">₦40M</div><div class="ly">50% equity in 9mo</div></div>
         </div>
       </div>
     </div>
@@ -498,39 +473,39 @@ footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,.05); }
 <div class="hr"></div>
 
 <!-- WHY -->
-<section class="sec why-sec">
-  <div class="why-head fu">
-    <div class="sec-label">Why Choose Us</div>
+<section class="sec sec-alt">
+  <div class="fu" style="text-align:center;margin-bottom:12px">
+    <div class="sec-label" style="justify-content:center"><span>Why Choose Us</span></div>
     <h2>The Engrite <em>Difference</em></h2>
   </div>
   <div class="why-grid">
-    <div class="why-card fu"><span class="why-num">01</span><div class="why-title">Structural Excellence</div><p class="why-txt">Every development engineered to the highest structural standards. We build for decades — quality you can see and feel in every finish.</p></div>
-    <div class="why-card fu"><span class="why-num">02</span><div class="why-title">Transparent Investment</div><p class="why-txt">No hidden fees, no surprises. Our 5% legal fee is all you pay beyond your property cost. Clear contracts, honest timelines, real returns.</p></div>
-    <div class="why-card fu"><span class="why-num">03</span><div class="why-title">Lagos-Rooted Expertise</div><p class="why-txt">Based in Yaba — one of Lagos's fastest-growing real estate corridors. We know the land, the laws, and the opportunities better than anyone.</p></div>
-    <div class="why-card fu"><span class="why-num">04</span><div class="why-title">Live or Earn Model</div><p class="why-txt">Unique to Engrite — move in or let us manage it for rental income. Your asset, your choice, our expertise backing you either way.</p></div>
-    <div class="why-card fu"><span class="why-num">05</span><div class="why-title">17-Year Security</div><p class="why-txt">Long-term lease structures that protect your investment horizon from market volatility. Backed by our guarantee and reselling assurance.</p></div>
-    <div class="why-card fu"><span class="why-num">06</span><div class="why-title">Proven Track Record</div><p class="why-txt">757 posts of documented progress. Multiple active projects across Lagos. Hundreds of satisfied investors and homeowners who testify.</p></div>
+    <div class="wcard fu"><span class="wnum">01</span><div class="wtitle">Structural Excellence</div><p class="wtxt">Every development engineered to the highest structural standards. We build for decades — quality you can see and feel in every finish.</p></div>
+    <div class="wcard fu"><span class="wnum">02</span><div class="wtitle">Transparent Investment</div><p class="wtxt">No hidden fees, no surprises. Our 5% legal fee is all you pay beyond your property cost. Clear contracts, honest timelines, real returns.</p></div>
+    <div class="wcard fu"><span class="wnum">03</span><div class="wtitle">Lagos-Rooted Expertise</div><p class="wtxt">Based in Yaba — one of Lagos's fastest-growing real estate corridors. We know the land, the laws, and the opportunities better than anyone.</p></div>
+    <div class="wcard fu"><span class="wnum">04</span><div class="wtitle">Live or Earn Model</div><p class="wtxt">Unique to Engrite — move in or let us manage it for rental income. Your asset, your choice, our expertise backing you either way.</p></div>
+    <div class="wcard fu"><span class="wnum">05</span><div class="wtitle">17-Year Security</div><p class="wtxt">Long-term lease structures that protect your investment from market volatility. Backed by our guarantee and reselling assurance.</p></div>
+    <div class="wcard fu"><span class="wnum">06</span><div class="wtitle">Proven Track Record</div><p class="wtxt">757 posts of documented progress. Multiple active projects across Lagos. Hundreds of satisfied investors and homeowners who testify.</p></div>
   </div>
 </section>
 
 <!-- QUOTE -->
 <section class="quote-sec fu">
-  <span class="quote-mark">"</span>
-  <p class="quote-text">Real estate surrounds your everyday life.<br><em>Why not own a piece of it too?</em></p>
-  <div class="quote-attr">Engrite Innovations — Lagos, Nigeria</div>
+  <span class="qmark">"</span>
+  <p class="qtxt">Real estate surrounds your everyday life.<br><strong>Why not own a piece of it too?</strong></p>
+  <div class="qattr">Engrite Innovations — Lagos, Nigeria</div>
 </section>
 
 <!-- NEWSLETTER -->
 <div class="nl-sec" id="newsletter">
-  <div class="nl-left"></div>
-  <div class="nl-right">
+  <div class="nl-photo"></div>
+  <div class="nl-content">
     <div class="sec-label">Stay Informed</div>
-    <h2 style="font-size:clamp(32px,3.2vw,48px)">Be First to Know<br>About <em>New Launches</em></h2>
-    <p style="font-size:14px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.85;margin-top:16px">Exclusive early access to new projects, investment opportunities, and property updates — straight to your inbox.</p>
+    <h2>Be First to Know<br>About <em>New Launches</em></h2>
+    <p class="nl-sub">Exclusive early access to new projects, investment opportunities, and property updates — straight to your inbox.</p>
     <form class="nl-form" onsubmit="doNL(event)">
-      <input type="text" class="nl-input" placeholder="Your full name" required>
-      <input type="email" class="nl-input" placeholder="Your email address" required>
-      <button type="submit" class="btn-gold" style="border:none;align-self:flex-start">Subscribe</button>
+      <input type="text" class="nl-inp" placeholder="Your full name" required>
+      <input type="email" class="nl-inp" placeholder="Your email address" required>
+      <button type="submit" class="btn-g" style="border:none;align-self:flex-start;padding:14px 36px">Subscribe</button>
     </form>
     <p class="nl-note" id="nl-msg">No spam. Unsubscribe any time.</p>
   </div>
@@ -543,20 +518,20 @@ footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,.05); }
       <div class="sec-label">Get In Touch</div>
       <h2>Begin Your<br><em>Ownership</em><br>Journey.</h2>
       <div class="contact-info">
-        <div class="ci-row"><span class="ci-label">Address</span><span class="ci-val">27, Montgomery Street, Yaba, Lagos, Nigeria</span></div>
-        <div class="ci-row"><span class="ci-label">Email</span><span class="ci-val">engriteinnovations@gmail.com</span></div>
-        <div class="ci-row"><span class="ci-label">Phone</span><span class="ci-val">08130665862</span></div>
-        <div class="ci-row"><span class="ci-label">Instagram</span><span class="ci-val">@engriteinnovations_</span></div>
+        <div><div class="ci-l">Address</div><div class="ci-v">27, Montgomery Street, Yaba, Lagos, Nigeria</div></div>
+        <div><div class="ci-l">Email</div><div class="ci-v">engriteinnovations@gmail.com</div></div>
+        <div><div class="ci-l">Phone</div><div class="ci-v">08130665862</div></div>
+        <div><div class="ci-l">Instagram</div><div class="ci-v">@engriteinnovations_</div></div>
       </div>
     </div>
-    <form class="contact-form fu" onsubmit="doContact(event)">
+    <form class="cform fu" onsubmit="doContact(event)">
       <div class="form-row">
-        <input type="text" class="f-input" placeholder="First Name" required>
-        <input type="text" class="f-input" placeholder="Last Name" required>
+        <input type="text" class="fi" placeholder="First Name" required>
+        <input type="text" class="fi" placeholder="Last Name" required>
       </div>
-      <input type="email" class="f-input" placeholder="Email Address" required>
-      <input type="tel" class="f-input" placeholder="Phone Number">
-      <select class="f-input">
+      <input type="email" class="fi" placeholder="Email Address" required>
+      <input type="tel" class="fi" placeholder="Phone Number">
+      <select class="fi">
         <option value="">I am interested in...</option>
         <option>Buying a Property</option>
         <option>Investment / Live or Earn</option>
@@ -566,38 +541,38 @@ footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,.05); }
         <option>Realtor Partnership</option>
         <option>General Enquiry</option>
       </select>
-      <textarea class="f-input" rows="4" placeholder="Tell us about your goals and budget..."></textarea>
-      <button type="submit" class="btn-gold" style="border:none;align-self:flex-start">Send Message</button>
+      <textarea class="fi" rows="4" placeholder="Tell us about your goals and budget..."></textarea>
+      <button type="submit" class="btn-g" style="border:none;align-self:flex-start">Send Message</button>
     </form>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-top">
-    <div class="footer-brand">
+  <div class="ft">
+    <div>
       <a href="#" class="logo" style="text-decoration:none">
         <svg width="40" height="36" viewBox="0 0 92 84" fill="none">
-          <rect x="5" y="30" width="19" height="50" stroke="#2d6b3f" stroke-width="2" fill="none"/>
-          <rect x="37" y="10" width="19" height="70" stroke="#1b3a5c" stroke-width="2" fill="none"/>
-          <line x1="37" y1="10" x2="24" y2="30" stroke="#2d6b3f" stroke-width="2"/>
-          <rect x="56" y="24" width="14" height="56" stroke="#2d6b3f" stroke-width="2" fill="none"/>
-          <line x1="56" y1="24" x2="70" y2="38" stroke="#1b3a5c" stroke-width="2"/>
-          <rect x="70" y="38" width="15" height="42" stroke="#1b3a5c" stroke-width="2" fill="none"/>
-          <line x1="2" y1="80" x2="88" y2="80" stroke="#c9a84c" stroke-width="1.8"/>
+          <rect x="5" y="30" width="19" height="50" stroke="#3a7c45" stroke-width="2.2" fill="none"/>
+          <rect x="37" y="10" width="19" height="70" stroke="#7fd89a" stroke-width="2.2" fill="none"/>
+          <line x1="37" y1="10" x2="24" y2="30" stroke="#3a7c45" stroke-width="2.2"/>
+          <rect x="56" y="24" width="14" height="56" stroke="#3a7c45" stroke-width="2.2" fill="none"/>
+          <line x1="56" y1="24" x2="70" y2="38" stroke="#7fd89a" stroke-width="2.2"/>
+          <rect x="70" y="38" width="15" height="42" stroke="#7fd89a" stroke-width="2.2" fill="none"/>
+          <line x1="2" y1="80" x2="88" y2="80" stroke="#7fd89a" stroke-width="1.8"/>
         </svg>
-        <div class="logo-text">ENGRITE INNOVATIONS<small>LTD. — REAL ESTATE</small></div>
+        <div class="logo-name" style="color:#fff">ENGRITE INNOVATIONS<small style="color:#7fd89a">LTD. — REAL ESTATE</small></div>
       </a>
-      <p>Your trusted partner in the journey towards home ownership. Premium real estate development and investment in Lagos, Nigeria.</p>
-      <div class="footer-social">
-        <a href="https://instagram.com/engriteinnovations_" target="_blank" class="fs">IG</a>
-        <a href="#" class="fs">IN</a>
-        <a href="#" class="fs">FB</a>
+      <p class="fb-p">Your trusted partner in the journey towards home ownership. Premium real estate development and investment in Lagos, Nigeria.</p>
+      <div class="fsoc">
+        <a href="https://instagram.com/engriteinnovations_" target="_blank" class="fsl">IG</a>
+        <a href="#" class="fsl">IN</a>
+        <a href="#" class="fsl">FB</a>
       </div>
     </div>
     <div>
-      <div class="f-col-title">Projects</div>
-      <ul class="f-links">
+      <div class="fc-title">Projects</div>
+      <ul class="fl">
         <li><a href="#projects">Sinai Spaces</a></li>
         <li><a href="#projects">Sinai Residence</a></li>
         <li><a href="#projects">Crest Residence</a></li>
@@ -605,8 +580,8 @@ footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,.05); }
       </ul>
     </div>
     <div>
-      <div class="f-col-title">Invest</div>
-      <ul class="f-links">
+      <div class="fc-title">Invest</div>
+      <ul class="fl">
         <li><a href="#invest">Live or Earn</a></li>
         <li><a href="#invest">17-Year Lease</a></li>
         <li><a href="#invest">Investment Returns</a></li>
@@ -614,8 +589,8 @@ footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,.05); }
       </ul>
     </div>
     <div>
-      <div class="f-col-title">Company</div>
-      <ul class="f-links">
+      <div class="fc-title">Company</div>
+      <ul class="fl">
         <li><a href="#about">About Us</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#newsletter">Newsletter</a></li>
@@ -623,9 +598,9 @@ footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,.05); }
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">
-    <div class="footer-copy">© 2026 Engrite Innovations Ltd. All rights reserved. · 27 Montgomery Street, Yaba, Lagos</div>
-    <div class="footer-tag">Building Legacy, Delivering Value.</div>
+  <div class="fb">
+    <div class="fb-copy">© 2026 Engrite Innovations Ltd. All rights reserved. · 27 Montgomery Street, Yaba, Lagos</div>
+    <div class="fb-tag">Building Legacy, Delivering Value.</div>
   </div>
 </footer>
 
@@ -633,24 +608,24 @@ footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,.05); }
 // Cursor
 const c=document.getElementById('c'),cr=document.getElementById('cr');
 let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;c.style.left=mx+'px';c.style.top=my+'px'});
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;c.style.left=mx+'px';c.style.top=my+'px'},{passive:true});
 (function loop(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(loop)})();
 document.querySelectorAll('a,button,input,select,textarea').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{c.style.transform='translate(-50%,-50%) scale(3)';cr.style.transform='translate(-50%,-50%) scale(1.6)';cr.style.borderColor='rgba(201,168,76,.8)'});
-  el.addEventListener('mouseleave',()=>{c.style.transform='translate(-50%,-50%) scale(1)';cr.style.transform='translate(-50%,-50%) scale(1)';cr.style.borderColor='rgba(201,168,76,.5)'});
+  el.addEventListener('mouseenter',()=>{c.style.transform='translate(-50%,-50%) scale(2.8)';cr.style.transform='translate(-50%,-50%) scale(1.6)'});
+  el.addEventListener('mouseleave',()=>{c.style.transform='translate(-50%,-50%) scale(1)';cr.style.transform='translate(-50%,-50%) scale(1)'});
 });
 
-// Nav scroll
+// Nav shadow
 const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)},{passive:true});
+window.addEventListener('scroll',()=>nav.classList.toggle('shadow',scrollY>40),{passive:true});
 
-// Scroll animations
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.1});
+// Scroll reveal
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.1});
 document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
 
 // Forms
-function doNL(e){e.preventDefault();const m=document.getElementById('nl-msg');m.textContent='✓ You\'re on the list. We\'ll be in touch soon.';m.style.color='#c9a84c';e.target.reset();}
-function doContact(e){e.preventDefault();const b=e.target.querySelector('[type=submit]');b.textContent='Sent ✓';b.style.background='#1a3d27';setTimeout(()=>{e.target.reset();b.textContent='Send Message';b.style.background=''},3500);}
+function doNL(e){e.preventDefault();const m=document.getElementById('nl-msg');m.textContent='✓ You\'re on the list! We\'ll keep you posted.';m.style.color='#7fd89a';e.target.reset();}
+function doContact(e){e.preventDefault();const b=e.target.querySelector('[type=submit]');b.textContent='Sent ✓';b.style.background='#2e6338';setTimeout(()=>{e.target.reset();b.textContent='Send Message';b.style.background=''},3500);}
 </script>
 </body>
 </html>
