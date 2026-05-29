@@ -444,16 +444,17 @@ footer { background: var(--navy3); }
 <div id="c"></div>
 <div id="cr"></div>
 
-<!-- Hidden forms for Netlify Forms static build-time detection -->
-<form name="contact" netlify netlify-honeypot="bot-field" hidden>
-  <input type="text" name="first-name"><input type="text" name="last-name">
-  <input type="email" name="email"><input type="tel" name="phone">
-  <select name="interest"><option>Buying a Property</option></select>
-  <textarea name="message"></textarea>
-</form>
-<form name="newsletter" netlify netlify-honeypot="bot-field" hidden>
-  <input type="text" name="name"><input type="email" name="email">
-</form>
+<!-- Success modal (shown after AJAX form submission) -->
+<div id="form-success" role="dialog" aria-modal="true" aria-labelledby="fs-title" style="position:fixed;inset:0;background:rgba(8,21,52,.75);backdrop-filter:blur(8px);z-index:10000;display:none;align-items:center;justify-content:center;padding:24px;">
+  <div style="background:#fff;max-width:480px;width:100%;padding:48px 36px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.4);border-top:4px solid #2BA84A;">
+    <div style="width:64px;height:64px;border-radius:50%;background:#2BA84A;margin:0 auto 24px;display:flex;align-items:center;justify-content:center;">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h3 id="fs-title" style="font-family:'Playfair Display',serif;font-size:32px;font-weight:400;color:#102357;margin-bottom:12px;line-height:1.2;">Thank You!</h3>
+    <p id="fs-msg" style="color:#6b7280;font-size:14.5px;line-height:1.7;font-weight:300;margin-bottom:28px;">We'll be in touch shortly.</p>
+    <button id="fs-close" style="background:#102357;color:#fff;border:none;padding:14px 32px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;">Close</button>
+  </div>
+</div>
 
 <!-- NAV -->
 <nav id="nav">
@@ -802,7 +803,7 @@ footer { background: var(--navy3); }
     <div class="sec-label">Stay Informed</div>
     <h2>Be First to Know<br>About <em>New Launches</em></h2>
     <p class="nl-sub">Exclusive early access to new projects, investment opportunities, and property updates — straight to your inbox.</p>
-    <form class="nl-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?form=newsletter-success" onsubmit="doNL(event)">
+    <form class="nl-form" id="newsletter-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="newsletter">
       <p style="display:none"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
       <input type="text" class="nl-inp" name="name" placeholder="Your full name" required>
@@ -834,7 +835,7 @@ footer { background: var(--navy3); }
         </div>
       </div>
     </div>
-    <form class="cform fu" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?form=contact-success" onsubmit="doContact(event)">
+    <form class="cform fu" id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="contact">
       <p style="display:none"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
       <div class="form-row">
@@ -990,41 +991,84 @@ document.querySelectorAll('a.pcta[data-property]').forEach(a => {
   });
 });
 
-// Forms — show success state. Netlify Forms catches the POST and stores it; we prevent default
-// to avoid the redirect, then show inline confirmation. Real submissions still hit Netlify.
-function doNL(e) {
-  // Let Netlify capture by NOT preventing default if served from Netlify; in local preview we suppress.
-  const m = document.getElementById('nl-msg');
-  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
-    e.preventDefault();
-    m.textContent = '✓ (Preview mode) You\'re on the list! Real submissions go live on Netlify.';
-    m.style.color = '#7fd89a';
-    e.target.reset();
-  }
-  // On Netlify production, form will POST normally and redirect to ?form=newsletter-success
+// ─────────────────────────────────────────────────────────────────
+// FORMS — Netlify Forms via AJAX submission
+// Posts to / with form-name in body. Netlify intercepts and saves
+// the submission without any page navigation or redirect.
+// ─────────────────────────────────────────────────────────────────
+
+const successModal = document.getElementById('form-success');
+const successTitle = document.getElementById('fs-title');
+const successMsg = document.getElementById('fs-msg');
+const successClose = document.getElementById('fs-close');
+
+function showSuccess(title, msg) {
+  successTitle.textContent = title;
+  successMsg.textContent = msg;
+  successModal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
 }
-function doContact(e) {
-  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
-    e.preventDefault();
-    const b = e.target.querySelector('[type=submit]');
-    b.textContent = '(Preview) Sent ✓';
-    b.style.background = '#2e6338';
-    setTimeout(() => { e.target.reset(); b.textContent = 'Send Message'; b.style.background = ''; }, 3500);
-  }
+function hideSuccess() {
+  successModal.style.display = 'none';
+  document.body.style.overflow = '';
+}
+successClose.addEventListener('click', hideSuccess);
+successModal.addEventListener('click', e => { if (e.target === successModal) hideSuccess(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && successModal.style.display === 'flex') hideSuccess(); });
+
+function encode(data) {
+  return Object.keys(data).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(data[k])).join('&');
 }
 
-// Handle the Netlify success redirect (?form=contact-success or newsletter-success)
-(function () {
-  const params = new URLSearchParams(window.location.search);
-  const form = params.get('form');
-  if (form === 'contact-success') {
-    alert('✓ Message received! The Engrite team will be in touch shortly.');
-    history.replaceState(null, '', window.location.pathname + '#contact');
-  } else if (form === 'newsletter-success') {
-    alert('✓ You\'re on the list! Watch your inbox for new launches.');
-    history.replaceState(null, '', window.location.pathname + '#newsletter');
-  }
-})();
+function wireForm(form, opts) {
+  if (!form) return;
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('[type=submit]');
+    const originalLabel = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    // Collect form data
+    const fd = new FormData(form);
+    const data = {};
+    fd.forEach((v, k) => { data[k] = v; });
+    // Ensure form-name is present for Netlify
+    if (!data['form-name']) data['form-name'] = form.getAttribute('name');
+
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode(data)
+      });
+      if (res.ok || res.status === 200 || res.status === 303) {
+        form.reset();
+        showSuccess(opts.successTitle, opts.successMsg);
+      } else {
+        throw new Error('Server returned ' + res.status);
+      }
+    } catch (err) {
+      console.error('Form submission failed:', err);
+      showSuccess(
+        'Something went wrong',
+        'We couldn\'t send your message right now. Please reach us directly: engriteinnovations@gmail.com or +234 813 066 5862.'
+      );
+    } finally {
+      btn.disabled = false;
+      btn.textContent = originalLabel;
+    }
+  });
+}
+
+wireForm(document.getElementById('contact-form'), {
+  successTitle: 'Message Received',
+  successMsg: 'Thank you for reaching out. The Engrite team will be in touch within 24 hours.'
+});
+wireForm(document.getElementById('newsletter-form'), {
+  successTitle: 'You\'re On The List',
+  successMsg: 'Watch your inbox for new launches, investment opportunities, and exclusive property updates.'
+});
 </script>
 </body>
 </html>
