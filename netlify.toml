@@ -1,7 +1,31 @@
 [build]
   publish = "."
 
+# Don't catch-all redirect — that breaks /privacy.html, /sitemap.xml, /robots.txt
+# Instead, only redirect unknown paths to the homepage
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = false
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Cache static assets aggressively
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
