@@ -8,18 +8,19 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --navy:    #1c2d6e;
-  --navy2:   #152259;
-  --navy3:   #0e1940;
-  --navy-bg: #111936;
-  --green:   #3a7c45;
-  --green2:  #2e6338;
-  --green3:  #4a9a57;
+  --navy:    #102357;
+  --navy2:   #0c1c46;
+  --navy3:   #081534;
+  --navy-bg: #0d1a40;
+  --green:   #2BA84A;
+  --green2:  #239540;
+  --green3:  #3fc066;
+  --gold:    #d4a000;
   --white:   #ffffff;
   --off:     #f4f6fb;
   --text:    #1a1f2e;
   --muted:   #6b7280;
-  --border:  rgba(28,45,110,.1);
+  --border:  rgba(16,35,87,.1);
 }
 html { scroll-behavior: smooth; }
 body { background: var(--white); color: var(--text); font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
@@ -57,13 +58,13 @@ nav.shadow { box-shadow: 0 2px 30px rgba(28,45,110,.08); }
 }
 .hero-bg {
   position: absolute; inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1800&q=85');
-  background-size: cover; background-position: center 35%;
+  background-image: url('assets/img/hero.jpg');
+  background-size: cover; background-position: center 60%;
   transform: scale(1.05); animation: hzoom 16s ease forwards;
 }
 @keyframes hzoom { to { transform: scale(1); } }
-.hero-navy { position: absolute; inset: 0; background: linear-gradient(to right, rgba(14,25,64,.9) 0%, rgba(14,25,64,.75) 50%, rgba(14,25,64,.3) 100%); }
-.hero-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 160px; background: linear-gradient(to top, rgba(14,25,64,.9), transparent); }
+.hero-navy { position: absolute; inset: 0; background: linear-gradient(to right, rgba(8,21,52,.92) 0%, rgba(8,21,52,.75) 45%, rgba(8,21,52,.2) 100%); }
+.hero-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 200px; background: linear-gradient(to top, rgba(8,21,52,.95), transparent); }
 .hero-content { position: relative; z-index: 2; padding: 0 60px 80px; max-width: 720px; }
 .tag { display: inline-flex; align-items: center; gap: 10px; font-size: 10px; font-weight: 600; letter-spacing: .3em; text-transform: uppercase; color: var(--white); opacity: .65; margin-bottom: 28px; }
 .tag::before { content: ''; display: block; width: 32px; height: 1.5px; background: var(--green3); }
@@ -98,7 +99,8 @@ h1 em { font-style: italic; color: #7fd89a; }
 .sec { padding: 120px 60px; }
 .sec-alt { background: var(--off); }
 .sec-navy { background: var(--navy); color: var(--white); }
-.sec-navy h2 em { color: #7fd89a; }
+.sec-navy h2 { color: var(--white); }
+.sec-navy h2 em { color: var(--green3); }
 .sec-navy .sec-label { color: rgba(255,255,255,.5); }
 .sec-navy .sec-label::before { background: var(--green3); }
 .sec-label { font-size: 10px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--green); margin-bottom: 18px; display: flex; align-items: center; gap: 14px; }
@@ -111,16 +113,18 @@ h2 em { font-style: italic; color: var(--green); }
 .about-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: center; }
 .about-p { font-size: 15px; font-weight: 300; line-height: 1.9; color: var(--muted); margin-top: 24px; }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 44px; background: var(--border); }
-.aval { padding: 26px 22px; background: var(--white); transition: background .25s; }
+.aval { padding: 30px 24px; background: var(--white); transition: background .25s; position: relative; }
 .aval:hover { background: #f0f4ff; }
-.aval-icon { font-size: 20px; margin-bottom: 10px; }
-.aval-t { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--navy); margin-bottom: 7px; }
-.aval-d { font-size: 12px; color: var(--muted); line-height: 1.7; }
-.about-photo { width: 100%; aspect-ratio: 3/4; background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=85'); background-size: cover; background-position: center; position: relative; }
-.about-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 60%, rgba(28,45,110,.5) 100%); }
-.about-badge { position: absolute; bottom: -20px; left: -24px; background: var(--navy); padding: 24px 28px; z-index: 2; }
-.about-badge-n { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 400; color: #7fd89a; display: block; line-height: 1; }
-.about-badge-l { font-size: 9px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.5); margin-top: 6px; }
+.aval-icon { width: 36px; height: 36px; margin-bottom: 18px; display: flex; align-items: center; justify-content: center; color: var(--green); }
+.aval-icon svg { width: 100%; height: 100%; }
+.aval:hover .aval-icon { color: var(--navy); transition: color .3s; }
+.aval-t { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--navy); margin-bottom: 8px; }
+.aval-d { font-size: 12px; color: var(--muted); line-height: 1.75; }
+.about-photo { width: 100%; aspect-ratio: 3/4; background-image: url('assets/img/about-aerial.jpg'); background-size: cover; background-position: center; position: relative; }
+.about-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 55%, rgba(8,21,52,.55) 100%); }
+.about-badge { position: absolute; bottom: -22px; left: -24px; background: var(--navy); padding: 26px 30px; z-index: 2; box-shadow: 0 14px 40px rgba(8,21,52,.25); border-left: 3px solid var(--green); }
+.about-badge-n { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 400; color: var(--green3); display: block; line-height: 1; }
+.about-badge-l { font-size: 9px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-top: 6px; }
 
 /* PROJECTS */
 .proj-sec { padding: 100px 0; background: var(--off); }
@@ -128,23 +132,23 @@ h2 em { font-style: italic; color: var(--green); }
 .proj-hdr h2 { color: var(--navy); }
 .proj-more { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--green); text-decoration: none; display: flex; align-items: center; gap: 10px; transition: gap .25s; }
 .proj-more:hover { gap: 18px; }
-.proj-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 3px; padding: 0 60px; }
-.pcard { position: relative; overflow: hidden; }
-.pcard-img { width: 100%; height: 520px; background-size: cover; background-position: center; transition: transform .65s ease; }
+.proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; padding: 0 60px; }
+.pcard { position: relative; background: var(--white); box-shadow: 0 12px 40px rgba(8,21,52,.08); transition: transform .4s ease, box-shadow .4s ease; display: flex; flex-direction: column; }
+.pcard:hover { transform: translateY(-6px); box-shadow: 0 26px 60px rgba(8,21,52,.18); }
+.pcard-imgwrap { position: relative; overflow: hidden; }
+.pcard-img { width: 100%; aspect-ratio: 4 / 5; background-size: cover; background-position: center; transition: transform .8s ease; }
 .pcard:hover .pcard-img { transform: scale(1.04); }
-.pov { position: absolute; inset: 0; background: linear-gradient(to top, rgba(14,25,64,.95) 0%, rgba(14,25,64,.35) 45%, rgba(14,25,64,.05) 100%); }
-.pbadge { position: absolute; top: 20px; left: 20px; font-size: 9px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; padding: 6px 14px; border: 1.5px solid; }
-.pb-green { color: #7fd89a; border-color: rgba(127,216,154,.45); background: rgba(127,216,154,.1); }
-.pb-yellow { color: #ffd97a; border-color: rgba(255,217,122,.45); background: rgba(255,217,122,.1); }
-.pb-blue { color: #7ab8f5; border-color: rgba(122,184,245,.45); background: rgba(122,184,245,.1); }
-.pinfo { position: absolute; bottom: 0; left: 0; right: 0; padding: 28px; }
-.pname { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 500; color: var(--white); margin-bottom: 6px; }
-.ploc { font-size: 10px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 18px; display: flex; align-items: center; gap: 7px; }
-.ploc::before { content: '●'; font-size: 5px; color: #7fd89a; }
-.pprice { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; color: #7fd89a; }
-.psub { font-size: 11px; color: rgba(255,255,255,.35); margin-top: 4px; }
-.ptags { display: flex; gap: 6px; margin-top: 14px; flex-wrap: wrap; }
-.ptag { font-size: 9px; letter-spacing: .1em; text-transform: uppercase; border: 1px solid rgba(255,255,255,.15); padding: 4px 10px; color: rgba(255,255,255,.45); }
+.pbadge { position: absolute; top: 18px; right: 18px; font-size: 9px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; padding: 7px 14px; backdrop-filter: blur(8px); background: rgba(255,255,255,.94); z-index: 3; box-shadow: 0 6px 18px rgba(8,21,52,.18); }
+.pb-green { color: var(--green); border-left: 3px solid var(--green); }
+.pb-yellow { color: #b88600; border-left: 3px solid var(--gold); }
+.pb-blue { color: var(--navy); border-left: 3px solid var(--navy); }
+.pinfo { padding: 22px 24px 24px; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 16px; flex: 1; }
+.ptags { display: flex; gap: 6px; flex-wrap: wrap; }
+.ptag { font-size: 9px; letter-spacing: .14em; text-transform: uppercase; border: 1px solid rgba(43,168,74,.3); padding: 5px 10px; color: var(--green); background: rgba(43,168,74,.06); }
+.pcta { display: inline-flex; align-items: center; justify-content: space-between; gap: 10px; color: var(--navy); font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; padding-top: 10px; border-top: 1px solid var(--border); margin-top: auto; transition: color .25s; }
+.pcta:hover { color: var(--green); }
+.pcta svg { transition: transform .3s; }
+.pcta:hover svg { transform: translateX(6px); }
 
 /* INVEST */
 .inv-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: start; }
@@ -193,7 +197,7 @@ h2 em { font-style: italic; color: var(--green); }
 
 /* NEWSLETTER */
 .nl-sec { display: grid; grid-template-columns: 1fr 1fr; min-height: 500px; }
-.nl-photo { background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=900&q=85'); background-size: cover; background-position: center; position: relative; }
+.nl-photo { background-image: url('assets/img/newsletter-portfolio.jpg'); background-size: cover; background-position: center; position: relative; }
 .nl-photo::after { content: 'YOUR FUTURE HOME STARTS HERE'; position: absolute; bottom: 36px; left: 36px; font-size: 9px; font-weight: 700; letter-spacing: .28em; color: rgba(255,255,255,.5); }
 .nl-content { background: var(--navy-bg); padding: 72px 60px; display: flex; flex-direction: column; justify-content: center; }
 .nl-content .sec-label { color: rgba(255,255,255,.45); }
@@ -253,7 +257,7 @@ footer { background: var(--navy3); }
   .sec { padding: 72px 24px; }
   .about-wrap, .inv-wrap, .contact-wrap { grid-template-columns: 1fr; gap: 48px; }
   .about-right { display: none; }
-  .proj-grid { grid-template-columns: 1fr; padding: 0 24px; }
+  .proj-grid { grid-template-columns: 1fr; padding: 0 24px; gap: 24px; }
   .proj-hdr { padding: 0 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
   .why-grid { grid-template-columns: 1fr; }
   .nl-sec { grid-template-columns: 1fr; }
@@ -358,10 +362,52 @@ footer { background: var(--navy3); }
       <p class="about-p">Engrite Innovations is a premier real estate development and investment company headquartered in Yaba, Lagos. We specialise in crafting spaces that don't just house people — they generate lasting wealth.</p>
       <p class="about-p" style="margin-top:14px">From groundbreaking to handover, every development is built on structural excellence, creative design, and an unwavering commitment to the futures of our investors and homeowners.</p>
       <div class="about-grid">
-        <div class="aval"><div class="aval-icon">🏗</div><div class="aval-t">Development</div><div class="aval-d">End-to-end construction with engineering precision</div></div>
-        <div class="aval"><div class="aval-icon">📈</div><div class="aval-t">Investment</div><div class="aval-d">Properties built to grow in value and yield</div></div>
-        <div class="aval"><div class="aval-icon">🔑</div><div class="aval-t">Ownership</div><div class="aval-d">Guided paths to home ownership for every budget</div></div>
-        <div class="aval"><div class="aval-icon">🤝</div><div class="aval-t">Partnership</div><div class="aval-d">Transparent, long-term investor relationships</div></div>
+        <div class="aval">
+          <div class="aval-icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 28V12l8-5 8 5v16"/>
+              <path d="M20 28V18h8v10"/>
+              <path d="M4 28h28"/>
+              <path d="M9 17h2M9 21h2M9 25h2"/>
+              <path d="M14 17h2M14 21h2"/>
+              <path d="M23 22h2M23 25h2"/>
+            </svg>
+          </div>
+          <div class="aval-t">Development</div><div class="aval-d">End-to-end construction with engineering precision</div>
+        </div>
+        <div class="aval">
+          <div class="aval-icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 26l8-9 5 5 11-13"/>
+              <path d="M21 9h7v7"/>
+              <path d="M4 30h24"/>
+            </svg>
+          </div>
+          <div class="aval-t">Investment</div><div class="aval-d">Properties built to grow in value and yield</div>
+        </div>
+        <div class="aval">
+          <div class="aval-icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="16" r="6"/>
+              <circle cx="11" cy="16" r="1.8" fill="currentColor"/>
+              <path d="M17 16h12"/>
+              <path d="M23 16v4"/>
+              <path d="M27 16v3"/>
+            </svg>
+          </div>
+          <div class="aval-t">Ownership</div><div class="aval-d">Guided paths to home ownership for every budget</div>
+        </div>
+        <div class="aval">
+          <div class="aval-icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 18l4-4 6 6 4-4 6 6 4-4"/>
+              <path d="M14 14l3-3 5 5"/>
+              <path d="M2 22h28"/>
+              <path d="M6 22v4M26 22v4"/>
+            </svg>
+          </div>
+          <div class="aval-t">Partnership</div><div class="aval-d">Transparent, long-term investor relationships</div>
+        </div>
       </div>
     </div>
     <div class="about-right fu" style="position:relative">
@@ -388,44 +434,47 @@ footer { background: var(--navy3); }
   <div class="proj-grid">
 
     <div class="pcard fu">
-      <div class="pcard-img" style="background-image:url('https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=1000&q=85')"></div>
-      <div class="pov"></div>
-      <div class="pbadge pb-green">Under Construction</div>
+      <div class="pcard-imgwrap">
+        <div class="pcard-img" style="background-image:url('assets/img/sinai-spaces.jpg')"></div>
+        <div class="pbadge pb-green">Under Construction</div>
+      </div>
       <div class="pinfo">
-        <div class="pname">Sinai Spaces</div>
-        <div class="ploc">Abule Ijesha, Yaba Lagos</div>
-        <div class="pprice">From ₦17M</div>
-        <div class="psub">Studio Apartment · 17-Year Lease · ₦5M Down Payment</div>
-        <div class="psub" style="color:rgba(127,216,154,.75);margin-top:5px">1 Bedroom from ₦28M · ₦2–4M/yr rental</div>
-        <div class="ptags"><span class="ptag">17yr Lease</span><span class="ptag">Live or Earn</span><span class="ptag">₦2–4M/yr</span></div>
+        <div class="ptags">
+          <span class="ptag">17yr Lease</span><span class="ptag">Live or Earn</span><span class="ptag">₦2–4M/yr Rental</span><span class="ptag">₦5M Down</span>
+        </div>
+        <a href="#contact" class="pcta">Enquire About Sinai Spaces
+          <svg width="18" height="10" viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 7h22M17 1l6 6-6 6"/></svg>
+        </a>
       </div>
     </div>
 
     <div class="pcard fu">
-      <div class="pcard-img" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&q=85')"></div>
-      <div class="pov"></div>
-      <div class="pbadge pb-yellow">Last Units Available</div>
+      <div class="pcard-imgwrap">
+        <div class="pcard-img" style="background-image:url('assets/img/sinai-residence.jpg')"></div>
+        <div class="pbadge pb-yellow">Last Units Available</div>
+      </div>
       <div class="pinfo">
-        <div class="pname">Sinai Residence</div>
-        <div class="ploc">Morocco Road, Yaba Lagos</div>
-        <div class="pprice">From ₦100M</div>
-        <div class="psub">1BR + Home Office · 2BR + Home Office</div>
-        <div class="psub" style="color:rgba(127,216,154,.75);margin-top:5px">5% Legal Fees · Registered Conveyance</div>
-        <div class="ptags"><span class="ptag">Solar Power</span><span class="ptag">Smart Home</span><span class="ptag">CCTV</span></div>
+        <div class="ptags">
+          <span class="ptag">Solar Power</span><span class="ptag">Smart Home</span><span class="ptag">CCTV</span><span class="ptag">5% Legal Fees</span>
+        </div>
+        <a href="#contact" class="pcta">Enquire About Sinai Residence
+          <svg width="18" height="10" viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 7h22M17 1l6 6-6 6"/></svg>
+        </a>
       </div>
     </div>
 
     <div class="pcard fu">
-      <div class="pcard-img" style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&q=85')"></div>
-      <div class="pov"></div>
-      <div class="pbadge pb-blue">Off-Plan · New Launch</div>
+      <div class="pcard-imgwrap">
+        <div class="pcard-img" style="background-image:url('assets/img/crest-residence.jpg')"></div>
+        <div class="pbadge pb-blue">Off-Plan · New Launch</div>
+      </div>
       <div class="pinfo">
-        <div class="pname">Crest Residence</div>
-        <div class="ploc">Gbagada Phase 1, Lagos</div>
-        <div class="pprice">From ₦40M</div>
-        <div class="psub">Studio · 1BR · 2BR</div>
-        <div class="psub" style="color:rgba(127,216,154,.75);margin-top:5px">50% equity in 9 months · 12-month plan</div>
-        <div class="ptags"><span class="ptag">Rooftop Gym</span><span class="ptag">Pool</span><span class="ptag">Elevator</span><span class="ptag">Smart Home</span></div>
+        <div class="ptags">
+          <span class="ptag">Rooftop Gym</span><span class="ptag">Pool</span><span class="ptag">Elevator</span><span class="ptag">Smart Home</span><span class="ptag">50% Equity in 9mo</span>
+        </div>
+        <a href="#contact" class="pcta">Enquire About Crest Residence
+          <svg width="18" height="10" viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 7h22M17 1l6 6-6 6"/></svg>
+        </a>
       </div>
     </div>
 
