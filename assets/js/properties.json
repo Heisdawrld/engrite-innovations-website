@@ -1,0 +1,38 @@
+[
+  {
+    "id": "sinai-spaces",
+    "name": "Sinai Spaces",
+    "location": "Yaba",
+    "image": "assets/img/sinai-spaces.jpg",
+    "status": "Under Construction",
+    "statusClass": "pb-green",
+    "tags": ["17yr Lease", "Live or Earn", "₦2–4M/yr Rental", "₦5M Down"],
+    "price": "₦17M",
+    "rental": "₦2–4M/yr rental",
+    "description": "Studio Apartment in Yaba"
+  },
+  {
+    "id": "sinai-residence",
+    "name": "Sinai Residence",
+    "location": "Morocco Rd",
+    "image": "assets/img/sinai-residence.jpg",
+    "status": "Last Units Available",
+    "statusClass": "pb-yellow",
+    "tags": ["Solar Power", "Smart Home", "CCTV", "5% Legal Fees"],
+    "price": "₦100M",
+    "rental": "High rental yield",
+    "description": "1 Bedroom + Home Office"
+  },
+  {
+    "id": "crest-residence",
+    "name": "Crest Residence",
+    "location": "Gbagada",
+    "image": "assets/img/crest-residence.jpg",
+    "status": "Off-Plan · New Launch",
+    "statusClass": "pb-blue",
+    "tags": ["Rooftop Gym", "Pool", "Elevator", "Smart Home", "50% Equity in 9mo"],
+    "price": "₦40M",
+    "rental": "50% equity in 9mo",
+    "description": "Studio — Off-Plan"
+  }
+]
