@@ -1,12 +1,9 @@
-# Netlify configuration for Next.js
-# https://docs.netlify.com/frameworks/next-js/overview/
+# Netlify configuration for Engrite Innovations
+# Static site with Netlify-native form handling (no Next.js plugin needed)
 
 [build]
   command = "npm run build:netlify"
   publish = ".next/"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
 
 # Environment variables for the build
 [build.environment]
