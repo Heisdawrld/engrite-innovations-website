@@ -1,16 +1,13 @@
 # Netlify configuration for Engrite Innovations
-# Static site with Netlify-native form handling (no Next.js plugin needed)
+# Static export — forms handled by Netlify native form detection
 
 [build]
   command = "npm run build:netlify"
-  publish = ".next/"
+  publish = "out/"
 
 # Environment variables for the build
 [build.environment]
   NODE_VERSION = "20"
-  # Prisma needs DATABASE_URL at build time for generate
-  # Using a placeholder since the DB file is not used in production API routes
-  DATABASE_URL = "file:./dev.db"
 
 # Headers for performance and security
 [[headers]]
