@@ -121,6 +121,7 @@ export function Contact() {
               data-netlify="true"
               netlify-honeypot="botField"
               name="contact"
+              action="/thank-you"
               onSubmit={handleSubmit}
               className="flex flex-col gap-3"
               aria-label="Contact form"

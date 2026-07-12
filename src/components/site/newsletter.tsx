@@ -51,7 +51,7 @@ export function Newsletter() {
           Exclusive early access to new projects, investment opportunities, and property updates — straight to your inbox.
         </p>
 
-        <form method="POST" data-netlify="true" netlify-honeypot="botField" name="newsletter" onSubmit={handleSubmit} className="mt-8 flex max-w-md flex-col gap-3" aria-label="Newsletter signup">
+        <form method="POST" data-netlify="true" netlify-honeypot="botField" name="newsletter" action="/thank-you" onSubmit={handleSubmit} className="mt-8 flex max-w-md flex-col gap-3" aria-label="Newsletter signup">
           {/* Honeypot — hidden from humans, bots will fill it */}
           <input type="text" name="botField" className="sr-only" tabIndex={-1} autoComplete="off" aria-hidden="true" />
           <div className="space-y-1.5">

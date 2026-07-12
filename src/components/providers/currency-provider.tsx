@@ -28,14 +28,8 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
     if (stored && CURRENCIES[stored]) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setCurrencyState(stored);
-    } else {
-      const locale = navigator.language;
-      if (locale.startsWith("en-GB")) {
-        setCurrencyState("GBP");
-      } else if (locale.startsWith("en-US")) {
-        setCurrencyState("USD");
-      }
     }
+    // Default is NGN — no auto-detection needed for a Lagos-based site
   }, []);
 
   const setCurrency = (c: Currency) => {
