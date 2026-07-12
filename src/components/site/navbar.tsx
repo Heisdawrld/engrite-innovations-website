@@ -149,7 +149,7 @@ export function Navbar({ onOpenFavorites }: { onOpenFavorites: () => void }) {
                 <div className="mt-auto flex gap-4 border-t border-white/10 pt-6 text-[11px] uppercase tracking-[0.14em] text-white/60">
                   <a href="https://instagram.com/engriteinnovations_" target="_blank" rel="noopener noreferrer">IG</a>
                   <a href="https://ng.linkedin.com/company/engrite-innovations" target="_blank" rel="noopener noreferrer">LI</a>
-                  <a href="https://www.facebook.com/share/1HYbG1gu1V/" target="_blank" rel="noopener noreferrer">FB</a>
+                  <a href="https://www.facebook.com/EduserveNG" target="_blank" rel="noopener noreferrer">FB</a>
                   <a href="https://www.tiktok.com/@engriteinnovation" target="_blank" rel="noopener noreferrer">TT</a>
                 </div>
               </div>

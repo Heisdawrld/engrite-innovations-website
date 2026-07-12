@@ -1,4 +1,4 @@
-export type PropertyStatus = "under-construction" | "last-units" | "off-plan";
+export type PropertyStatus = "under-construction" | "last-units" | "off-plan" | "sample-units-open";
 
 export type PropertyUnit = {
   name: string;
@@ -17,7 +17,7 @@ export type PropertyPaymentTier = {
 export type PropertyTourScene = {
   id: string;
   title: string;
-  image: string; // panorama image (use property image as fallback)
+  image: string;
   hotSpots?: { yaw: number; pitch: number; target: string; label: string }[];
 };
 
@@ -42,47 +42,62 @@ export type Property = {
   completionDate: string;
   startingPrice: number;
   annualReturn: number;
+  useCases?: string[];
+  valuePillars?: string[];
 };
 
 export const PROPERTIES: Property[] = [
   {
     slug: "sinai-spaces",
     name: "Sinai Spaces",
-    tagline: "Studio apartments for the modern Lagos professional",
+    tagline: "Spaces For You! — Affordable entry-point to Lagos property ownership",
     status: "under-construction",
-    statusLabel: "Under Construction",
+    statusLabel: "Active Selling",
     image: "/img/sinai-spaces.jpg",
     gallery: [
       "/img/sinai-spaces.jpg",
       "/img/about-aerial.jpg",
       "/img/newsletter-portfolio.jpg",
     ],
-    location: "Yaba, Lagos",
-    mapEmbed:
-      "https://www.google.com/maps?q=Yaba,Lagos,Nigeria&output=embed",
+    location: "Akoka, Yaba, Lagos",
+    mapEmbed: "https://www.google.com/maps?q=Akoka+Yaba+Lagos+Nigeria&output=embed",
     shortDesc:
-      "Studio apartments designed for the modern Lagos professional. Affordable entry-point with strong rental potential.",
+      "Studio and mini-flat apartments in Akoka, Yaba — offering a 17-year leasehold with Basic and Premium options. Live in it, rent it out, or run it as a shortlet/Airbnb.",
     description:
-      "Sinai Spaces is Engrite's flagship affordable-luxury development in the heart of Yaba — Lagos's tech and education hub. Each studio is engineered for efficient living: 24-32 sqm of intelligently planned space with full-height windows, premium fittings, and shared amenities that punch above their weight class. Designed for young professionals, diaspora investors seeking rental yield, and first-time buyers looking to step onto the property ladder.",
-    tags: ["17yr Lease", "Live or Earn", "₦2–4M/yr Rental", "₦5M Down"],
+      "Sinai Spaces is Engrite's affordable-luxury development in Akoka, Yaba — one of Lagos's most strategic neighborhoods, home to the University of Lagos and a thriving young-professional community. Designed around three value pillars — Efficiency, Safety, and Comfort — every unit is built for practical living with inverter-backed 24/7 power supply. Sinai Spaces pioneered Engrite's signature 17-year leasehold structure, giving buyers flexible ownership: move in (Live), rent it out for steady income (Earn), or operate it as a shortlet/Airbnb. With two pricing tiers (Basic and Premium), it's the most accessible entry point into Lagos property ownership.",
+    tags: ["17yr Lease", "Live or Earn", "Shortlet-ready", "24/7 Power"],
     units: [
       {
-        name: "Studio — Standard",
+        name: "Studio Apartment — Basic",
         price: 17_000_000,
-        size: "24 sqm",
+        size: "Compact studio",
         rentalYield: "₦2–3M/yr",
-        features: ["Full-height windows", "Premium fittings", "Shared gym"],
+        features: ["Inverter power", "Premium location", "17-year lease"],
       },
       {
-        name: "Studio — Corner",
-        price: 22_000_000,
-        size: "32 sqm",
+        name: "Mini Flat — Basic",
+        price: 28_000_000,
+        size: "Mini flat",
         rentalYield: "₦3–4M/yr",
-        features: ["Dual aspect", "Larger kitchen", "Balcony access"],
+        features: ["Inverter power", "Separate kitchen", "17-year lease"],
+      },
+      {
+        name: "Studio Apartment — Premium",
+        price: 20_000_000,
+        size: "Upgraded studio",
+        rentalYield: "₦3–4M/yr",
+        features: ["Inverter power", "Premium fittings", "17-year lease"],
+      },
+      {
+        name: "1 Bedroom Apartment — Premium",
+        price: 30_000_000,
+        size: "1 bedroom",
+        rentalYield: "₦4–6M/yr",
+        features: ["Inverter power", "Premium fittings", "17-year lease"],
       },
     ],
-    amenities: ["24/7 Security", "Backup Power", "Parking", "Gym", "Coworking Lounge"],
-    features: ["Solar Power", "Smart Home", "CCTV", "5% Legal Fees"],
+    amenities: ["24/7 Power (Inverter)", "24/7 Security", "Backup Power", "Parking", "Strategic Location"],
+    features: ["17-Year Lease", "Live or Earn Model", "Shortlet/Airbnb Ready", "Inverter Power", "5% Legal Fees"],
     paymentSchedule: [
       { milestone: "Initial Deposit", percentage: 30, description: "Secures your unit" },
       { milestone: "Construction Milestone 1", percentage: 30, description: "At foundation completion" },
@@ -116,43 +131,69 @@ export const PROPERTIES: Property[] = [
         ],
       },
     ],
-    completionDate: "Q4 2026",
+    completionDate: "Active Selling — Units Available",
     startingPrice: 17_000_000,
     annualReturn: 7.1,
+    useCases: [
+      "Live in it — your own Lagos address",
+      "Rent it out for steady annual income (₦2–6M/yr)",
+      "Operate as shortlet/Airbnb for higher yields",
+    ],
+    valuePillars: ["Efficiency", "Safety", "Comfort"],
   },
   {
     slug: "sinai-residence",
     name: "Sinai Residence",
-    tagline: "1-bedroom + home office for the working professional",
-    status: "last-units",
-    statusLabel: "Last Units Available",
+    tagline: "Yaba's premium smart real estate development",
+    status: "sample-units-open",
+    statusLabel: "Sample Units Open — Last Units Remaining",
     image: "/img/sinai-residence.jpg",
     gallery: [
       "/img/sinai-residence.jpg",
       "/img/about-aerial.jpg",
       "/img/newsletter-portfolio.jpg",
     ],
-    location: "Morocco Rd, Yaba, Lagos",
-    mapEmbed:
-      "https://www.google.com/maps?q=Morocco+Road+Yaba+Lagos&output=embed",
+    location: "Morocco Road, Yaba, Lagos",
+    mapEmbed: "https://www.google.com/maps?q=Morocco+Road+Yaba+Lagos+Nigeria&output=embed",
     shortDesc:
-      "Premium 1-bedroom + home office layouts in the heart of Yaba. Solar-powered, smart-home ready, with CCTV throughout.",
+      "Premium apartments with optional Home Office layouts on Morocco Road, Yaba. Sample units now open for inspection. Smart-home ready with inverter power.",
     description:
-      "Sinai Residence is for buyers who want more than a studio — a proper 1-bedroom with a dedicated home office that supports remote work, hybrid professionals, and small families. Built with solar primary power, smart-home automation, and full CCTV coverage, it's a turnkey solution for buyers who want modern conveniences baked in. Only a handful of units remain in this near-complete development.",
-    tags: ["Solar Power", "Smart Home", "CCTV", "5% Legal Fees"],
+      "Sinai Residence is Engrite's flagship premium development on Morocco Road, Yaba — designed around three value pillars: Comfort, Convenience, and Lasting value. The development offers both standard apartments (Studio and 1-Bedroom) and unique Home Office layouts (1BR + Home Office and 2BR + Home Office) for hybrid professionals and small families. Every unit is smart-home ready with inverter-backed 24/7 power supply. Sample units are now officially open for investors and realtors to inspect — book a private viewing. Only a handful of units remain in this near-complete development.",
+    tags: ["Smart Home", "Home Office Option", "24/7 Power", "5% Legal Fees"],
     units: [
       {
-        name: "1 Bedroom + Home Office",
+        name: "Studio Apartment",
+        price: 19_990_000,
+        size: "Studio",
+        rentalYield: "₦2–3M/yr",
+        features: ["Smart home ready", "Inverter power", "Premium location"],
+      },
+      {
+        name: "1-Bedroom Apartment",
+        price: 29_990_000,
+        size: "1 bedroom",
+        rentalYield: "₦3–5M/yr",
+        features: ["Smart home ready", "Inverter power", "Modern fittings"],
+      },
+      {
+        name: "1 Bedroom + Home Office (Unfurnished)",
         price: 100_000_000,
-        size: "65 sqm",
+        size: "1 bedroom + office",
         rentalYield: "₦6–8M/yr",
-        features: ["Home office", "Solar power", "Smart home", "CCTV"],
+        features: ["Home office", "Smart home", "Inverter power", "Premium fittings"],
+      },
+      {
+        name: "2 Bedroom + Home Office (Unfurnished)",
+        price: 120_000_000,
+        size: "2 bedroom + office",
+        rentalYield: "₦8–10M/yr",
+        features: ["Home office", "Smart home", "Inverter power", "Premium fittings", "Family-sized"],
       },
     ],
-    amenities: ["24/7 Security", "Solar Power", "Smart Home", "CCTV", "Parking", "Rooftop Terrace"],
-    features: ["Solar Power", "Smart Home", "CCTV", "5% Legal Fees", "Premium Fittings"],
+    amenities: ["24/7 Power (Inverter)", "Smart Home Ready", "24/7 Security", "Parking", "Premium Fittings", "Home Office Layouts"],
+    features: ["Smart Home", "Inverter Power (24/7)", "Home Office Option", "5% Legal Fees", "Premium Fittings", "Sample Units Open"],
     paymentSchedule: [
-      { milestone: "Initial Deposit", percentage: 25, description: "Secures your unit" },
+      { milestone: "Initial Deposit", percentage: 25, description: "₦5M minimum — secures your unit" },
       { milestone: "Construction Milestone 1", percentage: 30, description: "At superstructure" },
       { milestone: "Construction Milestone 2", percentage: 30, description: "At finishing" },
       { milestone: "Handover", percentage: 15, description: "On key collection" },
@@ -188,14 +229,20 @@ export const PROPERTIES: Property[] = [
         hotSpots: [{ yaw: 0, pitch: 0, target: "living", label: "Back to Living" }],
       },
     ],
-    completionDate: "Q3 2026 — Handover Imminent",
-    startingPrice: 100_000_000,
+    completionDate: "Sample Units Open — Book Inspection",
+    startingPrice: 19_990_000,
     annualReturn: 7.1,
+    useCases: [
+      "Live in it — premium Yaba address with smart home features",
+      "Earn rental income with Home Office premium (₦6–10M/yr)",
+      "Ideal for hybrid professionals and diaspora investors",
+    ],
+    valuePillars: ["Comfort", "Convenience", "Lasting"],
   },
   {
     slug: "crest-residence",
     name: "Crest Residence",
-    tagline: "Off-plan luxury living in Gbagada Phase One",
+    tagline: "Live higher, elevated beyond the ordinary",
     status: "off-plan",
     statusLabel: "Off-Plan · New Launch",
     image: "/img/crest-residence.jpg",
@@ -204,48 +251,47 @@ export const PROPERTIES: Property[] = [
       "/img/about-aerial.jpg",
       "/img/newsletter-portfolio.jpg",
     ],
-    location: "Gbagada Phase One, Lagos",
-    mapEmbed:
-      "https://www.google.com/maps?q=Gbagada+Phase+One+Lagos&output=embed",
+    location: "Gbagada Phase 1, Lagos",
+    mapEmbed: "https://www.google.com/maps?q=Gbagada+Phase+1+Lagos+Nigeria&output=embed",
     shortDesc:
-      "Brand new off-plan launch with rooftop gym, pool, elevator, and smart home integration. 50% equity achievable in 9 months.",
+      "Off-plan luxury in Gbagada Phase 1 — elevator, rooftop gym, rooftop lounge, swimming pool, fitted kitchens, 24/7 electricity. Studio, 1BR, and 2BR available.",
     description:
-      "Crest Residence is Engrite's most ambitious project to date — a luxury mid-rise in Gbagada Phase One featuring a rooftop gym, infinity pool, high-speed elevator, and full smart-home integration. As an off-plan launch, early buyers benefit from the lowest entry price and the strongest capital appreciation: 50% equity growth is achievable within 9 months based on Engrite's previous project track record. Ideal for diaspora investors and buyers seeking premium finishes in a fast-appreciating corridor.",
-    tags: ["Rooftop Gym", "Pool", "Elevator", "Smart Home", "50% Equity in 9mo"],
+      "Crest Residence is Engrite's most ambitious luxury development, located in Gbagada Phase 1 — one of Lagos's most demanded and desired residential locations. This off-plan project offers Studio, 1-Bedroom, and 2-Bedroom apartments with premium amenities including a rooftop gym, rooftop lounge, swimming pool, high-speed elevator, fitted kitchens, and 24/7 electricity with full security coverage. As an off-plan launch, early buyers benefit from the lowest entry price and strongest capital appreciation potential. Crest Residence calls you to live higher — elevated beyond the ordinary.",
+    tags: ["Rooftop Gym", "Swimming Pool", "Elevator", "Fitted Kitchens", "24/7 Electricity"],
     units: [
       {
-        name: "Studio — Off-Plan",
+        name: "Studio Apartment — Off-Plan",
         price: 40_000_000,
-        size: "30 sqm",
+        size: "Studio",
         rentalYield: "₦3–4M/yr",
-        features: ["Smart home", "Premium fittings", "Pool access"],
+        features: ["Fitted kitchen", "Pool access", "Gym access", "Elevator"],
       },
       {
-        name: "1 Bedroom — Off-Plan",
-        price: 65_000_000,
-        size: "55 sqm",
+        name: "1 Bedroom Apartment — Off-Plan",
+        price: 60_000_000,
+        size: "1 bedroom",
         rentalYield: "₦5–7M/yr",
-        features: ["Smart home", "Balcony", "Pool access", "Gym access"],
+        features: ["Fitted kitchen", "Balcony", "Pool access", "Gym access", "Elevator"],
       },
       {
-        name: "2 Bedroom Penthouse",
-        price: 120_000_000,
-        size: "95 sqm",
-        rentalYield: "₦9–12M/yr",
-        features: ["Private rooftop", "Smart home", "Premium finishes"],
+        name: "2 Bedroom Apartment — Off-Plan",
+        price: 80_000_000,
+        size: "2 bedroom",
+        rentalYield: "₦7–10M/yr",
+        features: ["Fitted kitchen", "Large balcony", "Pool access", "Gym access", "Elevator", "Family-sized"],
       },
     ],
     amenities: [
+      "Elevator",
       "Rooftop Gym",
-      "Infinity Pool",
-      "High-Speed Elevator",
+      "Rooftop Lounge",
+      "Swimming Pool",
+      "24/7 Electricity",
+      "Fitted Kitchens",
       "24/7 Security",
-      "Solar Power",
-      "Smart Home",
-      "CCTV",
       "Covered Parking",
     ],
-    features: ["Rooftop Gym", "Pool", "Elevator", "Smart Home", "50% Equity in 9mo"],
+    features: ["Elevator", "Rooftop Gym", "Rooftop Lounge", "Swimming Pool", "24/7 Electricity", "Fitted Kitchens", "24/7 Security", "Off-Plan Pricing"],
     paymentSchedule: [
       { milestone: "Reservation", percentage: 10, description: "Off-plan reservation" },
       { milestone: "Foundation Complete", percentage: 20, description: "Within 90 days" },
@@ -274,7 +320,7 @@ export const PROPERTIES: Property[] = [
       },
       {
         id: "rooftop",
-        title: "Rooftop Pool & Gym",
+        title: "Rooftop Pool, Gym & Lounge",
         image: "/img/newsletter-portfolio.jpg",
         hotSpots: [{ yaw: 180, pitch: -10, target: "exterior", label: "Back to Exterior" }],
       },
@@ -285,9 +331,15 @@ export const PROPERTIES: Property[] = [
         hotSpots: [{ yaw: 0, pitch: 0, target: "lobby", label: "Back to Lobby" }],
       },
     ],
-    completionDate: "Q4 2027",
+    completionDate: "Off-Plan — 12-Month Build Cycle",
     startingPrice: 40_000_000,
     annualReturn: 7.1,
+    useCases: [
+      "Live in it — luxury Gbagada address with full amenities",
+      "Earn premium rental income (₦3–10M/yr depending on unit)",
+      "Strongest capital appreciation potential (off-plan entry pricing)",
+    ],
+    valuePillars: ["Elevation", "Luxury", "Amenity-Rich"],
   },
 ];
 

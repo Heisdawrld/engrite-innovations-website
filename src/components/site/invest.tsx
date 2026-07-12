@@ -5,9 +5,9 @@ import { ROICalculator } from "./roi-calculator";
 import { useLanguage } from "@/components/providers/language-provider";
 
 const leaseRows = [
-  { name: "Studio Apartment", location: "Sinai Spaces · Yaba", price: 17_000_000, note: "₦2–4M/yr rental" },
-  { name: "1 Bedroom + Home Office", location: "Sinai Residence · Morocco Rd", price: 100_000_000, note: "High rental yield" },
-  { name: "Studio — Off-Plan", location: "Crest Residence · Gbagada", price: 40_000_000, note: "50% equity in 9mo" },
+  { name: "Studio — Basic Option", location: "Sinai Spaces · Akoka, Yaba", price: 17_000_000, note: "₦2–4M/yr rental · 17yr lease" },
+  { name: "Studio Apartment", location: "Sinai Residence · Morocco Rd, Yaba", price: 19_990_000, note: "Smart home · Sample units open" },
+  { name: "1 Bedroom — Off-Plan", location: "Crest Residence · Gbagada Phase 1", price: 60_000_000, note: "Rooftop gym · Pool · Elevator" },
 ];
 
 export function Invest() {

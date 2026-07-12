@@ -128,6 +128,12 @@ export function Contact() {
                 >
                   +234 813 066 5862
                 </a>
+                <a
+                  href="tel:+2349061753571"
+                  className="mt-1 block text-[13px] font-light text-[#6b7280] hover:text-[#2BA84A]"
+                >
+                  +234 906 175 3571 (Alt)
+                </a>
               </div>
               <div>
                 <div className="text-[9px] font-bold uppercase tracking-[0.24em] text-[#2BA84A]">
@@ -136,7 +142,7 @@ export function Contact() {
                 <div className="mt-2 flex flex-wrap gap-5 text-[15px] font-light text-[#1a1f2e]">
                   <a href="https://instagram.com/engriteinnovations_" target="_blank" rel="noopener noreferrer" className="hover:text-[#2BA84A]">Instagram</a>
                   <a href="https://ng.linkedin.com/company/engrite-innovations" target="_blank" rel="noopener noreferrer" className="hover:text-[#2BA84A]">LinkedIn</a>
-                  <a href="https://www.facebook.com/share/1HYbG1gu1V/" target="_blank" rel="noopener noreferrer" className="hover:text-[#2BA84A]">Facebook</a>
+                  <a href="https://www.facebook.com/EduserveNG" target="_blank" rel="noopener noreferrer" className="hover:text-[#2BA84A]">Facebook</a>
                   <a href="https://www.tiktok.com/@engriteinnovation" target="_blank" rel="noopener noreferrer" className="hover:text-[#2BA84A]">TikTok</a>
                 </div>
               </div>

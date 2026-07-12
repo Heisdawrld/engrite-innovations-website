@@ -1,0 +1,50 @@
+{
+  "success": true,
+  "query": "Crest Residence Gbagada Lagos apartment building rooftop pool",
+  "count": 6,
+  "ranked": true,
+  "results": [
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/958b1a60b928.jpeg",
+      "caption": "A real estate advertisement for Redemption Towers, a 3-bedroom apartment in Gbagada, Lagos, with pricing and amenities.",
+      "source": "Private Property Nigeria",
+      "original_width": "763px",
+      "original_height": "1080px"
+    },
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/517609a9edf3.jpeg",
+      "caption": "A modern outdoor swimming pool with a waterfall feature, surrounded by a tiled deck and residential buildings. The image contains the watermark text: PropertyPro.ng.",
+      "source": "PropertyPro Nigeria",
+      "original_width": "800px",
+      "original_height": "1067px"
+    },
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/11101968427f.jpeg",
+      "caption": "A modern, multi-story white house with glass balconies and a paved driveway, featuring a \"PropertyPro.ng\" watermark.",
+      "source": "PropertyPro",
+      "original_width": "800px",
+      "original_height": "1067px"
+    },
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/4fc37a24bcfc.jpeg",
+      "caption": "A modern, multi-story house with a blue fence and black gate. suitable for background image",
+      "source": "Airbnb",
+      "original_width": "1200px",
+      "original_height": "775px"
+    },
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/361e7fe51f65.jpeg",
+      "caption": "A modern multi-story building with a \"PropertyPro.ng\" watermark, construction materials, and clear blue sky.",
+      "source": "PropertyPro",
+      "original_width": "800px",
+      "original_height": "1067px"
+    },
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/ed4975c9395f.jpg",
+      "caption": "The image shows a swimming pool with a watermark \"LAGOSPROPERTY.NET\" and a logo \"DESH NAUTILUS LIMITED\".",
+      "source": "Real Estate and Property in Lagos",
+      "original_width": "1024px",
+      "original_height": "768px"
+    }
+  ]
+}

@@ -15,7 +15,7 @@ const socialLinks = [
   },
   {
     label: "Facebook",
-    href: "https://www.facebook.com/share/1HYbG1gu1V/",
+    href: "https://www.facebook.com/EduserveNG",
     icon: Facebook,
   },
 ];
@@ -128,7 +128,7 @@ export function Footer() {
         <div className="flex flex-wrap items-center justify-center gap-4 text-[11px]">
           <Link href="#privacy" className="text-white/60 transition-colors hover:text-[#7fd89a]">Privacy Policy</Link>
           <Link href="#privacy" className="text-white/60 transition-colors hover:text-[#7fd89a]">Terms</Link>
-          <span className="font-serif text-[13px] italic text-white/50">Building Legacy, Delivering Value.</span>
+          <span className="font-serif text-[13px] italic text-white/50">Building Dreams, Shaping Cities.</span>
         </div>
       </div>
     </footer>

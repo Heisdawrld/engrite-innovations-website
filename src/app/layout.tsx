@@ -111,9 +111,17 @@ const jsonLd = {
       logo: `${SITE_URL}/img/og-image.jpg`,
       image: `${SITE_URL}/img/og-image.jpg`,
       description:
-        "Premium real estate development and investment company headquartered in Yaba, Lagos, Nigeria.",
+        "Engrite Innovations Ltd. — Building Dreams, Shaping Cities. A Lagos-based real estate development and investment company headquartered in Yaba, specializing in Sales, Rent, Lease, Development, Surveying, and Construction.",
+      slogan: "Building Dreams, Shaping Cities",
       telephone: "+234-813-066-5862",
       email: "engriteinnovations@gmail.com",
+      founder: {
+        "@type": "Person",
+        name: "Victor Osinaike",
+        jobTitle: "CEO & Real Estate Developer",
+        almaMater: "University of Lagos",
+        knowsAbout: ["Land Surveying", "Real Estate Development", "Building Construction"],
+      },
       address: {
         "@type": "PostalAddress",
         streetAddress: "27, Montgomery Street",
@@ -122,10 +130,18 @@ const jsonLd = {
         addressCountry: "NG",
       },
       areaServed: { "@type": "City", name: "Lagos" },
+      knowsAbout: [
+        "Real Estate Development",
+        "Property Investment",
+        "Land Surveying",
+        "Building Construction",
+        "Property Management",
+        "Shortlet Management",
+      ],
       sameAs: [
         "https://instagram.com/engriteinnovations_",
         "https://ng.linkedin.com/company/engrite-innovations",
-        "https://www.facebook.com/share/1HYbG1gu1V/?mibextid=wwXIfr",
+        "https://www.facebook.com/EduserveNG",
         "https://www.tiktok.com/@engriteinnovation",
       ],
     },

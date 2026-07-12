@@ -7,11 +7,15 @@ import { useCurrency } from "@/components/providers/currency-provider";
 import { TrendingUp, Calendar, Wallet } from "lucide-react";
 
 const PROPERTY_PRESETS = [
-  { label: "Sinai Spaces Studio", price: 17_000_000 },
+  { label: "Sinai Spaces Studio (Basic)", price: 17_000_000 },
+  { label: "Sinai Spaces Studio (Premium)", price: 20_000_000 },
+  { label: "Sinai Residence Studio", price: 19_990_000 },
+  { label: "Sinai Residence 1BR", price: 29_990_000 },
   { label: "Crest Residence Studio", price: 40_000_000 },
-  { label: "Crest Residence 1BR", price: 65_000_000 },
-  { label: "Sinai Residence 1BR", price: 100_000_000 },
-  { label: "Crest Penthouse", price: 120_000_000 },
+  { label: "Crest Residence 1BR", price: 60_000_000 },
+  { label: "Crest Residence 2BR", price: 80_000_000 },
+  { label: "Sinai Residence 1BR+Office", price: 100_000_000 },
+  { label: "Sinai Residence 2BR+Office", price: 120_000_000 },
 ];
 
 export function ROICalculator() {

@@ -1,0 +1,43 @@
+{
+  "success": true,
+  "query": "Lagos Nigeria skyline aerial view Yaba city",
+  "count": 5,
+  "ranked": true,
+  "results": [
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/ff65f8ab7d80.jpg",
+      "caption": "A clear, high-angle view of a colorful cityscape with buildings and trees under a cloudy sky. suitable for background image",
+      "source": "Unsplash",
+      "original_width": "3000px",
+      "original_height": "2000px"
+    },
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/a67948e4c9df.jpg",
+      "caption": "A high-clarity aerial view of Lagos cityscape with a \"4K ULTRAHD\" logo and the text \"LAGOS\".",
+      "source": "YouTube",
+      "original_width": "1280px",
+      "original_height": "720px"
+    },
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/3d60f5182588.jpg",
+      "caption": "Aerial cityscape at sunset with \"alamy\" watermarks and text: Image ID: 3E1TT30, www.alamy.com.",
+      "source": "Alamy",
+      "original_width": "1300px",
+      "original_height": "821px"
+    },
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/d12d29ddc7af.jpg",
+      "caption": "Aerial view of a modern city with tall buildings, busy roads, and watermarks.",
+      "source": "Alamy",
+      "original_width": "1300px",
+      "original_height": "956px"
+    },
+    {
+      "original_url": "https://sfile.chatglm.cn/images-ppt/f6ac530df3f1.jpeg",
+      "caption": "A clear aerial view of a cityscape featuring a tall glass skyscraper, a river, and various buildings. suitable for background image",
+      "source": "Medium",
+      "original_width": "1400px",
+      "original_height": "787px"
+    }
+  ]
+}
