@@ -34,10 +34,11 @@ export function ROICalculator() {
     const grossAnnualReturn = purchasePrice * annualReturnRate;
     const netAnnualReturn = mode === "earn" ? grossAnnualReturn * (1 - mgmtFee) : 0;
     const totalReturnsOverLease = netAnnualReturn * leaseYears;
-    const propertyAppreciation = purchasePrice * 0.45; // conservative 45% over 17yr
+    const annualAppreciationRate = 0.026; // ~2.6% per year (conservative)
+    const propertyAppreciation = purchasePrice * annualAppreciationRate * leaseYears;
     const totalValueAtEnd = purchasePrice + propertyAppreciation + totalReturnsOverLease;
     const roi = ((totalValueAtEnd - purchasePrice) / purchasePrice) * 100;
-    const breakEvenYear = netAnnualReturn > 0 ? Math.ceil(purchasePrice / netAnnualReturn) : Infinity;
+    const breakEvenYear = netAnnualReturn > 0 ? Math.ceil(downPayment / netAnnualReturn) : Infinity;
 
     return {
       downPayment,
@@ -190,6 +191,16 @@ export function ROICalculator() {
 
         <div className="bg-[rgba(255,255,255,0.04)] p-4 border border-[rgba(255,255,255,0.08)]">
           <div className="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-wider text-white/50">
+            <Calendar className="h-3 w-3" />
+            Break-Even
+          </div>
+          <div className="mt-1.5 font-serif text-xl text-[#7fd89a]">
+            {calculations.breakEvenYear === Infinity ? "—" : `Year ${calculations.breakEvenYear}`}
+          </div>
+        </div>
+
+        <div className="bg-[rgba(255,255,255,0.04)] p-4 border border-[rgba(255,255,255,0.08)]">
+          <div className="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-wider text-white/50">
             <TrendingUp className="h-3 w-3" />
             Annual Return
           </div>
@@ -220,7 +231,7 @@ export function ROICalculator() {
       </div>
 
       <p className="mt-4 text-[10px] text-white/30">
-        Projections based on historical Engrite performance (7.1% gross yield, 15% management fee, 45% capital appreciation over lease term). Past performance does not guarantee future results. Figures shown in {currency}.
+        Projections based on historical Engrite performance (7.1% gross yield, 15% management fee, ~2.6% annual capital appreciation). Past performance does not guarantee future results. Figures shown in {currency}.
       </p>
     </div>
   );

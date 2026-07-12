@@ -35,7 +35,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-3" aria-label="Engrite Innovations home">
               <Logo variant="footer" />
               <div className="text-[12px] font-bold uppercase tracking-[0.18em] leading-tight text-white">
                 ENGRITE INNOVATIONS
@@ -126,8 +126,6 @@ export function Footer() {
           © 2026 Engrite Innovations Ltd. All rights reserved. · 27 Montgomery Street, Yaba, Lagos
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4 text-[11px]">
-          <Link href="#privacy" className="text-white/60 transition-colors hover:text-[#7fd89a]">Privacy Policy</Link>
-          <Link href="#privacy" className="text-white/60 transition-colors hover:text-[#7fd89a]">Terms</Link>
           <span className="font-serif text-[13px] italic text-white/50">Building Dreams, Shaping Cities.</span>
         </div>
       </div>

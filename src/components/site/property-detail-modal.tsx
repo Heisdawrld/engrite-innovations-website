@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import {
   Dialog,
@@ -27,6 +27,11 @@ export function PropertyDetailModal({ slug, onClose }: PropertyDetailModalProps)
   const { format } = useCurrency();
   const { toggleFavorite, isFavorite } = useFavorites();
   const [activeImage, setActiveImage] = useState(0);
+
+  // Reset gallery when switching properties
+  useEffect(() => {
+    setActiveImage(0);
+  }, [slug]);
 
   if (!property) return null;
 
@@ -261,7 +266,7 @@ export function PropertyDetailModal({ slug, onClose }: PropertyDetailModalProps)
               Enquire About {property.name}
             </a>
             <a
-              href="https://wa.me/2348130665862?text=Hi%20Engrite%2C%20I%27m%20interested%20in%20"
+              href={`https://wa.me/2348130665862?text=${encodeURIComponent(`Hi Engrite, I'm interested in ${property.name}`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 border-2 border-[#102357] px-6 py-4 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-[#102357] transition-all hover:bg-[#102357] hover:text-white"

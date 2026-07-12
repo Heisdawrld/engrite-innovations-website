@@ -2,6 +2,7 @@
 
 import { ScrollReveal } from "./scroll-reveal";
 import { ROICalculator } from "./roi-calculator";
+import { useCurrency } from "@/components/providers/currency-provider";
 import { useLanguage } from "@/components/providers/language-provider";
 
 const leaseRows = [
@@ -12,6 +13,7 @@ const leaseRows = [
 
 export function Invest() {
   const { t } = useLanguage();
+  const { format } = useCurrency();
 
   return (
     <section id="invest" className="scroll-mt-[100px] bg-[#102357] py-20 text-white sm:py-24 lg:py-32">
@@ -41,7 +43,7 @@ export function Invest() {
                 </div>
               </div>
               <div className="bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] p-6 transition-colors hover:border-[rgba(127,216,154,0.3)]">
-                <span className="font-serif text-[40px] font-normal leading-none text-white sm:text-[50px]">₦2–6M</span>
+                <span className="font-serif text-[40px] font-normal leading-none text-white sm:text-[50px]">{format(2_000_000)}–{format(6_000_000)}</span>
                 <div className="mt-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/45">
                   Yearly Rental Revenue
                 </div>
@@ -92,7 +94,7 @@ export function Invest() {
                     </div>
                     <div className="text-right">
                       <div className="font-serif text-[22px] text-[#7fd89a]">
-                        ₦{(row.price / 1_000_000).toFixed(0)}M
+                        {format(row.price)}
                       </div>
                       <div className="text-[11px] text-white/35">{row.note}</div>
                     </div>

@@ -24,7 +24,7 @@ export function Newsletter() {
       const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email }),
+        body: JSON.stringify({ name, email, botField: (e.target as HTMLFormElement).botField?.value }),
       });
 
       if (res.ok) {
@@ -86,6 +86,8 @@ export function Newsletter() {
         </p>
 
         <form onSubmit={handleSubmit} className="mt-8 flex max-w-md flex-col gap-3" aria-label="Newsletter signup">
+          {/* Honeypot — hidden from humans, bots will fill it */}
+          <input type="text" name="botField" className="sr-only" tabIndex={-1} autoComplete="off" aria-hidden="true" />
           <div className="space-y-1.5">
             <Label htmlFor="nl-name" className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">
               {t("newsletter.placeholder.name")}
@@ -122,7 +124,7 @@ export function Newsletter() {
             {loading ? "Subscribing…" : t("newsletter.button")}
           </Button>
         </form>
-        <p className="mt-3 text-[11px] text-white/22">No spam. Unsubscribe any time.</p>
+        <p className="mt-3 text-[11px] text-white/20">No spam. Unsubscribe any time.</p>
       </ScrollReveal>
     </section>
   );

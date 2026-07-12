@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { ScrollReveal } from "./scroll-reveal";
 import {
   Accordion,
@@ -22,6 +23,9 @@ const categories = [
 ];
 
 export function FAQ() {
+  const [activeCategory, setActiveCategory] = useState("all");
+  const filteredFaqs = activeCategory === "all" ? FAQS : FAQS.filter((f) => f.category === activeCategory);
+
   return (
     <section id="faq" className="scroll-mt-[100px] py-20 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-[900px] px-4 sm:px-6 lg:px-10">
@@ -45,7 +49,12 @@ export function FAQ() {
               <Badge
                 key={c.value}
                 variant="outline"
-                className="cursor-pointer border-[rgba(16,35,87,0.2)] px-3 py-1.5 text-xs"
+                className={`cursor-pointer border-[rgba(16,35,87,0.2)] px-3 py-1.5 text-xs transition-colors ${
+                  activeCategory === c.value
+                    ? "bg-[#2BA84A] text-white border-[#2BA84A]"
+                    : "hover:border-[#2BA84A] hover:text-[#2BA84A]"
+                }`}
+                onClick={() => setActiveCategory(c.value)}
               >
                 {c.label}
               </Badge>
@@ -55,7 +64,7 @@ export function FAQ() {
 
         <ScrollReveal delay={150}>
           <Accordion type="single" collapsible className="space-y-3">
-            {FAQS.map((faq) => (
+            {filteredFaqs.map((faq) => (
               <AccordionItem
                 key={faq.id}
                 value={faq.id}

@@ -31,7 +31,7 @@ export function Contact() {
     message: "",
   });
 
-  const setField = (field: string, value: string) =>
+  const setField = (field: keyof typeof form, value: string) =>
     setForm((f) => ({ ...f, [field]: value }));
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -41,7 +41,7 @@ export function Contact() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, botField: (e.target as HTMLFormElement).botField?.value }),
       });
       if (res.ok) {
         toast({
@@ -159,6 +159,8 @@ export function Contact() {
               className="flex flex-col gap-3"
               aria-label="Contact form"
             >
+              {/* Honeypot — hidden from humans, bots will fill it */}
+              <input type="text" name="botField" className="sr-only" tabIndex={-1} autoComplete="off" aria-hidden="true" />
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div className="space-y-1.5">
                   <Label htmlFor="first-name" className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#102357]">

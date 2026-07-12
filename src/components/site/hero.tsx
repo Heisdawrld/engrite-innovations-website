@@ -53,13 +53,13 @@ export function Hero() {
           >
             {t("hero.title1")}
             <br />
-            That <em className="italic text-[#7fd89a]">{t("hero.title2")}</em>
+            <em className="italic text-[#7fd89a]">{t("hero.title2")}</em>
             <br />
             {t("hero.title3")}
           </h1>
 
           <p
-            className="animate-fade-up mt-7 max-w-[420px] text-[15px] font-light leading-[1.85] text-white/62"
+            className="animate-fade-up mt-7 max-w-[420px] text-[15px] font-light leading-[1.85] text-white/60"
             style={{ animationDelay: "0.5s" }}
           >
             {t("hero.desc")}

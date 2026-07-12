@@ -18,7 +18,7 @@ export function StatsBar() {
         <div
           key={i}
           className={`px-6 py-7 text-center sm:px-10 sm:py-8 ${
-            i < stats.length - 1 ? "border-r border-white/7 lg:border-r" : ""
+            i < stats.length - 1 ? "border-r border-white/10 lg:border-r" : ""
           } ${i === 1 ? "border-r-0 lg:border-r" : ""} ${i === 3 ? "border-l lg:border-l-0" : ""}`}
         >
           <div className="font-serif text-[34px] font-normal leading-none text-white sm:text-[38px]">

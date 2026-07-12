@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState, useCallback, useId } from "react";
 import { ChevronLeft, ChevronRight, Maximize2, X } from "lucide-react";
 import type { PropertyTourScene } from "@/lib/properties";
 
@@ -40,6 +40,8 @@ type VirtualTourProps = {
 };
 
 export function VirtualTour({ scenes, matterportUrl, onClose, embedded = false }: VirtualTourProps) {
+  const uniqueId = useId().replace(/:/g, "-");
+  const containerId = `pannellum-${uniqueId}`;
   const containerRef = useRef<HTMLDivElement>(null);
   const viewerRef = useRef<ReturnType<NonNullable<Window["pannellum"]>["viewer"]> | null>(null);
   const [currentScene, setCurrentScene] = useState(scenes[0]?.id ?? "");
@@ -110,7 +112,7 @@ export function VirtualTour({ scenes, matterportUrl, onClose, embedded = false }
     });
 
     try {
-      viewerRef.current = window.pannellum.viewer(containerRef.current.id, {
+      viewerRef.current = window.pannellum.viewer(containerId, {
         default: {
           firstScene: scenes[0].id,
           sceneFadeDuration: 1000,
@@ -238,7 +240,7 @@ export function VirtualTour({ scenes, matterportUrl, onClose, embedded = false }
         </div>
       )}
       <div
-        id="pannellum-container"
+        id={containerId}
         ref={containerRef}
         className="h-[480px] w-full sm:h-[560px]"
         style={{ display: scriptLoaded ? "block" : "none" }}

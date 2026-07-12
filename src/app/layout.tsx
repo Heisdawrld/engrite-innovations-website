@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
-import { Toaster as SonnerToaster } from "@/components/ui/sonner";
 import { CurrencyProvider } from "@/components/providers/currency-provider";
 import { LanguageProvider } from "@/components/providers/language-provider";
 import { FavoritesProvider } from "@/components/providers/favorites-provider";
@@ -177,7 +176,6 @@ export default function RootLayout({
             <FavoritesProvider>
               {children}
               <Toaster />
-              <SonnerToaster position="bottom-right" />
             </FavoritesProvider>
           </CurrencyProvider>
         </LanguageProvider>

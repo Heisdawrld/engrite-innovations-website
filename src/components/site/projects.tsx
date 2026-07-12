@@ -12,6 +12,7 @@ const statusStyles: Record<Property["status"], string> = {
   "under-construction": "text-[#2BA84A] border-l-[3px] border-[#2BA84A]",
   "last-units": "text-[#b88600] border-l-[3px] border-[#d4a000]",
   "off-plan": "text-[#102357] border-l-[3px] border-[#102357]",
+  "sample-units-open": "text-[#2BA84A] border-l-[3px] border-[#2BA84A]",
 };
 
 export function Projects({ onSelectProperty }: { onSelectProperty: (slug: string) => void }) {
@@ -49,7 +50,7 @@ export function Projects({ onSelectProperty }: { onSelectProperty: (slug: string
               <ScrollReveal
                 key={property.slug}
                 delay={idx * 100}
-                className="group flex flex-col bg-white shadow-[0_12px_40px_rgba(8,21,52,0.08)] transition-all duration-400 hover:-translate-y-1.5 hover:shadow-[0_26px_60px_rgba(8,21,52,0.18)]"
+                className="group flex flex-col bg-white shadow-[0_12px_40px_rgba(8,21,52,0.08)] transition-all duration-[400ms] hover:-translate-y-1.5 hover:shadow-[0_26px_60px_rgba(8,21,52,0.18)]"
               >
                 <div className="relative overflow-hidden">
                   <div className="relative aspect-[4/5] w-full overflow-hidden">
@@ -58,7 +59,7 @@ export function Projects({ onSelectProperty }: { onSelectProperty: (slug: string
                       alt={`${property.name} — ${property.tagline}`}
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-800 group-hover:scale-105"
+                      className="object-cover transition-transform duration-[800ms] group-hover:scale-105"
                     />
                   </div>
                   <div
