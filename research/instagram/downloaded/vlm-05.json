@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "This image is a **graphic/poster with text** (a real estate advertisement) for a property. It features a modern, multi - story building exterior with a sleek, contemporary design (mix of dark and light facades, geometric shapes, and balconies). The poster promotes “Sinai Spaces” apartments in Yaba, listing studio and 1 - bedroom options, prices, lease terms, and amenities.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1783842518,
+  "id": "2026071215483550a68c1b837248c9",
+  "model": "glm-4.6v",
+  "object": "chat.completion",
+  "request_id": "2026071215483550a68c1b837248c9",
+  "usage": {
+    "completion_tokens": 84,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 3319,
+    "prompt_tokens_details": {
+      "cached_tokens": 48
+    },
+    "total_tokens": 3403
+  }
+}

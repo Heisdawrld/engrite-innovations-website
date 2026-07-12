@@ -13,8 +13,8 @@ export function Hero() {
     >
       <div className="absolute inset-0">
         <Image
-          src="/img/hero.jpg"
-          alt="Lagos skyline at sunset"
+          src="/img/hero-real.jpg"
+          alt="Sinai Residence by Engrite Innovations — premium apartments on Morocco Road, Yaba, Lagos"
           fill
           priority
           sizes="100vw"

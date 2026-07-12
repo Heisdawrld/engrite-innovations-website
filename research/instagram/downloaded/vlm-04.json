@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "This image is a **graphic/poster with text** (a real estate advertisement) showcasing a modern multi - unit residential building. The building exterior features a contemporary design with clean lines, a mix of dark and light facade panels, and balconies. It promotes “Sinai Spaces” apartments in Yaba, Lagos, highlighting unit types, prices, lease terms, and amenities.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1783842513,
+  "id": "20260712154830f1552b7a0b364fef",
+  "model": "glm-4.6v",
+  "object": "chat.completion",
+  "request_id": "20260712154830f1552b7a0b364fef",
+  "usage": {
+    "completion_tokens": 77,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 3319,
+    "prompt_tokens_details": {
+      "cached_tokens": 4
+    },
+    "total_tokens": 3396
+  }
+}

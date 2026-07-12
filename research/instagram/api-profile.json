@@ -1,0 +1,25 @@
+{
+  "code": 200,
+  "data": {
+    "description": "",
+    "external": {},
+    "html": "<html><head><meta name=\"color-scheme\" content=\"light dark\"><meta charset=\"utf-8\"></head><body><pre>{\"message\":\"useragent mismatch\",\"status\":\"fail\"}</pre><div class=\"json-formatter-container\"></div></body></html>",
+    "httpStatus": 400,
+    "httpStatusText": "",
+    "metadata": {
+      "color-scheme": "light dark"
+    },
+    "title": "",
+    "url": "https://i.instagram.com/api/v1/users/web_profile_info/",
+    "usage": {
+      "tokens": 56
+    },
+    "warning": "Target URL returned error 400: Bad Request"
+  },
+  "meta": {
+    "usage": {
+      "tokens": 56
+    }
+  },
+  "status": 20000
+}

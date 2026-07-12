@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "This image is a **graphic/poster with text** (likely a social media post or video still) featuring two people in an indoor setting. The foreground shows a person in a patterned shirt holding a book, with text overlay reading, *“Is it not this person watching us now that God wants to make a property”*. The background includes a wall with a framed picture and shelves, suggesting an interior space (possibly an office or home). The style is casual and conversational, typical of personal or religious-themed social media content.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1783842581,
+  "id": "20260712154919f4800e8611064686",
+  "model": "glm-4.6v",
+  "object": "chat.completion",
+  "request_id": "20260712154919f4800e8611064686",
+  "usage": {
+    "completion_tokens": 109,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 190,
+    "prompt_tokens_details": {
+      "cached_tokens": 6
+    },
+    "total_tokens": 299
+  }
+}

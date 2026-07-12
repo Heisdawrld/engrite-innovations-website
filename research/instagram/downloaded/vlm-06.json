@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "This image is a **graphic/poster with text** (a real estate advertisement) showcasing a modern multi - story residential building exterior. The building has a contemporary design with clean lines, large windows, and a mix of neutral - toned (gray, white) facades. It advertises apartments (studio, 1 - bedroom, 2 - bedroom) with prices, amenities (rooftop gym, swimming pool, etc.), and is located in Gbagada Phase One.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1783842546,
+  "id": "202607121548406121610f53bf428a",
+  "model": "glm-4.6v",
+  "object": "chat.completion",
+  "request_id": "202607121548406121610f53bf428a",
+  "usage": {
+    "completion_tokens": 98,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1879,
+    "prompt_tokens_details": {
+      "cached_tokens": 6
+    },
+    "total_tokens": 1977
+  }
+}

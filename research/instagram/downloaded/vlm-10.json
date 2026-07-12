@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "This image shows an **interior** (office space) with a person (a woman in a red dress) working at a desk with a laptop. The setting is a simple, functional office with framed photos on the wall and a desk setup. It is not a building exterior, construction site, or graphic/poster with text (though text is overlaid for context). The property style is a basic, utilitarian office environment.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1783842607,
+  "id": "202607121550028925449ef4f44116",
+  "model": "glm-4.6v",
+  "object": "chat.completion",
+  "request_id": "202607121550028925449ef4f44116",
+  "usage": {
+    "completion_tokens": 88,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 565,
+    "prompt_tokens_details": {
+      "cached_tokens": 48
+    },
+    "total_tokens": 653
+  }
+}

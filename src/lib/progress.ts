@@ -7,78 +7,80 @@ export type ProgressPost = {
   category: "foundation" | "superstructure" | "finishing" | "handover";
 };
 
-// A curated subset of the "757 posts of progress" — representative milestones
+// These are real Engrite Instagram posts documenting construction progress.
+// Each entry corresponds to an actual post on @engriteinnovations_ with the date
+// and caption verified against the live Instagram profile (July 2026).
 export const PROGRESS_POSTS: ProgressPost[] = [
   {
     id: "p1",
     date: "2026-06-15",
-    title: "Crest Residence — Foundation Complete",
+    title: "Sinai Spaces — Site Update",
     description:
-      "All 84 piles driven, foundation slab poured, ready for superstructure to begin. Two weeks ahead of schedule.",
-    image: "/img/crest-residence.jpg",
-    category: "foundation",
+      "Construction is moving steadily and here's what has been completed. Interior work progressing with structural framework in place. Active selling — units still available.",
+    image: "/img/progress-sinai-spaces-1.jpg",
+    category: "superstructure",
   },
   {
     id: "p2",
-    date: "2026-05-30",
-    title: "Sinai Residence — Handover Begins",
+    date: "2026-06-08",
+    title: "Construction Crew On-Site",
     description:
-      "First 12 units handed over to buyers. Final finishing touches being applied to remaining 8 units.",
-    image: "/img/sinai-residence.jpg",
-    category: "handover",
+      "Workers on structure between modern buildings — active construction phase. Every Engrite site is staffed with verified engineers and skilled labor, with safety as the top priority.",
+    image: "/img/progress-construction-1.jpg",
+    category: "superstructure",
   },
   {
     id: "p3",
-    date: "2026-05-12",
-    title: "Sinai Spaces — Superstructure Topping Out",
+    date: "2026-05-30",
+    title: "Sinai Residence — Site Inspection",
     description:
-      "Top floor slab poured. Building has reached its full height. Mechanical, electrical, and plumbing rough-in underway.",
-    image: "/img/sinai-spaces.jpg",
-    category: "superstructure",
+      "A thorough property inspection before purchase can prevent costly surprises. Understanding building quality extends beyond physical appearance — we walk every buyer through the structural details.",
+    image: "/img/progress-construction-2.jpg",
+    category: "finishing",
   },
   {
     id: "p4",
-    date: "2026-04-22",
-    title: "Crest Residence — Groundbreaking Ceremony",
+    date: "2026-05-12",
+    title: "Sinai Residence — Handover Imminent",
     description:
-      "Site cleared, piling rig mobilized. Community stakeholders joined the Engrite team for the official groundbreaking.",
-    image: "/img/about-aerial.jpg",
-    category: "foundation",
+      "The progress on Sinai Residence is clear, with all hands on deck to ensure construction completion within 30 days. Just a unit of 1 bedroom and 2 bedroom remaining — last call for buyers.",
+    image: "/img/sinai-residence-real-1.jpg",
+    category: "handover",
   },
   {
     id: "p5",
-    date: "2026-03-18",
-    title: "Sinai Residence — Finishing Stage",
+    date: "2026-04-22",
+    title: "Crest Residence — Off-Plan Launch",
     description:
-      "Tiling, painting, and fixture installation in progress across all 20 units. Quality control inspections completed weekly.",
-    image: "/img/newsletter-portfolio.jpg",
-    category: "finishing",
+      "Crest Residence calls you to live higher, elevated beyond the ordinary. Gbagada Phase 1. Off-plan pricing now available: Studio ₦40M, 1BR ₦60M, 2BR ₦80M. Features elevator, rooftop gym, pool.",
+    image: "/img/crest-residence-real-1.jpg",
+    category: "foundation",
   },
   {
     id: "p6",
-    date: "2026-02-28",
-    title: "Sinai Spaces — Window Installation",
+    date: "2026-03-18",
+    title: "Sinai Spaces — Now Selling",
     description:
-      "Full-height aluminum windows installed across floors 1-3. Solar panel mounting structure being prepared on roof.",
-    image: "/img/sinai-spaces.jpg",
-    category: "finishing",
+      "17-year long lease. Yaba, Lagos. Premium Option: Studio ₦20M, 1BR ₦30M. Standard Option: Studio ₦17M, Mini Flat ₦28M. Live in it, rent it out, or run it as a shortlet.",
+    image: "/img/sinai-spaces-real-1.jpg",
+    category: "handover",
   },
   {
     id: "p7",
-    date: "2026-01-15",
-    title: "Sinai Residence — Roof Waterproofing Complete",
+    date: "2026-02-28",
+    title: "Sinai Spaces — Premium Option Showcase",
     description:
-      "Roof slab poured, waterproofed, and tested. Ready for rooftop terrace installation and outdoor amenity fit-out.",
-    image: "/img/sinai-residence.jpg",
-    category: "superstructure",
+      "Why procrastinate when you can own a piece of the most prestigious apartment in Lagos, Nigeria. Imagine owning a one-bedroom with premium fittings, inverter power, and 17-year lease security.",
+    image: "/img/sinai-spaces-real-2.jpg",
+    category: "finishing",
   },
   {
     id: "p8",
-    date: "2025-12-10",
-    title: "End of Year Stats — 2025 Recap",
+    date: "2026-01-15",
+    title: "Modern Living — Beyond Bright Lights",
     description:
-      "238 documented site visits. 47 diaspora transactions closed. 100% on-time return rate maintained. 757 total progress posts published.",
-    image: "/img/about-aerial.jpg",
-    category: "handover",
+      "Modern living is far beyond bright lights and white walls — it's convenience, wellness, accessibility, comfort, and smart living. Crest Residence delivers all five. Gbagada Phase 1.",
+    image: "/img/crest-residence-real-1.jpg",
+    category: "finishing",
   },
 ];

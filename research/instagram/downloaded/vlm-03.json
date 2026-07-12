@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "This image is a **graphic/poster with text** (not a building, person, or construction site). It features a black background with white text and an Instagram handle, humorously depicting a social media manager prioritizing content creation over urgent tasks like unread emails or missed calls. The style is minimalist and text - focused, typical of social media - style memes or relatable workplace graphics.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1783842585,
+  "id": "20260712154942c43f08fe6df940b4",
+  "model": "glm-4.6v",
+  "object": "chat.completion",
+  "request_id": "20260712154942c43f08fe6df940b4",
+  "usage": {
+    "completion_tokens": 79,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 190,
+    "prompt_tokens_details": {
+      "cached_tokens": 4
+    },
+    "total_tokens": 269
+  }
+}

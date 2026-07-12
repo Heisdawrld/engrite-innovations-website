@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "The image shows a **construction site** with a person (wearing a high - visibility vest) in the foreground and workers/structures (like bamboo scaffolding) in the background. It is not a building exterior, interior, or graphic/poster with text (though text “focus on” is overlaid). The site appears to be in an active construction phase, with earthy, unfinished materials and laborers at work.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1783842601,
+  "id": "2026071215495215d181cc37cb4d06",
+  "model": "glm-4.6v",
+  "object": "chat.completion",
+  "request_id": "2026071215495215d181cc37cb4d06",
+  "usage": {
+    "completion_tokens": 87,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1251,
+    "prompt_tokens_details": {
+      "cached_tokens": 48
+    },
+    "total_tokens": 1338
+  }
+}
