@@ -34,48 +34,10 @@ export function Contact() {
   const setField = (field: keyof typeof form, value: string) =>
     setForm((f) => ({ ...f, [field]: value }));
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = (e: React.FormEvent) => {
     setLoading(true);
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, botField: (e.target as HTMLFormElement).botField?.value }),
-      });
-      if (res.ok) {
-        toast({
-          title: "Message received",
-          description:
-            "Thank you for reaching out. The Engrite team will be in touch within 24 hours.",
-        });
-        setForm({
-          firstName: "",
-          lastName: "",
-          email: "",
-          phone: "",
-          interest: "",
-          message: "",
-        });
-      } else {
-        const data = await res.json().catch(() => ({}));
-        toast({
-          variant: "destructive",
-          title: "Something went wrong",
-          description:
-            data.error ??
-            "We couldn't send your message. Please email engriteinnovations@gmail.com or call +234 813 066 5862.",
-        });
-      }
-    } catch {
-      toast({
-        variant: "destructive",
-        title: "Network error",
-        description: "Please check your connection and try again.",
-      });
-    } finally {
-      setLoading(false);
-    }
+    // Let native form submission go through — Netlify intercepts it
+    // and sends the submission data to your configured email notifications.
   };
 
   return (
@@ -155,6 +117,10 @@ export function Contact() {
 
           <ScrollReveal delay={150}>
             <form
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="botField"
+              name="contact"
               onSubmit={handleSubmit}
               className="flex flex-col gap-3"
               aria-label="Contact form"

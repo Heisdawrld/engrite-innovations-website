@@ -16,44 +16,10 @@ export function Newsletter() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = (e: React.FormEvent) => {
     setLoading(true);
-
-    try {
-      const res = await fetch("/api/newsletter", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, botField: (e.target as HTMLFormElement).botField?.value }),
-      });
-
-      if (res.ok) {
-        toast({
-          title: "You're on the list!",
-          description:
-            "Watch your inbox for new launches, investment opportunities, and exclusive property updates.",
-        });
-        setName("");
-        setEmail("");
-      } else {
-        const data = await res.json().catch(() => ({}));
-        toast({
-          variant: "destructive",
-          title: "Something went wrong",
-          description:
-            data.error ??
-            "We couldn't sign you up right now. Please try again or email engriteinnovations@gmail.com.",
-        });
-      }
-    } catch {
-      toast({
-        variant: "destructive",
-        title: "Network error",
-        description: "Please check your connection and try again.",
-      });
-    } finally {
-      setLoading(false);
-    }
+    // Let native form submission go through — Netlify intercepts it
+    // and sends the submission data to your configured email notifications.
   };
 
   return (
@@ -85,7 +51,7 @@ export function Newsletter() {
           Exclusive early access to new projects, investment opportunities, and property updates — straight to your inbox.
         </p>
 
-        <form onSubmit={handleSubmit} className="mt-8 flex max-w-md flex-col gap-3" aria-label="Newsletter signup">
+        <form method="POST" data-netlify="true" netlify-honeypot="botField" name="newsletter" onSubmit={handleSubmit} className="mt-8 flex max-w-md flex-col gap-3" aria-label="Newsletter signup">
           {/* Honeypot — hidden from humans, bots will fill it */}
           <input type="text" name="botField" className="sr-only" tabIndex={-1} autoComplete="off" aria-hidden="true" />
           <div className="space-y-1.5">
