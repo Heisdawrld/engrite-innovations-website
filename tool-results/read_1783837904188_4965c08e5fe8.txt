@@ -1,0 +1,1006 @@
+     1→<!DOCTYPE html>
+     2→<html lang="en">
+     3→<head>
+     4→<meta charset="UTF-8">
+     5→<meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→<title>Engrite Innovations Ltd. — Premium Real Estate Development & Investment in Lagos, Nigeria</title>
+     7→<meta name="description" content="Engrite Innovations Ltd. — Premium real estate development and investment in Lagos. Own properties from ₦17M with 7.1% annual returns, 17-year lease structures, and our Live or Earn model. Headquartered in Yaba, Lagos.">
+     8→<meta name="keywords" content="Lagos real estate, Nigeria property investment, Yaba apartments, Gbagada off-plan, Live or Earn, premium real estate Lagos, 17 year lease, Engrite Innovations">
+     9→<meta name="author" content="Engrite Innovations Ltd.">
+    10→<meta name="robots" content="index, follow">
+    11→<meta name="theme-color" content="#102357">
+    12→<link rel="canonical" href="https://engriteinnovations.com/">
+    13→
+    14→<!-- Favicon -->
+    15→<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    16→<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+    17→<link rel="manifest" href="site.webmanifest">
+    18→
+    19→<!-- Open Graph / Facebook -->
+    20→<meta property="og:type" content="website">
+    21→<meta property="og:url" content="https://engriteinnovations.com/">
+    22→<meta property="og:title" content="Engrite Innovations — Own An Address That Pays You Back">
+    23→<meta property="og:description" content="Premium real estate development in Lagos. 7.1% annual returns, 17-year lease, Live or Earn model. From ₦17M.">
+    24→<meta property="og:image" content="https://engriteinnovations.com/assets/img/og-image.jpg">
+    25→<meta property="og:image:width" content="1200">
+    26→<meta property="og:image:height" content="630">
+    27→<meta property="og:site_name" content="Engrite Innovations Ltd.">
+    28→<meta property="og:locale" content="en_NG">
+    29→
+    30→<!-- Twitter Card -->
+    31→<meta name="twitter:card" content="summary_large_image">
+    32→<meta name="twitter:title" content="Engrite Innovations — Own An Address That Pays You Back">
+    33→<meta name="twitter:description" content="Premium real estate in Lagos. 7.1% annual returns. Live or Earn model. From ₦17M.">
+    34→<meta name="twitter:image" content="https://engriteinnovations.com/assets/img/og-image.jpg">
+    35→
+    36→<!-- JSON-LD: Organization + RealEstateAgent + Place -->
+    37→<script type="application/ld+json">
+    38→{
+    39→  "@context": "https://schema.org",
+    40→  "@graph": [
+    41→    {
+    42→      "@type": "RealEstateAgent",
+    43→      "@id": "https://engriteinnovations.com/#organization",
+    44→      "name": "Engrite Innovations Ltd.",
+    45→      "alternateName": "Engrite Innovations",
+    46→      "url": "https://engriteinnovations.com/",
+    47→      "logo": "https://engriteinnovations.com/assets/img/og-image.jpg",
+    48→      "image": "https://engriteinnovations.com/assets/img/og-image.jpg",
+    49→      "description": "Premium real estate development and investment company headquartered in Yaba, Lagos, Nigeria.",
+    50→      "telephone": "+234-813-066-5862",
+    51→      "email": "engriteinnovations@gmail.com",
+    52→      "address": {
+    53→        "@type": "PostalAddress",
+    54→        "streetAddress": "27, Montgomery Street",
+    55→        "addressLocality": "Yaba",
+    56→        "addressRegion": "Lagos",
+    57→        "addressCountry": "NG"
+    58→      },
+    59→      "areaServed": {
+    60→        "@type": "City",
+    61→        "name": "Lagos"
+    62→      },
+    63→      "sameAs": [
+    64→        "https://instagram.com/engriteinnovations_",
+    65→        "https://ng.linkedin.com/company/engrite-innovations",
+    66→        "https://www.facebook.com/share/1HYbG1gu1V/?mibextid=wwXIfr",
+    67→        "https://www.tiktok.com/@engriteinnovation"
+    68→      ]
+    69→    },
+    70→    {
+    71→      "@type": "WebSite",
+    72→      "@id": "https://engriteinnovations.com/#website",
+    73→      "url": "https://engriteinnovations.com/",
+    74→      "name": "Engrite Innovations",
+    75→      "publisher": { "@id": "https://engriteinnovations.com/#organization" },
+    76→      "inLanguage": "en-NG"
+    77→    }
+    78→  ]
+    79→}
+    80→</script>
+    81→
+    82→<link rel="preconnect" href="https://fonts.googleapis.com">
+    83→<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    84→<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    85→<style>
+    86→*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    87→:root {
+    88→  --navy:    #102357;
+    89→  --navy2:   #0c1c46;
+    90→  --navy3:   #081534;
+    91→  --navy-bg: #0d1a40;
+    92→  --green:   #2BA84A;
+    93→  --green2:  #239540;
+    94→  --green3:  #3fc066;
+    95→  --gold:    #d4a000;
+    96→  --white:   #ffffff;
+    97→  --off:     #f4f6fb;
+    98→  --text:    #1a1f2e;
+    99→  --muted:   #6b7280;
+   100→  --border:  rgba(16,35,87,.1);
+   101→}
+   102→html { scroll-behavior: smooth; }
+   103→body { background: var(--white); color: var(--text); font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+   104→
+   105→/* CURSOR — desktop fine-pointer only, never on touch, never with reduced-motion */
+   106→#c, #cr { display: none; }
+   107→@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+   108→  @media (min-width: 1024px) {
+   109→    * { cursor: none !important; }
+   110→    #c { display: block; position: fixed; width: 8px; height: 8px; background: var(--green); border-radius: 50%; pointer-events: none; z-index: 99999; transform: translate(-50%,-50%); transition: transform .1s; }
+   111→    #cr { display: block; position: fixed; width: 34px; height: 34px; border: 1.5px solid rgba(58,124,69,.5); border-radius: 50%; pointer-events: none; z-index: 99998; transform: translate(-50%,-50%); transition: all .13s ease; }
+   112→  }
+   113→}
+   114→
+   115→/* NAV */
+   116→nav {
+   117→  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+   118→  height: 74px; padding: 0 60px;
+   119→  display: flex; align-items: center; justify-content: space-between;
+   120→  background: rgba(255,255,255,.97);
+   121→  border-bottom: 1px solid var(--border);
+   122→  backdrop-filter: blur(12px);
+   123→  transition: box-shadow .3s;
+   124→}
+   125→nav.shadow { box-shadow: 0 2px 30px rgba(28,45,110,.08); }
+   126→.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+   127→.logo-name { font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--navy); line-height: 1.25; }
+   128→.logo-name small { display: block; font-size: 9px; font-weight: 500; letter-spacing: .2em; color: var(--green); margin-top: 1px; }
+   129→.nav-links { display: flex; gap: 36px; list-style: none; }
+   130→.nav-links a { color: var(--muted); text-decoration: none; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; transition: color .2s; }
+   131→.nav-links a:hover { color: var(--navy); }
+   132→.nav-cta { background: var(--navy); color: var(--white); padding: 11px 28px; font-family: 'Montserrat',sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; border: 2px solid var(--navy); transition: all .25s; }
+   133→.nav-cta:hover { background: transparent; color: var(--navy); }
+   134→
+   135→/* HERO */
+   136→.hero {
+   137→  position: relative; height: 100vh; min-height: 680px;
+   138→  display: flex; align-items: flex-end;
+   139→  overflow: hidden; padding-top: 74px;
+   140→}
+   141→.hero-bg {
+   142→  position: absolute; inset: 0;
+   143→  background-image: url('assets/img/hero.jpg');
+   144→  background-size: cover; background-position: center 60%;
+   145→  transform: scale(1.05); animation: hzoom 16s ease forwards;
+   146→}
+   147→@keyframes hzoom { to { transform: scale(1); } }
+   148→.hero-navy { position: absolute; inset: 0; background: linear-gradient(to right, rgba(8,21,52,.92) 0%, rgba(8,21,52,.75) 45%, rgba(8,21,52,.2) 100%); }
+   149→.hero-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 200px; background: linear-gradient(to top, rgba(8,21,52,.95), transparent); }
+   150→.hero-content { position: relative; z-index: 2; padding: 0 60px 80px; max-width: 720px; }
+   151→.tag { display: inline-flex; align-items: center; gap: 10px; font-size: 10px; font-weight: 600; letter-spacing: .3em; text-transform: uppercase; color: var(--white); opacity: .65; margin-bottom: 28px; }
+   152→.tag::before { content: ''; display: block; width: 32px; height: 1.5px; background: var(--green3); }
+   153→h1 { font-family: 'Playfair Display', serif; font-size: clamp(48px, 6.8vw, 96px); font-weight: 400; line-height: .98; color: var(--white); margin-bottom: 30px; }
+   154→h1 em { font-style: italic; color: #7fd89a; }
+   155→.hero-p { font-size: 15px; font-weight: 300; line-height: 1.85; color: rgba(255,255,255,.62); max-width: 420px; margin-bottom: 48px; }
+   156→.btns { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+   157→.btn-g { display: inline-block; background: var(--green); color: var(--white); padding: 16px 42px; font-family: 'Montserrat',sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; border: 2px solid var(--green); transition: all .25s; }
+   158→.btn-g:hover { background: transparent; border-color: var(--white); }
+   159→.btn-w { display: inline-block; background: transparent; color: var(--white); padding: 16px 42px; font-family: 'Montserrat',sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; border: 2px solid rgba(255,255,255,.4); transition: all .25s; }
+   160→.btn-w:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+   161→
+   162→/* STATS BAR */
+   163→.stats-bar {
+   164→  background: var(--navy);
+   165→  display: grid; grid-template-columns: repeat(4,1fr);
+   166→}
+   167→.sbar { padding: 30px 40px; border-right: 1px solid rgba(255,255,255,.07); text-align: center; }
+   168→.sbar:last-child { border-right: none; }
+   169→.sbar-n { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 400; color: var(--white); line-height: 1; }
+   170→.sbar-n b { color: #7fd89a; }
+   171→.sbar-l { font-size: 9px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-top: 7px; }
+   172→
+   173→/* TICKER */
+   174→.ticker { background: var(--green); overflow: hidden; height: 42px; display: flex; align-items: center; }
+   175→.ticker-track { display: flex; animation: tick 30s linear infinite; white-space: nowrap; }
+   176→.ticker-item { font-size: 10px; font-weight: 600; letter-spacing: .26em; text-transform: uppercase; color: rgba(255,255,255,.75); padding: 0 24px; }
+   177→.ticker-dot { color: rgba(255,255,255,.35); padding: 0 4px; }
+   178→@keyframes tick { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+   179→
+   180→/* SECTIONS */
+   181→.sec { padding: 120px 60px; }
+   182→.sec-alt { background: var(--off); }
+   183→.sec-navy { background: var(--navy); color: var(--white); }
+   184→.sec-navy h2 { color: var(--white); }
+   185→.sec-navy h2 em { color: var(--green3); }
+   186→.sec-navy .sec-label { color: rgba(255,255,255,.5); }
+   187→.sec-navy .sec-label::before { background: var(--green3); }
+   188→.sec-label { font-size: 10px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--green); margin-bottom: 18px; display: flex; align-items: center; gap: 14px; }
+   189→.sec-label::before { content: ''; display: block; width: 36px; height: 2px; background: var(--green); }
+   190→h2 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 4.4vw, 60px); font-weight: 400; line-height: 1.12; color: var(--navy); }
+   191→h2 em { font-style: italic; color: var(--green); }
+   192→.hr { height: 1px; background: linear-gradient(to right, transparent, rgba(28,45,110,.12), transparent); }
+   193→
+   194→/* ABOUT */
+   195→.about-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: center; }
+   196→.about-p { font-size: 15px; font-weight: 300; line-height: 1.9; color: var(--muted); margin-top: 24px; }
+   197→.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 44px; background: var(--border); }
+   198→.aval { padding: 30px 24px; background: var(--white); transition: background .25s; position: relative; }
+   199→.aval:hover { background: #f0f4ff; }
+   200→.aval-icon { width: 36px; height: 36px; margin-bottom: 18px; display: flex; align-items: center; justify-content: center; color: var(--green); }
+   201→.aval-icon svg { width: 100%; height: 100%; }
+   202→.aval:hover .aval-icon { color: var(--navy); transition: color .3s; }
+   203→.aval-t { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--navy); margin-bottom: 8px; }
+   204→.aval-d { font-size: 12px; color: var(--muted); line-height: 1.75; }
+   205→.about-photo { width: 100%; aspect-ratio: 3/4; background-image: url('assets/img/about-aerial.jpg'); background-size: cover; background-position: center; position: relative; }
+   206→.about-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 55%, rgba(8,21,52,.55) 100%); }
+   207→.about-badge { position: absolute; bottom: -22px; left: -24px; background: var(--navy); padding: 26px 30px; z-index: 2; box-shadow: 0 14px 40px rgba(8,21,52,.25); border-left: 3px solid var(--green); }
+   208→.about-badge-n { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 400; color: var(--green3); display: block; line-height: 1; }
+   209→.about-badge-l { font-size: 9px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-top: 6px; }
+   210→
+   211→/* PROJECTS */
+   212→.proj-sec { padding: 100px 0; background: var(--off); }
+   213→.proj-hdr { padding: 0 60px; margin-bottom: 52px; display: flex; justify-content: space-between; align-items: flex-end; }
+   214→.proj-hdr h2 { color: var(--navy); }
+   215→.proj-more { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--green); text-decoration: none; display: flex; align-items: center; gap: 10px; transition: gap .25s; }
+   216→.proj-more:hover { gap: 18px; }
+   217→.proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; padding: 0 60px; }
+   218→.pcard { position: relative; background: var(--white); box-shadow: 0 12px 40px rgba(8,21,52,.08); transition: transform .4s ease, box-shadow .4s ease; display: flex; flex-direction: column; }
+   219→.pcard:hover { transform: translateY(-6px); box-shadow: 0 26px 60px rgba(8,21,52,.18); }
+   220→.pcard-imgwrap { position: relative; overflow: hidden; }
+   221→.pcard-img { width: 100%; aspect-ratio: 4 / 5; background-size: cover; background-position: center; transition: transform .8s ease; }
+   222→.pcard:hover .pcard-img { transform: scale(1.04); }
+   223→.pbadge { position: absolute; top: 18px; right: 18px; font-size: 9px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; padding: 7px 14px; backdrop-filter: blur(8px); background: rgba(255,255,255,.94); z-index: 3; box-shadow: 0 6px 18px rgba(8,21,52,.18); }
+   224→.pb-green { color: var(--green); border-left: 3px solid var(--green); }
+   225→.pb-yellow { color: #b88600; border-left: 3px solid var(--gold); }
+   226→.pb-blue { color: var(--navy); border-left: 3px solid var(--navy); }
+   227→.pinfo { padding: 22px 24px 24px; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 16px; flex: 1; }
+   228→.ptags { display: flex; gap: 6px; flex-wrap: wrap; }
+   229→.ptag { font-size: 9px; letter-spacing: .14em; text-transform: uppercase; border: 1px solid rgba(43,168,74,.3); padding: 5px 10px; color: var(--green); background: rgba(43,168,74,.06); }
+   230→.pcta { display: inline-flex; align-items: center; justify-content: space-between; gap: 10px; color: var(--navy); font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; padding-top: 10px; border-top: 1px solid var(--border); margin-top: auto; transition: color .25s; }
+   231→.pcta:hover { color: var(--green); }
+   232→.pcta svg { transition: transform .3s; }
+   233→.pcta:hover svg { transform: translateX(6px); }
+   234→
+   235→/* INVEST */
+   236→.inv-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: start; }
+   237→.ret-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 40px 0; }
+   238→.ret { padding: 30px 26px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); transition: border-color .3s; }
+   239→.ret:hover { border-color: rgba(127,216,154,.3); }
+   240→.ret.big { grid-column: span 2; background: var(--green); border-color: var(--green2); }
+   241→.ret-n { font-family: 'Playfair Display', serif; font-size: 50px; font-weight: 400; color: var(--white); line-height: 1; display: block; }
+   242→.ret-l { font-size: 9px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-top: 9px; }
+   243→.btn-green-outline { display: inline-block; background: transparent; color: #7fd89a; padding: 15px 40px; font-family: 'Montserrat',sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; border: 2px solid var(--green3); transition: all .25s; }
+   244→.btn-green-outline:hover { background: var(--green3); color: var(--white); }
+   245→
+   246→/* LEASE CARD */
+   247→.lease-box { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); overflow: hidden; position: relative; }
+   248→.lease-box::before { content: '17'; position: absolute; top: -50px; right: -20px; font-family: 'Playfair Display', serif; font-size: 280px; font-weight: 700; color: rgba(255,255,255,.025); line-height: 1; pointer-events: none; }
+   249→.lh { padding: 40px 40px 28px; border-bottom: 1px solid rgba(255,255,255,.07); }
+   250→.lh-eye { font-size: 9px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 14px; }
+   251→.lh-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 400; color: var(--white); margin-bottom: 6px; }
+   252→.lh-sub { color: #7fd89a; font-size: 14px; font-weight: 400; letter-spacing: .05em; }
+   253→.lrows { padding: 0 40px 40px; }
+   254→.lrow { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,.06); transition: padding-left .2s; }
+   255→.lrow:last-child { border-bottom: none; }
+   256→.lrow:hover { padding-left: 10px; }
+   257→.ln { font-size: 14px; font-weight: 500; color: var(--white); margin-bottom: 3px; }
+   258→.lt { font-size: 11px; color: rgba(255,255,255,.35); }
+   259→.lp { font-family: 'Playfair Display', serif; font-size: 24px; color: #7fd89a; text-align: right; }
+   260→.ly { font-size: 11px; color: rgba(255,255,255,.35); text-align: right; margin-top: 3px; }
+   261→
+   262→/* WHY */
+   263→.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 60px; }
+   264→.wcard { padding: 48px 36px; background: var(--white); border: 1px solid var(--border); position: relative; overflow: hidden; transition: all .35s; }
+   265→.wcard::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--green); transform: scaleY(0); transform-origin: bottom; transition: transform .4s; }
+   266→.wcard:hover::after { transform: scaleY(1); }
+   267→.wcard:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(28,45,110,.08); }
+   268→.wnum { font-family: 'Playfair Display', serif; font-size: 80px; font-weight: 400; color: rgba(28,45,110,.07); line-height: 1; margin-bottom: 20px; display: block; }
+   269→.wtitle { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--navy); margin-bottom: 14px; }
+   270→.wtxt { font-size: 13px; color: var(--muted); line-height: 1.85; font-weight: 300; }
+   271→
+   272→/* QUOTE */
+   273→.quote-sec { background: var(--navy); padding: 100px 60px; text-align: center; position: relative; overflow: hidden; }
+   274→.quote-sec::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(58,124,69,.15) 0%, transparent 65%); }
+   275→.qmark { font-family: 'Playfair Display', serif; font-size: 140px; color: rgba(127,216,154,.12); line-height: .5; display: block; margin-bottom: -20px; }
+   276→.qtxt { font-family: 'Playfair Display', serif; font-size: clamp(24px,3.4vw,46px); font-weight: 400; font-style: italic; color: var(--white); max-width: 860px; margin: 0 auto; line-height: 1.4; position: relative; }
+   277→.qtxt strong { color: #7fd89a; font-style: normal; font-weight: 500; }
+   278→.qattr { font-size: 10px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-top: 36px; }
+   279→
+   280→/* NEWSLETTER */
+   281→.nl-sec { display: grid; grid-template-columns: 1fr 1fr; min-height: 500px; }
+   282→.nl-photo { background-image: url('assets/img/newsletter-portfolio.jpg'); background-size: cover; background-position: center; position: relative; }
+   283→.nl-photo::after { content: 'YOUR FUTURE HOME STARTS HERE'; position: absolute; bottom: 36px; left: 36px; font-size: 9px; font-weight: 700; letter-spacing: .28em; color: rgba(255,255,255,.5); }
+   284→.nl-content { background: var(--navy-bg); padding: 72px 60px; display: flex; flex-direction: column; justify-content: center; }
+   285→.nl-content .sec-label { color: rgba(255,255,255,.45); }
+   286→.nl-content .sec-label::before { background: var(--green3); }
+   287→.nl-content h2 { color: var(--white); font-size: clamp(28px,2.8vw,44px); }
+   288→.nl-content h2 em { color: #7fd89a; }
+   289→.nl-sub { font-size: 14px; font-weight: 300; color: rgba(255,255,255,.45); line-height: 1.85; margin-top: 16px; max-width: 360px; }
+   290→.nl-form { display: flex; flex-direction: column; gap: 10px; margin-top: 32px; }
+   291→.nl-inp { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); padding: 15px 18px; color: var(--white); font-family: 'Montserrat',sans-serif; font-size: 13px; font-weight: 300; outline: none; transition: border-color .25s; }
+   292→.nl-inp::placeholder { color: rgba(255,255,255,.25); }
+   293→.nl-inp:focus { border-color: rgba(58,124,69,.6); }
+   294→.nl-note { font-size: 11px; color: rgba(255,255,255,.22); margin-top: 8px; }
+   295→
+   296→/* CONTACT */
+   297→.contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; }
+   298→.contact-info { margin-top: 36px; display: flex; flex-direction: column; gap: 28px; }
+   299→.ci-l { font-size: 9px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: var(--green); margin-bottom: 5px; }
+   300→.ci-v { font-size: 15px; font-weight: 300; color: var(--text); }
+   301→.cform { display: flex; flex-direction: column; gap: 12px; }
+   302→.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+   303→.fi { background: var(--off); border: 1px solid var(--border); padding: 15px 18px; color: var(--text); font-family: 'Montserrat',sans-serif; font-size: 13px; font-weight: 300; outline: none; transition: border-color .25s; width: 100%; }
+   304→.fi::placeholder { color: rgba(100,100,120,.4); }
+   305→.fi:focus { border-color: var(--green); background: var(--white); }
+   306→select.fi { background: var(--off); color: var(--muted); }
+   307→select.fi option { background: var(--white); }
+   308→textarea.fi { resize: none; }
+   309→
+   310→/* FOOTER */
+   311→footer { background: var(--navy3); }
+   312→.ft { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 52px; padding: 68px 60px 52px; }
+   313→.fb-p { font-size: 13px; font-weight: 300; color: rgba(255,255,255,.35); line-height: 1.85; max-width: 280px; margin-top: 18px; }
+   314→.fsoc { display: flex; gap: 10px; margin-top: 24px; }
+   315→.fsl { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.35); font-size: 10px; font-weight: 700; text-decoration: none; letter-spacing: .06em; transition: all .25s; }
+   316→.fsl:hover { border-color: var(--green3); color: #7fd89a; }
+   317→.fc-title { font-size: 9px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 20px; }
+   318→.fl { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+   319→.fl a { color: rgba(255,255,255,.4); text-decoration: none; font-size: 13px; font-weight: 300; transition: color .2s; }
+   320→.fl a:hover { color: #7fd89a; }
+   321→.fb { padding: 22px 60px; border-top: 1px solid rgba(255,255,255,.06); display: flex; justify-content: space-between; align-items: center; background: var(--green2); }
+   322→.fb-copy { font-size: 11px; color: rgba(255,255,255,.55); font-weight: 300; }
+   323→.fb-tag { font-family: 'Playfair Display', serif; font-size: 13px; font-style: italic; color: rgba(255,255,255,.5); }
+   324→
+   325→/* ANIMS */
+   326→.fu { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+   327→.fu.in { opacity: 1; transform: translateY(0); }
+   328→.hero-content > * { opacity: 0; animation: fup .8s ease forwards; }
+   329→.hero-content > *:nth-child(1) { animation-delay: .1s; }
+   330→.hero-content > *:nth-child(2) { animation-delay: .3s; }
+   331→.hero-content > *:nth-child(3) { animation-delay: .5s; }
+   332→.hero-content > *:nth-child(4) { animation-delay: .68s; }
+   333→@keyframes fup { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+   334→
+   335→/* WHATSAPP FLOAT */
+   336→.wa-float {
+   337→  position: fixed; bottom: 24px; right: 24px; z-index: 9990;
+   338→  width: 60px; height: 60px; border-radius: 50%;
+   339→  background: #25D366; color: #fff;
+   340→  display: flex; align-items: center; justify-content: center;
+   341→  text-decoration: none;
+   342→  box-shadow: 0 8px 28px rgba(37,211,102,.45), 0 2px 8px rgba(0,0,0,.15);
+   343→  transition: transform .25s ease, box-shadow .25s ease;
+   344→}
+   345→.wa-float:hover { transform: scale(1.08); box-shadow: 0 12px 36px rgba(37,211,102,.55); }
+   346→.wa-float svg { width: 30px; height: 30px; }
+   347→.wa-float::after {
+   348→  content: ''; position: absolute; inset: 0; border-radius: 50%;
+   349→  border: 2px solid #25D366; animation: wa-pulse 2.4s ease-out infinite;
+   350→}
+   351→@keyframes wa-pulse { 0% { transform: scale(1); opacity: .8; } 100% { transform: scale(1.6); opacity: 0; } }
+   352→.wa-label {
+   353→  position: absolute; right: 72px; top: 50%; transform: translateY(-50%);
+   354→  background: #102357; color: #fff; padding: 8px 14px;
+   355→  font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+   356→  white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity .2s;
+   357→}
+   358→.wa-float:hover .wa-label { opacity: 1; }
+   359→@media (prefers-reduced-motion: reduce) { .wa-float::after { animation: none; } }
+   360→
+   361→/* MOBILE NAV TOGGLE */
+   362→.nav-toggle {
+   363→  display: none; background: none; border: none; padding: 8px; cursor: pointer;
+   364→  width: 40px; height: 40px; position: relative; z-index: 1101;
+   365→}
+   366→.nav-toggle span { display: block; width: 24px; height: 2px; background: var(--navy); margin: 5px auto; transition: all .3s ease; }
+   367→.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+   368→.nav-toggle.open span:nth-child(2) { opacity: 0; }
+   369→.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+   370→
+   371→.mobile-menu {
+   372→  position: fixed; top: 0; right: 0; height: 100vh; width: 100%; max-width: 380px;
+   373→  background: var(--navy); padding: 100px 40px 40px;
+   374→  transform: translateX(100%); transition: transform .35s ease;
+   375→  z-index: 1099; display: flex; flex-direction: column; gap: 32px;
+   376→  box-shadow: -10px 0 40px rgba(0,0,0,.3);
+   377→}
+   378→.mobile-menu.open { transform: translateX(0); }
+   379→.mobile-menu a { color: var(--white); text-decoration: none; font-size: 18px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,.08); transition: color .2s; }
+   380→.mobile-menu a:hover { color: #7fd89a; }
+   381→.mobile-menu .mm-cta { background: var(--green); border: 2px solid var(--green); padding: 16px 32px; text-align: center; margin-top: 16px; font-size: 12px; font-weight: 700; letter-spacing: .2em; border-bottom: none; }
+   382→.mobile-menu .mm-socials { display: flex; gap: 16px; margin-top: auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.1); }
+   383→.mobile-menu .mm-socials a { padding: 8px 0; border: none; font-size: 11px; letter-spacing: .14em; }
+   384→.mobile-backdrop { position: fixed; inset: 0; background: rgba(8,21,52,.55); backdrop-filter: blur(4px); opacity: 0; pointer-events: none; transition: opacity .3s; z-index: 1098; }
+   385→.mobile-backdrop.open { opacity: 1; pointer-events: auto; }
+   386→
+   387→
+   388→
+   389→/* PRIVACY LINK */
+   390→.fb-links { display: flex; gap: 18px; flex-wrap: wrap; }
+   391→.fb-links a { font-size: 11px; color: rgba(255,255,255,.6); text-decoration: none; transition: color .2s; }
+   392→.fb-links a:hover { color: #7fd89a; }
+   393→
+   394→/* RESPONSIVE */
+   395→@media (max-width: 960px) {
+   396→  .nav-toggle { display: block; }
+   397→  .nav-links, .nav-cta { display: none !important; }
+   398→
+   399→  .wa-float { width: 56px; height: 56px; bottom: 18px; right: 18px; }
+   400→  .wa-float svg { width: 28px; height: 28px; }
+   401→  nav { padding: 0 20px; }
+   402→  .nav-links, .nav-cta { display: none; }
+   403→  .sec { padding: 72px 24px; }
+   404→  .about-wrap, .inv-wrap, .contact-wrap { grid-template-columns: 1fr; gap: 48px; }
+   405→  .about-right { display: none; }
+   406→  .proj-grid { grid-template-columns: 1fr; padding: 0 24px; gap: 24px; }
+   407→  .proj-hdr { padding: 0 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
+   408→  .why-grid { grid-template-columns: 1fr; }
+   409→  .nl-sec { grid-template-columns: 1fr; }
+   410→  .nl-photo { min-height: 220px; }
+   411→  .nl-content { padding: 48px 28px; }
+   412→  .ret-grid { grid-template-columns: 1fr; }
+   413→  .ret.big { grid-column: span 1; }
+   414→  .stats-bar { grid-template-columns: repeat(2,1fr); }
+   415→  .ft { grid-template-columns: 1fr; gap: 32px; padding: 48px 24px 36px; }
+   416→  .fb { flex-direction: column; gap: 8px; text-align: center; padding: 18px 24px; }
+   417→  .hero-content { padding: 0 24px 120px; }
+   418→}
+   419→</style>
+   420→</head>
+   421→<body>
+   422→
+   423→<div id="c"></div>
+   424→<div id="cr"></div>
+   425→
+   426→<!-- Success modal (shown after AJAX form submission) -->
+   427→<div id="form-success" role="dialog" aria-modal="true" aria-labelledby="fs-title" style="position:fixed;inset:0;background:rgba(8,21,52,.75);backdrop-filter:blur(8px);z-index:10000;display:none;align-items:center;justify-content:center;padding:24px;">
+   428→  <div style="background:#fff;max-width:480px;width:100%;padding:48px 36px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.4);border-top:4px solid #2BA84A;">
+   429→    <div style="width:64px;height:64px;border-radius:50%;background:#2BA84A;margin:0 auto 24px;display:flex;align-items:center;justify-content:center;">
+   430→      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+   431→    </div>
+   432→    <h3 id="fs-title" style="font-family:'Playfair Display',serif;font-size:32px;font-weight:400;color:#102357;margin-bottom:12px;line-height:1.2;">Thank You!</h3>
+   433→    <p id="fs-msg" style="color:#6b7280;font-size:14.5px;line-height:1.7;font-weight:300;margin-bottom:28px;">We'll be in touch shortly.</p>
+   434→    <button id="fs-close" style="background:#102357;color:#fff;border:none;padding:14px 32px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;">Close</button>
+   435→  </div>
+   436→</div>
+   437→
+   438→<!-- NAV -->
+   439→<nav id="nav">
+   440→  <a href="#" class="logo">
+   441→    <svg width="46" height="42" viewBox="0 0 92 84" fill="none">
+   442→      <rect x="5" y="30" width="19" height="50" stroke="#3a7c45" stroke-width="2.2" fill="none"/>
+   443→      <rect x="37" y="10" width="19" height="70" stroke="#1c2d6e" stroke-width="2.2" fill="none"/>
+   444→      <line x1="37" y1="10" x2="24" y2="30" stroke="#3a7c45" stroke-width="2.2"/>
+   445→      <rect x="56" y="24" width="14" height="56" stroke="#3a7c45" stroke-width="2.2" fill="none"/>
+   446→      <line x1="56" y1="24" x2="70" y2="38" stroke="#1c2d6e" stroke-width="2.2"/>
+   447→      <rect x="70" y="38" width="15" height="42" stroke="#1c2d6e" stroke-width="2.2" fill="none"/>
+   448→      <line x1="2" y1="80" x2="88" y2="80" stroke="#1c2d6e" stroke-width="1.8"/>
+   449→    </svg>
+   450→    <div class="logo-name">ENGRITE INNOVATIONS
+   451→      <small>LTD. — REAL ESTATE</small>
+   452→    </div>
+   453→  </a>
+   454→  <ul class="nav-links">
+   455→    <li><a href="#about">About</a></li>
+   456→    <li><a href="#projects">Projects</a></li>
+   457→    <li><a href="#invest">Invest</a></li>
+   458→    <li><a href="#contact">Contact</a></li>
+   459→  </ul>
+   460→  <a href="#newsletter" class="nav-cta">Get Updates</a>
+   461→  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+   462→    <span></span><span></span><span></span>
+   463→  </button>
+   464→</nav>
+   465→
+   466→<!-- MOBILE MENU -->
+   467→<div class="mobile-backdrop" id="mobile-backdrop"></div>
+   468→<aside class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+   469→  <a href="#about">About</a>
+   470→  <a href="#projects">Projects</a>
+   471→  <a href="#invest">Invest</a>
+   472→  <a href="#contact">Contact</a>
+   473→  <a href="#newsletter" class="mm-cta">Get Updates</a>
+   474→  <div class="mm-socials">
+   475→    <a href="https://instagram.com/engriteinnovations_" target="_blank" rel="noopener">Instagram</a>
+   476→    <a href="https://ng.linkedin.com/company/engrite-innovations" target="_blank" rel="noopener">LinkedIn</a>
+   477→    <a href="https://www.facebook.com/share/1HYbG1gu1V/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
+   478→    <a href="https://www.tiktok.com/@engriteinnovation" target="_blank" rel="noopener">TikTok</a>
+   479→  </div>
+   480→</aside>
+   481→
+   482→<!-- WHATSAPP FLOATING BUTTON -->
+   483→<a href="https://wa.me/2348130665862?text=Hi%20Engrite%20Innovations%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20properties." target="_blank" rel="noopener" class="wa-float" aria-label="Chat with Engrite on WhatsApp">
+   484→  <span class="wa-label">Chat on WhatsApp</span>
+   485→  <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.003 3C9.376 3 4 8.376 4 15.003c0 2.387.708 4.61 1.928 6.477L4 28l6.683-1.898a11.952 11.952 0 005.32 1.276h.005c6.626 0 12.003-5.376 12.003-12.003 0-3.213-1.252-6.232-3.523-8.503A11.93 11.93 0 0016.003 3zm0 21.81a9.79 9.79 0 01-4.99-1.366l-.358-.213-3.972 1.128 1.063-3.867-.234-.397a9.836 9.836 0 01-1.52-5.252c0-5.43 4.422-9.852 9.853-9.852a9.79 9.79 0 016.972 2.888 9.79 9.79 0 012.882 6.978c.001 5.43-4.42 9.853-9.696 9.953zm5.402-7.418c-.295-.148-1.748-.864-2.018-.963-.27-.099-.467-.148-.663.149-.197.296-.762.961-.934 1.158-.172.197-.345.222-.64.074-.295-.148-1.247-.46-2.376-1.467-.878-.784-1.471-1.752-1.643-2.048-.172-.296-.018-.456.13-.604.133-.133.296-.345.443-.518.148-.173.198-.296.296-.494.099-.197.05-.37-.025-.518-.074-.148-.663-1.604-.91-2.197-.24-.578-.483-.5-.663-.51-.171-.008-.368-.01-.564-.01a1.084 1.084 0 00-.787.37c-.27.296-1.03 1.01-1.03 2.466 0 1.456 1.054 2.86 1.202 3.058.148.197 2.078 3.17 5.04 4.448.704.304 1.253.485 1.681.622.706.224 1.349.193 1.857.117.566-.085 1.748-.715 1.994-1.405.247-.69.247-1.282.173-1.406-.074-.123-.27-.197-.566-.345z"/></svg>
+   486→</a>
+   487→
+   488→<!-- HERO -->
+   489→<section class="hero">
+   490→  <div class="hero-bg"></div>
+   491→  <div class="hero-navy"></div>
+   492→  <div class="hero-bottom"></div>
+   493→  <div class="hero-content">
+   494→    <div class="tag">Lagos · Nigeria · Est. 2020</div>
+   495→    <h1>Own An Address<br>That <em>Pays</em><br>You Back.</h1>
+   496→    <p class="hero-p">Your trusted partner in the journey towards home ownership. Premium real estate development and investment opportunities across Lagos.</p>
+   497→    <div class="btns">
+   498→      <a href="#projects" class="btn-g">Explore Properties</a>
+   499→      <a href="#invest" class="btn-w">Investment Returns</a>
+   500→    </div>
+   501→  </div>
+   502→</section>
+   503→
+   504→<!-- STATS BAR -->
+   505→<div class="stats-bar">
+   506→  <div class="sbar"><div class="sbar-n"><b>7.1</b>%</div><div class="sbar-l">Annual Returns</div></div>
+   507→  <div class="sbar"><div class="sbar-n">17</div><div class="sbar-l">Year Lease</div></div>
+   508→  <div class="sbar"><div class="sbar-n">3<b>+</b></div><div class="sbar-l">Active Projects</div></div>
+   509→  <div class="sbar"><div class="sbar-n">5%</div><div class="sbar-l">Legal Fees Only</div></div>
+   510→</div>
+   511→
+   512→<!-- TICKER -->
+   513→<div class="ticker">
+   514→  <div class="ticker-track">
+   515→    <span class="ticker-item">Sinai Spaces</span><span class="ticker-dot">◆</span>
+   516→    <span class="ticker-item">Sinai Residence</span><span class="ticker-dot">◆</span>
+   517→    <span class="ticker-item">Crest Residence</span><span class="ticker-dot">◆</span>
+   518→    <span class="ticker-item">Gbagada Phase One</span><span class="ticker-dot">◆</span>
+   519→    <span class="ticker-item">Yaba Lagos</span><span class="ticker-dot">◆</span>
+   520→    <span class="ticker-item">Live or Earn</span><span class="ticker-dot">◆</span>
+   521→    <span class="ticker-item">17-Year Lease</span><span class="ticker-dot">◆</span>
+   522→    <span class="ticker-item">7.1% Returns</span><span class="ticker-dot">◆</span>
+   523→    <span class="ticker-item">Off-Plan Investment</span><span class="ticker-dot">◆</span>
+   524→    <span class="ticker-item">Real Estate Development</span><span class="ticker-dot">◆</span>
+   525→    <!-- duplicate -->
+   526→    <span class="ticker-item">Sinai Spaces</span><span class="ticker-dot">◆</span>
+   527→    <span class="ticker-item">Sinai Residence</span><span class="ticker-dot">◆</span>
+   528→    <span class="ticker-item">Crest Residence</span><span class="ticker-dot">◆</span>
+   529→    <span class="ticker-item">Gbagada Phase One</span><span class="ticker-dot">◆</span>
+   530→    <span class="ticker-item">Yaba Lagos</span><span class="ticker-dot">◆</span>
+   531→    <span class="ticker-item">Live or Earn</span><span class="ticker-dot">◆</span>
+   532→    <span class="ticker-item">17-Year Lease</span><span class="ticker-dot">◆</span>
+   533→    <span class="ticker-item">7.1% Returns</span><span class="ticker-dot">◆</span>
+   534→    <span class="ticker-item">Off-Plan Investment</span><span class="ticker-dot">◆</span>
+   535→    <span class="ticker-item">Real Estate Development</span><span class="ticker-dot">◆</span>
+   536→  </div>
+   537→</div>
+   538→
+   539→<!-- ABOUT -->
+   540→<section class="sec" id="about">
+   541→  <div class="about-wrap">
+   542→    <div class="fu">
+   543→      <div class="sec-label">Who We Are</div>
+   544→      <h2>Building Lagos,<br>One <em>Legacy</em><br>At a Time.</h2>
+   545→      <p class="about-p">Engrite Innovations is a premier real estate development and investment company headquartered in Yaba, Lagos. We specialise in crafting spaces that don't just house people — they generate lasting wealth.</p>
+   546→      <p class="about-p" style="margin-top:14px">From groundbreaking to handover, every development is built on structural excellence, creative design, and an unwavering commitment to the futures of our investors and homeowners.</p>
+   547→      <div class="about-grid">
+   548→        <div class="aval">
+   549→          <div class="aval-icon">
+   550→            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+   551→              <path d="M4 28V12l8-5 8 5v16"/>
+   552→              <path d="M20 28V18h8v10"/>
+   553→              <path d="M4 28h28"/>
+   554→              <path d="M9 17h2M9 21h2M9 25h2"/>
+   555→              <path d="M14 17h2M14 21h2"/>
+   556→              <path d="M23 22h2M23 25h2"/>
+   557→            </svg>
+   558→          </div>
+   559→          <div class="aval-t">Development</div><div class="aval-d">End-to-end construction with engineering precision</div>
+   560→        </div>
+   561→        <div class="aval">
+   562→          <div class="aval-icon">
+   563→            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+   564→              <path d="M4 26l8-9 5 5 11-13"/>
+   565→              <path d="M21 9h7v7"/>
+   566→              <path d="M4 30h24"/>
+   567→            </svg>
+   568→          </div>
+   569→          <div class="aval-t">Investment</div><div class="aval-d">Properties built to grow in value and yield</div>
+   570→        </div>
+   571→        <div class="aval">
+   572→          <div class="aval-icon">
+   573→            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+   574→              <circle cx="11" cy="16" r="6"/>
+   575→              <circle cx="11" cy="16" r="1.8" fill="currentColor"/>
+   576→              <path d="M17 16h12"/>
+   577→              <path d="M23 16v4"/>
+   578→              <path d="M27 16v3"/>
+   579→            </svg>
+   580→          </div>
+   581→          <div class="aval-t">Ownership</div><div class="aval-d">Guided paths to home ownership for every budget</div>
+   582→        </div>
+   583→        <div class="aval">
+   584→          <div class="aval-icon">
+   585→            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+   586→              <path d="M4 18l4-4 6 6 4-4 6 6 4-4"/>
+   587→              <path d="M14 14l3-3 5 5"/>
+   588→              <path d="M2 22h28"/>
+   589→              <path d="M6 22v4M26 22v4"/>
+   590→            </svg>
+   591→          </div>
+   592→          <div class="aval-t">Partnership</div><div class="aval-d">Transparent, long-term investor relationships</div>
+   593→        </div>
+   594→      </div>
+   595→    </div>
+   596→    <div class="about-right fu" style="position:relative">
+   597→      <div class="about-photo"></div>
+   598→      <div class="about-badge">
+   599→        <span class="about-badge-n">757</span>
+   600→        <div class="about-badge-l">Posts of Progress</div>
+   601→      </div>
+   602→    </div>
+   603→  </div>
+   604→</section>
+   605→
+   606→<div class="hr"></div>
+   607→
+   608→<!-- PROJECTS -->
+   609→<section class="proj-sec" id="projects">
+   610→  <div class="proj-hdr fu">
+   611→    <div>
+   612→      <div class="sec-label">Our Portfolio</div>
+   613→      <h2>Landmark<br>Developments</h2>
+   614→    </div>
+   615→    <a href="#contact" class="proj-more">View All Properties →</a>
+   616→  </div>
+   617→  <div class="proj-grid">
+   618→
+   619→    <div class="pcard fu">
+   620→      <div class="pcard-imgwrap">
+   621→        <div class="pcard-img" style="background-image:url('assets/img/sinai-spaces.jpg')"></div>
+   622→        <div class="pbadge pb-green">Under Construction</div>
+   623→      </div>
+   624→      <div class="pinfo">
+   625→        <div class="ptags">
+   626→          <span class="ptag">17yr Lease</span><span class="ptag">Live or Earn</span><span class="ptag">₦2–4M/yr Rental</span><span class="ptag">₦5M Down</span>
+   627→        </div>
+   628→        <a href="#contact" class="pcta" data-property="Sinai Spaces">Enquire About Sinai Spaces
+   629→          <svg width="18" height="10" viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 7h22M17 1l6 6-6 6"/></svg>
+   630→        </a>
+   631→      </div>
+   632→    </div>
+   633→
+   634→    <div class="pcard fu">
+   635→      <div class="pcard-imgwrap">
+   636→        <div class="pcard-img" style="background-image:url('assets/img/sinai-residence.jpg')"></div>
+   637→        <div class="pbadge pb-yellow">Last Units Available</div>
+   638→      </div>
+   639→      <div class="pinfo">
+   640→        <div class="ptags">
+   641→          <span class="ptag">Solar Power</span><span class="ptag">Smart Home</span><span class="ptag">CCTV</span><span class="ptag">5% Legal Fees</span>
+   642→        </div>
+   643→        <a href="#contact" class="pcta" data-property="Sinai Residence">Enquire About Sinai Residence
+   644→          <svg width="18" height="10" viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 7h22M17 1l6 6-6 6"/></svg>
+   645→        </a>
+   646→      </div>
+   647→    </div>
+   648→
+   649→    <div class="pcard fu">
+   650→      <div class="pcard-imgwrap">
+   651→        <div class="pcard-img" style="background-image:url('assets/img/crest-residence.jpg')"></div>
+   652→        <div class="pbadge pb-blue">Off-Plan · New Launch</div>
+   653→      </div>
+   654→      <div class="pinfo">
+   655→        <div class="ptags">
+   656→          <span class="ptag">Rooftop Gym</span><span class="ptag">Pool</span><span class="ptag">Elevator</span><span class="ptag">Smart Home</span><span class="ptag">50% Equity in 9mo</span>
+   657→        </div>
+   658→        <a href="#contact" class="pcta" data-property="Crest Residence">Enquire About Crest Residence
+   659→          <svg width="18" height="10" viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 7h22M17 1l6 6-6 6"/></svg>
+   660→        </a>
+   661→      </div>
+   662→    </div>
+   663→
+   664→  </div>
+   665→</section>
+   666→
+   667→<!-- INVEST -->
+   668→<section class="sec sec-navy" id="invest">
+   669→  <div class="inv-wrap">
+   670→    <div class="fu">
+   671→      <div class="sec-label">For Investors</div>
+   672→      <h2>Your Money Should<br><em>Work</em> As Hard<br>As You Do.</h2>
+   673→      <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(255,255,255,.5);margin-top:24px">Engrite Innovations offers a proven Live or Earn model — buy a property, move in, or let us generate rental income for you. Either way, you build wealth.</p>
+   674→      <div class="ret-grid">
+   675→        <div class="ret big fu"><span class="ret-n">7.1%</span><div class="ret-l">Annual Investment Returns</div></div>
+   676→        <div class="ret fu"><span class="ret-n">₦2–6M</span><div class="ret-l">Yearly Rental Revenue</div></div>
+   677→        <div class="ret fu"><span class="ret-n">5%</span><div class="ret-l">Legal Fees Only</div></div>
+   678→      </div>
+   679→      <a href="#contact" class="btn-green-outline">Start Investing Today</a>
+   680→    </div>
+   681→    <div class="lease-box fu">
+   682→      <div class="lh">
+   683→        <div class="lh-eye">Our Signature Offering</div>
+   684→        <div class="lh-title">17-Year Lease</div>
+   685→        <div class="lh-sub">Live or Earn — Your Choice.</div>
+   686→      </div>
+   687→      <div class="lrows">
+   688→        <div class="lrow">
+   689→          <div><div class="ln">Studio Apartment</div><div class="lt">Sinai Spaces · Yaba</div></div>
+   690→          <div><div class="lp">₦17M</div><div class="ly">₦2–4M/yr rental</div></div>
+   691→        </div>
+   692→        <div class="lrow">
+   693→          <div><div class="ln">1 Bedroom + Home Office</div><div class="lt">Sinai Residence · Morocco Rd</div></div>
+   694→          <div><div class="lp">₦100M</div><div class="ly">High rental yield</div></div>
+   695→        </div>
+   696→        <div class="lrow">
+   697→          <div><div class="ln">Studio — Off-Plan</div><div class="lt">Crest Residence · Gbagada</div></div>
+   698→          <div><div class="lp">₦40M</div><div class="ly">50% equity in 9mo</div></div>
+   699→        </div>
+   700→      </div>
+   701→    </div>
+   702→  </div>
+   703→</section>
+   704→
+   705→<div class="hr"></div>
+   706→
+   707→<!-- WHY -->
+   708→<section class="sec sec-alt">
+   709→  <div class="fu" style="text-align:center;margin-bottom:12px">
+   710→    <div class="sec-label" style="justify-content:center"><span>Why Choose Us</span></div>
+   711→    <h2>The Engrite <em>Difference</em></h2>
+   712→  </div>
+   713→  <div class="why-grid">
+   714→    <div class="wcard fu"><span class="wnum">01</span><div class="wtitle">Structural Excellence</div><p class="wtxt">Every development engineered to the highest structural standards. We build for decades — quality you can see and feel in every finish.</p></div>
+   715→    <div class="wcard fu"><span class="wnum">02</span><div class="wtitle">Transparent Investment</div><p class="wtxt">No hidden fees, no surprises. Our 5% legal fee is all you pay beyond your property cost. Clear contracts, honest timelines, real returns.</p></div>
+   716→    <div class="wcard fu"><span class="wnum">03</span><div class="wtitle">Lagos-Rooted Expertise</div><p class="wtxt">Based in Yaba — one of Lagos's fastest-growing real estate corridors. We know the land, the laws, and the opportunities better than anyone.</p></div>
+   717→    <div class="wcard fu"><span class="wnum">04</span><div class="wtitle">Live or Earn Model</div><p class="wtxt">Unique to Engrite — move in or let us manage it for rental income. Your asset, your choice, our expertise backing you either way.</p></div>
+   718→    <div class="wcard fu"><span class="wnum">05</span><div class="wtitle">17-Year Security</div><p class="wtxt">Long-term lease structures that protect your investment from market volatility. Backed by our guarantee and reselling assurance.</p></div>
+   719→    <div class="wcard fu"><span class="wnum">06</span><div class="wtitle">Proven Track Record</div><p class="wtxt">757 posts of documented progress. Multiple active projects across Lagos. Hundreds of satisfied investors and homeowners who testify.</p></div>
+   720→  </div>
+   721→</section>
+   722→
+   723→<!-- QUOTE -->
+   724→<section class="quote-sec fu">
+   725→  <span class="qmark">"</span>
+   726→  <p class="qtxt">Real estate surrounds your everyday life.<br><strong>Why not own a piece of it too?</strong></p>
+   727→  <div class="qattr">Engrite Innovations — Lagos, Nigeria</div>
+   728→</section>
+   729→
+   730→<!-- NEWSLETTER -->
+   731→<div class="nl-sec" id="newsletter">
+   732→  <div class="nl-photo"></div>
+   733→  <div class="nl-content">
+   734→    <div class="sec-label">Stay Informed</div>
+   735→    <h2>Be First to Know<br>About <em>New Launches</em></h2>
+   736→    <p class="nl-sub">Exclusive early access to new projects, investment opportunities, and property updates — straight to your inbox.</p>
+   737→    <form class="nl-form" id="newsletter-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+   738→      <input type="hidden" name="form-name" value="newsletter">
+   739→      <p style="display:none"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+   740→      <input type="text" class="nl-inp" name="name" placeholder="Your full name" required>
+   741→      <input type="email" class="nl-inp" name="email" placeholder="Your email address" required>
+   742→      <button type="submit" class="btn-g" style="border:none;align-self:flex-start;padding:14px 36px">Subscribe</button>
+   743→    </form>
+   744→    <p class="nl-note" id="nl-msg">No spam. Unsubscribe any time.</p>
+   745→  </div>
+   746→</div>
+   747→
+   748→<!-- CONTACT -->
+   749→<section class="sec" id="contact">
+   750→  <div class="contact-wrap">
+   751→    <div class="fu">
+   752→      <div class="sec-label">Get In Touch</div>
+   753→      <h2>Begin Your<br><em>Ownership</em><br>Journey.</h2>
+   754→      <div class="contact-info">
+   755→        <div><div class="ci-l">Address</div><div class="ci-v">27, Montgomery Street, Yaba, Lagos, Nigeria</div></div>
+   756→        <div><div class="ci-l">Email</div><div class="ci-v"><a href="mailto:engriteinnovations@gmail.com" style="color:inherit;text-decoration:none">engriteinnovations@gmail.com</a></div></div>
+   757→        <div><div class="ci-l">Phone</div><div class="ci-v"><a href="tel:+2348130665862" style="color:inherit;text-decoration:none">+234 813 066 5862</a></div></div>
+   758→        <div>
+   759→          <div class="ci-l">Follow Us</div>
+   760→          <div class="ci-v" style="display:flex;gap:22px;flex-wrap:wrap;margin-top:4px">
+   761→            <a href="https://instagram.com/engriteinnovations_" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Instagram</a>
+   762→            <a href="https://ng.linkedin.com/company/engrite-innovations" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">LinkedIn</a>
+   763→            <a href="https://www.facebook.com/share/1HYbG1gu1V/?mibextid=wwXIfr" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Facebook</a>
+   764→            <a href="https://www.tiktok.com/@engriteinnovation" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">TikTok</a>
+   765→          </div>
+   766→        </div>
+   767→      </div>
+   768→    </div>
+   769→    <form class="cform fu" id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+   770→      <input type="hidden" name="form-name" value="contact">
+   771→      <p style="display:none"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+   772→      <div class="form-row">
+   773→        <input type="text" class="fi" name="first-name" placeholder="First Name" required>
+   774→        <input type="text" class="fi" name="last-name" placeholder="Last Name" required>
+   775→      </div>
+   776→      <input type="email" class="fi" name="email" placeholder="Email Address" required>
+   777→      <input type="tel" class="fi" name="phone" placeholder="Phone Number">
+   778→      <select class="fi" name="interest" id="interest-select">
+   779→        <option value="">I am interested in...</option>
+   780→        <option>Buying a Property</option>
+   781→        <option>Investment / Live or Earn</option>
+   782→        <option>Sinai Spaces</option>
+   783→        <option>Sinai Residence</option>
+   784→        <option>Crest Residence</option>
+   785→        <option>Realtor Partnership</option>
+   786→        <option>General Enquiry</option>
+   787→      </select>
+   788→      <textarea class="fi" name="message" rows="4" placeholder="Tell us about your goals and budget..."></textarea>
+   789→      <button type="submit" class="btn-g" style="border:none;align-self:flex-start">Send Message</button>
+   790→    </form>
+   791→  </div>
+   792→</section>
+   793→
+   794→<!-- FOOTER -->
+   795→<footer>
+   796→  <div class="ft">
+   797→    <div>
+   798→      <a href="#" class="logo" style="text-decoration:none">
+   799→        <svg width="40" height="36" viewBox="0 0 92 84" fill="none">
+   800→          <rect x="5" y="30" width="19" height="50" stroke="#3a7c45" stroke-width="2.2" fill="none"/>
+   801→          <rect x="37" y="10" width="19" height="70" stroke="#7fd89a" stroke-width="2.2" fill="none"/>
+   802→          <line x1="37" y1="10" x2="24" y2="30" stroke="#3a7c45" stroke-width="2.2"/>
+   803→          <rect x="56" y="24" width="14" height="56" stroke="#3a7c45" stroke-width="2.2" fill="none"/>
+   804→          <line x1="56" y1="24" x2="70" y2="38" stroke="#7fd89a" stroke-width="2.2"/>
+   805→          <rect x="70" y="38" width="15" height="42" stroke="#7fd89a" stroke-width="2.2" fill="none"/>
+   806→          <line x1="2" y1="80" x2="88" y2="80" stroke="#7fd89a" stroke-width="1.8"/>
+   807→        </svg>
+   808→        <div class="logo-name" style="color:#fff">ENGRITE INNOVATIONS<small style="color:#7fd89a">LTD. — REAL ESTATE</small></div>
+   809→      </a>
+   810→      <p class="fb-p">Your trusted partner in the journey towards home ownership. Premium real estate development and investment in Lagos, Nigeria.</p>
+   811→      <div class="fsoc">
+   812→        <a href="https://instagram.com/engriteinnovations_" target="_blank" rel="noopener" class="fsl" aria-label="Instagram">
+   813→          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".9" fill="currentColor" stroke="none"/></svg>
+   814→        </a>
+   815→        <a href="https://ng.linkedin.com/company/engrite-innovations" target="_blank" rel="noopener" class="fsl" aria-label="LinkedIn">
+   816→          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+   817→        </a>
+   818→        <a href="https://www.facebook.com/share/1HYbG1gu1V/?mibextid=wwXIfr" target="_blank" rel="noopener" class="fsl" aria-label="Facebook">
+   819→          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.13 8.44 9.88v-7H7.9v-2.88h2.54V9.85c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46H15.2c-1.24 0-1.63.77-1.63 1.56v1.88h2.78L15.91 15h-2.34v6.95C18.34 21.19 22 17.06 22 12.06z"/></svg>
+   820→        </a>
+   821→        <a href="https://www.tiktok.com/@engriteinnovation" target="_blank" rel="noopener" class="fsl" aria-label="TikTok">
+   822→          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005.8 20.1a6.34 6.34 0 0010.86-4.43V8.66a8.16 8.16 0 004.77 1.52V6.73a4.85 4.85 0 01-1.84-.04z"/></svg>
+   823→        </a>
+   824→      </div>
+   825→    </div>
+   826→    <div>
+   827→      <div class="fc-title">Projects</div>
+   828→      <ul class="fl">
+   829→        <li><a href="#projects">Sinai Spaces</a></li>
+   830→        <li><a href="#projects">Sinai Residence</a></li>
+   831→        <li><a href="#projects">Crest Residence</a></li>
+   832→        <li><a href="#projects">Gbagada Phase One</a></li>
+   833→      </ul>
+   834→    </div>
+   835→    <div>
+   836→      <div class="fc-title">Invest</div>
+   837→      <ul class="fl">
+   838→        <li><a href="#invest">Live or Earn</a></li>
+   839→        <li><a href="#invest">17-Year Lease</a></li>
+   840→        <li><a href="#invest">Investment Returns</a></li>
+   841→        <li><a href="#contact">Realtor Programme</a></li>
+   842→      </ul>
+   843→    </div>
+   844→    <div>
+   845→      <div class="fc-title">Company</div>
+   846→      <ul class="fl">
+   847→        <li><a href="#about">About Us</a></li>
+   848→        <li><a href="#contact">Contact</a></li>
+   849→        <li><a href="#newsletter">Newsletter</a></li>
+   850→        <li><a href="https://instagram.com/engriteinnovations_" target="_blank">Instagram</a></li>
+   851→      </ul>
+   852→    </div>
+   853→  </div>
+   854→  <div class="fb">
+   855→    <div class="fb-copy">© 2026 Engrite Innovations Ltd. All rights reserved. · 27 Montgomery Street, Yaba, Lagos</div>
+   856→    <div class="fb-links">
+   857→      <a href="privacy.html">Privacy Policy</a>
+   858→      <a href="privacy.html#terms">Terms</a>
+   859→      <a href="sitemap.xml">Sitemap</a>
+   860→    </div>
+   861→    <div class="fb-tag">Building Legacy, Delivering Value.</div>
+   862→  </div>
+   863→</footer>
+   864→
+   865→<script>
+   866→// Custom cursor — only on desktop fine pointers, respecting reduced-motion
+   867→const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+   868→const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+   869→const isDesktop = window.innerWidth >= 1024;
+   870→if (hasFinePointer && !reducedMotion && isDesktop) {
+   871→  const c = document.getElementById('c'), cr = document.getElementById('cr');
+   872→  let mx = 0, my = 0, rx = 0, ry = 0;
+   873→  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; c.style.left = mx + 'px'; c.style.top = my + 'px'; }, { passive: true });
+   874→  (function loop() { rx += (mx - rx) * .13; ry += (my - ry) * .13; cr.style.left = rx + 'px'; cr.style.top = ry + 'px'; requestAnimationFrame(loop); })();
+   875→  document.querySelectorAll('a,button,input,select,textarea').forEach(el => {
+   876→    el.addEventListener('mouseenter', () => { c.style.transform = 'translate(-50%,-50%) scale(2.8)'; cr.style.transform = 'translate(-50%,-50%) scale(1.6)'; });
+   877→    el.addEventListener('mouseleave', () => { c.style.transform = 'translate(-50%,-50%) scale(1)'; cr.style.transform = 'translate(-50%,-50%) scale(1)'; });
+   878→  });
+   879→}
+   880→
+   881→// Nav shadow on scroll
+   882→const nav = document.getElementById('nav');
+   883→window.addEventListener('scroll', () => nav.classList.toggle('shadow', scrollY > 40), { passive: true });
+   884→
+   885→// Mobile menu toggle
+   886→const navToggle = document.getElementById('nav-toggle');
+   887→const mobileMenu = document.getElementById('mobile-menu');
+   888→const mobileBackdrop = document.getElementById('mobile-backdrop');
+   889→function setMenu(open) {
+   890→  navToggle.classList.toggle('open', open);
+   891→  mobileMenu.classList.toggle('open', open);
+   892→  mobileBackdrop.classList.toggle('open', open);
+   893→  navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+   894→  document.body.style.overflow = open ? 'hidden' : '';
+   895→}
+   896→navToggle.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('open')));
+   897→mobileBackdrop.addEventListener('click', () => setMenu(false));
+   898→mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+   899→document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+   900→
+   901→// Scroll reveal
+   902→const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }), { threshold: .1 });
+   903→document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+   904→
+   905→// Per-property CTA prefill — when an "Enquire" button is clicked, prefill the interest dropdown
+   906→document.querySelectorAll('a.pcta[data-property]').forEach(a => {
+   907→  a.addEventListener('click', () => {
+   908→    const property = a.getAttribute('data-property');
+   909→    const sel = document.getElementById('interest-select');
+   910→    if (sel) {
+   911→      for (const opt of sel.options) {
+   912→        if (opt.textContent.trim() === property) { sel.value = opt.value || opt.textContent; break; }
+   913→      }
+   914→      // Flash the form so the user sees it activated
+   915→      const form = document.querySelector('form.cform');
+   916→      if (form) {
+   917→        form.style.transition = 'box-shadow .4s';
+   918→        form.style.boxShadow = '0 0 0 3px rgba(43,168,74,.35)';
+   919→        setTimeout(() => { form.style.boxShadow = ''; }, 1400);
+   920→      }
+   921→    }
+   922→  });
+   923→});
+   924→
+   925→// ─────────────────────────────────────────────────────────────────
+   926→// FORMS — Netlify Forms via AJAX submission
+   927→// Posts to / with form-name in body. Netlify intercepts and saves
+   928→// the submission without any page navigation or redirect.
+   929→// ─────────────────────────────────────────────────────────────────
+   930→
+   931→const successModal = document.getElementById('form-success');
+   932→const successTitle = document.getElementById('fs-title');
+   933→const successMsg = document.getElementById('fs-msg');
+   934→const successClose = document.getElementById('fs-close');
+   935→
+   936→function showSuccess(title, msg) {
+   937→  successTitle.textContent = title;
+   938→  successMsg.textContent = msg;
+   939→  successModal.style.display = 'flex';
+   940→  document.body.style.overflow = 'hidden';
+   941→}
+   942→function hideSuccess() {
+   943→  successModal.style.display = 'none';
+   944→  document.body.style.overflow = '';
+   945→}
+   946→successClose.addEventListener('click', hideSuccess);
+   947→successModal.addEventListener('click', e => { if (e.target === successModal) hideSuccess(); });
+   948→document.addEventListener('keydown', e => { if (e.key === 'Escape' && successModal.style.display === 'flex') hideSuccess(); });
+   949→
+   950→function encode(data) {
+   951→  return Object.keys(data).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(data[k])).join('&');
+   952→}
+   953→
+   954→function wireForm(form, opts) {
+   955→  if (!form) return;
+   956→  form.addEventListener('submit', async (e) => {
+   957→    e.preventDefault();
+   958→    const btn = form.querySelector('[type=submit]');
+   959→    const originalLabel = btn.textContent;
+   960→    btn.disabled = true;
+   961→    btn.textContent = 'Sending…';
+   962→
+   963→    // Collect form data
+   964→    const fd = new FormData(form);
+   965→    const data = {};
+   966→    fd.forEach((v, k) => { data[k] = v; });
+   967→    // Ensure form-name is present for Netlify
+   968→    if (!data['form-name']) data['form-name'] = form.getAttribute('name');
+   969→
+   970→    try {
+   971→      const res = await fetch('/', {
+   972→        method: 'POST',
+   973→        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+   974→        body: encode(data)
+   975→      });
+   976→      if (res.ok || res.status === 200 || res.status === 303) {
+   977→        form.reset();
+   978→        showSuccess(opts.successTitle, opts.successMsg);
+   979→      } else {
+   980→        throw new Error('Server returned ' + res.status);
+   981→      }
+   982→    } catch (err) {
+   983→      console.error('Form submission failed:', err);
+   984→      showSuccess(
+   985→        'Something went wrong',
+   986→        'We couldn\'t send your message right now. Please reach us directly: engriteinnovations@gmail.com or +234 813 066 5862.'
+   987→      );
+   988→    } finally {
+   989→      btn.disabled = false;
+   990→      btn.textContent = originalLabel;
+   991→    }
+   992→  });
+   993→}
+   994→
+   995→wireForm(document.getElementById('contact-form'), {
+   996→  successTitle: 'Message Received',
+   997→  successMsg: 'Thank you for reaching out. The Engrite team will be in touch within 24 hours.'
+   998→});
+   999→wireForm(document.getElementById('newsletter-form'), {
+  1000→  successTitle: 'You\'re On The List',
+  1001→  successMsg: 'Watch your inbox for new launches, investment opportunities, and exclusive property updates.'
+  1002→});
+  1003→</script>
+  1004→</body>
+  1005→</html>
+  1006→
