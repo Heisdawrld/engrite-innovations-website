@@ -34,19 +34,21 @@ declare global {
 
 type VirtualTourProps = {
   scenes: PropertyTourScene[];
+  matterportUrl?: string;
   onClose?: () => void;
   embedded?: boolean;
 };
 
-export function VirtualTour({ scenes, onClose, embedded = false }: VirtualTourProps) {
+export function VirtualTour({ scenes, matterportUrl, onClose, embedded = false }: VirtualTourProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const viewerRef = useRef<ReturnType<NonNullable<Window["pannellum"]>["viewer"]> | null>(null);
   const [currentScene, setCurrentScene] = useState(scenes[0]?.id ?? "");
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const [scriptError, setScriptError] = useState(false);
 
-  // Load Pannellum CSS + JS via CDN
+  // Load Pannellum CSS + JS via CDN (only needed if no Matterport URL)
   useEffect(() => {
+    if (matterportUrl) return; // skip Pannellum loading if Matterport is provided
     if (document.getElementById("pannellum-css")) {
       if (window.pannellum) {
         // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -78,10 +80,11 @@ export function VirtualTour({ scenes, onClose, embedded = false }: VirtualTourPr
     return () => {
       // Don't remove — keep cached for re-mounts
     };
-  }, []);
+  }, [matterportUrl]);
 
   // Initialize / re-init viewer when scenes or script change
   useEffect(() => {
+    if (matterportUrl) return; // skip if using Matterport
     if (!scriptLoaded || !window.pannellum || !containerRef.current || scenes.length === 0) {
       return;
     }
@@ -153,6 +156,39 @@ export function VirtualTour({ scenes, onClose, embedded = false }: VirtualTourPr
     const next = scenes[(currentIndex + 1) % scenes.length];
     goToScene(next.id);
   };
+
+  // Matterport embed — takes priority over Pannellum fallback
+  if (matterportUrl) {
+    const embedUrl = matterportUrl.includes("?")
+      ? `${matterportUrl}&play=1`
+      : `${matterportUrl}?play=1`;
+    return (
+      <div className="relative w-full overflow-hidden rounded-md bg-[#0d1a40]">
+        <div className="flex aspect-video w-full items-center justify-center sm:aspect-[3/2]">
+          <iframe
+            src={embedUrl}
+            allow="fullscreen; xr-spatial-tracking"
+            className="h-full w-full"
+            style={{ border: 0 }}
+            title="360° Matterport Virtual Tour"
+            loading="lazy"
+          />
+        </div>
+        {!embedded && onClose && (
+          <button
+            onClick={onClose}
+            className="absolute right-3 top-3 z-20 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition-colors hover:bg-white/20"
+            aria-label="Close virtual tour"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        )}
+        <div className="absolute left-3 top-3 z-10 rounded-full bg-white/10 px-3 py-1.5 text-[10px] uppercase tracking-wider text-white backdrop-blur">
+          360° Matterport Tour · Drag to look · Click floorplan to navigate
+        </div>
+      </div>
+    );
+  }
 
   if (scriptError) {
     // Fallback to image gallery

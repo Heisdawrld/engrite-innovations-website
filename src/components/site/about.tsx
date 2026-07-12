@@ -127,56 +127,31 @@ export function About() {
           </ScrollReveal>
         </div>
 
-        {/* Team & Operations */}
-        <ScrollReveal delay={200} className="mt-24 grid grid-cols-1 gap-8 lg:grid-cols-3">
-          <div className="lg:col-span-2">
-            <div className="mb-8 text-center">
-              <div className="flex items-center justify-center gap-3.5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#2BA84A]">
-                <span className="block h-[2px] w-9 bg-[#2BA84A]" aria-hidden="true" />
-                What We Do
-                <span className="block h-[2px] w-9 bg-[#2BA84A]" aria-hidden="true" />
-              </div>
-              <h3 className="mt-3 font-serif text-[clamp(28px,3vw,40px)] font-normal text-[#102357]">
-                Full-Service Real Estate
-              </h3>
+        {/* Services Grid */}
+        <ScrollReveal delay={200} className="mt-20">
+          <div className="mb-8 text-center">
+            <div className="flex items-center justify-center gap-3.5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#2BA84A]">
+              <span className="block h-[2px] w-9 bg-[#2BA84A]" aria-hidden="true" />
+              What We Do
+              <span className="block h-[2px] w-9 bg-[#2BA84A]" aria-hidden="true" />
             </div>
-
-            <div className="grid grid-cols-1 gap-px bg-[rgba(16,35,87,0.1)] sm:grid-cols-2">
-              {values.map((v) => (
-                <div key={v.title} className="group bg-white p-7 transition-colors hover:bg-[#f0f4ff]">
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#2BA84A]/10 text-[#2BA84A] transition-colors group-hover:bg-[#102357] group-hover:text-[#7fd89a]">
-                    {v.icon}
-                  </div>
-                  <div className="text-[12px] font-bold uppercase tracking-[0.14em] text-[#102357]">
-                    {v.title}
-                  </div>
-                  <div className="mt-2 text-[13px] leading-[1.75] text-[#6b7280]">{v.desc}</div>
-                </div>
-              ))}
-            </div>
+            <h3 className="mt-3 font-serif text-[clamp(28px,3vw,40px)] font-normal text-[#102357]">
+              Full-Service Real Estate
+            </h3>
           </div>
 
-          {/* Team member card */}
-          <div className="border border-[rgba(16,35,87,0.1)] bg-white p-6">
-            <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#2BA84A]">
-              Meet the Team
-            </div>
-            <div className="relative mt-4 aspect-square w-full overflow-hidden bg-[#f4f6fb]">
-              <Image
-                src="/img/team-precious.jpg"
-                alt="Precious Laney — Product Designer & Manager, Engrite Innovations"
-                fill
-                sizes="(min-width: 1024px) 33vw, 100vw"
-                className="object-cover"
-              />
-            </div>
-            <h4 className="mt-4 font-serif text-lg text-[#102357]">Precious Laney</h4>
-            <p className="text-[12px] text-[#6b7280]">
-              Product Designer & Manager
-            </p>
-            <p className="mt-3 text-[12px] font-light leading-[1.7] text-[#6b7280]">
-              Hosts Engrite&apos;s Project Spotlight series — walking buyers through unit designs, amenity planning, and the thinking behind each development.
-            </p>
+          <div className="grid grid-cols-1 gap-px bg-[rgba(16,35,87,0.1)] sm:grid-cols-2 lg:grid-cols-4">
+            {values.map((v) => (
+              <div key={v.title} className="group bg-white p-7 transition-colors hover:bg-[#f0f4ff]">
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#2BA84A]/10 text-[#2BA84A] transition-colors group-hover:bg-[#102357] group-hover:text-[#7fd89a]">
+                  {v.icon}
+                </div>
+                <div className="text-[12px] font-bold uppercase tracking-[0.14em] text-[#102357]">
+                  {v.title}
+                </div>
+                <div className="mt-2 text-[13px] leading-[1.75] text-[#6b7280]">{v.desc}</div>
+              </div>
+            ))}
           </div>
         </ScrollReveal>
       </div>

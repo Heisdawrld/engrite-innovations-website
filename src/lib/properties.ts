@@ -39,6 +39,11 @@ export type Property = {
   features: string[];
   paymentSchedule: PropertyPaymentTier[];
   tourScenes: PropertyTourScene[];
+  // Matterport 360° tour — when you provide a Matterport showcase URL,
+  // the Virtual Tour tab will embed it instead of the Pannellum fallback.
+  // Format: "https://my.matterport.com/show/?m=XXXXXXXX"
+  // Leave as null/undefined to use the image-based fallback tour.
+  matterportUrl?: string;
   completionDate: string;
   startingPrice: number;
   annualReturn: number;

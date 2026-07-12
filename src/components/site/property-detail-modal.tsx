@@ -163,7 +163,7 @@ export function PropertyDetailModal({ slug, onClose }: PropertyDetailModalProps)
                     Walk through {property.name} from your device. Drag to look around, click hotspots to navigate between rooms.
                   </p>
                 </div>
-                <VirtualTour scenes={property.tourScenes} embedded />
+                <VirtualTour scenes={property.tourScenes} matterportUrl={property.matterportUrl} embedded />
               </div>
             </TabsContent>
 
