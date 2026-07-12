@@ -1,0 +1,99 @@
+import Image from "next/image";
+import { ScrollReveal } from "./scroll-reveal";
+import { Plane, Video, FileCheck, Wallet } from "lucide-react";
+
+const steps = [
+  {
+    icon: Video,
+    title: "Virtual Tour & Inquiry",
+    desc: "Walk through properties in 360° from your phone. Book a video call with our sales team to discuss your goals.",
+  },
+  {
+    icon: FileCheck,
+    title: "Document Verification",
+    desc: "Receive scanned title documents. Verify independently at the Lagos State Lands Bureau portal.",
+  },
+  {
+    icon: Wallet,
+    title: "Electronic Closing",
+    desc: "Sign agreements electronically (DocuSign). Pay via SWIFT wire to our USD or NGN account.",
+  },
+  {
+    icon: Plane,
+    title: "Handover or Rental",
+    desc: "Choose Live (move in) or Earn (we manage rentals). Receive keys or first quarterly payout.",
+  },
+];
+
+export function DiasporaSection() {
+  return (
+    <section id="diaspora" className="scroll-mt-[100px] relative overflow-hidden bg-[#081534] py-20 text-white sm:py-24 lg:py-32">
+      <div className="absolute inset-0 opacity-30">
+        <Image
+          src="/img/newsletter-portfolio.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-[#081534]/70" />
+      </div>
+
+      <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
+        <ScrollReveal className="mb-12 max-w-2xl">
+          <div className="flex items-center gap-3.5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#7fd89a]">
+            <span className="block h-[2px] w-9 bg-[#7fd89a]" aria-hidden="true" />
+            Invest From Abroad
+          </div>
+          <h2 className="mt-4 font-serif text-[clamp(36px,4.4vw,60px)] font-normal leading-[1.12] text-white">
+            Built for the <em className="italic text-[#7fd89a]">Diaspora</em>
+          </h2>
+          <p className="mt-6 text-[15px] font-light leading-[1.9] text-white/60">
+            Over 40% of Engrite buyers are diaspora Nigerians. Our entire process is built to be completed remotely — from 360° virtual tours to electronic closing and USD wire transfers. No flights to Lagos required.
+          </p>
+        </ScrollReveal>
+
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {steps.map((step, i) => (
+            <ScrollReveal
+              key={step.title}
+              delay={i * 80}
+              className="relative border border-white/10 bg-white/[0.04] p-6 backdrop-blur transition-all hover:border-[#7fd89a]/40"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#2BA84A]/20 text-[#7fd89a]">
+                <step.icon className="h-5 w-5" />
+              </div>
+              <div className="mt-4 text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
+                Step {i + 1}
+              </div>
+              <h3 className="mt-1.5 font-serif text-lg text-white">{step.title}</h3>
+              <p className="mt-2 text-[12px] font-light leading-[1.7] text-white/55">
+                {step.desc}
+              </p>
+            </ScrollReveal>
+          ))}
+        </div>
+
+        <ScrollReveal delay={200} className="mt-12 flex flex-wrap items-center gap-4">
+          <a
+            href="#projects"
+            className="inline-flex items-center gap-2 bg-[#2BA84A] px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-[#239540]"
+          >
+            Take a Virtual Tour
+          </a>
+          <a
+            href="https://wa.me/2348130665862?text=Hi%20Engrite%2C%20I%27m%20a%20diaspora%20investor%20interested%20in%20your%20properties."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border-2 border-white/30 px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:border-white"
+          >
+            Chat on WhatsApp
+          </a>
+          <div className="text-[11px] uppercase tracking-wider text-white/40">
+            Typical diaspora closing: 21-30 days
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Engrite Innovations Ltd.",
+  "short_name": "Engrite",
+  "description": "Premium real estate development and investment in Lagos, Nigeria.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#102357",
+  "icons": [
+    { "src": "/img/favicon.svg", "type": "image/svg+xml", "sizes": "any" }
+  ]
+}
