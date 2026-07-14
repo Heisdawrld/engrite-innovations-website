@@ -21,7 +21,7 @@ export const translations: Record<Language, Dict> = {
     "nav.cta": "Get Updates",
     "hero.tag": "Lagos · Nigeria · Est. 2020",
     "hero.title1": "Own An Address",
-    "hero.title2": "Pays",
+    "hero.title2": "That Pays",
     "hero.title3": "You Back.",
     "hero.desc":
       "Your trusted partner in the journey towards home ownership. Premium real estate development and investment opportunities across Lagos.",

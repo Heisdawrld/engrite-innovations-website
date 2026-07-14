@@ -45,7 +45,7 @@ export function Newsletter() {
         <h2 className="mt-4 font-serif text-[clamp(28px,2.8vw,44px)] font-normal leading-[1.15] text-white">
           {t("newsletter.title1")}
           <br />
-          About <em className="italic text-[#7fd89a]">{t("newsletter.title2")}</em>
+          <em className="italic text-[#7fd89a]">{t("newsletter.title2")}</em>
         </h2>
         <p className="mt-4 max-w-[360px] text-[14px] font-light leading-[1.85] text-white/45">
           Exclusive early access to new projects, investment opportunities, and property updates — straight to your inbox.
