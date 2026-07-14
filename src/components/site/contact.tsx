@@ -105,7 +105,6 @@ export function Contact() {
                   <a href="https://instagram.com/engriteinnovations_" target="_blank" rel="noopener noreferrer" className="hover:text-[#2BA84A]">Instagram</a>
                   <a href="https://ng.linkedin.com/company/engrite-innovations" target="_blank" rel="noopener noreferrer" className="hover:text-[#2BA84A]">LinkedIn</a>
                   <a href="https://www.facebook.com/EduserveNG" target="_blank" rel="noopener noreferrer" className="hover:text-[#2BA84A]">Facebook</a>
-                  <a href="https://www.tiktok.com/@engriteinnovation" target="_blank" rel="noopener noreferrer" className="hover:text-[#2BA84A]">TikTok</a>
                 </div>
               </div>
             </div>

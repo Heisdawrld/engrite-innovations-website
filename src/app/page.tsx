@@ -15,9 +15,7 @@ import { Newsletter } from "@/components/site/newsletter";
 import { Contact } from "@/components/site/contact";
 import { FAQ } from "@/components/site/faq";
 import { Testimonials } from "@/components/site/testimonials";
-import { ProgressGallery } from "@/components/site/progress-gallery";
 import { DiasporaSection } from "@/components/site/diaspora-section";
-import { Blog } from "@/components/site/blog";
 import { WhatsAppFloat } from "@/components/site/whatsapp-float";
 import { PropertyDetailModal } from "@/components/site/property-detail-modal";
 import { FavoritesModal } from "@/components/site/favorites-modal";
@@ -48,8 +46,6 @@ export default function Home() {
         <Quote />
         <DiasporaSection />
         <Testimonials />
-        <ProgressGallery />
-        <Blog />
         <FAQ />
         <Newsletter />
         <Contact />

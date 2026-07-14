@@ -28,7 +28,6 @@ export function Navbar({ onOpenFavorites }: { onOpenFavorites: () => void }) {
     { href: "#projects", label: t("nav.projects") },
     { href: "#invest", label: t("nav.invest") },
     { href: "#faq", label: t("nav.faq") },
-    { href: "#insights", label: t("nav.blog") },
     { href: "#contact", label: t("nav.contact") },
   ];
 
@@ -150,7 +149,6 @@ export function Navbar({ onOpenFavorites }: { onOpenFavorites: () => void }) {
                   <a href="https://instagram.com/engriteinnovations_" target="_blank" rel="noopener noreferrer">IG</a>
                   <a href="https://ng.linkedin.com/company/engrite-innovations" target="_blank" rel="noopener noreferrer">LI</a>
                   <a href="https://www.facebook.com/EduserveNG" target="_blank" rel="noopener noreferrer">FB</a>
-                  <a href="https://www.tiktok.com/@engriteinnovation" target="_blank" rel="noopener noreferrer">TT</a>
                 </div>
               </div>
             </SheetContent>

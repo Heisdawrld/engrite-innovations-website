@@ -141,7 +141,6 @@ const jsonLd = {
         "https://instagram.com/engriteinnovations_",
         "https://ng.linkedin.com/company/engrite-innovations",
         "https://www.facebook.com/EduserveNG",
-        "https://www.tiktok.com/@engriteinnovation",
       ],
     },
     {
