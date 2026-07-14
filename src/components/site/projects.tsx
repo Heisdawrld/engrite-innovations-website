@@ -119,19 +119,22 @@ export function Projects({ onSelectProperty }: { onSelectProperty: (slug: string
                         {format(property.startingPrice)}
                       </div>
                     </div>
+                    <span className={`bg-[rgba(43,168,74,0.06)] px-3 py-1.5 text-[9px] uppercase tracking-[0.14em] ${statusStyles[property.status].split(' ').filter(c => c.startsWith('text-')).join(' ')}`}>
+                      {property.annualReturn}% ROI
+                    </span>
                   </div>
 
-                  <div className="flex gap-2">
+                  <div className="flex flex-col gap-2 sm:flex-row">
                     <button
                       onClick={() => onSelectProperty(property.slug)}
-                      className="flex flex-1 items-center justify-between border-t border-[rgba(16,35,87,0.1)] pt-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#102357] transition-colors hover:text-[#2BA84A]"
+                      className="flex flex-1 items-center justify-center gap-2 bg-[#102357] px-4 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#1a3470] sm:justify-between"
                     >
                       View Details
                       <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1.5" />
                     </button>
                     <button
                       onClick={() => onSelectProperty(property.slug)}
-                      className="flex items-center gap-1.5 border-t border-[rgba(16,35,87,0.1)] pt-3 pl-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#2BA84A]"
+                      className="flex items-center justify-center gap-1.5 border-2 border-[#2BA84A] px-4 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#2BA84A] transition-colors hover:bg-[#2BA84A] hover:text-white"
                       aria-label={`Take virtual tour of ${property.name}`}
                     >
                       <Eye className="h-3.5 w-3.5" />

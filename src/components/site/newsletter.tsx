@@ -71,7 +71,7 @@ export function Newsletter() {
               onChange={(e) => setName(e.target.value)}
               required
               autoComplete="name"
-              className="border-white/10 bg-white/5 text-white placeholder:text-white/25 focus:border-[#3fc066]"
+              className="h-12 border-white/10 bg-white/5 text-white placeholder:text-white/25 focus:border-[#3fc066]"
             />
           </div>
           <div className="space-y-1.5">
@@ -86,13 +86,13 @@ export function Newsletter() {
               onChange={(e) => setEmail(e.target.value)}
               required
               autoComplete="email"
-              className="border-white/10 bg-white/5 text-white placeholder:text-white/25 focus:border-[#3fc066]"
+              className="h-12 border-white/10 bg-white/5 text-white placeholder:text-white/25 focus:border-[#3fc066]"
             />
           </div>
           <Button
             type="submit"
             disabled={loading}
-            className="mt-2 self-start bg-[#2BA84A] text-[11px] font-bold uppercase tracking-[0.2em] text-white hover:bg-[#239540] disabled:opacity-50"
+            className="mt-2 h-12 w-full bg-[#2BA84A] text-[11px] font-bold uppercase tracking-[0.2em] text-white hover:bg-[#239540] disabled:opacity-50 sm:w-auto sm:self-start"
           >
             {loading ? "Subscribing…" : t("newsletter.button")}
           </Button>

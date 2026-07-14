@@ -66,18 +66,18 @@ export function Hero() {
           </p>
 
           <div
-            className="animate-fade-up mt-12 flex flex-wrap items-center gap-5"
+            className="animate-fade-up mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-5"
             style={{ animationDelay: "0.68s" }}
           >
             <Link
               href="#projects"
-              className="inline-block bg-[#2BA84A] px-10 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white border-2 border-[#2BA84A] transition-all hover:bg-transparent hover:border-white"
+              className="inline-block w-full bg-[#2BA84A] px-8 py-4 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-white border-2 border-[#2BA84A] transition-all hover:bg-transparent hover:border-white sm:w-auto"
             >
               {t("hero.cta1")}
             </Link>
             <Link
               href="#invest"
-              className="inline-block bg-transparent px-10 py-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-white border-2 border-white/40 transition-all hover:border-white hover:bg-white/8"
+              className="inline-block w-full bg-transparent px-8 py-4 text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-white border-2 border-white/40 transition-all hover:border-white hover:bg-white/8 sm:w-auto"
             >
               {t("hero.cta2")}
             </Link>

@@ -39,7 +39,7 @@ export function Footer() {
             <p className="mt-5 max-w-[280px] text-[13px] font-light leading-[1.85] text-white/35">
               Your trusted partner in the journey towards home ownership. Premium real estate development and investment in Lagos, Nigeria.
             </p>
-            <div className="mt-6 flex gap-2.5">
+            <div className="mt-6 flex gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -47,9 +47,9 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex h-9 w-9 items-center justify-center border border-white/10 text-white/35 transition-all hover:border-[#3fc066] hover:text-[#7fd89a]"
+                  className="flex h-11 w-11 items-center justify-center border border-white/10 text-white/35 transition-all hover:border-[#3fc066] hover:text-[#7fd89a]"
                 >
-                  <social.icon className="h-3.5 w-3.5" />
+                  <social.icon className="h-4 w-4" />
                 </a>
               ))}
             </div>
@@ -60,7 +60,7 @@ export function Footer() {
             <h3 className="mb-5 text-[9px] font-bold uppercase tracking-[0.24em] text-white/30">
               Projects
             </h3>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-4 sm:gap-3">
               {["Sinai Spaces", "Sinai Residence", "Crest Residence"].map((p) => (
                 <li key={p}>
                   <Link
@@ -79,7 +79,7 @@ export function Footer() {
             <h3 className="mb-5 text-[9px] font-bold uppercase tracking-[0.24em] text-white/30">
               Invest
             </h3>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-4 sm:gap-3">
               <li><Link href="#invest" className="text-[13px] font-light text-white/40 transition-colors hover:text-[#7fd89a]">Live or Earn</Link></li>
               <li><Link href="#invest" className="text-[13px] font-light text-white/40 transition-colors hover:text-[#7fd89a]">17-Year Lease</Link></li>
               <li><Link href="#invest" className="text-[13px] font-light text-white/40 transition-colors hover:text-[#7fd89a]">Investment Returns</Link></li>
@@ -93,7 +93,7 @@ export function Footer() {
             <h3 className="mb-5 text-[9px] font-bold uppercase tracking-[0.24em] text-white/30">
               Company
             </h3>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-4 sm:gap-3">
               <li><Link href="#about" className="text-[13px] font-light text-white/40 transition-colors hover:text-[#7fd89a]">About Us</Link></li>
               <li><Link href="#faq" className="text-[13px] font-light text-white/40 transition-colors hover:text-[#7fd89a]">FAQ</Link></li>
               <li><Link href="#testimonials" className="text-[13px] font-light text-white/40 transition-colors hover:text-[#7fd89a]">Testimonials</Link></li>

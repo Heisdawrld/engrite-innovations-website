@@ -85,16 +85,16 @@ export function About() {
                 alt="Victor Osinaike — CEO & Real Estate Developer, Engrite Innovations Ltd."
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover"
+                className="object-cover object-[center_20%] sm:object-[center_25%]"
               />
               <div
                 className="absolute inset-0"
                 style={{
-                  background: "linear-gradient(to bottom, transparent 50%, rgba(8,21,52,0.85) 100%)",
+                  background: "linear-gradient(to bottom, transparent 40%, rgba(8,21,52,0.85) 100%)",
                 }}
                 aria-hidden="true"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <div className="absolute bottom-0 left-0 right-0 p-5 text-white sm:p-6">
                 <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#7fd89a]">
                   Founder & CEO
                 </div>
@@ -115,8 +115,8 @@ export function About() {
               </div>
             </div>
 
-            {/* Stats badge */}
-            <div className="absolute -bottom-5 -left-4 z-10 border-l-[3px] border-[#2BA84A] bg-[#102357] px-6 py-5 shadow-[0_14px_40px_rgba(8,21,52,0.25)]">
+            {/* Stats badge — hidden on mobile to avoid overlap, shown from sm up */}
+            <div className="absolute -bottom-5 -left-4 z-10 hidden border-l-[3px] border-[#2BA84A] bg-[#102357] px-6 py-5 shadow-[0_14px_40px_rgba(8,21,52,0.25)] sm:block">
               <span className="block font-serif text-[40px] font-normal leading-none text-[#7fd89a]">
                 3
               </span>
@@ -126,6 +126,16 @@ export function About() {
             </div>
           </ScrollReveal>
         </div>
+
+        {/* Mobile-only inline stats badge */}
+        <ScrollReveal delay={250} className="mt-8 sm:hidden">
+          <div className="flex items-center gap-4 border-l-[3px] border-[#2BA84A] bg-[#102357] px-6 py-5">
+            <span className="font-serif text-[40px] font-normal leading-none text-[#7fd89a]">3</span>
+            <div className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/55">
+              Active<br />Developments
+            </div>
+          </div>
+        </ScrollReveal>
 
         {/* Services Grid */}
         <ScrollReveal delay={200} className="mt-20">

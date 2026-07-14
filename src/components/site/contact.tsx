@@ -146,7 +146,7 @@ export function Contact() {
                     autoComplete="given-name"
                     value={form.firstName}
                     onChange={(e) => setField("firstName", e.target.value)}
-                    className="bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#2BA84A] focus:bg-white"
+                    className="h-12 bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#2BA84A] focus:bg-white"
                   />
                 </div>
                 <div className="space-y-1.5">
@@ -161,7 +161,7 @@ export function Contact() {
                     autoComplete="family-name"
                     value={form.lastName}
                     onChange={(e) => setField("lastName", e.target.value)}
-                    className="bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#2BA84A] focus:bg-white"
+                    className="h-12 bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#2BA84A] focus:bg-white"
                   />
                 </div>
               </div>
@@ -178,7 +178,7 @@ export function Contact() {
                   autoComplete="email"
                   value={form.email}
                   onChange={(e) => setField("email", e.target.value)}
-                  className="bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#2BA84A] focus:bg-white"
+                  className="h-12 bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#2BA84A] focus:bg-white"
                 />
               </div>
 
@@ -193,7 +193,7 @@ export function Contact() {
                   autoComplete="tel"
                   value={form.phone}
                   onChange={(e) => setField("phone", e.target.value)}
-                  className="bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#2BA84A] focus:bg-white"
+                  className="h-12 bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#2BA84A] focus:bg-white"
                 />
               </div>
 
@@ -202,7 +202,7 @@ export function Contact() {
                   {t("form.interest")}
                 </Label>
                 <Select value={form.interest} onValueChange={(v) => setField("interest", v)}>
-                  <SelectTrigger id="interest" className="bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#2BA84A]">
+                  <SelectTrigger id="interest" className="h-12 bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#2BA84A]">
                     <SelectValue placeholder={t("form.interest")} />
                   </SelectTrigger>
                   <SelectContent>
@@ -235,7 +235,7 @@ export function Contact() {
               <Button
                 type="submit"
                 disabled={loading}
-                className="mt-2 self-start bg-[#2BA84A] text-[11px] font-bold uppercase tracking-[0.2em] text-white hover:bg-[#239540] disabled:opacity-50"
+                className="mt-3 h-12 w-full bg-[#2BA84A] text-[11px] font-bold uppercase tracking-[0.2em] text-white hover:bg-[#239540] disabled:opacity-50 sm:w-auto sm:self-start"
               >
                 {loading ? "Sending…" : t("form.submit")}
               </Button>
