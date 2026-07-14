@@ -1,0 +1,52 @@
+<!--
+  Static HTML fallback forms for Netlify Forms detection.
+
+  WHY THIS EXISTS:
+  Netlify Forms detects forms by scanning the static HTML output at build time.
+  With Next.js client components (`"use client"`), the actual rendered form
+  markup is hydrated client-side and may not be reliably parsed by Netlify's
+  scanner — especially when Radix UI Select/Combobox components are involved.
+
+  This file ships pure static HTML forms that Netlify will always detect.
+  The form `name` attributes here MUST match the `name` attributes used in
+  the React forms:
+    - "newsletter"  ->  src/components/site/newsletter.tsx
+    - "contact"     ->  src/components/site/contact.tsx
+
+  When a user submits the React form, the native form POST is intercepted
+  by Netlify's CDN, matched against these registered form definitions, and
+  the submission is saved + emailed to the configured notification address
+  (configured in Netlify dashboard → Forms → Notifications).
+
+  This file is never shown to users. It exists only for build-time detection.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Engrite Innovations — Forms</title>
+</head>
+<body>
+
+  <!-- Newsletter form -->
+  <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="botField" action="/thank-you">
+    <input type="hidden" name="form-name" value="newsletter" />
+    <input type="text" name="botField" style="display:none" />
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+  </form>
+
+  <!-- Contact form -->
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="botField" action="/thank-you">
+    <input type="hidden" name="form-name" value="contact" />
+    <input type="text" name="botField" style="display:none" />
+    <input type="text" name="firstName" />
+    <input type="text" name="lastName" />
+    <input type="email" name="email" />
+    <input type="tel" name="phone" />
+    <input type="text" name="interest" />
+    <textarea name="message"></textarea>
+  </form>
+
+</body>
+</html>

@@ -35,9 +35,13 @@ export function Contact() {
     setForm((f) => ({ ...f, [field]: value }));
 
   const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.firstName || !form.lastName || !form.email) return;
     setLoading(true);
-    // Let native form submission go through — Netlify intercepts it
-    // and sends the submission data to your configured email notifications.
+    // Submit natively so Netlify Forms intercepts the POST.
+    // Static fallback form in public/__forms.html guarantees build-time detection.
+    const formEl = e.currentTarget as HTMLFormElement;
+    formEl.submit();
   };
 
   return (
@@ -127,6 +131,8 @@ export function Contact() {
             >
               {/* Honeypot — hidden from humans, bots will fill it */}
               <input type="text" name="botField" className="sr-only" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+              {/* Hidden input to serialize the Radix Select value (which doesn't render a native <select>) */}
+              <input type="hidden" name="interest" value={form.interest} />
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div className="space-y-1.5">
                   <Label htmlFor="first-name" className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#102357]">
@@ -134,6 +140,7 @@ export function Contact() {
                   </Label>
                   <Input
                     id="first-name"
+                    name="firstName"
                     type="text"
                     required
                     autoComplete="given-name"
@@ -148,6 +155,7 @@ export function Contact() {
                   </Label>
                   <Input
                     id="last-name"
+                    name="lastName"
                     type="text"
                     required
                     autoComplete="family-name"
@@ -164,6 +172,7 @@ export function Contact() {
                 </Label>
                 <Input
                   id="email"
+                  name="email"
                   type="email"
                   required
                   autoComplete="email"
@@ -179,6 +188,7 @@ export function Contact() {
                 </Label>
                 <Input
                   id="phone"
+                  name="phone"
                   type="tel"
                   autoComplete="tel"
                   value={form.phone}
@@ -214,6 +224,7 @@ export function Contact() {
                 </Label>
                 <Textarea
                   id="message"
+                  name="message"
                   rows={4}
                   value={form.message}
                   onChange={(e) => setField("message", e.target.value)}

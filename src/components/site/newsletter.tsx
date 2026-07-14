@@ -17,9 +17,14 @@ export function Newsletter() {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name || !email) return;
     setLoading(true);
-    // Let native form submission go through — Netlify intercepts it
-    // and sends the submission data to your configured email notifications.
+    // Submit the form natively so Netlify Forms intercepts the POST.
+    // The hidden static form in public/__forms.html guarantees Netlify
+    // detects this form at build time even though this is a client component.
+    const form = e.currentTarget as HTMLFormElement;
+    form.submit();
   };
 
   return (
@@ -60,6 +65,7 @@ export function Newsletter() {
             </Label>
             <Input
               id="nl-name"
+              name="name"
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -74,6 +80,7 @@ export function Newsletter() {
             </Label>
             <Input
               id="nl-email"
+              name="email"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
