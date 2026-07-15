@@ -3,8 +3,7 @@
 import Image from "next/image";
 import { ScrollReveal } from "./scroll-reveal";
 import { useLanguage } from "@/components/providers/language-provider";
-import { Badge } from "@/components/ui/badge";
-import { MapPin, GraduationCap, Hammer, Phone, Clock, ShieldCheck, Search } from "lucide-react";
+import { MapPin, GraduationCap, Hammer, Clock, ShieldCheck, Search } from "lucide-react";
 
 const values = [
   {

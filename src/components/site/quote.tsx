@@ -9,13 +9,13 @@ export function Quote() {
       <span
         className="pointer-events-none absolute inset-0"
         style={{
-          background: "radial-gradient(ellipse at 50% 0%, rgba(58,124,69,0.15) 0%, transparent 65%)",
+          background: "radial-gradient(ellipse at 50% 0%, rgba(43,168,74,0.15) 0%, transparent 65%)",
         }}
         aria-hidden="true"
       />
       <div className="relative mx-auto max-w-[860px] px-4 sm:px-6">
         <span
-          className="font-serif text-[140px] leading-[0.5] text-[rgba(127,216,154,0.12)]"
+          className="font-serif text-[100px] leading-[0.5] text-[rgba(127,216,154,0.12)] sm:text-[140px]"
           aria-hidden="true"
         >
           &ldquo;
@@ -27,7 +27,7 @@ export function Quote() {
             Why not own a piece of it too?
           </strong>
         </p>
-        <div className="mt-9 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/30">
+        <div className="mt-9 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/50">
           Engrite Innovations — Lagos, Nigeria
         </div>
       </div>

@@ -13,14 +13,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/components/providers/language-provider";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { BookingWidget } from "./booking-widget";
 
 export function Contact() {
   const { t } = useLanguage();
-  const { toast } = useToast();
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     firstName: "",

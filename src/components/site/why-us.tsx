@@ -29,7 +29,7 @@ const reasons = [
   {
     n: "06",
     title: "Proven Track Record",
-    text: "757 posts of documented progress. Multiple active projects across Lagos. Hundreds of satisfied investors and homeowners who testify.",
+    text: "Multiple active projects across Lagos. Hundreds of documented construction milestones on our Instagram. Satisfied investors and homeowners who testify.",
   },
 ];
 
@@ -55,10 +55,10 @@ export function WhyUs() {
               className="group relative overflow-hidden border border-[rgba(16,35,87,0.1)] bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(28,45,110,0.08)] sm:p-10"
             >
               <span
-                className="pointer-events-none absolute bottom-0 left-0 top-0 w-[3px] origin-bottom scale-y-0 bg-[#2BA84A] transition-transform duration-400 group-hover:scale-y-100"
+                className="pointer-events-none absolute bottom-0 left-0 top-0 w-[3px] origin-bottom scale-y-0 bg-[#2BA84A] transition-transform duration-300 group-hover:scale-y-100"
                 aria-hidden="true"
               />
-              <span className="font-serif text-[70px] font-normal leading-none text-[rgba(28,45,110,0.07)] sm:text-[80px]">
+              <span className="font-serif text-[70px] font-normal leading-none text-[#102357]/[0.07] sm:text-[80px]">
                 {r.n}
               </span>
               <div className="mt-4 text-[13px] font-bold uppercase tracking-[0.08em] text-[#102357]">

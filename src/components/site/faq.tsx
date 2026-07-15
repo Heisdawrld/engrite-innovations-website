@@ -8,7 +8,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Badge } from "@/components/ui/badge";
 import { FAQS } from "@/lib/faqs";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -46,18 +45,19 @@ export function FAQ() {
         <ScrollReveal delay={100}>
           <div className="mb-8 flex flex-wrap justify-center gap-2">
             {categories.map((c) => (
-              <Badge
+              <button
                 key={c.value}
-                variant="outline"
-                className={`cursor-pointer border-[rgba(16,35,87,0.2)] px-3 py-1.5 text-xs transition-colors ${
-                  activeCategory === c.value
-                    ? "bg-[#2BA84A] text-white border-[#2BA84A]"
-                    : "hover:border-[#2BA84A] hover:text-[#2BA84A]"
-                }`}
+                type="button"
                 onClick={() => setActiveCategory(c.value)}
+                aria-pressed={activeCategory === c.value}
+                className={`inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors ${
+                  activeCategory === c.value
+                    ? "border-[#2BA84A] bg-[#2BA84A] text-white"
+                    : "border-[rgba(16,35,87,0.2)] text-[#102357] hover:border-[#2BA84A] hover:text-[#2BA84A]"
+                }`}
               >
                 {c.label}
-              </Badge>
+              </button>
             ))}
           </div>
         </ScrollReveal>

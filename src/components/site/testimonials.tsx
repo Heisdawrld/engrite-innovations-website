@@ -80,15 +80,15 @@ export function Testimonials() {
                 );
               })}
             </CarouselContent>
-            <CarouselPrevious className="flex" />
-            <CarouselNext className="flex" />
+            <CarouselPrevious className="left-2 sm:-left-12" />
+            <CarouselNext className="right-2 sm:-right-12" />
           </Carousel>
         </ScrollReveal>
 
         <ScrollReveal delay={150} className="mt-10 text-center">
           <p className="text-[12px] text-[#6b7280]">
             <Building2 className="mr-1.5 inline h-3.5 w-3.5" />
-            All pricing and yield figures sourced from Engrite Innovations&apos; official Instagram (@engriteinnovations_), Facebook, and LinkedIn. Last verified July 2026.
+            All pricing and yield figures sourced from Engrite Innovations&apos; official Instagram (@engriteinnovations_), Facebook, and LinkedIn.
           </p>
         </ScrollReveal>
       </div>

@@ -4,9 +4,9 @@ type LogoProps = {
 };
 
 export function Logo({ variant = "nav", className = "" }: LogoProps) {
-  const strokeGreen = variant === "footer" ? "#7fd89a" : "#3a7c45";
-  const strokeNavy = variant === "footer" ? "#7fd89a" : "#1c2d6e";
-  const baseLine = variant === "footer" ? "#7fd89a" : "#1c2d6e";
+  const strokeGreen = variant === "footer" ? "#7fd89a" : "#239540";
+  const strokeNavy = variant === "footer" ? "#7fd89a" : "#102357";
+  const baseLine = variant === "footer" ? "#7fd89a" : "#102357";
 
   return (
     <svg

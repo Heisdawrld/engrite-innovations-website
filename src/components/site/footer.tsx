@@ -103,12 +103,12 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center justify-between gap-3 border-t border-white/6 bg-[#239540] px-4 py-5 text-center sm:flex-row sm:px-10 sm:text-left">
-        <p className="text-[11px] font-light text-white/55">
-          © 2026 Engrite Innovations Ltd. All rights reserved. · 27 Montgomery Street, Yaba, Lagos
+      <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 bg-[#239540] px-4 py-5 text-center sm:flex-row sm:px-10 sm:text-left">
+        <p className="text-[11px] font-light text-white/60">
+          © {new Date().getFullYear()} Engrite Innovations Ltd. All rights reserved. · 27 Montgomery Street, Yaba, Lagos
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4 text-[11px]">
-          <span className="font-serif text-[13px] italic text-white/50">Building Dreams, Shaping Cities.</span>
+          <span className="font-serif text-[13px] italic text-white/60">Building Dreams, Shaping Cities.</span>
         </div>
       </div>
     </footer>

@@ -176,8 +176,8 @@ export function PropertyDetailModal({ slug, onClose }: PropertyDetailModalProps)
             <TabsContent value="units">
               <div className="space-y-3">
                 <h3 className="font-serif text-xl text-[#102357]">Available Units</h3>
-                <div className="overflow-hidden rounded-md border border-[rgba(16,35,87,0.1)]">
-                  <table className="w-full text-left text-sm">
+                <div className="overflow-x-auto rounded-md border border-[rgba(16,35,87,0.1)]">
+                  <table className="w-full min-w-[480px] text-left text-sm">
                     <thead className="bg-[#102357] text-white">
                       <tr>
                         <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-wider">Unit Type</th>
@@ -260,7 +260,13 @@ export function PropertyDetailModal({ slug, onClose }: PropertyDetailModalProps)
           <div className="mt-6 flex flex-col gap-3 border-t border-[rgba(16,35,87,0.1)] pt-6 sm:flex-row">
             <a
               href="#contact"
-              onClick={onClose}
+              onClick={(e) => {
+                e.preventDefault();
+                onClose();
+                requestAnimationFrame(() => {
+                  document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+                });
+              }}
               className="flex-1 bg-[#2BA84A] px-6 py-4 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-[#239540]"
             >
               Enquire About {property.name}

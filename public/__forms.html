@@ -48,5 +48,17 @@
     <textarea name="message"></textarea>
   </form>
 
+  <!-- Booking form -->
+  <form name="booking" method="POST" data-netlify="true" netlify-honeypot="botField" action="/thank-you">
+    <input type="hidden" name="form-name" value="booking" />
+    <input type="text" name="botField" style="display:none" />
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="tel" name="phone" />
+    <input type="text" name="mode" />
+    <input type="text" name="date" />
+    <input type="text" name="slot" />
+  </form>
+
 </body>
 </html>

@@ -74,10 +74,10 @@ export function DiasporaSection() {
           ))}
         </div>
 
-        <ScrollReveal delay={200} className="mt-12 flex flex-wrap items-center gap-4">
+        <ScrollReveal delay={200} className="mt-12 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 bg-[#2BA84A] px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-[#239540]"
+            className="inline-flex w-full items-center justify-center gap-2 bg-[#2BA84A] px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-[#239540] sm:w-auto"
           >
             Take a Virtual Tour
           </a>
@@ -85,11 +85,11 @@ export function DiasporaSection() {
             href="https://wa.me/2348130665862?text=Hi%20Engrite%2C%20I%27m%20a%20diaspora%20investor%20interested%20in%20your%20properties."
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 border-2 border-white/30 px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:border-white"
+            className="inline-flex w-full items-center justify-center gap-2 border-2 border-white/30 px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:border-white sm:w-auto"
           >
             Chat on WhatsApp
           </a>
-          <div className="text-[11px] uppercase tracking-wider text-white/40">
+          <div className="text-[11px] uppercase tracking-wider text-white/60">
             Typical diaspora closing: 21-30 days
           </div>
         </ScrollReveal>

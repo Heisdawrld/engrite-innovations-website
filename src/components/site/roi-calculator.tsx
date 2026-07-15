@@ -1,10 +1,13 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useCurrency } from "@/components/providers/currency-provider";
-import { TrendingUp, Calendar, Wallet } from "lucide-react";
+import { TrendingUp, Calendar, Wallet, Target } from "lucide-react";
+
+const ANNUAL_RETURN_RATE = 0.071;
+const MGMT_FEE = 0.15;
+const ANNUAL_APPRECIATION_RATE = 0.026;
 
 const PROPERTY_PRESETS = [
   { label: "Sinai Spaces Studio (Basic)", price: 17_000_000 },
@@ -25,17 +28,13 @@ export function ROICalculator() {
   const [leaseYears, setLeaseYears] = useState(17);
   const [mode, setMode] = useState<"earn" | "live">("earn");
 
-  const annualReturnRate = 0.071;
-  const mgmtFee = 0.15;
-
   const calculations = useMemo(() => {
     const downPayment = purchasePrice * (downPaymentPct / 100);
     const financedAmount = purchasePrice - downPayment;
-    const grossAnnualReturn = purchasePrice * annualReturnRate;
-    const netAnnualReturn = mode === "earn" ? grossAnnualReturn * (1 - mgmtFee) : 0;
+    const grossAnnualReturn = purchasePrice * ANNUAL_RETURN_RATE;
+    const netAnnualReturn = mode === "earn" ? grossAnnualReturn * (1 - MGMT_FEE) : 0;
     const totalReturnsOverLease = netAnnualReturn * leaseYears;
-    const annualAppreciationRate = 0.026; // ~2.6% per year (conservative)
-    const propertyAppreciation = purchasePrice * annualAppreciationRate * leaseYears;
+    const propertyAppreciation = purchasePrice * ANNUAL_APPRECIATION_RATE * leaseYears;
     const totalValueAtEnd = purchasePrice + propertyAppreciation + totalReturnsOverLease;
     const roi = ((totalValueAtEnd - purchasePrice) / purchasePrice) * 100;
     const breakEvenYear = netAnnualReturn > 0 ? Math.ceil(downPayment / netAnnualReturn) : Infinity;
@@ -191,7 +190,7 @@ export function ROICalculator() {
 
         <div className="bg-[rgba(255,255,255,0.04)] p-4 border border-[rgba(255,255,255,0.08)]">
           <div className="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-wider text-white/50">
-            <Calendar className="h-3 w-3" />
+            <Target className="h-3 w-3" />
             Break-Even
           </div>
           <div className="mt-1.5 font-serif text-xl text-[#7fd89a]">
@@ -230,7 +229,7 @@ export function ROICalculator() {
         </div>
       </div>
 
-      <p className="mt-4 text-[10px] text-white/30">
+      <p className="mt-4 text-[10px] text-white/50">
         Projections based on historical Engrite performance (7.1% gross yield, 15% management fee, ~2.6% annual capital appreciation). Past performance does not guarantee future results. Figures shown in {currency}.
       </p>
     </div>

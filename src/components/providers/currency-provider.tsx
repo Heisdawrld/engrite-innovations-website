@@ -7,12 +7,13 @@ import {
   useEffect,
   ReactNode,
 } from "react";
-import { Currency, CURRENCIES, formatMoney } from "@/lib/currency";
+import { Currency, CURRENCIES, formatMoney, formatCompact } from "@/lib/currency";
 
 type CurrencyContextValue = {
   currency: Currency;
   setCurrency: (c: Currency) => void;
   format: (amountNGN: number) => string;
+  formatCompact: (amountNGN: number) => string;
   convert: (amountNGN: number) => number;
 };
 
@@ -39,9 +40,10 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
 
   const convert = (amountNGN: number) => amountNGN * CURRENCIES[currency].rate;
   const format = (amountNGN: number) => formatMoney(amountNGN, currency);
+  const formatCompactFn = (amountNGN: number) => formatCompact(amountNGN, currency);
 
   return (
-    <CurrencyContext.Provider value={{ currency, setCurrency, format, convert }}>
+    <CurrencyContext.Provider value={{ currency, setCurrency, format, formatCompact: formatCompactFn, convert }}>
       {children}
     </CurrencyContext.Provider>
   );

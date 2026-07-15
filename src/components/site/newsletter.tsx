@@ -6,12 +6,10 @@ import { ScrollReveal } from "./scroll-reveal";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/components/providers/language-provider";
 
 export function Newsletter() {
   const { t } = useLanguage();
-  const { toast } = useToast();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
@@ -98,7 +96,7 @@ export function Newsletter() {
             {loading ? "Subscribing…" : t("newsletter.button")}
           </Button>
         </form>
-        <p className="mt-3 text-[11px] text-white/20">No spam. Unsubscribe any time.</p>
+        <p className="mt-3 text-[11px] text-white/40">No spam. Unsubscribe any time.</p>
       </ScrollReveal>
     </section>
   );

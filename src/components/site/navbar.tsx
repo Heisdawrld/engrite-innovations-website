@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Heart, Globe } from "lucide-react";
+import { Menu, X, Heart } from "lucide-react";
 import { Logo } from "./logo";
 import { CurrencyToggle } from "./currency-toggle";
 import { LanguageToggle } from "./language-toggle";
@@ -126,7 +126,7 @@ export function Navbar({ onOpenFavorites }: { onOpenFavorites: () => void }) {
                   <a
                     key={link.href}
                     href={link.href}
-                    onClick={() => setMobileOpen(false)}
+                    onClick={() => setTimeout(() => setMobileOpen(false), 50)}
                     className="border-b border-white/10 py-4 text-lg font-medium uppercase tracking-[0.08em] transition-colors hover:text-[#7fd89a]"
                   >
                     {link.label}
@@ -134,7 +134,7 @@ export function Navbar({ onOpenFavorites }: { onOpenFavorites: () => void }) {
                 ))}
                 <a
                   href="#newsletter"
-                  onClick={() => setMobileOpen(false)}
+                  onClick={() => setTimeout(() => setMobileOpen(false), 50)}
                   className="mt-4 bg-[#2BA84A] py-4 text-center text-xs font-bold uppercase tracking-[0.2em] text-white border-2 border-[#2BA84A] transition-all hover:bg-transparent"
                 >
                   {t("nav.cta")}
