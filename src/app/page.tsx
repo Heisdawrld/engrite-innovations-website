@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Navbar } from "@/components/site/navbar";
 import { Footer } from "@/components/site/footer";
 import { Hero } from "@/components/site/hero";
+import { PressStrip } from "@/components/site/press-strip";
 import { StatsBar } from "@/components/site/stats-bar";
 import { Ticker } from "@/components/site/ticker";
 import { About } from "@/components/site/about";
@@ -15,6 +16,7 @@ import { Newsletter } from "@/components/site/newsletter";
 import { Contact } from "@/components/site/contact";
 import { FAQ } from "@/components/site/faq";
 import { Testimonials } from "@/components/site/testimonials";
+import { ClientTestimonials } from "@/components/site/client-testimonials";
 import { DiasporaSection } from "@/components/site/diaspora-section";
 import { WhatsAppFloat } from "@/components/site/whatsapp-float";
 import { PropertyDetailModal } from "@/components/site/property-detail-modal";
@@ -37,6 +39,7 @@ export default function Home() {
 
       <main id="main" className="flex-1">
         <Hero />
+        <PressStrip />
         <StatsBar />
         <Ticker />
         <About />
@@ -46,6 +49,7 @@ export default function Home() {
         <Quote />
         <DiasporaSection />
         <Testimonials />
+        <ClientTestimonials />
         <FAQ />
         <Newsletter />
         <Contact />

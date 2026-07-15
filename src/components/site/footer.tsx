@@ -36,9 +36,21 @@ export function Footer() {
                 </small>
               </div>
             </Link>
-            <p className="mt-5 max-w-[280px] text-[13px] font-light leading-[1.85] text-white/35">
+            <p className="mt-5 max-w-[280px] text-[13px] font-light leading-[1.85] text-white/50">
               Your trusted partner in the journey towards home ownership. Premium real estate development and investment in Lagos, Nigeria.
             </p>
+            {/* Trust badges */}
+            <div className="mt-5 flex flex-wrap gap-2">
+              <span className="inline-flex items-center gap-1.5 border border-white/10 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.14em] text-white/60">
+                RC 7233410
+              </span>
+              <span className="inline-flex items-center gap-1.5 border border-white/10 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.14em] text-white/60">
+                Licensed Surveyors
+              </span>
+              <span className="inline-flex items-center gap-1.5 border border-white/10 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.14em] text-white/60">
+                Est. 2019
+              </span>
+            </div>
             <div className="mt-6 flex gap-3">
               {socialLinks.map((social) => (
                 <a

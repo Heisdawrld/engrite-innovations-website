@@ -39,11 +39,25 @@ export type Property = {
   features: string[];
   paymentSchedule: PropertyPaymentTier[];
   tourScenes: PropertyTourScene[];
-  // Matterport 360° tour — when you provide a Matterport showcase URL,
-  // the Virtual Tour tab will embed it instead of the Pannellum fallback.
-  // Format: "https://my.matterport.com/show/?m=XXXXXXXX"
-  // Leave as null/undefined to use the image-based fallback tour.
+  // === VIRTUAL TOUR OPTIONS (set ONE of these — priority order below) ===
+  //
+  // 1. matterportUrl — paste a Matterport showcase URL for a true 360° tour.
+  //    Format: "https://my.matterport.com/show/?m=XXXXXXXX"
+  //    Best quality. Get this from a Matterport scan of the property.
+  //
+  // 2. videoUrl — paste a video link (MP4 / YouTube / Vimeo).
+  //    Examples:
+  //      "https://example.com/tour.mp4"           (direct MP4)
+  //      "https://www.youtube.com/watch?v=XXXXX"  (YouTube)
+  //      "https://vimeo.com/XXXXXX"               (Vimeo)
+  //    Easy to produce — just film a walkthrough and upload.
+  //
+  // 3. tourScenes — leave as-is; the gallery images above are used as a
+  //    clean carousel fallback (no warping). Works with any photos.
+  //
+  // To upgrade: just paste a URL into matterportUrl or videoUrl. No code changes.
   matterportUrl?: string;
+  videoUrl?: string;
   completionDate: string;
   startingPrice: number;
   annualReturn: number;

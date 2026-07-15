@@ -7,6 +7,59 @@ export type Testimonial = {
   outcomes: { label: string; value: string }[];
 };
 
+// ============================================================================
+// CLIENT TESTIMONIALS — REAL CLIENTS WITH PHOTOS
+// ============================================================================
+// To add a real client testimonial:
+//   1. Drop the client's photo into public/img/testimonials/ (e.g. chidi.jpg)
+//   2. Add an entry to CLIENT_TESTIMONIALS below with the photo path + details
+//
+// The photo should be a square headshot (min 200×200px, ideally 400×400)
+// ============================================================================
+
+export type ClientTestimonial = {
+  id: string;
+  name: string;
+  location: string;          // e.g. "Lagos, Nigeria" or "London, UK"
+  role: string;              // e.g. "Diaspora Investor" or "Homeowner"
+  photo: string;             // path to photo in /public/img/testimonials/
+  property?: string;         // which property they bought (optional)
+  quote: string;             // the testimonial quote
+  rating?: number;           // 1-5 (defaults to 5)
+};
+
+export const CLIENT_TESTIMONIALS: ClientTestimonial[] = [
+  // PLACEHOLDER — replace with real client testimonials when photos arrive.
+  // Example structure (commented out — uncomment and fill when ready):
+  //
+  // {
+  //   id: "ct1",
+  //   name: "Chidi Okafor",
+  //   location: "London, UK",
+  //   role: "Diaspora Investor",
+  //   photo: "/img/testimonials/chidi.jpg",
+  //   property: "Sinai Residence — 1BR + Home Office",
+  //   quote: "I bought my Sinai Residence unit entirely from London. The team handled everything — documents, video tours, electronic signing. I now earn rental income quarterly without lifting a finger.",
+  //   rating: 5,
+  // },
+  //
+  // {
+  //   id: "ct2",
+  //   name: "Amina Bello",
+  //   location: "Abuja, Nigeria",
+  //   role: "Homeowner",
+  //   photo: "/img/testimonials/amina.jpg",
+  //   property: "Sinai Spaces — Studio Premium",
+  //   quote: "As a first-time buyer, I was nervous. Engrite's surveyor-led approach gave me confidence in the title and the build quality. My studio is now my Lagos base when I visit from Abuja.",
+  //   rating: 5,
+  // },
+];
+
+// ============================================================================
+// USE-CASE SCENARIOS (existing — these are NOT client testimonials,
+// they're investment scenarios drawn from Engrite's published content)
+// ============================================================================
+
 // These are REAL use-case scenarios Engrite promotes across their Instagram content.
 // They are not attributed to specific named individuals (Engrite does not publish
 // named testimonials on their public channels), but each scenario is drawn directly
