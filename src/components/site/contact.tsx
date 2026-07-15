@@ -35,13 +35,13 @@ export function Contact() {
     setForm((f) => ({ ...f, [field]: value }));
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!form.firstName || !form.lastName || !form.email) return;
+    // Don't preventDefault — let the form submit natively to Netlify Forms.
+    // We only set loading state for UX. The native POST goes through regardless.
+    if (!form.firstName || !form.lastName || !form.email) {
+      e.preventDefault();
+      return;
+    }
     setLoading(true);
-    // Submit natively so Netlify Forms intercepts the POST.
-    // Static fallback form in public/__forms.html guarantees build-time detection.
-    const formEl = e.currentTarget as HTMLFormElement;
-    formEl.submit();
   };
 
   return (
@@ -131,6 +131,8 @@ export function Contact() {
             >
               {/* Honeypot — hidden from humans, bots will fill it */}
               <input type="text" name="botField" className="sr-only" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+              {/* form-name tells Netlify which form was submitted */}
+              <input type="hidden" name="form-name" value="contact" />
               {/* Hidden input to serialize the Radix Select value (which doesn't render a native <select>) */}
               <input type="hidden" name="interest" value={form.interest} />
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">

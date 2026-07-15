@@ -17,14 +17,13 @@ export function Newsletter() {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!name || !email) return;
+    // Don't preventDefault — let the form submit natively to Netlify Forms.
+    // We only set loading state for UX. The native POST goes through regardless.
+    if (!name || !email) {
+      e.preventDefault();
+      return;
+    }
     setLoading(true);
-    // Submit the form natively so Netlify Forms intercepts the POST.
-    // The hidden static form in public/__forms.html guarantees Netlify
-    // detects this form at build time even though this is a client component.
-    const form = e.currentTarget as HTMLFormElement;
-    form.submit();
   };
 
   return (
@@ -59,6 +58,8 @@ export function Newsletter() {
         <form method="POST" data-netlify="true" netlify-honeypot="botField" name="newsletter" action="/thank-you" onSubmit={handleSubmit} className="mt-8 flex max-w-md flex-col gap-3" aria-label="Newsletter signup">
           {/* Honeypot — hidden from humans, bots will fill it */}
           <input type="text" name="botField" className="sr-only" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+          {/* form-name tells Netlify which form was submitted */}
+          <input type="hidden" name="form-name" value="newsletter" />
           <div className="space-y-1.5">
             <Label htmlFor="nl-name" className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">
               {t("newsletter.placeholder.name")}
