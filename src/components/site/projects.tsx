@@ -52,6 +52,7 @@ export function Projects({
         <div className="grid grid-cols-1 gap-5 px-4 sm:gap-6 sm:px-6 md:grid-cols-2 lg:grid-cols-3 lg:px-10">
           {PROPERTIES.map((property, idx) => {
             const fav = isFavorite(property.slug);
+            const hasTour = !!(property.matterportUrl || property.videoUrl);
             return (
               <ScrollReveal
                 key={property.slug}
@@ -138,17 +139,28 @@ export function Projects({
                       View Details
                       <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1.5" />
                     </button>
-                    <button
-                      onClick={() => onTakeTour(property.slug)}
-                      className="group/tour relative flex items-center justify-center gap-1.5 overflow-hidden bg-[#2BA84A] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-[#239540] hover:shadow-[0_8px_24px_rgba(43,168,74,0.4)]"
-                      aria-label={`Take virtual tour of ${property.name}`}
-                    >
-                      <Eye className="h-3.5 w-3.5" />
-                      Tour
-                      <span className="ml-1 hidden text-[9px] font-medium tracking-[0.14em] text-white/70 sm:inline">
-                        · 360°
-                      </span>
-                    </button>
+                    {hasTour ? (
+                      <button
+                        onClick={() => onTakeTour(property.slug)}
+                        className="group/tour relative flex items-center justify-center gap-1.5 overflow-hidden bg-[#2BA84A] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-[#239540] hover:shadow-[0_8px_24px_rgba(43,168,74,0.4)]"
+                        aria-label={`Take virtual tour of ${property.name}`}
+                      >
+                        <Eye className="h-3.5 w-3.5" />
+                        Tour
+                        <span className="ml-1 hidden text-[9px] font-medium tracking-[0.14em] text-white/70 sm:inline">
+                          · 360°
+                        </span>
+                      </button>
+                    ) : (
+                      <button
+                        onClick={() => onTakeTour(property.slug)}
+                        className="group/tour relative flex items-center justify-center gap-1.5 overflow-hidden border border-[rgba(16,35,87,0.2)] bg-white px-5 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#102357] transition-all hover:border-[#102357] hover:bg-[#f4f6fb]"
+                        aria-label={`Book a site visit for ${property.name}`}
+                      >
+                        <Eye className="h-3.5 w-3.5" />
+                        Site Visit
+                      </button>
+                    )}
                   </div>
                 </div>
               </ScrollReveal>

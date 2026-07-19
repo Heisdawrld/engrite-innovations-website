@@ -1,0 +1,341 @@
+# Decap CMS Configuration
+# Docs: https://decapcms.org/docs/configuration-options/
+
+# Use Netlify Identity for email/password auth (no GitHub account needed by client)
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: "Create {{collection}} entry — {{slug}}"
+    update: "Update {{collection}} entry — {{slug}}"
+    delete: "Delete {{collection}} entry — {{slug}}"
+    uploadMedia: "Upload media asset"
+    deleteMedia: "Delete media asset"
+
+# Use Netlify Large Media for image uploads (saved to repo /uploads/)
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+# Show site URL in CMS UI for easy preview
+site_url: https://engriteinnovations.com
+
+# Show preview panel on the right side
+publish_mode: editorial_workflow
+
+# Friendly UI
+locale: en
+
+collections:
+  # ============================================================
+  # PROPERTIES — the main collection
+  # ============================================================
+  - name: "properties"
+    label: "Properties"
+    label_singular: "Property"
+    folder: "content/properties"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    summary: "{{name}} — {{location}} ({{statusLabel}})"
+    sortable_fields: ["name", "status", "startingPrice"]
+    view_filters:
+      - label: "Active Selling"
+        field: status
+        pattern: "under-construction"
+      - label: "Sample Units Open"
+        field: status
+        pattern: "sample-units-open"
+      - label: "Off-Plan"
+        field: status
+        pattern: "off-plan"
+      - label: "Last Units"
+        field: status
+        pattern: "last-units"
+    fields:
+      - { name: "slug", label: "URL Slug (auto from name)", widget: "string", hint: "Used in URLs — keep it short, lowercase, no spaces (e.g. sinai-spaces)" }
+      - { name: "name", label: "Property Name", widget: "string" }
+      - { name: "tagline", label: "Tagline", widget: "string" }
+      - name: "status"
+        label: "Status"
+        widget: "select"
+        options:
+          - { label: "Under Construction", value: "under-construction" }
+          - { label: "Sample Units Open", value: "sample-units-open" }
+          - { label: "Off-Plan", value: "off-plan" }
+          - { label: "Last Units Remaining", value: "last-units" }
+        default: "under-construction"
+      - { name: "statusLabel", label: "Status Label (shown to users)", widget: "string", default: "Active Selling" }
+      - { name: "image", label: "Card Image", widget: "image", hint: "Main photo shown on property card (landscape orientation, 1200×900 recommended)" }
+      - name: "gallery"
+        label: "Photo Gallery"
+        widget: "list"
+        min: 1
+        field: { name: "image", label: "Image", widget: "image" }
+        hint: "Photos shown in the property detail view. Add at least 3."
+      - { name: "location", label: "Location", widget: "string", hint: "Full address or area name (e.g. Akoka, Yaba, Lagos)" }
+      - { name: "mapEmbed", label: "Google Map Embed URL", widget: "string", hint: "Get this from Google Maps → Share → Embed → copy the src URL" }
+      - { name: "shortDesc", label: "Short Description (card text)", widget: "text", hint: "1-2 sentence summary shown on the property card" }
+      - { name: "description", label: "Full Description", widget: "markdown", hint: "Detailed description shown on the property detail page" }
+      - name: "tags"
+        label: "Property Tags (shown on card)"
+        widget: "list"
+        field: { name: "tag", label: "Tag", widget: "string" }
+        hint: "Short labels like '17yr Lease', 'Smart Home', etc. Max 4."
+      - name: "units"
+        label: "Available Units & Pricing"
+        widget: "list"
+        fields:
+          - { name: "name", label: "Unit Name", widget: "string" }
+          - { name: "price", label: "Price (NGN)", widget: "number", value_type: "int", min: 0 }
+          - { name: "size", label: "Size / Layout", widget: "string" }
+          - { name: "rentalYield", label: "Rental Yield Range", widget: "string", hint: "e.g. ₦2–3M/yr" }
+          - name: "features"
+            label: "Unit Features"
+            widget: "list"
+            field: { name: "feature", label: "Feature", widget: "string" }
+      - name: "amenities"
+        label: "Property Amenities"
+        widget: "list"
+        field: { name: "amenity", label: "Amenity", widget: "string" }
+        hint: "Building-wide amenities (pool, gym, parking, etc.)"
+      - name: "features"
+        label: "Property Features"
+        widget: "list"
+        field: { name: "feature", label: "Feature", widget: "string" }
+        hint: "Highlight badges shown on the detail page"
+      - name: "paymentSchedule"
+        label: "Payment Schedule (Milestone-based)"
+        widget: "list"
+        fields:
+          - { name: "milestone", label: "Milestone Name", widget: "string" }
+          - { name: "percentage", label: "Percentage %", widget: "number", value_type: "int", min: 0, max: 100 }
+          - { name: "description", label: "Description", widget: "string" }
+      - name: "tourScenes"
+        label: "Virtual Tour Scenes (image fallback)"
+        widget: "list"
+        required: false
+        hint: "Used only when no video/Matterport URL is set. Each scene is a 360° panorama image."
+        fields:
+          - { name: "id", label: "Scene ID", widget: "string" }
+          - { name: "title", label: "Scene Title", widget: "string" }
+          - { name: "image", label: "Scene Image", widget: "image" }
+      - { name: "completionDate", label: "Completion / Availability Note", widget: "string", hint: "e.g. 'Active Selling — Units Available' or 'Off-Plan — 12-Month Build Cycle'" }
+      - { name: "startingPrice", label: "Starting Price (NGN)", widget: "number", value_type: "int", min: 0 }
+      - { name: "annualReturn", label: "Annual Return %", widget: "number", value_type: "float", min: 0, max: 100, step: 0.1 }
+      - { name: "videoUrl", label: "Walkthrough Video URL (optional)", widget: "string", required: false, hint: "YouTube, Vimeo, or direct MP4 link. Leave blank if not yet filmed." }
+      - { name: "matterportUrl", label: "360° Matterport URL (optional)", widget: "string", required: false, hint: "Leave blank unless you have a Matterport showcase URL." }
+      - name: "useCases"
+        label: "Use Cases"
+        widget: "list"
+        required: false
+        field: { name: "useCase", label: "Use Case", widget: "string" }
+      - name: "valuePillars"
+        label: "Value Pillars"
+        widget: "list"
+        required: false
+        field: { name: "pillar", label: "Pillar", widget: "string" }
+        hint: "e.g. Efficiency, Safety, Comfort"
+
+  # ============================================================
+  # FAQs
+  # ============================================================
+  - name: "faqs"
+    label: "FAQs"
+    label_singular: "FAQ"
+    folder: "content/faqs"
+    create: true
+    delete: true
+    summary: "{{question}}"
+    sortable_fields: ["order", "category"]
+    view_filters:
+      - label: "Investment"
+        field: category
+        pattern: "investment"
+      - label: "Legal"
+        field: category
+        pattern: "legal"
+      - label: "Property"
+        field: category
+        pattern: "property"
+      - label: "Diaspora"
+        field: category
+        pattern: "diaspora"
+      - label: "General"
+        field: category
+        pattern: "general"
+    fields:
+      - { name: "id", label: "ID (auto)", widget: "string", hint: "Short unique ID like f1, f2, f3…" }
+      - { name: "question", label: "Question", widget: "string" }
+      - { name: "answer", label: "Answer", widget: "markdown" }
+      - name: "category"
+        label: "Category"
+        widget: "select"
+        options: ["investment", "legal", "property", "diaspora", "general"]
+        default: "general"
+      - { name: "order", label: "Display Order", widget: "number", default: 1, hint: "Lower numbers appear first" }
+
+  # ============================================================
+  # TESTIMONIALS (use-case scenarios)
+  # ============================================================
+  - name: "testimonials"
+    label: "Use-Case Scenarios"
+    label_singular: "Scenario"
+    folder: "content/testimonials"
+    create: true
+    delete: true
+    summary: "{{title}} ({{category}})"
+    fields:
+      - { name: "id", label: "ID (auto)", widget: "string" }
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "scenario", label: "Scenario Subtitle", widget: "string" }
+      - { name: "description", label: "Description", widget: "markdown" }
+      - name: "category"
+        label: "Category"
+        widget: "select"
+        options: ["live", "earn", "shortlet", "diaspora", "realtor"]
+        default: "earn"
+      - name: "outcomes"
+        label: "Outcome Highlights"
+        widget: "list"
+        fields:
+          - { name: "label", label: "Label", widget: "string" }
+          - { name: "value", label: "Value", widget: "string" }
+
+  # ============================================================
+  # CLIENT TESTIMONIALS (real client quotes with photos)
+  # ============================================================
+  - name: "client-testimonials"
+    label: "Client Testimonials"
+    label_singular: "Client Testimonial"
+    folder: "content/client-testimonials"
+    create: true
+    delete: true
+    summary: "{{name}} — {{role}}"
+    fields:
+      - { name: "name", label: "Client Name", widget: "string" }
+      - { name: "location", label: "Location", widget: "string", hint: "e.g. Lagos, Nigeria or London, UK" }
+      - { name: "role", label: "Role / Title", widget: "string", hint: "e.g. Diaspora Investor or Homeowner" }
+      - { name: "photo", label: "Photo", widget: "image", hint: "Square headshot, min 400×400px" }
+      - { name: "property", label: "Property They Bought (optional)", widget: "string", required: false }
+      - { name: "quote", label: "Testimonial Quote", widget: "text" }
+      - { name: "rating", label: "Star Rating (1-5)", widget: "number", default: 5, min: 1, max: 5 }
+      - { name: "featured", label: "Feature on Homepage?", widget: "boolean", default: true }
+
+  # ============================================================
+  # BLOG POSTS
+  # ============================================================
+  - name: "blog"
+    label: "Blog Posts"
+    label_singular: "Blog Post"
+    folder: "content/blog"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    summary: "{{title}} — {{date}}"
+    sortable_fields: ["date", "title"]
+    view_filters:
+      - label: "Published in 2026"
+        field: date
+        pattern: "2026"
+    fields:
+      - { name: "slug", label: "URL Slug", widget: "string", hint: "Lowercase with dashes, e.g. why-lagos-2026-outperforms" }
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "excerpt", label: "Excerpt (summary)", widget: "text", hint: "1-2 sentence summary shown on the blog listing" }
+      - name: "category"
+        label: "Category"
+        widget: "select"
+        options: ["investment", "market", "diaspora", "guide", "company"]
+        default: "market"
+      - { name: "date", label: "Publish Date", widget: "datetime" }
+      - { name: "readTime", label: "Read Time", widget: "string", hint: "e.g. '7 min read'" }
+      - { name: "author", label: "Author", widget: "string", default: "Engrite Innovations" }
+      - { name: "cover", label: "Cover Image", widget: "image" }
+      - { name: "body", label: "Article Body", widget: "markdown" }
+
+  # ============================================================
+  # SITE SETTINGS (singleton — global contact info, hero text, etc.)
+  # ============================================================
+  - name: "settings"
+    label: "Site Settings"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "site"
+        label: "Site-Wide Settings"
+        file: "content/settings/site.md"
+        description: "Contact info, hero text, social links, and global stats. Edits here update the entire site."
+        fields:
+          - name: "company"
+            label: "Company Information"
+            widget: "object"
+            fields:
+              - { name: "name", label: "Company Name", widget: "string" }
+              - { name: "legalName", label: "Legal Name", widget: "string" }
+              - { name: "rcNumber", label: "RC Number", widget: "string" }
+              - { name: "tagline", label: "Tagline", widget: "string" }
+              - { name: "established", label: "Year Established", widget: "string" }
+              - { name: "description", label: "Company Description", widget: "text" }
+          - name: "contact"
+            label: "Contact Information"
+            widget: "object"
+            fields:
+              - { name: "phonePrimary", label: "Primary Phone", widget: "string" }
+              - { name: "phoneSecondary", label: "Secondary Phone", widget: "string" }
+              - { name: "email", label: "Email Address", widget: "string" }
+              - { name: "address", label: "Office Address", widget: "text" }
+              - { name: "whatsappNumber", label: "WhatsApp Number (no + or spaces)", widget: "string", hint: "e.g. 2348130665862" }
+              - { name: "hours", label: "Business Hours", widget: "string" }
+          - name: "social"
+            label: "Social Media Links"
+            widget: "object"
+            fields:
+              - { name: "instagram", label: "Instagram URL", widget: "string" }
+              - { name: "linkedin", label: "LinkedIn URL", widget: "string" }
+              - { name: "facebook", label: "Facebook URL", widget: "string" }
+          - name: "hero"
+            label: "Homepage Hero Section"
+            widget: "object"
+            fields:
+              - { name: "eyebrow", label: "Eyebrow Text", widget: "string" }
+              - { name: "titleLine1", label: "Title Line 1", widget: "string" }
+              - { name: "titleLine2", label: "Title Line 2", widget: "string" }
+              - { name: "titleLine3", label: "Title Line 3", widget: "string" }
+              - { name: "subtitle", label: "Subtitle", widget: "text" }
+              - { name: "primaryCta", label: "Primary Button Text", widget: "string" }
+              - { name: "secondaryCta", label: "Secondary Button Text", widget: "string" }
+          - name: "stats"
+            label: "Homepage Stats Bar"
+            widget: "object"
+            hint: "The four statistics shown below the hero section"
+            fields:
+              - { name: "annualReturn", label: "Annual Return Value", widget: "string" }
+              - { name: "annualReturnLabel", label: "Annual Return Label", widget: "string" }
+              - { name: "leaseTerm", label: "Lease Term Value", widget: "string" }
+              - { name: "leaseTermLabel", label: "Lease Term Label", widget: "string" }
+              - { name: "activeProjects", label: "Active Projects Value", widget: "string" }
+              - { name: "activeProjectsLabel", label: "Active Projects Label", widget: "string" }
+              - { name: "legalFees", label: "Legal Fees Value", widget: "string" }
+              - { name: "legalFeesLabel", label: "Legal Fees Label", widget: "string" }
+          - name: "founder"
+            label: "Founder / CEO Section"
+            widget: "object"
+            fields:
+              - { name: "name", label: "Name", widget: "string" }
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "role", label: "Role / Specialty", widget: "string" }
+              - { name: "education", label: "Education", widget: "string" }
+              - { name: "location", label: "Location", widget: "string" }
+          - name: "diaspora"
+            label: "Diaspora Section"
+            widget: "object"
+            fields:
+              - { name: "title", label: "Section Title", widget: "string" }
+              - { name: "description", label: "Section Description", widget: "text" }
+              - { name: "closingTime", label: "Closing Time", widget: "string" }
+          - name: "footer"
+            label: "Footer Settings"
+            widget: "object"
+            fields:
+              - { name: "aboutBlurb", label: "About Blurb", widget: "text" }
+              - { name: "copyright", label: "Copyright Text", widget: "string" }

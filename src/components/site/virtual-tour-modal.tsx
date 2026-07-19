@@ -93,23 +93,25 @@ export function VirtualTourModal({ slug, onClose }: VirtualTourModalProps) {
       />
 
       {/* Header bar */}
-      <header className="relative z-10 flex items-center justify-between gap-4 px-4 py-4 sm:px-8 sm:py-5">
-        <div className="flex min-w-0 flex-1 items-center gap-3 text-white">
-          <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#2BA84A]/15 ring-1 ring-[#2BA84A]/40">
+      <header className="relative z-10 flex items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-8 sm:py-5">
+        <div className="flex min-w-0 flex-1 items-center gap-2.5 text-white sm:gap-3">
+          <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#2BA84A]/15 ring-1 ring-[#2BA84A]/40 sm:h-10 sm:w-10">
             <Eye className="h-4 w-4 text-[#7fd89a]" />
           </div>
           <div className="min-w-0">
             <div
               id="virtual-tour-title"
-              className="truncate font-serif text-lg leading-tight sm:text-xl"
+              className="truncate font-serif text-base leading-tight sm:text-xl"
             >
               {property.name}
             </div>
-            <div className="flex items-center gap-1.5 text-[11px] uppercase tracking-[0.18em] text-white/55">
-              <MapPin className="h-3 w-3 text-[#7fd89a]" />
+            <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.16em] text-white/60 sm:text-[11px] sm:tracking-[0.18em] sm:text-white/55">
+              <MapPin className="h-3 w-3 flex-shrink-0 text-[#7fd89a]" />
               <span className="truncate">{property.location}</span>
               <span className="text-white/30">·</span>
-              <span className="text-[#7fd89a]">360° Virtual Tour</span>
+              <span className="flex-shrink-0 text-[#7fd89a]">
+                {hasMatterport ? "360° Tour" : hasVideo ? "Video Tour" : "Site Visit"}
+              </span>
             </div>
           </div>
         </div>
@@ -136,19 +138,19 @@ export function VirtualTourModal({ slug, onClose }: VirtualTourModalProps) {
         </div>
       </header>
 
-      {/* Tour viewport */}
-      <div className="relative z-10 flex flex-1 items-center justify-center px-4 pb-4 sm:px-8 sm:pb-8">
+      {/* Tour viewport — on mobile portrait, fill available height for immersion.
+          On sm+ screens, lock to 16:9 for cinematic feel. */}
+      <div className="relative z-10 flex flex-1 items-stretch justify-center px-3 pb-3 sm:items-center sm:px-8 sm:pb-8">
         <div
-          className={`relative w-full max-w-[1400px] overflow-hidden rounded-lg bg-[#0d1a40] shadow-[0_30px_80px_rgba(0,0,0,0.6)] transition-all duration-700 ${
+          className={`relative w-full max-w-[1400px] overflow-hidden bg-[#0d1a40] shadow-[0_30px_80px_rgba(0,0,0,0.6)] transition-all duration-700 sm:rounded-lg ${
             animating ? "translate-y-0 scale-100 opacity-100" : "translate-y-4 scale-[0.98] opacity-0"
-          }`}
-          style={{ aspectRatio: "16 / 9" }}
+          } sm:aspect-video`}
         >
           {hasMatterport ? (
             <iframe
               key={property.slug}
               src={embedUrl}
-              className="h-full w-full"
+              className="absolute inset-0 h-full w-full"
               style={{ border: 0 }}
               title={`${property.name} — 360° Matterport Virtual Tour`}
               loading="eager"
@@ -161,14 +163,14 @@ export function VirtualTourModal({ slug, onClose }: VirtualTourModalProps) {
               controls
               autoPlay
               playsInline
-              className="h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover"
             />
           ) : (
-            <div className="flex h-full w-full flex-col items-center justify-center gap-3 px-6 text-center text-white/70">
+            <div className="absolute inset-0 flex h-full w-full flex-col items-center justify-center gap-3 px-6 text-center text-white/70">
               <Maximize2 className="h-10 w-10 text-white/30" />
-              <p className="font-serif text-lg text-white/90">Virtual tour coming soon</p>
+              <p className="font-serif text-lg text-white/90">Walkthrough coming soon</p>
               <p className="max-w-md text-sm text-white/55">
-                A 360° Matterport walkthrough for {property.name} is being prepared.
+                A live video walkthrough of {property.name} is being filmed.
                 In the meantime, book a site visit to see this property in person.
               </p>
               <a
@@ -189,9 +191,9 @@ export function VirtualTourModal({ slug, onClose }: VirtualTourModalProps) {
 
           {/* Floating hint badge (only when Matterport is active) */}
           {hasMatterport && (
-            <div className="pointer-events-none absolute bottom-4 left-4 z-10 flex items-center gap-2 rounded-full bg-black/60 px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] text-white/85 backdrop-blur">
+            <div className="pointer-events-none absolute bottom-3 left-3 z-10 flex items-center gap-2 rounded-full bg-black/60 px-2.5 py-1.5 text-[9px] uppercase tracking-[0.16em] text-white/85 backdrop-blur sm:bottom-4 sm:left-4 sm:px-3 sm:text-[10px] sm:tracking-[0.18em]">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#7fd89a]" />
-              Drag to look · Click floorplan to navigate
+              Drag to look · Tap floorplan to navigate
             </div>
           )}
         </div>

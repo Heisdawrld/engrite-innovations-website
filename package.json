@@ -3,9 +3,10 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3000 2>&1 | tee dev.log",
+    "dev": "node scripts/generate-content.js && next dev -p 3000 2>&1 | tee dev.log",
+    "prebuild": "node scripts/generate-content.js",
     "build": "next build",
-    "build:netlify": "next build",
+    "build:netlify": "node scripts/generate-content.js && next build",
     "start": "bunx serve out/ -l 3000",
     "lint": "eslint .",
     "postinstall": ""
@@ -22,6 +23,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.6.0",
+    "gray-matter": "^4.0.3",
     "lucide-react": "^0.525.0",
     "next": "^16.1.1",
     "react": "^19.0.0",
