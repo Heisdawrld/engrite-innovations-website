@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "./logo";
+import { CurrentYear } from "./current-year";
 import { Instagram, Linkedin, Facebook } from "lucide-react";
 
 const socialLinks = [
@@ -48,7 +49,7 @@ export function Footer() {
                 Licensed Surveyors
               </span>
               <span className="inline-flex items-center gap-1.5 border border-white/10 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.14em] text-white/60">
-                Est. 2019
+                Est. 2020
               </span>
             </div>
             <div className="mt-6 flex gap-3">
@@ -117,7 +118,7 @@ export function Footer() {
 
       <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 bg-[#239540] px-4 py-5 text-center sm:flex-row sm:px-10 sm:text-left">
         <p className="text-[11px] font-light text-white/60">
-          © {new Date().getFullYear()} Engrite Innovations Ltd. All rights reserved. · 27 Montgomery Street, Yaba, Lagos
+          © <CurrentYear /> Engrite Innovations Ltd. All rights reserved. · 27 Montgomery Street, Yaba, Lagos
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4 text-[11px]">
           <span className="font-serif text-[13px] italic text-white/60">Building Dreams, Shaping Cities.</span>

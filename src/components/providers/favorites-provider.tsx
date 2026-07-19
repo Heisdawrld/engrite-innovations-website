@@ -5,6 +5,8 @@ import {
   useContext,
   useState,
   useEffect,
+  useCallback,
+  useMemo,
   ReactNode,
 } from "react";
 
@@ -19,37 +21,58 @@ const FavoritesContext = createContext<FavoritesContextValue | undefined>(
   undefined,
 );
 
+const STORAGE_KEY = "engrite-favorites";
+
 export function FavoritesProvider({ children }: { children: ReactNode }) {
   const [favorites, setFavorites] = useState<string[]>([]);
+  const [hydrated, setHydrated] = useState(false);
 
+  // Load saved favorites on mount. Hydrating from localStorage after mount
+  // is intentional — it avoids SSR/first-paint mismatches on static export.
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     try {
-      const stored = localStorage.getItem("engrite-favorites");
+      const stored = localStorage.getItem(STORAGE_KEY);
       if (stored) {
-        // eslint-disable-next-line react-hooks/set-state-in-effect
         setFavorites(JSON.parse(stored));
       }
     } catch {
       // ignore parse errors
     }
+    setHydrated(true);
+  }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
+
+  // Persist whenever favorites change (after hydration)
+  useEffect(() => {
+    if (!hydrated) return;
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites));
+    } catch {
+      // storage may be unavailable (private mode, etc.)
+    }
+  }, [favorites, hydrated]);
+
+  const toggleFavorite = useCallback((slug: string) => {
+    setFavorites((prev) =>
+      prev.includes(slug)
+        ? prev.filter((s) => s !== slug)
+        : [...prev, slug],
+    );
   }, []);
 
-  const toggleFavorite = (slug: string) => {
-    setFavorites((prev) => {
-      const next = prev.includes(slug)
-        ? prev.filter((s) => s !== slug)
-        : [...prev, slug];
-      localStorage.setItem("engrite-favorites", JSON.stringify(next));
-      return next;
-    });
-  };
+  const isFavorite = useCallback(
+    (slug: string) => favorites.includes(slug),
+    [favorites],
+  );
 
-  const isFavorite = (slug: string) => favorites.includes(slug);
+  const value = useMemo<FavoritesContextValue>(
+    () => ({ favorites, toggleFavorite, isFavorite, count: favorites.length }),
+    [favorites, toggleFavorite, isFavorite],
+  );
 
   return (
-    <FavoritesContext.Provider
-      value={{ favorites, toggleFavorite, isFavorite, count: favorites.length }}
-    >
+    <FavoritesContext.Provider value={value}>
       {children}
     </FavoritesContext.Provider>
   );

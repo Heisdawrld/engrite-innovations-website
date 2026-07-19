@@ -22,15 +22,20 @@ export function ScrollReveal({
     const el = ref.current;
     if (!el) return;
 
-    // Failsafe: force visibility after 4s if JS observer somehow fails
-    const failsafe = setTimeout(() => {
-      if (!visible) setVisible(true);
-    }, 4000);
+    let triggered = false;
+    const reveal = () => {
+      if (triggered) return;
+      triggered = true;
+      setVisible(true);
+    };
+
+    // Failsafe: force visibility after 4s if the IntersectionObserver never fires
+    const failsafe = setTimeout(reveal, 4000);
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setVisible(true);
+          reveal();
           observer.disconnect();
           clearTimeout(failsafe);
         }

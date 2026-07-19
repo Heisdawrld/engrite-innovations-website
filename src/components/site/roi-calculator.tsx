@@ -22,7 +22,7 @@ const PROPERTY_PRESETS = [
 ];
 
 export function ROICalculator() {
-  const { format, convert, currency } = useCurrency();
+  const { format, currency } = useCurrency();
   const [purchasePrice, setPurchasePrice] = useState(40_000_000);
   const [downPaymentPct, setDownPaymentPct] = useState(30);
   const [leaseYears, setLeaseYears] = useState(17);

@@ -5,6 +5,8 @@ import {
   useContext,
   useState,
   useEffect,
+  useCallback,
+  useMemo,
   ReactNode,
 } from "react";
 import { Language, translations } from "@/lib/i18n";
@@ -19,13 +21,17 @@ const LanguageContext = createContext<LanguageContextValue | undefined>(
   undefined,
 );
 
+const STORAGE_KEY = "engrite-lang";
+
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Language>("en");
 
+  // Hydrating from localStorage after mount avoids SSR/first-paint mismatches
+  // on static export.
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
-    const stored = localStorage.getItem("engrite-lang") as Language | null;
+    const stored = localStorage.getItem(STORAGE_KEY) as Language | null;
     if (stored && translations[stored]) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLangState(stored);
       document.documentElement.lang = stored;
       return;
@@ -38,17 +44,26 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       document.documentElement.lang = urlLang;
     }
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
-  const setLang = (l: Language) => {
+  const setLang = useCallback((l: Language) => {
     setLangState(l);
-    localStorage.setItem("engrite-lang", l);
+    try {
+      localStorage.setItem(STORAGE_KEY, l);
+    } catch {
+      // ignore storage errors
+    }
     document.documentElement.lang = l;
-  };
+  }, []);
 
-  const t = (key: string) => translations[lang][key] ?? translations.en[key] ?? key;
+  const value = useMemo<LanguageContextValue>(() => {
+    const t = (key: string) =>
+      translations[lang][key] ?? translations.en[key] ?? key;
+    return { lang, setLang, t };
+  }, [lang, setLang]);
 
   return (
-    <LanguageContext.Provider value={{ lang, setLang, t }}>
+    <LanguageContext.Provider value={value}>
       {children}
     </LanguageContext.Provider>
   );

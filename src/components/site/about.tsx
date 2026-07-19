@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { ScrollReveal } from "./scroll-reveal";
-import { useLanguage } from "@/components/providers/language-provider";
 import { MapPin, GraduationCap, Hammer, Clock, ShieldCheck, Search } from "lucide-react";
 
 const values = [
@@ -36,8 +35,6 @@ const servicePromises = [
 ];
 
 export function About() {
-  const { t } = useLanguage();
-
   return (
     <section id="about" className="scroll-mt-[100px] py-20 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
@@ -114,8 +111,8 @@ export function About() {
               </div>
             </div>
 
-            {/* Stats badge — hidden on mobile to avoid overlap, shown from sm up */}
-            <div className="absolute -bottom-5 -left-4 z-10 hidden border-l-[3px] border-[#2BA84A] bg-[#102357] px-6 py-5 shadow-[0_14px_40px_rgba(8,21,52,0.25)] sm:block">
+            {/* Stats badge — placed below the photo (no overlap with founder image) */}
+            <div className="absolute -bottom-5 right-4 z-10 hidden border-l-[3px] border-[#2BA84A] bg-[#102357] px-6 py-5 shadow-[0_14px_40px_rgba(8,21,52,0.25)] sm:block">
               <span className="block font-serif text-[40px] font-normal leading-none text-[#7fd89a]">
                 3
               </span>

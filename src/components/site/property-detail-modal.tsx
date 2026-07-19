@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import {
   Dialog,
@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { Heart, MapPin, Calendar, TrendingUp, Phone, Mail, Eye } from "lucide-react";
+import { Heart, MapPin, Calendar, TrendingUp, Eye, X } from "lucide-react";
 import { getProperty } from "@/lib/properties";
 import { useCurrency } from "@/components/providers/currency-provider";
 import { useFavorites } from "@/components/providers/favorites-provider";
@@ -27,11 +27,14 @@ export function PropertyDetailModal({ slug, onClose }: PropertyDetailModalProps)
   const { format } = useCurrency();
   const { toggleFavorite, isFavorite } = useFavorites();
   const [activeImage, setActiveImage] = useState(0);
+  const [activeSlug, setActiveSlug] = useState<string | null>(slug);
 
-  // Reset gallery when switching properties
-  useEffect(() => {
+  // Reset gallery index when the property changes (derived state pattern
+  // avoids setState-in-effect and is safe under Strict Mode).
+  if (slug !== activeSlug) {
+    setActiveSlug(slug);
     setActiveImage(0);
-  }, [slug]);
+  }
 
   if (!property) return null;
 
@@ -39,7 +42,10 @@ export function PropertyDetailModal({ slug, onClose }: PropertyDetailModalProps)
 
   return (
     <Dialog open={!!slug} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="max-h-[92vh] w-[95vw] max-w-5xl overflow-y-auto p-0 sm:rounded-md">
+      <DialogContent
+        showCloseButton={false}
+        className="max-h-[92vh] w-[95vw] max-w-5xl overflow-y-auto p-0 sm:rounded-md"
+      >
         <DialogHeader className="sr-only">
           <DialogTitle>{property.name}</DialogTitle>
           <DialogDescription>{property.shortDesc}</DialogDescription>
@@ -89,6 +95,13 @@ export function PropertyDetailModal({ slug, onClose }: PropertyDetailModalProps)
                 fav ? "fill-[#2BA84A] text-[#2BA84A]" : "text-[#102357]"
               }`}
             />
+          </button>
+          <button
+            onClick={onClose}
+            className="absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/95 text-[#102357] backdrop-blur transition-all hover:scale-110"
+            aria-label="Close dialog"
+          >
+            <X className="h-5 w-5" />
           </button>
         </div>
 

@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/dialog";
 import { Heart, X } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { PROPERTIES } from "@/lib/properties";
 import { useFavorites } from "@/components/providers/favorites-provider";
 import { useCurrency } from "@/components/providers/currency-provider";

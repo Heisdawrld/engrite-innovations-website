@@ -30,12 +30,17 @@ export function formatCompact(amountNGN: number, currency: Currency): string {
   if (!isFinite(amountNGN)) return "—";
   const cur = CURRENCIES[currency];
   const amount = amountNGN * cur.rate;
+  if (amount >= 1_000_000_000) {
+    const b = amount / 1_000_000_000;
+    return `${cur.symbol}${b % 1 === 0 ? b.toFixed(0) : b.toFixed(1)}B`;
+  }
   if (amount >= 1_000_000) {
     const m = amount / 1_000_000;
     return `${cur.symbol}${m % 1 === 0 ? m.toFixed(0) : m.toFixed(1)}M`;
   }
   if (amount >= 1_000) {
-    return `${cur.symbol}${Math.round(amount / 1_000)}K`;
+    // Cap at 999K so we never render "1000K" — anything ≥ 1M is handled above.
+    return `${cur.symbol}${Math.min(999, Math.floor(amount / 1_000))}K`;
   }
   return `${cur.symbol}${Math.round(amount)}`;
 }

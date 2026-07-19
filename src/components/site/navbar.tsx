@@ -123,22 +123,22 @@ export function Navbar({ onOpenFavorites }: { onOpenFavorites: () => void }) {
               </button>
               <div className="flex flex-col gap-1 px-6 pt-20 pb-6">
                 {navLinks.map((link) => (
-                  <a
+                  <Link
                     key={link.href}
                     href={link.href}
-                    onClick={() => setTimeout(() => setMobileOpen(false), 50)}
+                    onClick={() => setMobileOpen(false)}
                     className="border-b border-white/10 py-4 text-lg font-medium uppercase tracking-[0.08em] transition-colors hover:text-[#7fd89a]"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 ))}
-                <a
+                <Link
                   href="#newsletter"
-                  onClick={() => setTimeout(() => setMobileOpen(false), 50)}
+                  onClick={() => setMobileOpen(false)}
                   className="mt-4 bg-[#2BA84A] py-4 text-center text-xs font-bold uppercase tracking-[0.2em] text-white border-2 border-[#2BA84A] transition-all hover:bg-transparent"
                 >
                   {t("nav.cta")}
-                </a>
+                </Link>
 
                 <div className="mt-8 flex items-center justify-between">
                   <LanguageToggle />

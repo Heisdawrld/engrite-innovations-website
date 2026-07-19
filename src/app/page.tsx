@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Navbar } from "@/components/site/navbar";
 import { Footer } from "@/components/site/footer";
 import { Hero } from "@/components/site/hero";
-import { PressStrip } from "@/components/site/press-strip";
 import { StatsBar } from "@/components/site/stats-bar";
 import { Ticker } from "@/components/site/ticker";
 import { About } from "@/components/site/about";
@@ -39,7 +38,6 @@ export default function Home() {
 
       <main id="main" className="flex-1">
         <Hero />
-        <PressStrip />
         <StatsBar />
         <Ticker />
         <About />

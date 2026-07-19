@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Thank You — Message Received",
+  description:
+    "Your message has been received by Engrite Innovations. We'll be in touch within 24 hours.",
+  robots: { index: false, follow: false },
+};
 
 export default function ThankYou() {
   return (

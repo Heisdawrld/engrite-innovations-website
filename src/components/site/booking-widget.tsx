@@ -35,7 +35,9 @@ export function BookingWidget() {
   const [contact, setContact] = useState({ name: "", email: "", phone: "" });
   const formRef = useRef<HTMLFormElement>(null);
 
-  // Generate dates client-side only to avoid hydration mismatch
+  // Generate dates client-side only to avoid hydration mismatch — dates are
+  // time-relative and must be computed after mount.
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     setDays(
       Array.from({ length: 14 }, (_, i) => {
@@ -46,6 +48,7 @@ export function BookingWidget() {
       })
     );
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   const handleConfirm = (e: React.FormEvent) => {
     e.preventDefault();
@@ -119,7 +122,7 @@ export function BookingWidget() {
           aria-hidden="true"
         >
           <input type="hidden" name="form-name" value="booking" />
-          <input type="text" name="botField" />
+          <input type="text" name="botField" style={{ display: "none" }} tabIndex={-1} autoComplete="off" aria-hidden="true" />
           <input type="hidden" name="name" value={contact.name} />
           <input type="hidden" name="email" value={contact.email} />
           <input type="hidden" name="phone" value={contact.phone} />

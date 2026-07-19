@@ -7,10 +7,7 @@ import { useLanguage } from "@/components/providers/language-provider";
 export function Hero() {
   const { t } = useLanguage();
   return (
-    <section
-      className="relative flex min-h-[680px] flex-col justify-end overflow-hidden pt-[74px]"
-      style={{ height: "100vh", minHeight: "680px" }}
-    >
+    <section className="relative flex h-screen min-h-[680px] flex-col justify-end overflow-hidden pt-[74px]">
       <div className="absolute inset-0">
         <Image
           src="/img/hero-real.jpg"

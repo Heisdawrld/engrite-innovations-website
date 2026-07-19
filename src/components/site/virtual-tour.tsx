@@ -27,12 +27,12 @@ type VirtualTourProps = {
 export function VirtualTour({ scenes, matterportUrl, videoUrl, onClose, embedded = false }: VirtualTourProps) {
   const [currentScene, setCurrentScene] = useState(0);
 
-  const goToScene = useCallback((index: number) => {
-    setCurrentScene((prev) => {
-      const next = (index + scenes.length) % scenes.length;
-      return next;
-    });
-  }, [scenes.length]);
+  const goToScene = useCallback(
+    (index: number) => {
+      setCurrentScene(((index % scenes.length) + scenes.length) % scenes.length);
+    },
+    [scenes.length],
+  );
 
   const goPrev = () => goToScene(currentScene - 1);
   const goNext = () => goToScene(currentScene + 1);
