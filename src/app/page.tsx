@@ -19,10 +19,12 @@ import { ClientTestimonials } from "@/components/site/client-testimonials";
 import { DiasporaSection } from "@/components/site/diaspora-section";
 import { WhatsAppFloat } from "@/components/site/whatsapp-float";
 import { PropertyDetailModal } from "@/components/site/property-detail-modal";
+import { VirtualTourModal } from "@/components/site/virtual-tour-modal";
 import { FavoritesModal } from "@/components/site/favorites-modal";
 
 export default function Home() {
   const [selectedProperty, setSelectedProperty] = useState<string | null>(null);
+  const [tourProperty, setTourProperty] = useState<string | null>(null);
   const [favoritesOpen, setFavoritesOpen] = useState(false);
 
   return (
@@ -41,7 +43,10 @@ export default function Home() {
         <StatsBar />
         <Ticker />
         <About />
-        <Projects onSelectProperty={setSelectedProperty} />
+        <Projects
+          onSelectProperty={setSelectedProperty}
+          onTakeTour={setTourProperty}
+        />
         <Invest />
         <WhyUs />
         <Quote />
@@ -60,6 +65,11 @@ export default function Home() {
       <PropertyDetailModal
         slug={selectedProperty}
         onClose={() => setSelectedProperty(null)}
+      />
+
+      <VirtualTourModal
+        slug={tourProperty}
+        onClose={() => setTourProperty(null)}
       />
 
       <FavoritesModal

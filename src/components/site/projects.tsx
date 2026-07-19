@@ -15,7 +15,13 @@ const statusStyles: Record<Property["status"], string> = {
   "sample-units-open": "text-[#2BA84A] border-l-[3px] border-[#2BA84A]",
 };
 
-export function Projects({ onSelectProperty }: { onSelectProperty: (slug: string) => void }) {
+export function Projects({
+  onSelectProperty,
+  onTakeTour,
+}: {
+  onSelectProperty: (slug: string) => void;
+  onTakeTour: (slug: string) => void;
+}) {
   const { format } = useCurrency();
   const { toggleFavorite, isFavorite } = useFavorites();
 
@@ -133,12 +139,15 @@ export function Projects({ onSelectProperty }: { onSelectProperty: (slug: string
                       <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1.5" />
                     </button>
                     <button
-                      onClick={() => onSelectProperty(property.slug)}
-                      className="flex items-center justify-center gap-1.5 border-2 border-[#2BA84A] px-4 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#2BA84A] transition-colors hover:bg-[#2BA84A] hover:text-white"
+                      onClick={() => onTakeTour(property.slug)}
+                      className="group/tour relative flex items-center justify-center gap-1.5 overflow-hidden bg-[#2BA84A] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-[#239540] hover:shadow-[0_8px_24px_rgba(43,168,74,0.4)]"
                       aria-label={`Take virtual tour of ${property.name}`}
                     >
                       <Eye className="h-3.5 w-3.5" />
                       Tour
+                      <span className="ml-1 hidden text-[9px] font-medium tracking-[0.14em] text-white/70 sm:inline">
+                        · 360°
+                      </span>
                     </button>
                   </div>
                 </div>
