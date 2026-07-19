@@ -73,6 +73,8 @@ export const PROPERTIES: Property[] = [
     status: "under-construction",
     statusLabel: "Active Selling",
     image: "/img/sinai-spaces-real-1.jpg",
+    // TEST: Matterport 360° tour embed (temporary — remove before client review)
+    matterportUrl: "https://my.matterport.com/show/?m=dopJL4huPmu",
     gallery: [
       "/img/sinai-spaces-real-1.jpg",
       "/img/sinai-spaces-real-2.jpg",
