@@ -166,6 +166,25 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Netlify Identity widget — loaded on every page so invite tokens
+            in #invite_token=... URLs are processed regardless of landing page.
+            Essential for invite-only admin flow to work from email links. */}
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (window.netlifyIdentity) {
+                window.netlifyIdentity.on("init", user => {
+                  if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                      document.location.href = "/admin/";
+                    });
+                  }
+                });
+              }
+            `,
+          }}
+        />
       </head>
       <body
         className={`${playfair.variable} ${montserrat.variable} antialiased min-h-screen flex flex-col bg-background text-foreground`}
