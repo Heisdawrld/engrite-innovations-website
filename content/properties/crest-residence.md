@@ -112,14 +112,5 @@ valuePillars:
   - Amenity-Rich
 matterportUrl: ''
 videoUrl: ''
-body: >-
-  Crest Residence is Engrite's most ambitious luxury development, located in
-  Gbagada Phase 1 — one of Lagos's most demanded and desired residential
-  locations. This off-plan project offers Studio, 1-Bedroom, and 2-Bedroom
-  apartments with premium amenities including a rooftop gym, rooftop lounge,
-  swimming pool, high-speed elevator, fitted kitchens, and 24/7 electricity with
-  full security coverage. As an off-plan launch, early buyers benefit from the
-  lowest entry price and strongest capital appreciation potential. Crest
-  Residence calls you to live higher — elevated beyond the ordinary.
 ---
-
+Crest Residence is Engrite's most ambitious luxury development, located in Gbagada Phase 1 — one of Lagos's most demanded and desired residential locations. This off-plan project offers Studio, 1-Bedroom, and 2-Bedroom apartments with premium amenities including a rooftop gym, rooftop lounge, swimming pool, high-speed elevator, fitted kitchens, and 24/7 electricity with full security coverage. As an off-plan launch, early buyers benefit from the lowest entry price and strongest capital appreciation potential. Crest Residence calls you to live higher — elevated beyond the ordinary.

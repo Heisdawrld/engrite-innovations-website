@@ -108,14 +108,5 @@ valuePillars:
   - Lasting
 matterportUrl: ''
 videoUrl: ''
-body: >-
-  Sinai Residence is Engrite's flagship premium development on Morocco Road,
-  Yaba — designed around three value pillars: Comfort, Convenience, and Lasting
-  value. The development offers both standard apartments (Studio and 1-Bedroom)
-  and unique Home Office layouts (1BR + Home Office and 2BR + Home Office) for
-  hybrid professionals and small families. Every unit is smart-home ready with
-  inverter-backed 24/7 power supply. Sample units are now officially open for
-  investors and realtors to inspect — book a private viewing. Only a handful of
-  units remain in this near-complete development.
 ---
-
+Sinai Residence is Engrite's flagship premium development on Morocco Road, Yaba — designed around three value pillars: Comfort, Convenience, and Lasting value. The development offers both standard apartments (Studio and 1-Bedroom) and unique Home Office layouts (1BR + Home Office and 2BR + Home Office) for hybrid professionals and small families. Every unit is smart-home ready with inverter-backed 24/7 power supply. Sample units are now officially open for investors and realtors to inspect — book a private viewing. Only a handful of units remain in this near-complete development.

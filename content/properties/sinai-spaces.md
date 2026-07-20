@@ -101,15 +101,5 @@ valuePillars:
   - Comfort
 matterportUrl: ''
 videoUrl: ''
-body: >-
-  Sinai Spaces is Engrite's affordable-luxury development in Akoka, Yaba — one
-  of Lagos's most strategic neighborhoods, home to the University of Lagos and a
-  thriving young-professional community. Designed around three value pillars —
-  Efficiency, Safety, and Comfort — every unit is built for practical living
-  with inverter-backed 24/7 power supply. Sinai Spaces pioneered Engrite's
-  signature 17-year leasehold structure, giving buyers flexible ownership: move
-  in (Live), rent it out for steady income (Earn), or operate it as a
-  shortlet/Airbnb. With two pricing tiers (Basic and Premium), it's the most
-  accessible entry point into Lagos property ownership.
 ---
-
+Sinai Spaces is Engrite's affordable-luxury development in Akoka, Yaba — one of Lagos's most strategic neighborhoods, home to the University of Lagos and a thriving young-professional community. Designed around three value pillars — Efficiency, Safety, and Comfort — every unit is built for practical living with inverter-backed 24/7 power supply. Sinai Spaces pioneered Engrite's signature 17-year leasehold structure, giving buyers flexible ownership: move in (Live), rent it out for steady income (Earn), or operate it as a shortlet/Airbnb. With two pricing tiers (Basic and Premium), it's the most accessible entry point into Lagos property ownership.
