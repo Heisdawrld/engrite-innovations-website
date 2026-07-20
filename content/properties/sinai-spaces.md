@@ -11,7 +11,7 @@ gallery:
   - /img/sinai-spaces-real-1.jpg
   - /img/sinai-spaces-real-2.jpg
   - /img/progress-sinai-spaces-1.jpg
-startingPrice: 18500000
+startingPrice: 17000000
 annualReturn: 7.1
 units:
   - name: Studio Apartment — Basic
