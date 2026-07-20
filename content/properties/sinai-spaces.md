@@ -1,25 +1,18 @@
 ---
-slug: sinai-spaces
 name: Sinai Spaces
+slug: sinai-spaces
 tagline: Spaces For You! — Affordable entry-point to Lagos property ownership
 status: under-construction
 statusLabel: Active Selling
+location: Akoka, Yaba, Lagos
+completionDate: Active Selling — Units Available
 image: /img/sinai-spaces-real-1.jpg
 gallery:
   - /img/sinai-spaces-real-1.jpg
   - /img/sinai-spaces-real-2.jpg
   - /img/progress-sinai-spaces-1.jpg
-location: 'Akoka, Yaba, Lagos'
-mapEmbed: 'https://www.google.com/maps?q=Akoka+Yaba+Lagos+Nigeria&output=embed'
-shortDesc: >-
-  Studio and mini-flat apartments in Akoka, Yaba — offering a 17-year leasehold
-  with Basic and Premium options. Live in it, rent it out, or run it as a
-  shortlet/Airbnb.
-tags:
-  - 17yr Lease
-  - Live or Earn
-  - Shortlet-ready
-  - 24/7 Power
+startingPrice: 18500000
+annualReturn: 7.1
 units:
   - name: Studio Apartment — Basic
     price: 17000000
@@ -53,18 +46,6 @@ units:
       - Inverter power
       - Premium fittings
       - 17-year lease
-amenities:
-  - 24/7 Power (Inverter)
-  - 24/7 Security
-  - Backup Power
-  - Parking
-  - Strategic Location
-features:
-  - 17-Year Lease
-  - Live or Earn Model
-  - Shortlet/Airbnb Ready
-  - Inverter Power
-  - 5% Legal Fees
 paymentSchedule:
   - milestone: Initial Deposit
     percentage: 30
@@ -78,6 +59,29 @@ paymentSchedule:
   - milestone: Handover
     percentage: 15
     description: On key collection
+shortDesc: Studio and mini-flat apartments in Akoka, Yaba — offering a 17-year
+  leasehold with Basic and Premium options. Live in it, rent it out, or run it
+  as a shortlet/Airbnb.
+tags:
+  - 17yr Lease
+  - Live or Earn
+  - Shortlet-ready
+  - 24/7 Power
+features:
+  - 17-Year Lease
+  - Live or Earn Model
+  - Shortlet/Airbnb Ready
+  - Inverter Power
+  - 5% Legal Fees
+amenities:
+  - 24/7 Power (Inverter)
+  - 24/7 Security
+  - Backup Power
+  - Parking
+  - Strategic Location
+mapEmbed: https://www.google.com/maps?q=Akoka+Yaba+Lagos+Nigeria&output=embed
+videoUrl: ""
+matterportUrl: ""
 tourScenes:
   - id: exterior
     title: Exterior View
@@ -88,9 +92,6 @@ tourScenes:
   - id: studio
     title: Show Studio
     image: /img/newsletter-portfolio.jpg
-completionDate: Active Selling — Units Available
-startingPrice: 17000000
-annualReturn: 7.1
 useCases:
   - Live in it — your own Lagos address
   - Rent it out for steady annual income (₦2–6M/yr)
@@ -99,7 +100,5 @@ valuePillars:
   - Efficiency
   - Safety
   - Comfort
-matterportUrl: ''
-videoUrl: ''
 ---
 Sinai Spaces is Engrite's affordable-luxury development in Akoka, Yaba — one of Lagos's most strategic neighborhoods, home to the University of Lagos and a thriving young-professional community. Designed around three value pillars — Efficiency, Safety, and Comfort — every unit is built for practical living with inverter-backed 24/7 power supply. Sinai Spaces pioneered Engrite's signature 17-year leasehold structure, giving buyers flexible ownership: move in (Live), rent it out for steady income (Earn), or operate it as a shortlet/Airbnb. With two pricing tiers (Basic and Premium), it's the most accessible entry point into Lagos property ownership.
