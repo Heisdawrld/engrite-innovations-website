@@ -8,13 +8,15 @@ export type FAQ = {
   order?: number;
 };
 
-type RawFAQ = Omit<FAQ, "answer"> & { _content?: string };
+type RawFAQ = Omit<FAQ, "answer"> & { _content?: string; answer?: string };
 
 function normalize(raw: RawFAQ & { slug: string }): FAQ {
   return {
     id: raw.id ?? raw.slug,
     question: raw.question,
-    answer: raw._content ?? "",
+    // Decap CMS writes markdown to a frontmatter field named `answer`.
+    // Legacy files (pre-CMS) have the answer as the markdown body.
+    answer: raw.answer ?? raw._content ?? "",
     category: raw.category,
     order: raw.order,
   };

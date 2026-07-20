@@ -75,7 +75,7 @@ collections:
       - { name: "location", label: "Location", widget: "string", hint: "Full address or area name (e.g. Akoka, Yaba, Lagos)" }
       - { name: "mapEmbed", label: "Google Map Embed URL", widget: "string", hint: "Get this from Google Maps → Share → Embed → copy the src URL" }
       - { name: "shortDesc", label: "Short Description (card text)", widget: "text", hint: "1-2 sentence summary shown on the property card" }
-      - { name: "description", label: "Full Description", widget: "markdown", hint: "Detailed description shown on the property detail page" }
+      - { name: "body", label: "Full Description", widget: "markdown", hint: "Detailed description shown on the property detail page" }
       - name: "tags"
         label: "Property Tags (shown on card)"
         widget: "list"

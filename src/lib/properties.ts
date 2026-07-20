@@ -52,6 +52,7 @@ export type Property = {
 
 type RawProperty = Omit<Property, "description"> & {
   _content?: string;
+  body?: string;
   description?: string;
 };
 
@@ -67,7 +68,9 @@ function normalize(raw: RawProperty): Property {
     location: raw.location,
     mapEmbed: raw.mapEmbed,
     shortDesc: raw.shortDesc,
-    description: raw.description ?? raw._content ?? "",
+    // Decap CMS writes the markdown body to `body` (special field name).
+    // The generate-content script also exposes it as `_content`.
+    description: raw.description ?? raw.body ?? raw._content ?? "",
     tags: raw.tags ?? [],
     units: raw.units ?? [],
     amenities: raw.amenities ?? [],
@@ -78,7 +81,8 @@ function normalize(raw: RawProperty): Property {
     videoUrl: raw.videoUrl || undefined,
     completionDate: raw.completionDate,
     startingPrice: raw.startingPrice,
-    annualReturn: raw.annualReturn,
+    // Round to 2 decimals to avoid float precision noise (7.099999... → 7.1)
+    annualReturn: Math.round((raw.annualReturn ?? 0) * 100) / 100,
     useCases: raw.useCases,
     valuePillars: raw.valuePillars,
   };

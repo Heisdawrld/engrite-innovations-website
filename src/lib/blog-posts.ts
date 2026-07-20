@@ -12,7 +12,7 @@ export type BlogPost = {
   content: string; // markdown
 };
 
-type RawBlogPost = Omit<BlogPost, "content"> & { _content?: string };
+type RawBlogPost = Omit<BlogPost, "content"> & { _content?: string; body?: string };
 
 function normalize(raw: RawBlogPost & { slug: string }): BlogPost {
   return {
@@ -24,7 +24,8 @@ function normalize(raw: RawBlogPost & { slug: string }): BlogPost {
     readTime: raw.readTime,
     author: raw.author,
     cover: raw.cover,
-    content: raw._content ?? "",
+    // Decap CMS writes the markdown body to `body` (special field name).
+    content: raw.body ?? raw._content ?? "",
   };
 }
 

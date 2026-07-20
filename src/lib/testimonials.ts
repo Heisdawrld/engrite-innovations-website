@@ -21,8 +21,8 @@ export type ClientTestimonial = {
   featured?: boolean;
 };
 
-type RawTestimonial = Omit<Testimonial, "description"> & { _content?: string };
-type RawClientTestimonial = Omit<ClientTestimonial, "quote"> & { _content?: string };
+type RawTestimonial = Omit<Testimonial, "description"> & { _content?: string; description?: string };
+type RawClientTestimonial = Omit<ClientTestimonial, "quote"> & { _content?: string; quote?: string };
 
 function normalizeTestimonial(raw: RawTestimonial & { slug: string }): Testimonial {
   return {
@@ -30,7 +30,9 @@ function normalizeTestimonial(raw: RawTestimonial & { slug: string }): Testimoni
     category: raw.category,
     title: raw.title,
     scenario: raw.scenario,
-    description: raw._content ?? "",
+    // Decap CMS writes markdown to a frontmatter field named `description`.
+    // Legacy files have it as the markdown body.
+    description: raw.description ?? raw._content ?? "",
     outcomes: raw.outcomes ?? [],
   };
 }
@@ -43,7 +45,9 @@ function normalizeClient(raw: RawClientTestimonial & { slug: string }): ClientTe
     role: raw.role,
     photo: raw.photo,
     property: raw.property,
-    quote: raw._content ?? "",
+    // Decap CMS writes the quote to frontmatter `quote:` field.
+    // Legacy files have it as the markdown body.
+    quote: raw.quote ?? raw._content ?? "",
     rating: raw.rating ?? 5,
     featured: raw.featured,
   };
