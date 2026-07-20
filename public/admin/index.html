@@ -64,17 +64,25 @@
     <script>
       window.addEventListener('load', () => {
         const checkReady = setInterval(() => {
-          if (document.querySelector('.nc-app-header')) {
+          // CMS is ready if EITHER the app header (logged-in dashboard)
+          // OR the authentication page (login screen) is rendered.
+          const isReady =
+            document.querySelector('.nc-app-header') ||
+            document.querySelector('[class*="AuthenticationPage"]') ||
+            document.querySelector('[class*="StyledAuthenticationPage"]') ||
+            (document.getElementById('nc-root') &&
+             document.getElementById('nc-root').innerHTML.length > 500);
+          if (isReady) {
             const loading = document.getElementById('cms-loading');
             if (loading) loading.remove();
             clearInterval(checkReady);
           }
-        }, 200);
-        // Safety: hide spinner after 10 seconds even if CMS hasn't fully loaded
+        }, 150);
+        // Safety: hide spinner after 6 seconds even if detection fails
         setTimeout(() => {
           const loading = document.getElementById('cms-loading');
-          if (loading) loading.style.opacity = '0.3';
-        }, 10000);
+          if (loading) loading.remove();
+        }, 6000);
       });
 
       // Redirect to the site after login (Netlify Identity requires this)
