@@ -9,9 +9,11 @@ gallery:
   - /img/sinai-residence-real-1.jpg
   - /img/about-aerial.jpg
   - /img/newsletter-portfolio.jpg
-location: Morocco Road, Yaba, Lagos
-mapEmbed: https://www.google.com/maps?q=Morocco+Road+Yaba+Lagos+Nigeria&output=embed
-shortDesc: Premium apartments with optional Home Office layouts on Morocco Road, Yaba. Sample units now open for inspection. Smart-home ready with inverter power.
+location: 'Morocco Road, Yaba, Lagos'
+mapEmbed: 'https://www.google.com/maps?q=Morocco+Road+Yaba+Lagos+Nigeria&output=embed'
+shortDesc: >-
+  Premium apartments with optional Home Office layouts on Morocco Road, Yaba.
+  Sample units now open for inspection. Smart-home ready with inverter power.
 tags:
   - Smart Home
   - Home Office Option
@@ -21,7 +23,7 @@ units:
   - name: Studio Apartment
     price: 19990000
     size: Studio
-    rentalYield: "₦2–3M/yr"
+    rentalYield: ₦2–3M/yr
     features:
       - Smart home ready
       - Inverter power
@@ -29,7 +31,7 @@ units:
   - name: 1-Bedroom Apartment
     price: 29990000
     size: 1 bedroom
-    rentalYield: "₦3–5M/yr"
+    rentalYield: ₦3–5M/yr
     features:
       - Smart home ready
       - Inverter power
@@ -37,7 +39,7 @@ units:
   - name: 1 Bedroom + Home Office (Unfurnished)
     price: 100000000
     size: 1 bedroom + office
-    rentalYield: "₦6–8M/yr"
+    rentalYield: ₦6–8M/yr
     features:
       - Home office
       - Smart home
@@ -46,7 +48,7 @@ units:
   - name: 2 Bedroom + Home Office (Unfurnished)
     price: 120000000
     size: 2 bedroom + office
-    rentalYield: "₦8–10M/yr"
+    rentalYield: ₦8–10M/yr
     features:
       - Home office
       - Smart home
@@ -70,7 +72,7 @@ features:
 paymentSchedule:
   - milestone: Initial Deposit
     percentage: 25
-    description: "₦5M minimum — secures your unit"
+    description: ₦5M minimum — secures your unit
   - milestone: Construction Milestone 1
     percentage: 30
     description: At superstructure
@@ -104,8 +106,16 @@ valuePillars:
   - Comfort
   - Convenience
   - Lasting
-matterportUrl: ""
-videoUrl: ""
+matterportUrl: ''
+videoUrl: ''
+body: >-
+  Sinai Residence is Engrite's flagship premium development on Morocco Road,
+  Yaba — designed around three value pillars: Comfort, Convenience, and Lasting
+  value. The development offers both standard apartments (Studio and 1-Bedroom)
+  and unique Home Office layouts (1BR + Home Office and 2BR + Home Office) for
+  hybrid professionals and small families. Every unit is smart-home ready with
+  inverter-backed 24/7 power supply. Sample units are now officially open for
+  investors and realtors to inspect — book a private viewing. Only a handful of
+  units remain in this near-complete development.
 ---
 
-Sinai Residence is Engrite's flagship premium development on Morocco Road, Yaba — designed around three value pillars: Comfort, Convenience, and Lasting value. The development offers both standard apartments (Studio and 1-Bedroom) and unique Home Office layouts (1BR + Home Office and 2BR + Home Office) for hybrid professionals and small families. Every unit is smart-home ready with inverter-backed 24/7 power supply. Sample units are now officially open for investors and realtors to inspect — book a private viewing. Only a handful of units remain in this near-complete development.

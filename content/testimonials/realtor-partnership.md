@@ -12,6 +12,11 @@ outcomes:
     value: Provided
   - label: Site Access
     value: On request
+description: >-
+  Engrite actively partners with registered realtors across Nigeria and the
+  diaspora. Realtors who bring buyers to Sinai Spaces, Sinai Residence, or Crest
+  Residence receive competitive commissions, paid on time. Engrite provides
+  realtors with marketing materials, site access for client tours, and a
+  dedicated relationship manager.
 ---
 
-Engrite actively partners with registered realtors across Nigeria and the diaspora. Realtors who bring buyers to Sinai Spaces, Sinai Residence, or Crest Residence receive competitive commissions, paid on time. Engrite provides realtors with marketing materials, site access for client tours, and a dedicated relationship manager.
