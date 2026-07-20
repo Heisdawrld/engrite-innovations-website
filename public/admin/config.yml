@@ -58,148 +58,121 @@ collections:
         pattern: "last-units"
     fields:
 
-      # ---------- BASICS ----------
-      - name: "basics_section"
-        label: "🏠 Property Basics"
-        widget: "object"
-        collapsed: false
-        summary: "{{fields.name}}"
-        fields:
-          - { name: "name", label: "Property Name", widget: "string", hint: "e.g. Sinai Spaces, Crest Residence" }
-          - { name: "slug", label: "Web Address (auto-filled)", widget: "string", hint: "Lowercase, no spaces. Auto-fills from the name but you can change it. Example: sinai-spaces" }
-          - { name: "tagline", label: "Short Tagline", widget: "string", hint: "One-line highlight shown under the name. Example: 'Spaces For You! — Affordable entry-point to Lagos property ownership'" }
-          - name: "status"
-            label: "Current Status"
-            widget: "select"
-            hint: "Pick the one that matches where the property is right now"
-            options:
-              - { label: "🚧 Under Construction", value: "under-construction" }
-              - { label: "🏠 Sample Units Open", value: "sample-units-open" }
-              - { label: "📐 Off-Plan (Pre-Launch)", value: "off-plan" }
-              - { label: "⏳ Last Units Remaining", value: "last-units" }
-            default: "under-construction"
-          - { name: "statusLabel", label: "Status Badge Text", widget: "string", hint: "Short text shown on the property card. Example: 'Active Selling' or 'Last 3 Units'", default: "Active Selling" }
-          - { name: "location", label: "Location", widget: "string", hint: "Full address or area. Example: 'Akoka, Yaba, Lagos'" }
-          - { name: "completionDate", label: "Availability Note", widget: "string", hint: "What buyers see about timing. Example: 'Active Selling — Units Available' or 'Off-Plan — 12-Month Build Cycle'", default: "Active Selling — Units Available" }
+      # ===========================================================
+      # 🏠 PROPERTY BASICS
+      # ===========================================================
+      - { name: "name", label: "🏠 Property Name", widget: "string", hint: "e.g. Sinai Spaces, Crest Residence" }
+      - { name: "slug", label: "Web Address (auto-filled)", widget: "string", hint: "Lowercase, no spaces. Auto-fills from the name but you can change it. Example: sinai-spaces" }
+      - { name: "tagline", label: "Short Tagline", widget: "string", hint: "One-line highlight shown under the name. Example: 'Spaces For You! — Affordable entry-point to Lagos property ownership'" }
+      - name: "status"
+        label: "Current Status"
+        widget: "select"
+        hint: "Pick the one that matches where the property is right now"
+        options:
+          - { label: "🚧 Under Construction", value: "under-construction" }
+          - { label: "🏠 Sample Units Open", value: "sample-units-open" }
+          - { label: "📐 Off-Plan (Pre-Launch)", value: "off-plan" }
+          - { label: "⏳ Last Units Remaining", value: "last-units" }
+        default: "under-construction"
+      - { name: "statusLabel", label: "Status Badge Text", widget: "string", hint: "Short text shown on the property card. Example: 'Active Selling' or 'Last 3 Units'", default: "Active Selling" }
+      - { name: "location", label: "Location", widget: "string", hint: "Full address or area. Example: 'Akoka, Yaba, Lagos'" }
+      - { name: "completionDate", label: "Availability Note", widget: "string", hint: "What buyers see about timing. Example: 'Active Selling — Units Available' or 'Off-Plan — 12-Month Build Cycle'", default: "Active Selling — Units Available" }
 
-      # ---------- PHOTOS ----------
-      - name: "photos_section"
-        label: "📸 Photos"
-        widget: "object"
-        collapsed: false
-        fields:
-          - { name: "image", label: "Main Photo (Card Image)", widget: "image", hint: "This is the photo people see first on the homepage and property cards. Landscape orientation works best (1200×900 recommended)." }
-          - name: "gallery"
-            label: "Photo Gallery"
-            widget: "list"
-            min: 1
-            field: { name: "image", label: "Photo", widget: "image" }
-            hint: "Add at least 3 photos. These show when someone clicks into the property detail page."
+      # ===========================================================
+      # 📸 PHOTOS
+      # ===========================================================
+      - { name: "image", label: "📸 Main Photo (Card Image)", widget: "image", hint: "This is the photo people see first on the homepage and property cards. Landscape orientation works best (1200×900 recommended)." }
+      - name: "gallery"
+        label: "Photo Gallery"
+        widget: "list"
+        min: 1
+        field: { name: "image", label: "Photo", widget: "image" }
+        hint: "Add at least 3 photos. These show when someone clicks into the property detail page."
 
-      # ---------- PRICING ----------
-      - name: "pricing_section"
-        label: "💰 Pricing & Units"
-        widget: "object"
-        collapsed: false
+      # ===========================================================
+      # 💰 PRICING & UNITS
+      # ===========================================================
+      - { name: "startingPrice", label: "💰 Starting Price (₦)", widget: "number", value_type: "int", min: 0, hint: "The 'from' price shown on the card. Example: 17000000 for ₦17M" }
+      - { name: "annualReturn", label: "Annual Return %", widget: "number", value_type: "float", min: 0, max: 100, step: 0.1, hint: "Expected yearly return for investors. Example: 7.1", default: 7.1 }
+      - name: "units"
+        label: "Available Units (with prices)"
+        widget: "list"
+        hint: "List every unit type buyers can choose from. Click 'Add' to add a new unit type."
         fields:
-          - { name: "startingPrice", label: "Starting Price (₦)", widget: "number", value_type: "int", min: 0, hint: "The 'from' price shown on the card. Example: 17000000 for ₦17M" }
-          - { name: "annualReturn", label: "Annual Return %", widget: "number", value_type: "float", min: 0, max: 100, step: 0.1, hint: "Expected yearly return for investors. Example: 7.1", default: 7.1 }
-          - name: "units"
-            label: "Available Units (with prices)"
-            widget: "list"
-            hint: "List every unit type buyers can choose from. Click 'Add' to add a new unit type."
-            fields:
-              - { name: "name", label: "Unit Name", widget: "string", hint: "Example: 'Studio Apartment — Basic'" }
-              - { name: "price", label: "Price (₦)", widget: "number", value_type: "int", min: 0, hint: "Full price in naira. Example: 17000000" }
-              - { name: "size", label: "Size / Layout", widget: "string", hint: "Example: 'Compact studio' or '1 bedroom'" }
-              - { name: "rentalYield", label: "Rental Income Range", widget: "string", hint: "Example: '₦2–3M/yr'" }
-              - name: "features"
-                label: "What's included in this unit"
-                widget: "list"
-                field: { name: "feature", label: "Feature", widget: "string" }
-                hint: "Example: 'Inverter power', 'Premium fittings'"
-          - name: "paymentSchedule"
-            label: "Payment Plan (Milestones)"
-            widget: "list"
-            hint: "How buyers pay over time. Most properties use 3-4 milestones."
-            fields:
-              - { name: "milestone", label: "Milestone Name", widget: "string", hint: "Example: 'Initial Deposit'" }
-              - { name: "percentage", label: "Percentage %", widget: "number", value_type: "int", min: 0, max: 100 }
-              - { name: "description", label: "What happens at this milestone", widget: "string", hint: "Example: 'Secures your unit'" }
-
-      # ---------- DESCRIPTION ----------
-      - name: "description_section"
-        label: "📝 Description"
-        widget: "object"
-        collapsed: false
-        fields:
-          - { name: "shortDesc", label: "Short Summary (shown on card)", widget: "text", hint: "1-2 sentences. This is what people see before clicking. Make it punchy." }
-          - name: "tags"
-            label: "Highlight Badges (shown on card)"
-            widget: "list"
-            field: { name: "tag", label: "Badge", widget: "string" }
-            hint: "Short labels shown on the card. Max 4. Example: '17yr Lease', 'Smart Home', '24/7 Power'"
+          - { name: "name", label: "Unit Name", widget: "string", hint: "Example: 'Studio Apartment — Basic'" }
+          - { name: "price", label: "Price (₦)", widget: "number", value_type: "int", min: 0, hint: "Full price in naira. Example: 17000000" }
+          - { name: "size", label: "Size / Layout", widget: "string", hint: "Example: 'Compact studio' or '1 bedroom'" }
+          - { name: "rentalYield", label: "Rental Income Range", widget: "string", hint: "Example: '₦2–3M/yr'" }
           - name: "features"
-            label: "Property Highlights (on detail page)"
+            label: "What's included in this unit"
             widget: "list"
-            field: { name: "feature", label: "Highlight", widget: "string" }
-            hint: "Bigger feature list shown on the detail page. Example: '17-Year Lease', 'Live or Earn Model'"
-          - name: "amenities"
-            label: "Building Amenities"
-            widget: "list"
-            field: { name: "amenity", label: "Amenity", widget: "string" }
-            hint: "What the building offers. Example: '24/7 Power', 'Gym', 'Parking', 'Security'"
-
-      # ---------- FULL DESCRIPTION (top-level body field) ----------
-      # NOTE: This must be at the top level (NOT inside an object widget)
-      # because Decap CMS treats a field named 'body' specially — it
-      # reads/writes the file's markdown body (below the ---).
-      - { name: "body", label: "📝 Full Description", widget: "markdown", hint: "The detailed write-up shown on the property page. Use the toolbar above to format text — bold, headings, bullet points, etc." }
-
-      # ---------- LOCATION MAP (advanced) ----------
-      - name: "map_section"
-        label: "🗺️ Location Map"
-        widget: "object"
-        collapsed: true
+            field: { name: "feature", label: "Feature", widget: "string" }
+            hint: "Example: 'Inverter power', 'Premium fittings'"
+      - name: "paymentSchedule"
+        label: "Payment Plan (Milestones)"
+        widget: "list"
+        hint: "How buyers pay over time. Most properties use 3-4 milestones."
         fields:
-          - { name: "mapEmbed", label: "Google Map Link", widget: "string", hint: "💡 How to get this: 1) Open Google Maps → search your property address 2) Click 'Share' → 'Embed a map' 3) Copy the URL from the iframe src (looks like https://www.google.com/maps?q=...&output=embed)" }
+          - { name: "milestone", label: "Milestone Name", widget: "string", hint: "Example: 'Initial Deposit'" }
+          - { name: "percentage", label: "Percentage %", widget: "number", value_type: "int", min: 0, max: 100 }
+          - { name: "description", label: "What happens at this milestone", widget: "string", hint: "Example: 'Secures your unit'" }
 
-      # ---------- TOURS / VIDEO (advanced) ----------
-      - name: "tour_section"
-        label: "🎥 Virtual Tour & Video"
-        widget: "object"
-        collapsed: true
-        fields:
-          - { name: "videoUrl", label: "Walkthrough Video Link (optional)", widget: "string", required: false, hint: "YouTube, Vimeo, or direct MP4 link. Leave blank if not yet filmed. The 'Tour' button only shows if this is filled." }
-          - { name: "matterportUrl", label: "360° Matterport Link (optional)", widget: "string", required: false, hint: "Only fill if you have a Matterport showcase URL. Most properties leave this blank." }
-          - name: "tourScenes"
-            label: "Fallback 360° Photos (optional)"
-            widget: "list"
-            required: false
-            hint: "Used only when no video/Matterport link is set. Each scene is a 360° panorama image."
-            fields:
-              - { name: "id", label: "Scene ID", widget: "string", hint: "Short name like 'exterior' or 'lobby'" }
-              - { name: "title", label: "Scene Title", widget: "string", hint: "Shown to viewers" }
-              - { name: "image", label: "360° Photo", widget: "image" }
+      # ===========================================================
+      # 📝 DESCRIPTION
+      # ===========================================================
+      - { name: "shortDesc", label: "📝 Short Summary (shown on card)", widget: "text", hint: "1-2 sentences. This is what people see before clicking. Make it punchy." }
+      - { name: "body", label: "Full Description", widget: "markdown", hint: "The detailed write-up shown on the property page. Use the toolbar above to format text — bold, headings, bullet points, etc." }
+      - name: "tags"
+        label: "Highlight Badges (shown on card)"
+        widget: "list"
+        field: { name: "tag", label: "Badge", widget: "string" }
+        hint: "Short labels shown on the card. Max 4. Example: '17yr Lease', 'Smart Home', '24/7 Power'"
+      - name: "features"
+        label: "Property Highlights (on detail page)"
+        widget: "list"
+        field: { name: "feature", label: "Highlight", widget: "string" }
+        hint: "Bigger feature list shown on the detail page. Example: '17-Year Lease', 'Live or Earn Model'"
+      - name: "amenities"
+        label: "Building Amenities"
+        widget: "list"
+        field: { name: "amenity", label: "Amenity", widget: "string" }
+        hint: "What the building offers. Example: '24/7 Power', 'Gym', 'Parking', 'Security'"
 
-      # ---------- ADVANCED (rarely needed) ----------
-      - name: "advanced_section"
-        label: "⚙️ Advanced (usually leave alone)"
-        widget: "object"
-        collapsed: true
+      # ===========================================================
+      # 🗺️ LOCATION MAP
+      # ===========================================================
+      - { name: "mapEmbed", label: "🗺️ Google Map Link", widget: "string", hint: "💡 How to get this: 1) Open Google Maps → search your property address 2) Click 'Share' → 'Embed a map' 3) Copy the URL from the iframe src (looks like https://www.google.com/maps?q=...&output=embed)" }
+
+      # ===========================================================
+      # 🎥 VIRTUAL TOUR & VIDEO (optional)
+      # ===========================================================
+      - { name: "videoUrl", label: "🎥 Walkthrough Video Link (optional)", widget: "string", required: false, hint: "YouTube, Vimeo, or direct MP4 link. Leave blank if not yet filmed. The 'Tour' button only shows if this is filled." }
+      - { name: "matterportUrl", label: "360° Matterport Link (optional)", widget: "string", required: false, hint: "Only fill if you have a Matterport showcase URL. Most properties leave this blank." }
+      - name: "tourScenes"
+        label: "Fallback 360° Photos (optional)"
+        widget: "list"
+        required: false
+        hint: "Used only when no video/Matterport link is set. Each scene is a 360° panorama image."
         fields:
-          - name: "useCases"
-            label: "Use Cases (Live / Earn / Shortlet)"
-            widget: "list"
-            required: false
-            field: { name: "useCase", label: "Use Case", widget: "string" }
-            hint: "How buyers can use the property. Example: 'Live in it', 'Rent it out', 'Airbnb'"
-          - name: "valuePillars"
-            label: "Value Pillars"
-            widget: "list"
-            required: false
-            field: { name: "pillar", label: "Pillar", widget: "string" }
-            hint: "Core values the property represents. Example: 'Efficiency', 'Safety', 'Comfort'"
+          - { name: "id", label: "Scene ID", widget: "string", hint: "Short name like 'exterior' or 'lobby'" }
+          - { name: "title", label: "Scene Title", widget: "string", hint: "Shown to viewers" }
+          - { name: "image", label: "360° Photo", widget: "image" }
+
+      # ===========================================================
+      # ⚙️ ADVANCED (usually leave alone)
+      # ===========================================================
+      - name: "useCases"
+        label: "⚙️ Use Cases (Live / Earn / Shortlet) — advanced"
+        widget: "list"
+        required: false
+        field: { name: "useCase", label: "Use Case", widget: "string" }
+        hint: "How buyers can use the property. Example: 'Live in it', 'Rent it out', 'Airbnb'"
+      - name: "valuePillars"
+        label: "Value Pillars — advanced"
+        widget: "list"
+        required: false
+        field: { name: "pillar", label: "Pillar", widget: "string" }
+        hint: "Core values the property represents. Example: 'Efficiency', 'Safety', 'Comfort'"
 
   # ============================================================
   # FAQs
