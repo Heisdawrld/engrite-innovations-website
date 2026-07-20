@@ -1,33 +1,38 @@
-# Decap CMS Configuration
+# Decap CMS Configuration — Client-Friendly Edition
 # Docs: https://decapcms.org/docs/configuration-options/
 
-# Use Netlify Identity for email/password auth (no GitHub account needed by client)
 backend:
   name: git-gateway
   branch: main
   commit_messages:
-    create: "Create {{collection}} entry — {{slug}}"
-    update: "Update {{collection}} entry — {{slug}}"
-    delete: "Delete {{collection}} entry — {{slug}}"
-    uploadMedia: "Upload media asset"
-    deleteMedia: "Delete media asset"
+    create: "Add {{collection}} — {{slug}}"
+    update: "Edit {{collection}} — {{slug}}"
+    delete: "Remove {{collection}} — {{slug}}"
+    uploadMedia: "Upload photo"
+    deleteMedia: "Remove photo"
 
-# Use Netlify Large Media for image uploads (saved to repo /uploads/)
+# Photos uploaded through the admin are saved here
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
-# Show site URL in CMS UI for easy preview
+# Live site URL (shown in CMS top bar)
 site_url: https://engriteinnovations.com
 
-# Show preview panel on the right side
-publish_mode: editorial_workflow
+# Single Save = Publish (no draft workflow — keeps things simple for the client)
+# Removed: publish_mode: editorial_workflow
 
-# Friendly UI
 locale: en
+
+# Custom CSS to make the admin look more like the Engrite brand
+# (loaded from /admin/admin.css)
+media_library:
+  name: ''
+  config:
+    max_file_size: 5242880  # 5MB limit — prevents huge uploads breaking the build
 
 collections:
   # ============================================================
-  # PROPERTIES — the main collection
+  # PROPERTIES — main collection, organized into friendly sections
   # ============================================================
   - name: "properties"
     label: "Properties"
@@ -36,7 +41,7 @@ collections:
     create: true
     delete: true
     slug: "{{slug}}"
-    summary: "{{name}} — {{location}} ({{statusLabel}})"
+    summary: "{{name}} — {{location}}"
     sortable_fields: ["name", "status", "startingPrice"]
     view_filters:
       - label: "Active Selling"
@@ -52,89 +57,144 @@ collections:
         field: status
         pattern: "last-units"
     fields:
-      - { name: "slug", label: "URL Slug (auto from name)", widget: "string", hint: "Used in URLs — keep it short, lowercase, no spaces (e.g. sinai-spaces)" }
-      - { name: "name", label: "Property Name", widget: "string" }
-      - { name: "tagline", label: "Tagline", widget: "string" }
-      - name: "status"
-        label: "Status"
-        widget: "select"
-        options:
-          - { label: "Under Construction", value: "under-construction" }
-          - { label: "Sample Units Open", value: "sample-units-open" }
-          - { label: "Off-Plan", value: "off-plan" }
-          - { label: "Last Units Remaining", value: "last-units" }
-        default: "under-construction"
-      - { name: "statusLabel", label: "Status Label (shown to users)", widget: "string", default: "Active Selling" }
-      - { name: "image", label: "Card Image", widget: "image", hint: "Main photo shown on property card (landscape orientation, 1200×900 recommended)" }
-      - name: "gallery"
-        label: "Photo Gallery"
-        widget: "list"
-        min: 1
-        field: { name: "image", label: "Image", widget: "image" }
-        hint: "Photos shown in the property detail view. Add at least 3."
-      - { name: "location", label: "Location", widget: "string", hint: "Full address or area name (e.g. Akoka, Yaba, Lagos)" }
-      - { name: "mapEmbed", label: "Google Map Embed URL", widget: "string", hint: "Get this from Google Maps → Share → Embed → copy the src URL" }
-      - { name: "shortDesc", label: "Short Description (card text)", widget: "text", hint: "1-2 sentence summary shown on the property card" }
-      - { name: "body", label: "Full Description", widget: "markdown", hint: "Detailed description shown on the property detail page" }
-      - name: "tags"
-        label: "Property Tags (shown on card)"
-        widget: "list"
-        field: { name: "tag", label: "Tag", widget: "string" }
-        hint: "Short labels like '17yr Lease', 'Smart Home', etc. Max 4."
-      - name: "units"
-        label: "Available Units & Pricing"
-        widget: "list"
+
+      # ---------- BASICS ----------
+      - name: "basics_section"
+        label: "🏠 Property Basics"
+        widget: "object"
+        collapsed: false
+        summary: "{{fields.name}}"
         fields:
-          - { name: "name", label: "Unit Name", widget: "string" }
-          - { name: "price", label: "Price (NGN)", widget: "number", value_type: "int", min: 0 }
-          - { name: "size", label: "Size / Layout", widget: "string" }
-          - { name: "rentalYield", label: "Rental Yield Range", widget: "string", hint: "e.g. ₦2–3M/yr" }
-          - name: "features"
-            label: "Unit Features"
+          - { name: "name", label: "Property Name", widget: "string", hint: "e.g. Sinai Spaces, Crest Residence" }
+          - { name: "slug", label: "Web Address (auto-filled)", widget: "string", hint: "Lowercase, no spaces. Auto-fills from the name but you can change it. Example: sinai-spaces" }
+          - { name: "tagline", label: "Short Tagline", widget: "string", hint: "One-line highlight shown under the name. Example: 'Spaces For You! — Affordable entry-point to Lagos property ownership'" }
+          - name: "status"
+            label: "Current Status"
+            widget: "select"
+            hint: "Pick the one that matches where the property is right now"
+            options:
+              - { label: "🚧 Under Construction", value: "under-construction" }
+              - { label: "🏠 Sample Units Open", value: "sample-units-open" }
+              - { label: "📐 Off-Plan (Pre-Launch)", value: "off-plan" }
+              - { label: "⏳ Last Units Remaining", value: "last-units" }
+            default: "under-construction"
+          - { name: "statusLabel", label: "Status Badge Text", widget: "string", hint: "Short text shown on the property card. Example: 'Active Selling' or 'Last 3 Units'", default: "Active Selling" }
+          - { name: "location", label: "Location", widget: "string", hint: "Full address or area. Example: 'Akoka, Yaba, Lagos'" }
+          - { name: "completionDate", label: "Availability Note", widget: "string", hint: "What buyers see about timing. Example: 'Active Selling — Units Available' or 'Off-Plan — 12-Month Build Cycle'", default: "Active Selling — Units Available" }
+
+      # ---------- PHOTOS ----------
+      - name: "photos_section"
+        label: "📸 Photos"
+        widget: "object"
+        collapsed: false
+        fields:
+          - { name: "image", label: "Main Photo (Card Image)", widget: "image", hint: "This is the photo people see first on the homepage and property cards. Landscape orientation works best (1200×900 recommended)." }
+          - name: "gallery"
+            label: "Photo Gallery"
             widget: "list"
-            field: { name: "feature", label: "Feature", widget: "string" }
-      - name: "amenities"
-        label: "Property Amenities"
-        widget: "list"
-        field: { name: "amenity", label: "Amenity", widget: "string" }
-        hint: "Building-wide amenities (pool, gym, parking, etc.)"
-      - name: "features"
-        label: "Property Features"
-        widget: "list"
-        field: { name: "feature", label: "Feature", widget: "string" }
-        hint: "Highlight badges shown on the detail page"
-      - name: "paymentSchedule"
-        label: "Payment Schedule (Milestone-based)"
-        widget: "list"
+            min: 1
+            field: { name: "image", label: "Photo", widget: "image" }
+            hint: "Add at least 3 photos. These show when someone clicks into the property detail page."
+
+      # ---------- PRICING ----------
+      - name: "pricing_section"
+        label: "💰 Pricing & Units"
+        widget: "object"
+        collapsed: false
         fields:
-          - { name: "milestone", label: "Milestone Name", widget: "string" }
-          - { name: "percentage", label: "Percentage %", widget: "number", value_type: "int", min: 0, max: 100 }
-          - { name: "description", label: "Description", widget: "string" }
-      - name: "tourScenes"
-        label: "Virtual Tour Scenes (image fallback)"
-        widget: "list"
-        required: false
-        hint: "Used only when no video/Matterport URL is set. Each scene is a 360° panorama image."
+          - { name: "startingPrice", label: "Starting Price (₦)", widget: "number", value_type: "int", min: 0, hint: "The 'from' price shown on the card. Example: 17000000 for ₦17M" }
+          - { name: "annualReturn", label: "Annual Return %", widget: "number", value_type: "float", min: 0, max: 100, step: 0.1, hint: "Expected yearly return for investors. Example: 7.1", default: 7.1 }
+          - name: "units"
+            label: "Available Units (with prices)"
+            widget: "list"
+            hint: "List every unit type buyers can choose from. Click 'Add' to add a new unit type."
+            fields:
+              - { name: "name", label: "Unit Name", widget: "string", hint: "Example: 'Studio Apartment — Basic'" }
+              - { name: "price", label: "Price (₦)", widget: "number", value_type: "int", min: 0, hint: "Full price in naira. Example: 17000000" }
+              - { name: "size", label: "Size / Layout", widget: "string", hint: "Example: 'Compact studio' or '1 bedroom'" }
+              - { name: "rentalYield", label: "Rental Income Range", widget: "string", hint: "Example: '₦2–3M/yr'" }
+              - name: "features"
+                label: "What's included in this unit"
+                widget: "list"
+                field: { name: "feature", label: "Feature", widget: "string" }
+                hint: "Example: 'Inverter power', 'Premium fittings'"
+          - name: "paymentSchedule"
+            label: "Payment Plan (Milestones)"
+            widget: "list"
+            hint: "How buyers pay over time. Most properties use 3-4 milestones."
+            fields:
+              - { name: "milestone", label: "Milestone Name", widget: "string", hint: "Example: 'Initial Deposit'" }
+              - { name: "percentage", label: "Percentage %", widget: "number", value_type: "int", min: 0, max: 100 }
+              - { name: "description", label: "What happens at this milestone", widget: "string", hint: "Example: 'Secures your unit'" }
+
+      # ---------- DESCRIPTION ----------
+      - name: "description_section"
+        label: "📝 Description"
+        widget: "object"
+        collapsed: false
         fields:
-          - { name: "id", label: "Scene ID", widget: "string" }
-          - { name: "title", label: "Scene Title", widget: "string" }
-          - { name: "image", label: "Scene Image", widget: "image" }
-      - { name: "completionDate", label: "Completion / Availability Note", widget: "string", hint: "e.g. 'Active Selling — Units Available' or 'Off-Plan — 12-Month Build Cycle'" }
-      - { name: "startingPrice", label: "Starting Price (NGN)", widget: "number", value_type: "int", min: 0 }
-      - { name: "annualReturn", label: "Annual Return %", widget: "number", value_type: "float", min: 0, max: 100, step: 0.1 }
-      - { name: "videoUrl", label: "Walkthrough Video URL (optional)", widget: "string", required: false, hint: "YouTube, Vimeo, or direct MP4 link. Leave blank if not yet filmed." }
-      - { name: "matterportUrl", label: "360° Matterport URL (optional)", widget: "string", required: false, hint: "Leave blank unless you have a Matterport showcase URL." }
-      - name: "useCases"
-        label: "Use Cases"
-        widget: "list"
-        required: false
-        field: { name: "useCase", label: "Use Case", widget: "string" }
-      - name: "valuePillars"
-        label: "Value Pillars"
-        widget: "list"
-        required: false
-        field: { name: "pillar", label: "Pillar", widget: "string" }
-        hint: "e.g. Efficiency, Safety, Comfort"
+          - { name: "shortDesc", label: "Short Summary (shown on card)", widget: "text", hint: "1-2 sentences. This is what people see before clicking. Make it punchy." }
+          - { name: "body", label: "Full Description", widget: "markdown", hint: "The detailed write-up shown on the property page. Use the toolbar above to format text — bold, headings, bullet points, etc." }
+          - name: "tags"
+            label: "Highlight Badges (shown on card)"
+            widget: "list"
+            field: { name: "tag", label: "Badge", widget: "string" }
+            hint: "Short labels shown on the card. Max 4. Example: '17yr Lease', 'Smart Home', '24/7 Power'"
+          - name: "features"
+            label: "Property Highlights (on detail page)"
+            widget: "list"
+            field: { name: "feature", label: "Highlight", widget: "string" }
+            hint: "Bigger feature list shown on the detail page. Example: '17-Year Lease', 'Live or Earn Model'"
+          - name: "amenities"
+            label: "Building Amenities"
+            widget: "list"
+            field: { name: "amenity", label: "Amenity", widget: "string" }
+            hint: "What the building offers. Example: '24/7 Power', 'Gym', 'Parking', 'Security'"
+
+      # ---------- LOCATION MAP (advanced) ----------
+      - name: "map_section"
+        label: "🗺️ Location Map"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { name: "mapEmbed", label: "Google Map Link", widget: "string", hint: "💡 How to get this: 1) Open Google Maps → search your property address 2) Click 'Share' → 'Embed a map' 3) Copy the URL from the iframe src (looks like https://www.google.com/maps?q=...&output=embed)" }
+
+      # ---------- TOURS / VIDEO (advanced) ----------
+      - name: "tour_section"
+        label: "🎥 Virtual Tour & Video"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { name: "videoUrl", label: "Walkthrough Video Link (optional)", widget: "string", required: false, hint: "YouTube, Vimeo, or direct MP4 link. Leave blank if not yet filmed. The 'Tour' button only shows if this is filled." }
+          - { name: "matterportUrl", label: "360° Matterport Link (optional)", widget: "string", required: false, hint: "Only fill if you have a Matterport showcase URL. Most properties leave this blank." }
+          - name: "tourScenes"
+            label: "Fallback 360° Photos (optional)"
+            widget: "list"
+            required: false
+            hint: "Used only when no video/Matterport link is set. Each scene is a 360° panorama image."
+            fields:
+              - { name: "id", label: "Scene ID", widget: "string", hint: "Short name like 'exterior' or 'lobby'" }
+              - { name: "title", label: "Scene Title", widget: "string", hint: "Shown to viewers" }
+              - { name: "image", label: "360° Photo", widget: "image" }
+
+      # ---------- ADVANCED (rarely needed) ----------
+      - name: "advanced_section"
+        label: "⚙️ Advanced (usually leave alone)"
+        widget: "object"
+        collapsed: true
+        fields:
+          - name: "useCases"
+            label: "Use Cases (Live / Earn / Shortlet)"
+            widget: "list"
+            required: false
+            field: { name: "useCase", label: "Use Case", widget: "string" }
+            hint: "How buyers can use the property. Example: 'Live in it', 'Rent it out', 'Airbnb'"
+          - name: "valuePillars"
+            label: "Value Pillars"
+            widget: "list"
+            required: false
+            field: { name: "pillar", label: "Pillar", widget: "string" }
+            hint: "Core values the property represents. Example: 'Efficiency', 'Safety', 'Comfort'"
 
   # ============================================================
   # FAQs
@@ -164,18 +224,24 @@ collections:
         field: category
         pattern: "general"
     fields:
-      - { name: "id", label: "ID (auto)", widget: "string", hint: "Short unique ID like f1, f2, f3…" }
-      - { name: "question", label: "Question", widget: "string" }
-      - { name: "answer", label: "Answer", widget: "markdown" }
+      - { name: "id", label: "ID (short, like f1, f2)", widget: "string", hint: "Just a unique short label. Example: f1, f2, f3" }
+      - { name: "question", label: "Question", widget: "string", hint: "The question buyers ask. Example: 'How does the 17-year lease work?'" }
+      - { name: "answer", label: "Answer", widget: "markdown", hint: "Type your answer. Use the toolbar to format — bold for emphasis, bullet points for lists." }
       - name: "category"
         label: "Category"
         widget: "select"
-        options: ["investment", "legal", "property", "diaspora", "general"]
+        hint: "Where this FAQ belongs"
+        options:
+          - { label: "💰 Investment", value: "investment" }
+          - { label: "⚖️ Legal", value: "legal" }
+          - { label: "🏠 Property", value: "property" }
+          - { label: "🌍 Diaspora", value: "diaspora" }
+          - { label: "📋 General", value: "general" }
         default: "general"
-      - { name: "order", label: "Display Order", widget: "number", default: 1, hint: "Lower numbers appear first" }
+      - { name: "order", label: "Display Order", widget: "number", default: 1, hint: "Lower numbers appear first. Example: 1 shows before 5." }
 
   # ============================================================
-  # TESTIMONIALS (use-case scenarios)
+  # USE-CASE SCENARIOS
   # ============================================================
   - name: "testimonials"
     label: "Use-Case Scenarios"
@@ -183,23 +249,29 @@ collections:
     folder: "content/testimonials"
     create: true
     delete: true
-    summary: "{{title}} ({{category}})"
+    summary: "{{title}}"
     fields:
-      - { name: "id", label: "ID (auto)", widget: "string" }
-      - { name: "title", label: "Title", widget: "string" }
-      - { name: "scenario", label: "Scenario Subtitle", widget: "string" }
-      - { name: "description", label: "Description", widget: "markdown" }
+      - { name: "id", label: "ID (short)", widget: "string", hint: "Just a unique short label" }
+      - { name: "title", label: "Title", widget: "string", hint: "Example: 'Live in it — Your own Lagos address'" }
+      - { name: "scenario", label: "Short Subtitle", widget: "string", hint: "One line describing the scenario" }
+      - { name: "description", label: "Full Description", widget: "markdown", hint: "Explain the scenario in detail. Use the toolbar for formatting." }
       - name: "category"
         label: "Category"
         widget: "select"
-        options: ["live", "earn", "shortlet", "diaspora", "realtor"]
+        options:
+          - { label: "🏠 Live in it", value: "live" }
+          - { label: "💰 Rent it out", value: "earn" }
+          - { label: "🏨 Shortlet / Airbnb", value: "shortlet" }
+          - { label: "🌍 Diaspora buyer", value: "diaspora" }
+          - { label: "🤝 Realtor partner", value: "realtor" }
         default: "earn"
       - name: "outcomes"
-        label: "Outcome Highlights"
+        label: "Outcome Highlights (the numbers)"
         widget: "list"
+        hint: "The impressive numbers buyers see. Click 'Add' for each one."
         fields:
-          - { name: "label", label: "Label", widget: "string" }
-          - { name: "value", label: "Value", widget: "string" }
+          - { name: "label", label: "Label", widget: "string", hint: "Example: 'Annual Yield'" }
+          - { name: "value", label: "Value", widget: "string", hint: "Example: '7.1%'" }
 
   # ============================================================
   # CLIENT TESTIMONIALS (real client quotes with photos)
@@ -213,13 +285,13 @@ collections:
     summary: "{{name}} — {{role}}"
     fields:
       - { name: "name", label: "Client Name", widget: "string" }
-      - { name: "location", label: "Location", widget: "string", hint: "e.g. Lagos, Nigeria or London, UK" }
-      - { name: "role", label: "Role / Title", widget: "string", hint: "e.g. Diaspora Investor or Homeowner" }
-      - { name: "photo", label: "Photo", widget: "image", hint: "Square headshot, min 400×400px" }
-      - { name: "property", label: "Property They Bought (optional)", widget: "string", required: false }
-      - { name: "quote", label: "Testimonial Quote", widget: "text" }
-      - { name: "rating", label: "Star Rating (1-5)", widget: "number", default: 5, min: 1, max: 5 }
-      - { name: "featured", label: "Feature on Homepage?", widget: "boolean", default: true }
+      - { name: "location", label: "Location", widget: "string", hint: "Example: 'Lagos, Nigeria' or 'London, UK'" }
+      - { name: "role", label: "Role / Title", widget: "string", hint: "Example: 'Diaspora Investor' or 'Homeowner'" }
+      - { name: "photo", label: "Photo", widget: "image", hint: "Square headshot works best. At least 400×400px." }
+      - { name: "property", label: "Which Property Did They Buy? (optional)", widget: "string", required: false, hint: "Example: 'Sinai Spaces'" }
+      - { name: "quote", label: "What They Said", widget: "text", hint: "The testimonial quote. Keep it natural and authentic." }
+      - { name: "rating", label: "Star Rating", widget: "number", default: 5, min: 1, max: 5, hint: "1-5 stars. Most are 5." }
+      - { name: "featured", label: "Show on Homepage?", widget: "boolean", default: true, hint: "Toggle on to feature this on the homepage" }
 
   # ============================================================
   # BLOG POSTS
@@ -238,22 +310,27 @@ collections:
         field: date
         pattern: "2026"
     fields:
-      - { name: "slug", label: "URL Slug", widget: "string", hint: "Lowercase with dashes, e.g. why-lagos-2026-outperforms" }
-      - { name: "title", label: "Title", widget: "string" }
-      - { name: "excerpt", label: "Excerpt (summary)", widget: "text", hint: "1-2 sentence summary shown on the blog listing" }
+      - { name: "title", label: "Article Title", widget: "string" }
+      - { name: "slug", label: "Web Address (auto-filled)", widget: "string", hint: "Lowercase with dashes. Example: why-lagos-2026-outperforms" }
+      - { name: "excerpt", label: "Short Summary", widget: "text", hint: "1-2 sentence preview shown on the blog listing page" }
       - name: "category"
         label: "Category"
         widget: "select"
-        options: ["investment", "market", "diaspora", "guide", "company"]
+        options:
+          - { label: "💰 Investment", value: "investment" }
+          - { label: "📊 Market", value: "market" }
+          - { label: "🌍 Diaspora", value: "diaspora" }
+          - { label: "📖 Guide", value: "guide" }
+          - { label: "🏢 Company", value: "company" }
         default: "market"
       - { name: "date", label: "Publish Date", widget: "datetime" }
-      - { name: "readTime", label: "Read Time", widget: "string", hint: "e.g. '7 min read'" }
+      - { name: "readTime", label: "Reading Time", widget: "string", hint: "Example: '7 min read'" }
       - { name: "author", label: "Author", widget: "string", default: "Engrite Innovations" }
-      - { name: "cover", label: "Cover Image", widget: "image" }
-      - { name: "body", label: "Article Body", widget: "markdown" }
+      - { name: "cover", label: "Cover Image", widget: "image", hint: "Wide landscape image. Shows at the top of the article." }
+      - { name: "body", label: "Article Body", widget: "markdown", hint: "Write your article here. Use the toolbar for headings, bold, links, images, etc." }
 
   # ============================================================
-  # SITE SETTINGS (singleton — global contact info, hero text, etc.)
+  # SITE SETTINGS (singleton)
   # ============================================================
   - name: "settings"
     label: "Site Settings"
@@ -262,80 +339,104 @@ collections:
       preview: false
     files:
       - name: "site"
-        label: "Site-Wide Settings"
+        label: "Contact Info & Site Text"
         file: "content/settings/site.md"
-        description: "Contact info, hero text, social links, and global stats. Edits here update the entire site."
+        description: "Phone numbers, email, hero text, social links — changes here update the entire site."
         fields:
-          - name: "company"
-            label: "Company Information"
+
+          # ---------- CONTACT INFO ----------
+          - name: "contact"
+            label: "📞 Contact Information"
             widget: "object"
+            collapsed: false
+            fields:
+              - { name: "phonePrimary", label: "Primary Phone Number", widget: "string", hint: "Main number customers call" }
+              - { name: "phoneSecondary", label: "Secondary Phone (optional)", widget: "string" }
+              - { name: "email", label: "Email Address", widget: "string" }
+              - { name: "address", label: "Office Address", widget: "text" }
+              - { name: "whatsappNumber", label: "WhatsApp Number", widget: "string", hint: "No + or spaces. Example: 2348130665862" }
+              - { name: "hours", label: "Business Hours", widget: "string", hint: "Example: 'Mon–Fri, 9am – 6pm'" }
+
+          # ---------- SOCIAL LINKS ----------
+          - name: "social"
+            label: "📲 Social Media Links"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { name: "instagram", label: "Instagram URL", widget: "string", hint: "Full link, example: https://instagram.com/engriteinnovations_" }
+              - { name: "linkedin", label: "LinkedIn URL", widget: "string" }
+              - { name: "facebook", label: "Facebook URL", widget: "string" }
+
+          # ---------- HOMEPAGE HERO ----------
+          - name: "hero"
+            label: "🎯 Homepage Banner"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { name: "eyebrow", label: "Small Label (top of banner)", widget: "string", hint: "Example: 'Lagos · Nigeria'" }
+              - { name: "titleLine1", label: "Headline Line 1", widget: "string" }
+              - { name: "titleLine2", label: "Headline Line 2", widget: "string" }
+              - { name: "titleLine3", label: "Headline Line 3", widget: "string" }
+              - { name: "subtitle", label: "Subtitle", widget: "text", hint: "1-2 sentence description below the headline" }
+              - { name: "primaryCta", label: "Primary Button Text", widget: "string", hint: "Main button. Example: 'Explore Properties'" }
+              - { name: "secondaryCta", label: "Secondary Button Text", widget: "string", hint: "Second button. Example: 'Book a Site Visit'" }
+
+          # ---------- HOMEPAGE STATS ----------
+          - name: "stats"
+            label: "📊 Homepage Stats Bar"
+            widget: "object"
+            collapsed: true
+            hint: "The four numbers shown below the homepage banner"
+            fields:
+              - { name: "annualReturn", label: "Stat 1 — Value", widget: "string", hint: "Example: '7.1%'" }
+              - { name: "annualReturnLabel", label: "Stat 1 — Label", widget: "string", hint: "Example: 'Annual Return'" }
+              - { name: "leaseTerm", label: "Stat 2 — Value", widget: "string" }
+              - { name: "leaseTermLabel", label: "Stat 2 — Label", widget: "string" }
+              - { name: "activeProjects", label: "Stat 3 — Value", widget: "string" }
+              - { name: "activeProjectsLabel", label: "Stat 3 — Label", widget: "string" }
+              - { name: "legalFees", label: "Stat 4 — Value", widget: "string" }
+              - { name: "legalFeesLabel", label: "Stat 4 — Label", widget: "string" }
+
+          # ---------- COMPANY INFO ----------
+          - name: "company"
+            label: "🏢 Company Information"
+            widget: "object"
+            collapsed: true
             fields:
               - { name: "name", label: "Company Name", widget: "string" }
               - { name: "legalName", label: "Legal Name", widget: "string" }
               - { name: "rcNumber", label: "RC Number", widget: "string" }
               - { name: "tagline", label: "Tagline", widget: "string" }
               - { name: "established", label: "Year Established", widget: "string" }
-              - { name: "description", label: "Company Description", widget: "text" }
-          - name: "contact"
-            label: "Contact Information"
-            widget: "object"
-            fields:
-              - { name: "phonePrimary", label: "Primary Phone", widget: "string" }
-              - { name: "phoneSecondary", label: "Secondary Phone", widget: "string" }
-              - { name: "email", label: "Email Address", widget: "string" }
-              - { name: "address", label: "Office Address", widget: "text" }
-              - { name: "whatsappNumber", label: "WhatsApp Number (no + or spaces)", widget: "string", hint: "e.g. 2348130665862" }
-              - { name: "hours", label: "Business Hours", widget: "string" }
-          - name: "social"
-            label: "Social Media Links"
-            widget: "object"
-            fields:
-              - { name: "instagram", label: "Instagram URL", widget: "string" }
-              - { name: "linkedin", label: "LinkedIn URL", widget: "string" }
-              - { name: "facebook", label: "Facebook URL", widget: "string" }
-          - name: "hero"
-            label: "Homepage Hero Section"
-            widget: "object"
-            fields:
-              - { name: "eyebrow", label: "Eyebrow Text", widget: "string" }
-              - { name: "titleLine1", label: "Title Line 1", widget: "string" }
-              - { name: "titleLine2", label: "Title Line 2", widget: "string" }
-              - { name: "titleLine3", label: "Title Line 3", widget: "string" }
-              - { name: "subtitle", label: "Subtitle", widget: "text" }
-              - { name: "primaryCta", label: "Primary Button Text", widget: "string" }
-              - { name: "secondaryCta", label: "Secondary Button Text", widget: "string" }
-          - name: "stats"
-            label: "Homepage Stats Bar"
-            widget: "object"
-            hint: "The four statistics shown below the hero section"
-            fields:
-              - { name: "annualReturn", label: "Annual Return Value", widget: "string" }
-              - { name: "annualReturnLabel", label: "Annual Return Label", widget: "string" }
-              - { name: "leaseTerm", label: "Lease Term Value", widget: "string" }
-              - { name: "leaseTermLabel", label: "Lease Term Label", widget: "string" }
-              - { name: "activeProjects", label: "Active Projects Value", widget: "string" }
-              - { name: "activeProjectsLabel", label: "Active Projects Label", widget: "string" }
-              - { name: "legalFees", label: "Legal Fees Value", widget: "string" }
-              - { name: "legalFeesLabel", label: "Legal Fees Label", widget: "string" }
+              - { name: "description", label: "About the Company", widget: "text" }
+
+          # ---------- FOUNDER ----------
           - name: "founder"
-            label: "Founder / CEO Section"
+            label: "👤 Founder / CEO"
             widget: "object"
+            collapsed: true
             fields:
               - { name: "name", label: "Name", widget: "string" }
-              - { name: "title", label: "Title", widget: "string" }
+              - { name: "title", label: "Title", widget: "string", hint: "Example: 'CEO & Real Estate Developer'" }
               - { name: "role", label: "Role / Specialty", widget: "string" }
               - { name: "education", label: "Education", widget: "string" }
               - { name: "location", label: "Location", widget: "string" }
+
+          # ---------- DIASPORA SECTION ----------
           - name: "diaspora"
-            label: "Diaspora Section"
+            label: "🌍 Diaspora Section"
             widget: "object"
+            collapsed: true
             fields:
               - { name: "title", label: "Section Title", widget: "string" }
               - { name: "description", label: "Section Description", widget: "text" }
               - { name: "closingTime", label: "Closing Time", widget: "string" }
+
+          # ---------- FOOTER ----------
           - name: "footer"
-            label: "Footer Settings"
+            label: "📄 Footer"
             widget: "object"
+            collapsed: true
             fields:
-              - { name: "aboutBlurb", label: "About Blurb", widget: "text" }
+              - { name: "aboutBlurb", label: "About Blurb (short text in footer)", widget: "text" }
               - { name: "copyright", label: "Copyright Text", widget: "string" }
