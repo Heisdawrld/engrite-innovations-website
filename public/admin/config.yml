@@ -134,7 +134,6 @@ collections:
         collapsed: false
         fields:
           - { name: "shortDesc", label: "Short Summary (shown on card)", widget: "text", hint: "1-2 sentences. This is what people see before clicking. Make it punchy." }
-          - { name: "body", label: "Full Description", widget: "markdown", hint: "The detailed write-up shown on the property page. Use the toolbar above to format text — bold, headings, bullet points, etc." }
           - name: "tags"
             label: "Highlight Badges (shown on card)"
             widget: "list"
@@ -150,6 +149,12 @@ collections:
             widget: "list"
             field: { name: "amenity", label: "Amenity", widget: "string" }
             hint: "What the building offers. Example: '24/7 Power', 'Gym', 'Parking', 'Security'"
+
+      # ---------- FULL DESCRIPTION (top-level body field) ----------
+      # NOTE: This must be at the top level (NOT inside an object widget)
+      # because Decap CMS treats a field named 'body' specially — it
+      # reads/writes the file's markdown body (below the ---).
+      - { name: "body", label: "📝 Full Description", widget: "markdown", hint: "The detailed write-up shown on the property page. Use the toolbar above to format text — bold, headings, bullet points, etc." }
 
       # ---------- LOCATION MAP (advanced) ----------
       - name: "map_section"
