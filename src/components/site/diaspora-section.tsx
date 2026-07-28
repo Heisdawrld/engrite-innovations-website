@@ -11,17 +11,17 @@ const steps = [
   {
     icon: FileCheck,
     title: "Document Verification",
-    desc: "Receive scanned title documents. Verify independently at the Lagos State Lands Bureau portal.",
+    desc: "Receive the available project documents and appoint an independent Nigerian property lawyer for verification.",
   },
   {
     icon: Wallet,
     title: "Electronic Closing",
-    desc: "Sign agreements electronically (DocuSign). Pay via SWIFT wire to our USD or NGN account.",
+    desc: "Review the final agreement, confirm payment instructions independently, and complete the approved closing process.",
   },
   {
     icon: Plane,
     title: "Handover or Rental",
-    desc: "Choose Live (move in) or Earn (we manage rentals). Receive keys or first quarterly payout.",
+    desc: "Complete the handover path or discuss managed-rental options available under the signed agreement.",
   },
 ];
 
@@ -30,7 +30,7 @@ export function DiasporaSection() {
     <section id="diaspora" className="scroll-mt-[100px] relative overflow-hidden bg-[#081534] py-20 text-white sm:py-24 lg:py-32">
       <div className="absolute inset-0 opacity-30">
         <Image
-          src="/img/newsletter-portfolio.jpg"
+          src="/img/newsletter-portfolio.webp"
           alt=""
           fill
           sizes="100vw"
@@ -49,7 +49,9 @@ export function DiasporaSection() {
             Built for the <em className="italic text-[#7fd89a]">Diaspora</em>
           </h2>
           <p className="mt-6 text-[15px] font-light leading-[1.9] text-white/60">
-            Over 40% of Engrite buyers are diaspora Nigerians. Our entire process is built to be completed remotely — from 360° virtual tours to electronic closing and USD wire transfers. No flights to Lagos required.
+            Explore from abroad with guided video calls, virtual walkthroughs,
+            document sharing and a closing process designed to reduce unnecessary
+            travel. Independent legal review remains an essential step.
           </p>
         </ScrollReveal>
 
@@ -60,7 +62,7 @@ export function DiasporaSection() {
               delay={i * 80}
               className="relative border border-white/10 bg-white/[0.04] p-6 backdrop-blur transition-all hover:border-[#7fd89a]/40"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#2BA84A]/20 text-[#7fd89a]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1F7A3A]/20 text-[#7fd89a]">
                 <step.icon className="h-5 w-5" />
               </div>
               <div className="mt-4 text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
@@ -77,7 +79,7 @@ export function DiasporaSection() {
         <ScrollReveal delay={200} className="mt-12 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
           <a
             href="#projects"
-            className="inline-flex w-full items-center justify-center gap-2 bg-[#2BA84A] px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-[#239540] sm:w-auto"
+            className="inline-flex w-full items-center justify-center gap-2 bg-[#1F7A3A] px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-[#239540] sm:w-auto"
           >
             Take a Virtual Tour
           </a>
@@ -90,7 +92,7 @@ export function DiasporaSection() {
             Chat on WhatsApp
           </a>
           <div className="text-[11px] uppercase tracking-wider text-white/60">
-            Typical diaspora closing: 21-30 days
+            Remote consultations available across time zones
           </div>
         </ScrollReveal>
       </div>

@@ -13,9 +13,8 @@ outcomes:
   - label: Management
     value: Engrite or self
 description: >-
-  Buy a Premium studio at ₦20M and run it as a shortlet/Airbnb. Engrite's Live
-  or Earn model explicitly supports shortlet operation — higher yield than
-  long-term rental, especially in Akoka Yaba where demand from UNILAG students,
-  faculty, and visiting professionals keeps occupancy high year-round.
+  Consider a Premium studio as a shortlet scenario, subject to the development
+  rules and signed agreement. Shortlet demand, occupancy, operating costs and
+  income vary and should be tested against current local market data.
 ---
 

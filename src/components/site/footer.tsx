@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Logo } from "./logo";
 import { CurrentYear } from "./current-year";
-import { Instagram, Linkedin, Facebook } from "lucide-react";
+import { Instagram, Linkedin } from "lucide-react";
 
 const socialLinks = [
   {
@@ -14,11 +14,6 @@ const socialLinks = [
     href: "https://ng.linkedin.com/company/engrite-innovations",
     icon: Linkedin,
   },
-  {
-    label: "Facebook",
-    href: "https://www.facebook.com/EduserveNG",
-    icon: Facebook,
-  },
 ];
 
 export function Footer() {
@@ -28,7 +23,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3" aria-label="Engrite Innovations home">
+            <Link href="/" className="flex items-center gap-3">
               <Logo variant="footer" />
               <div className="text-[12px] font-bold uppercase tracking-[0.18em] leading-tight text-white">
                 ENGRITE INNOVATIONS
@@ -77,8 +72,8 @@ export function Footer() {
               {["Sinai Spaces", "Sinai Residence", "Crest Residence"].map((p) => (
                 <li key={p}>
                   <Link
-                    href="#projects"
-                    className="text-[13px] font-light text-white/40 transition-colors hover:text-[#7fd89a]"
+                    href="/#projects"
+                    className="text-[13px] font-light text-white/55 transition-colors hover:text-[#9be15d]"
                   >
                     {p}
                   </Link>
@@ -93,11 +88,11 @@ export function Footer() {
               Invest
             </h3>
             <ul className="flex flex-col gap-4 sm:gap-3">
-              <li><Link href="#invest" className="text-[13px] font-light text-white/40 transition-colors hover:text-[#7fd89a]">Live or Earn</Link></li>
-              <li><Link href="#invest" className="text-[13px] font-light text-white/40 transition-colors hover:text-[#7fd89a]">17-Year Lease</Link></li>
-              <li><Link href="#invest" className="text-[13px] font-light text-white/40 transition-colors hover:text-[#7fd89a]">Investment Returns</Link></li>
-              <li><Link href="#invest" className="text-[13px] font-light text-white/40 transition-colors hover:text-[#7fd89a]">ROI Calculator</Link></li>
-              <li><Link href="#contact" className="text-[13px] font-light text-white/40 transition-colors hover:text-[#7fd89a]">Realtor Programme</Link></li>
+              <li><Link href="/#invest" className="text-[13px] font-light text-white/55 transition-colors hover:text-[#9be15d]">Live or Earn</Link></li>
+              <li><Link href="/#invest" className="text-[13px] font-light text-white/55 transition-colors hover:text-[#9be15d]">17-Year Lease</Link></li>
+              <li><Link href="/#invest" className="text-[13px] font-light text-white/55 transition-colors hover:text-[#9be15d]">Investment Illustration</Link></li>
+              <li><Link href="/#invest" className="text-[13px] font-light text-white/55 transition-colors hover:text-[#9be15d]">ROI Calculator</Link></li>
+              <li><Link href="/#contact" className="text-[13px] font-light text-white/55 transition-colors hover:text-[#9be15d]">Realtor Programme</Link></li>
             </ul>
           </div>
 
@@ -107,17 +102,19 @@ export function Footer() {
               Company
             </h3>
             <ul className="flex flex-col gap-4 sm:gap-3">
-              <li><Link href="#about" className="text-[13px] font-light text-white/40 transition-colors hover:text-[#7fd89a]">About Us</Link></li>
-              <li><Link href="#faq" className="text-[13px] font-light text-white/40 transition-colors hover:text-[#7fd89a]">FAQ</Link></li>
-              <li><Link href="#testimonials" className="text-[13px] font-light text-white/40 transition-colors hover:text-[#7fd89a]">Testimonials</Link></li>
-              <li><Link href="#contact" className="text-[13px] font-light text-white/40 transition-colors hover:text-[#7fd89a]">Contact</Link></li>
+              <li><Link href="/#about" className="text-[13px] font-light text-white/55 transition-colors hover:text-[#9be15d]">About Us</Link></li>
+              <li><Link href="/#faq" className="text-[13px] font-light text-white/55 transition-colors hover:text-[#9be15d]">FAQ</Link></li>
+              <li><Link href="/#testimonials" className="text-[13px] font-light text-white/55 transition-colors hover:text-[#9be15d]">Ownership Paths</Link></li>
+              <li><Link href="/#contact" className="text-[13px] font-light text-white/55 transition-colors hover:text-[#9be15d]">Contact</Link></li>
+              <li><Link href="/privacy" className="text-[13px] font-light text-white/55 transition-colors hover:text-[#9be15d]">Privacy</Link></li>
+              <li><Link href="/terms" className="text-[13px] font-light text-white/55 transition-colors hover:text-[#9be15d]">Website Terms</Link></li>
             </ul>
           </div>
         </div>
       </div>
 
       <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 bg-[#239540] px-4 py-5 text-center sm:flex-row sm:px-10 sm:text-left">
-        <p className="text-[11px] font-light text-white/60">
+        <p className="text-[11px] font-light text-white/75">
           © <CurrentYear /> Engrite Innovations Ltd. All rights reserved. · 27 Montgomery Street, Yaba, Lagos
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4 text-[11px]">

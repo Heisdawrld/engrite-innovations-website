@@ -13,10 +13,8 @@ outcomes:
   - label: Lease Term
     value: 17 years
 description: >-
-  Purchase the 2BR + Home Office layout at Sinai Residence for ₦120M
-  (unfurnished). This is the highest-yielding unit type at Sinai Residence —
-  larger footprint, premium layout, strong rental demand from executive tenants.
-  Engrite manages the lease, vetting, and maintenance; you receive net rental
-  income quarterly.
+  Explore how a larger 2BR + Home Office layout could fit a multi-unit or
+  executive-rental strategy. Rental demand, occupancy, costs and income are
+  illustrative and should be independently assessed before purchase.
 ---
 

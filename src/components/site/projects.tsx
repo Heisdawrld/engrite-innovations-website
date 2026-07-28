@@ -2,171 +2,146 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Heart, ArrowRight, MapPin, Eye } from "lucide-react";
+import { ArrowUpRight, MapPin } from "lucide-react";
 import { ScrollReveal } from "./scroll-reveal";
-import { useFavorites } from "@/components/providers/favorites-provider";
 import { useCurrency } from "@/components/providers/currency-provider";
-import { PROPERTIES, Property } from "@/lib/properties";
+import { PROPERTIES } from "@/lib/properties";
 
-const statusStyles: Record<Property["status"], string> = {
-  "under-construction": "text-[#2BA84A] border-l-[3px] border-[#2BA84A]",
-  "last-units": "text-[#b88600] border-l-[3px] border-[#d4a000]",
-  "off-plan": "text-[#102357] border-l-[3px] border-[#102357]",
-  "sample-units-open": "text-[#2BA84A] border-l-[3px] border-[#2BA84A]",
-};
-
-export function Projects({
-  onSelectProperty,
-  onTakeTour,
-}: {
-  onSelectProperty: (slug: string) => void;
-  onTakeTour: (slug: string) => void;
-}) {
+export function Projects() {
   const { format } = useCurrency();
-  const { toggleFavorite, isFavorite } = useFavorites();
 
   return (
-    <section id="projects" className="scroll-mt-[100px] bg-[#f4f6fb] py-20 sm:py-24 lg:py-28">
-      <div className="mx-auto max-w-[1400px]">
-        <ScrollReveal className="mb-12 flex flex-col gap-4 px-4 sm:mb-14 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:px-10">
+    <section
+      id="projects"
+      className="architectural-grid-dark scroll-mt-[90px] overflow-hidden bg-[#f7f7f2] py-24 sm:py-28 lg:py-36"
+    >
+      <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10">
+        <ScrollReveal className="mb-14 grid items-end gap-8 lg:grid-cols-[1fr_420px]">
           <div>
-            <div className="flex items-center gap-3.5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#2BA84A]">
-              <span className="block h-[2px] w-9 bg-[#2BA84A]" aria-hidden="true" />
-              Our Portfolio
-            </div>
-            <h2 className="mt-4 font-serif text-[clamp(36px,4.4vw,60px)] font-normal leading-[1.12] text-[#102357]">
-              Landmark
+            <div className="eyebrow text-[#1f7f39]">Selected portfolio</div>
+            <h2 className="mt-5 max-w-[880px] font-serif text-[clamp(48px,6.6vw,96px)] font-normal leading-[0.9] tracking-[-0.04em] text-[#102357]">
+              Three addresses.
               <br />
-              Developments
+              <em className="italic text-[#1f7f39]">One standard.</em>
             </h2>
           </div>
-          <Link
-            href="#contact"
-            className="flex items-center gap-2.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#2BA84A] transition-all hover:gap-4"
-          >
-            View All Properties
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+          <div className="border-l border-[#102357]/15 pl-6">
+            <p className="text-[14px] font-light leading-[1.9] text-[#596174]">
+              From compact urban studios to amenity-led residences, each Engrite
+              development is shaped around how Lagos lives, works and grows.
+            </p>
+            <a
+              href="#contact"
+              className="mt-5 inline-flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#102357] transition-colors hover:text-[#1f7f39]"
+            >
+              Discuss your requirements <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 gap-5 px-4 sm:gap-6 sm:px-6 md:grid-cols-2 lg:grid-cols-3 lg:px-10">
-          {PROPERTIES.map((property, idx) => {
-            const fav = isFavorite(property.slug);
-            const hasTour = !!(property.matterportUrl || property.videoUrl);
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:gap-6">
+          {PROPERTIES.map((property, index) => {
+            const isFeatured = index === 0;
+            const isWide = index === 2;
+
             return (
               <ScrollReveal
                 key={property.slug}
-                delay={idx * 100}
-                className="group flex flex-col bg-white shadow-[0_12px_40px_rgba(8,21,52,0.08)] transition-all duration-[400ms] hover:-translate-y-1.5 hover:shadow-[0_26px_60px_rgba(8,21,52,0.18)]"
+                delay={index * 90}
+                className={`group relative overflow-hidden bg-[#071128] ${
+                  isFeatured
+                    ? "lg:col-span-7"
+                    : isWide
+                      ? "lg:col-span-12"
+                      : "lg:col-span-5"
+                }`}
               >
-                <div className="relative overflow-hidden">
-                  <div className="relative aspect-[4/5] w-full overflow-hidden">
-                    <Image
-                      src={property.image}
-                      alt={`${property.name} — ${property.tagline}`}
-                      fill
-                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-[800ms] group-hover:scale-105"
-                    />
-                  </div>
-                  <div
-                    className={`absolute right-4 top-4 z-10 bg-white/95 px-3.5 py-1.5 text-[9px] font-bold uppercase tracking-[0.2em] backdrop-blur ${statusStyles[property.status]}`}
-                  >
-                    {property.statusLabel}
-                  </div>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      e.preventDefault();
-                      toggleFavorite(property.slug);
-                    }}
-                    className="absolute left-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/95 backdrop-blur transition-all hover:scale-110"
-                    aria-label={fav ? "Remove from favorites" : "Save to favorites"}
-                    aria-pressed={fav}
-                  >
-                    <Heart
-                      className={`h-4 w-4 transition-colors ${
-                        fav ? "fill-[#2BA84A] text-[#2BA84A]" : "text-[#102357]"
-                      }`}
-                    />
-                  </button>
-                </div>
+                <article className={`relative ${isWide ? "min-h-[620px] lg:min-h-[560px]" : "min-h-[640px] lg:min-h-[760px]"}`}>
+                  <Image
+                    src={property.image}
+                    alt={`${property.name} — ${property.tagline}`}
+                    fill
+                    sizes={
+                      isWide
+                        ? "(min-width: 1024px) 94vw, 100vw"
+                        : "(min-width: 1024px) 55vw, 100vw"
+                    }
+                    className="object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.045]"
+                  />
+                  <div className="image-wash absolute inset-0 transition-opacity duration-500 group-hover:opacity-90" />
+                  <div className="film-grain pointer-events-none absolute inset-0 opacity-30" />
 
-                <div className="flex flex-1 flex-col gap-4 border-t border-[rgba(16,35,87,0.1)] p-5 sm:p-6">
-                  <div>
-                    <div className="flex items-center gap-1.5 text-[11px] font-medium text-[#6b7280]">
-                      <MapPin className="h-3 w-3" />
-                      {property.location}
-                    </div>
-                    <h3 className="mt-2 font-serif text-[22px] font-normal text-[#102357]">
-                      {property.name}
-                    </h3>
-                    <p className="mt-1 text-[13px] font-light leading-relaxed text-[#6b7280]">
-                      {property.shortDesc}
-                    </p>
-                  </div>
-
-                  <div className="flex flex-wrap gap-1.5">
-                    {property.tags.slice(0, 3).map((tag) => (
-                      <span
-                        key={tag}
-                        className="border border-[rgba(43,168,74,0.3)] bg-[rgba(43,168,74,0.06)] px-2.5 py-1 text-[9px] uppercase tracking-[0.14em] text-[#2BA84A]"
-                      >
-                        {tag}
+                  <div className="absolute inset-x-0 top-0 flex items-start p-5 sm:p-7">
+                    <div className="flex items-center gap-3">
+                      <span className="font-serif text-2xl text-white/35">0{index + 1}</span>
+                      <span className="border border-white/20 bg-[#071128]/35 px-3 py-2 text-[8px] font-bold uppercase tracking-[0.2em] text-white/85 backdrop-blur">
+                        {property.statusLabel}
                       </span>
-                    ))}
+                    </div>
                   </div>
 
-                  <div className="mt-auto flex items-center justify-between border-t border-[rgba(16,35,87,0.1)] pt-4">
+                  <div className={`absolute inset-x-0 bottom-0 p-5 sm:p-8 ${isWide ? "lg:grid lg:grid-cols-[1fr_420px] lg:items-end lg:gap-12" : ""}`}>
                     <div>
-                      <div className="text-[9px] font-semibold uppercase tracking-[0.2em] text-[#6b7280]">
-                        From
+                      <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9be15d]">
+                        <MapPin className="h-3.5 w-3.5" />
+                        {property.location}
                       </div>
-                      <div className="font-serif text-[20px] text-[#102357]">
-                        {format(property.startingPrice)}
+                      <h3 className="mt-3 font-serif text-[clamp(38px,4vw,66px)] font-normal leading-none tracking-[-0.03em] text-white">
+                        {property.name}
+                      </h3>
+                      <p className="mt-4 max-w-[650px] text-[13px] font-light leading-[1.8] text-white/70 sm:text-sm">
+                        {property.shortDesc}
+                      </p>
+                    </div>
+
+                    <div className={isWide ? "mt-7 lg:mt-0" : "mt-7"}>
+                      <div className="flex items-end justify-between border-t border-white/20 pt-5">
+                        <div>
+                          <div className="text-[8px] font-semibold uppercase tracking-[0.2em] text-white/45">
+                            Current entry point
+                          </div>
+                          <div className="mt-1 font-serif text-2xl text-white">
+                            {format(property.startingPrice)}
+                          </div>
+                        </div>
+                        <Link
+                          href={`/properties/${property.slug}`}
+                          className="flex h-11 w-11 items-center justify-center border border-white/20 text-white transition-colors hover:border-[#9be15d] hover:text-[#9be15d]"
+                          aria-label={`Explore ${property.name}`}
+                        >
+                          <ArrowUpRight className="h-4 w-4" />
+                        </Link>
+                      </div>
+
+                      <div className="mt-4 flex flex-col gap-2 sm:flex-row">
+                        <Link
+                          href={`/properties/${property.slug}`}
+                          className="group/link inline-flex min-h-13 flex-1 items-center justify-between bg-[#9be15d] px-5 text-[10px] font-bold uppercase tracking-[0.18em] text-[#071128] transition-colors hover:bg-white"
+                        >
+                          Explore residence
+                          <ArrowUpRight className="h-4 w-4 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+                        </Link>
+                        <a
+                          href="#contact"
+                          className="inline-flex min-h-13 items-center justify-center gap-2 border border-white/25 px-5 text-[10px] font-bold uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/10"
+                          aria-label={`Request a private viewing for ${property.name}`}
+                        >
+                          Private viewing
+                          <ArrowUpRight className="h-4 w-4" />
+                        </a>
                       </div>
                     </div>
-                    <span className={`bg-[rgba(43,168,74,0.06)] px-3 py-1.5 text-[9px] uppercase tracking-[0.14em] ${statusStyles[property.status].split(' ').filter(c => c.startsWith('text-')).join(' ')}`}>
-                      {property.annualReturn}% ROI
-                    </span>
                   </div>
-
-                  <div className="flex flex-col gap-2 sm:flex-row">
-                    <button
-                      onClick={() => onSelectProperty(property.slug)}
-                      className="flex flex-1 items-center justify-center gap-2 bg-[#102357] px-4 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#1a3470] sm:justify-between"
-                    >
-                      View Details
-                      <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1.5" />
-                    </button>
-                    {hasTour ? (
-                      <button
-                        onClick={() => onTakeTour(property.slug)}
-                        className="group/tour relative flex items-center justify-center gap-1.5 overflow-hidden bg-[#2BA84A] px-5 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-[#239540] hover:shadow-[0_8px_24px_rgba(43,168,74,0.4)]"
-                        aria-label={`Take virtual tour of ${property.name}`}
-                      >
-                        <Eye className="h-3.5 w-3.5" />
-                        Tour
-                        <span className="ml-1 hidden text-[9px] font-medium tracking-[0.14em] text-white/70 sm:inline">
-                          · 360°
-                        </span>
-                      </button>
-                    ) : (
-                      <button
-                        onClick={() => onTakeTour(property.slug)}
-                        className="group/tour relative flex items-center justify-center gap-1.5 overflow-hidden border border-[rgba(16,35,87,0.2)] bg-white px-5 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#102357] transition-all hover:border-[#102357] hover:bg-[#f4f6fb]"
-                        aria-label={`Book a site visit for ${property.name}`}
-                      >
-                        <Eye className="h-3.5 w-3.5" />
-                        Site Visit
-                      </button>
-                    )}
-                  </div>
-                </div>
+                </article>
               </ScrollReveal>
             );
           })}
         </div>
+
+        <p className="mt-5 text-[10px] leading-relaxed text-[#596174]">
+          Prices, availability and projected returns can change. Request the
+          current offer document before making a decision.
+        </p>
       </div>
     </section>
   );

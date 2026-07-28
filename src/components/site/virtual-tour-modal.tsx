@@ -95,7 +95,7 @@ export function VirtualTourModal({ slug, onClose }: VirtualTourModalProps) {
       {/* Header bar */}
       <header className="relative z-10 flex items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-8 sm:py-5">
         <div className="flex min-w-0 flex-1 items-center gap-2.5 text-white sm:gap-3">
-          <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#2BA84A]/15 ring-1 ring-[#2BA84A]/40 sm:h-10 sm:w-10">
+          <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#1F7A3A]/15 ring-1 ring-[#1F7A3A]/40 sm:h-10 sm:w-10">
             <Eye className="h-4 w-4 text-[#7fd89a]" />
           </div>
           <div className="min-w-0">
@@ -182,7 +182,7 @@ export function VirtualTourModal({ slug, onClose }: VirtualTourModalProps) {
                     document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
                   });
                 }}
-                className="mt-2 inline-block bg-[#2BA84A] px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#239540]"
+                className="mt-2 inline-block bg-[#1F7A3A] px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#239540]"
               >
                 Book a Site Visit
               </a>

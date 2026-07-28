@@ -21,7 +21,7 @@ export function LanguageToggle() {
         <Button
           variant="outline"
           size="sm"
-          className="gap-1.5 border-[rgba(16,35,87,0.15)] bg-white px-2.5 text-[11px] font-semibold tracking-wider text-[#102357] hover:border-[#2BA84A] hover:text-[#2BA84A]"
+          className="gap-1.5 border-[rgba(16,35,87,0.15)] bg-white px-2.5 text-[11px] font-semibold tracking-wider text-[#102357] hover:border-[#1F7A3A] hover:text-[#1F7A3A]"
           aria-label={`Language: ${current.label}`}
         >
           <Globe className="h-3.5 w-3.5" />
@@ -34,7 +34,7 @@ export function LanguageToggle() {
             key={l.code}
             onClick={() => setLang(l.code as Language)}
             className={`cursor-pointer text-xs ${
-              l.code === lang ? "font-bold text-[#2BA84A]" : ""
+              l.code === lang ? "font-bold text-[#1F7A3A]" : ""
             }`}
           >
             <span className="mr-2">{l.native}</span>

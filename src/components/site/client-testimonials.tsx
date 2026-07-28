@@ -22,12 +22,12 @@ export function ClientTestimonials() {
     <section className="bg-white py-20 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
         <ScrollReveal className="mb-12 text-center">
-          <div className="flex items-center justify-center gap-3.5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#2BA84A]">
-            <span className="block h-[2px] w-9 bg-[#2BA84A]" aria-hidden="true" />
+          <div className="flex items-center justify-center gap-3.5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#1F7A3A]">
+            <span className="block h-[2px] w-9 bg-[#1F7A3A]" aria-hidden="true" />
             Client Stories
           </div>
           <h2 className="mt-4 font-serif text-[clamp(36px,4.4vw,60px)] font-normal leading-[1.12] text-[#102357]">
-            What Our <em className="italic text-[#2BA84A]">Investors Say</em>
+            What Our <em className="italic text-[#1F7A3A]">Investors Say</em>
           </h2>
           <p className="mx-auto mt-4 max-w-[560px] text-[15px] font-light text-[#6b7280]">
             Real buyers. Real outcomes. From Lagos to the diaspora — hear from the people who trusted Engrite with their property journey.
@@ -43,7 +43,7 @@ export function ClientTestimonials() {
             >
               {/* Quote mark + rating */}
               <div className="flex items-center justify-between">
-                <QuoteIcon className="h-8 w-8 text-[#2BA84A]/30" />
+                <QuoteIcon className="h-8 w-8 text-[#1F7A3A]/30" />
                 {t.rating !== undefined && (
                   <div className="flex gap-0.5" aria-label={`${t.rating} out of 5 stars`}>
                     {Array.from({ length: 5 }).map((_, idx) => (
@@ -51,7 +51,7 @@ export function ClientTestimonials() {
                         key={idx}
                         className={`h-3.5 w-3.5 ${
                           idx < (t.rating ?? 5)
-                            ? "fill-[#2BA84A] text-[#2BA84A]"
+                            ? "fill-[#1F7A3A] text-[#1F7A3A]"
                             : "text-[#6b7280]/30"
                         }`}
                       />
@@ -67,7 +67,7 @@ export function ClientTestimonials() {
 
               {/* Property badge (if provided) */}
               {t.property && (
-                <div className="mt-4 text-[10px] font-bold uppercase tracking-[0.14em] text-[#2BA84A]">
+                <div className="mt-4 text-[10px] font-bold uppercase tracking-[0.14em] text-[#1F7A3A]">
                   {t.property}
                 </div>
               )}

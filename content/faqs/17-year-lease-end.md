@@ -1,13 +1,12 @@
 ---
 id: f2
 question: What happens at the end of the 17-year lease?
-answer: "The 17-year lease is a structural protection mechanism, not an
-  expiration of ownership. You own the property outright — the lease refers to
-  the structured investment and rental management framework. At year 17, you
-  have three options: (1) renew the Live or Earn management agreement on updated
-  terms, (2) take full self-management of the property, or (3) sell back to
-  Engrite at a guaranteed minimum price based on a pre-agreed valuation formula.
-  This exit optionality is built into every contract"
+answer: "Your rights at the end of the lease are determined by the offer
+  document and executed agreement for the specific development. Depending on
+  those terms, available options may include renewal, a new management
+  arrangement, self-management, or a transfer of your interest. Before
+  purchasing, request the complete title and lease documents and have an
+  independent property lawyer explain the tenure, renewal and exit provisions."
 category: investment
 order: 2
 ---

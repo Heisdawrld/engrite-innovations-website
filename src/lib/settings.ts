@@ -92,7 +92,7 @@ const FALLBACK: SiteSettings = {
   },
   stats: {
     annualReturn: "7.1%",
-    annualReturnLabel: "Annual Returns",
+    annualReturnLabel: "Illustrative Gross Yield",
     leaseTerm: "17",
     leaseTermLabel: "Year Lease",
     activeProjects: "3+",
@@ -109,8 +109,8 @@ const FALLBACK: SiteSettings = {
   },
   diaspora: {
     title: "Built for the Diaspora",
-    description: "Over 40% of Engrite buyers are diaspora Nigerians. Our entire process is built to be completed remotely — from 360° virtual tours to electronic closing and USD wire transfers.",
-    closingTime: "21–30 days",
+    description: "A guided remote buying experience for Nigerians abroad — from live video walkthroughs and document review to coordinated payments and construction updates.",
+    closingTime: "By appointment",
   },
   footer: {
     aboutBlurb: "Your trusted partner in the journey towards home ownership. Premium real estate development and investment in Lagos, Nigeria.",

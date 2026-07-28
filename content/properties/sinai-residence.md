@@ -4,11 +4,11 @@ name: Sinai Residence
 tagline: Yaba's premium smart real estate development
 status: sample-units-open
 statusLabel: Sample Units Open — Last Units Remaining
-image: /img/sinai-residence-real-1.jpg
+image: /img/sinai-residence-real-1.webp
 gallery:
-  - /img/sinai-residence-real-1.jpg
-  - /img/about-aerial.jpg
-  - /img/newsletter-portfolio.jpg
+  - /img/sinai-residence-real-1.webp
+  - /img/about-aerial.webp
+  - /img/newsletter-portfolio.webp
 location: 'Morocco Road, Yaba, Lagos'
 mapEmbed: 'https://www.google.com/maps?q=Morocco+Road+Yaba+Lagos+Nigeria&output=embed'
 shortDesc: >-
@@ -85,16 +85,16 @@ paymentSchedule:
 tourScenes:
   - id: exterior
     title: Exterior View
-    image: /img/sinai-residence.jpg
+    image: /img/sinai-residence.webp
   - id: living
     title: Living Room
-    image: /img/about-aerial.jpg
+    image: /img/about-aerial.webp
   - id: office
     title: Home Office
-    image: /img/newsletter-portfolio.jpg
+    image: /img/newsletter-portfolio.webp
   - id: bedroom
     title: Master Bedroom
-    image: /img/crest-residence.jpg
+    image: /img/crest-residence.webp
 completionDate: Sample Units Open — Book Inspection
 startingPrice: 19990000
 annualReturn: 7.1

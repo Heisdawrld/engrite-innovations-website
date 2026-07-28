@@ -60,9 +60,10 @@ export function ROICalculator() {
   return (
     <div className="bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] p-5 sm:p-8">
       <div className="mb-6">
-        <h3 className="font-serif text-2xl text-white sm:text-3xl">ROI Calculator</h3>
+        <h3 className="font-serif text-2xl text-white sm:text-3xl">Investment Scenario</h3>
         <p className="mt-1.5 text-sm text-white/50">
-          Adjust the sliders to model your investment returns. All figures are projections based on Engrite&apos;s 7.1% historical yield.
+          Adjust the assumptions to explore an illustrative ownership scenario.
+          This is not a quote or forecast.
         </p>
       </div>
 
@@ -73,10 +74,10 @@ export function ROICalculator() {
         </label>
         <Tabs value={mode} onValueChange={(v) => setMode(v as "earn" | "live")}>
           <TabsList className="grid w-full grid-cols-2 bg-[rgba(255,255,255,0.05)]">
-            <TabsTrigger value="earn" className="text-xs data-[state=active]:bg-[#2BA84A] data-[state=active]:text-white">
+            <TabsTrigger value="earn" className="text-xs data-[state=active]:bg-[#1F7A3A] data-[state=active]:text-white">
               Earn (Rental Income)
             </TabsTrigger>
-            <TabsTrigger value="live" className="text-xs data-[state=active]:bg-[#2BA84A] data-[state=active]:text-white">
+            <TabsTrigger value="live" className="text-xs data-[state=active]:bg-[#1F7A3A] data-[state=active]:text-white">
               Live (Owner Occupied)
             </TabsTrigger>
           </TabsList>
@@ -95,7 +96,7 @@ export function ROICalculator() {
               onClick={() => setPurchasePrice(p.price)}
               className={`px-3 py-2.5 text-left text-[11px] uppercase tracking-wider transition-all ${
                 purchasePrice === p.price
-                  ? "bg-[#2BA84A] text-white"
+                  ? "bg-[#1F7A3A] text-white"
                   : "bg-[rgba(255,255,255,0.05)] text-white/60 hover:bg-[rgba(255,255,255,0.1)]"
               }`}
             >
@@ -124,7 +125,7 @@ export function ROICalculator() {
             step={1_000_000}
             value={purchasePrice}
             onChange={(e) => setPurchasePrice(Number(e.target.value))}
-            className="w-full accent-[#2BA84A]"
+            className="w-full accent-[#1F7A3A]"
             aria-label="Purchase price"
           />
         </div>
@@ -146,7 +147,7 @@ export function ROICalculator() {
             step={5}
             value={downPaymentPct}
             onChange={(e) => setDownPaymentPct(Number(e.target.value))}
-            className="w-full accent-[#2BA84A]"
+            className="w-full accent-[#1F7A3A]"
             aria-label="Down payment percentage"
           />
         </div>
@@ -168,7 +169,7 @@ export function ROICalculator() {
             step={1}
             value={leaseYears}
             onChange={(e) => setLeaseYears(Number(e.target.value))}
-            className="w-full accent-[#2BA84A]"
+            className="w-full accent-[#1F7A3A]"
             aria-label="Lease years"
           />
         </div>
@@ -176,7 +177,7 @@ export function ROICalculator() {
 
       {/* Results */}
       <div className="mt-7 grid grid-cols-1 gap-2 sm:grid-cols-3">
-        <div className="bg-[#2BA84A] p-4 sm:col-span-3">
+        <div className="bg-[#1F7A3A] p-4 sm:col-span-3">
           <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">
             Total ROI at end of lease
           </div>
@@ -201,7 +202,7 @@ export function ROICalculator() {
         <div className="bg-[rgba(255,255,255,0.04)] p-4 border border-[rgba(255,255,255,0.08)]">
           <div className="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-wider text-white/50">
             <TrendingUp className="h-3 w-3" />
-            Annual Return
+            Illustrative Annual Income
           </div>
           <div className="mt-1.5 font-serif text-xl text-[#7fd89a]">
             {mode === "earn" ? formatSafe(calculations.netAnnualReturn) : "Owner-occupied"}
@@ -221,7 +222,7 @@ export function ROICalculator() {
         <div className="bg-[rgba(255,255,255,0.04)] p-4 border border-[rgba(255,255,255,0.08)] sm:col-span-3">
           <div className="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-wider text-white/50">
             <Wallet className="h-3 w-3" />
-            Est. Appreciation
+            Illustrative Appreciation
           </div>
           <div className="mt-1.5 font-serif text-xl text-[#7fd89a]">
             +{formatSafe(calculations.propertyAppreciation)}
@@ -230,7 +231,10 @@ export function ROICalculator() {
       </div>
 
       <p className="mt-4 text-[10px] text-white/50">
-        Projections based on historical Engrite performance (7.1% gross yield, 15% management fee, ~2.6% annual capital appreciation). Past performance does not guarantee future results. Figures shown in {currency}.
+        Scenario estimates only, using the assumptions shown in this calculator.
+        They are not a quote, valuation or promise of income or appreciation.
+        Review the project documents and obtain independent financial and legal
+        advice. Figures shown in {currency}.
       </p>
     </div>
   );

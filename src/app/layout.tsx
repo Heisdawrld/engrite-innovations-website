@@ -4,7 +4,6 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { CurrencyProvider } from "@/components/providers/currency-provider";
 import { LanguageProvider } from "@/components/providers/language-provider";
-import { FavoritesProvider } from "@/components/providers/favorites-provider";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -30,7 +29,7 @@ export const metadata: Metadata = {
     template: "%s | Engrite Innovations Ltd.",
   },
   description:
-    "Engrite Innovations Ltd. — Premium real estate development and investment in Lagos. Own properties from ₦17M with 7.1% annual returns, 17-year lease structures, and our Live or Earn model. Headquartered in Yaba, Lagos.",
+    "Explore thoughtfully designed residences by Engrite Innovations across Yaba, Akoka and Gbagada, Lagos. View current developments, ownership options and construction updates.",
   keywords: [
     "Lagos real estate",
     "Nigeria property investment",
@@ -51,28 +50,21 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   alternates: {
     canonical: SITE_URL,
-    languages: {
-      "en-NG": SITE_URL,
-      "yo-NG": `${SITE_URL}/?lang=yo`,
-      "ha-NG": `${SITE_URL}/?lang=ha`,
-      "ig-NG": `${SITE_URL}/?lang=ig`,
-      "pcm-NG": `${SITE_URL}/?lang=pcm`,
-    },
   },
   openGraph: {
     type: "website",
     url: SITE_URL,
     title: "Engrite Innovations — Own An Address That Pays You Back",
     description:
-      "Premium real estate development in Lagos. 7.1% annual returns, 17-year lease, Live or Earn model. From ₦17M.",
+      "Thoughtfully designed residences across Yaba, Akoka and Gbagada, Lagos. Explore current developments and book a private inspection.",
     siteName: "Engrite Innovations Ltd.",
     locale: "en_NG",
     images: [
       {
-        url: "/img/og-image.jpg",
+        url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Engrite Innovations — Premium Real Estate in Lagos",
+        alt: "Engrite Innovations — Building Dreams. Shaping Cities.",
       },
     ],
   },
@@ -80,8 +72,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Engrite Innovations — Own An Address That Pays You Back",
     description:
-      "Premium real estate in Lagos. 7.1% annual returns. Live or Earn model. From ₦17M.",
-    images: ["/img/og-image.jpg"],
+      "Explore Engrite developments across Lagos and book a private inspection.",
+    images: ["/og.png"],
   },
   icons: {
     icon: [{ url: "/img/favicon.svg", type: "image/svg+xml" }],
@@ -107,8 +99,8 @@ const jsonLd = {
       name: "Engrite Innovations Ltd.",
       alternateName: "Engrite Innovations",
       url: SITE_URL,
-      logo: `${SITE_URL}/img/og-image.jpg`,
-      image: `${SITE_URL}/img/og-image.jpg`,
+      logo: `${SITE_URL}/img/og-image.webp`,
+      image: `${SITE_URL}/img/og-image.webp`,
       description:
         "Engrite Innovations Ltd. — Building Dreams, Shaping Cities. A Lagos-based real estate development and investment company headquartered in Yaba, specializing in Sales, Rent, Lease, Development, Surveying, and Construction.",
       slogan: "Building Dreams, Shaping Cities",
@@ -140,7 +132,6 @@ const jsonLd = {
       sameAs: [
         "https://instagram.com/engriteinnovations_",
         "https://ng.linkedin.com/company/engrite-innovations",
-        "https://www.facebook.com/EduserveNG",
       ],
     },
     {
@@ -166,22 +157,29 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {/* Netlify Identity widget — loaded on every page so invite tokens
-            in #invite_token=... URLs are processed regardless of landing page.
-            Essential for invite-only admin flow to work from email links. */}
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async />
+        {/* Load the admin identity bundle only when an invitation/recovery link
+            lands on the public site. Regular visitors avoid the extra script. */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              if (window.netlifyIdentity) {
-                window.netlifyIdentity.on("init", user => {
-                  if (!user) {
-                    window.netlifyIdentity.on("login", () => {
-                      document.location.href = "/admin/";
-                    });
-                  }
-                });
-              }
+              (function () {
+                var needsIdentity = /(?:invite|recovery|confirmation)_token=/.test(window.location.hash);
+                if (!needsIdentity) return;
+                var script = document.createElement("script");
+                script.src = "https://identity.netlify.com/v1/netlify-identity-widget.js";
+                script.onload = function () {
+                  if (!window.netlifyIdentity) return;
+                  window.netlifyIdentity.on("init", function (user) {
+                    if (!user) {
+                      window.netlifyIdentity.on("login", function () {
+                        document.location.href = "/admin/";
+                      });
+                    }
+                  });
+                  window.netlifyIdentity.open();
+                };
+                document.head.appendChild(script);
+              })();
             `,
           }}
         />
@@ -191,10 +189,8 @@ export default function RootLayout({
       >
         <LanguageProvider>
           <CurrencyProvider>
-            <FavoritesProvider>
-              {children}
-              <Toaster />
-            </FavoritesProvider>
+            {children}
+            <Toaster />
           </CurrencyProvider>
         </LanguageProvider>
       </body>

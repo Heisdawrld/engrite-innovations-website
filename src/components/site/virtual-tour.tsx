@@ -200,7 +200,7 @@ export function VirtualTour({ scenes, matterportUrl, videoUrl, onClose, embedded
               onClick={() => goToScene(i)}
               className={`relative h-16 w-24 flex-shrink-0 overflow-hidden rounded border-2 transition-all ${
                 i === currentScene
-                  ? "border-[#2BA84A]"
+                  ? "border-[#1F7A3A]"
                   : "border-transparent opacity-60 hover:opacity-100"
               }`}
               aria-label={`View ${scene.title}`}

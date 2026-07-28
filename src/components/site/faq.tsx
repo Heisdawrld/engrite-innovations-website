@@ -29,16 +29,16 @@ export function FAQ() {
     <section id="faq" className="scroll-mt-[100px] py-20 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-[900px] px-4 sm:px-6 lg:px-10">
         <ScrollReveal className="mb-10 text-center">
-          <div className="flex items-center justify-center gap-3.5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#2BA84A]">
-            <span className="block h-[2px] w-9 bg-[#2BA84A]" aria-hidden="true" />
+          <div className="flex items-center justify-center gap-3.5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#1F7A3A]">
+            <span className="block h-[2px] w-9 bg-[#1F7A3A]" aria-hidden="true" />
             Questions & Answers
           </div>
           <h2 className="mt-4 font-serif text-[clamp(36px,4.4vw,60px)] font-normal leading-[1.12] text-[#102357]">
-            Frequently Asked <em className="italic text-[#2BA84A]">Questions</em>
+            Frequently Asked <em className="italic text-[#1F7A3A]">Questions</em>
           </h2>
           <p className="mt-4 text-[15px] font-light text-[#6b7280]">
             Everything you need to know about investing with Engrite. Can&apos;t find your answer?
-            <Link href="#contact" className="ml-1 text-[#2BA84A] underline">Ask us directly</Link>.
+            <Link href="#contact" className="ml-1 text-[#1F7A3A] underline">Ask us directly</Link>.
           </p>
         </ScrollReveal>
 
@@ -52,8 +52,8 @@ export function FAQ() {
                 aria-pressed={activeCategory === c.value}
                 className={`inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors ${
                   activeCategory === c.value
-                    ? "border-[#2BA84A] bg-[#2BA84A] text-white"
-                    : "border-[rgba(16,35,87,0.2)] text-[#102357] hover:border-[#2BA84A] hover:text-[#2BA84A]"
+                    ? "border-[#1F7A3A] bg-[#1F7A3A] text-white"
+                    : "border-[rgba(16,35,87,0.2)] text-[#102357] hover:border-[#1F7A3A] hover:text-[#1F7A3A]"
                 }`}
               >
                 {c.label}
@@ -68,7 +68,7 @@ export function FAQ() {
               <AccordionItem
                 key={faq.id}
                 value={faq.id}
-                className="overflow-hidden rounded-md border border-[rgba(16,35,87,0.1)] bg-white px-5 data-[state=open]:border-[#2BA84A] sm:px-6"
+                className="overflow-hidden rounded-md border border-[rgba(16,35,87,0.1)] bg-white px-5 data-[state=open]:border-[#1F7A3A] sm:px-6"
               >
                 <AccordionTrigger className="text-left text-[15px] font-semibold text-[#102357] hover:no-underline">
                   {faq.question}

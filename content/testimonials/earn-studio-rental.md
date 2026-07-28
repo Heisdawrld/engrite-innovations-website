@@ -11,11 +11,10 @@ outcomes:
   - label: Lease Term
     value: 17 years
   - label: Switch to Live mode
-    value: 'Anytime, no fee'
+    value: Per agreement
 description: >-
-  Purchase a studio at Sinai Spaces (Akoka, Yaba) for ₦17M on a 17-year lease.
-  Engrite's property management team places a vetted tenant and remits rental
-  income to you quarterly. The Live or Earn model means you can switch to living
-  in the unit yourself at any point — no penalty, no fee.
+  Model a studio at Sinai Spaces as a managed-rental scenario. Occupancy,
+  management fees, rental income, payment timing and any option to switch use
+  modes are governed by the current offer and signed agreement.
 ---
 

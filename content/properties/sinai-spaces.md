@@ -6,11 +6,11 @@ status: under-construction
 statusLabel: Active Selling
 location: Akoka, Yaba, Lagos
 completionDate: Active Selling — Units Available
-image: /img/sinai-spaces-real-1.jpg
+image: /img/sinai-spaces-real-1.webp
 gallery:
-  - /img/sinai-spaces-real-1.jpg
-  - /img/sinai-spaces-real-2.jpg
-  - /img/progress-sinai-spaces-1.jpg
+  - /img/sinai-spaces-real-1.webp
+  - /img/sinai-spaces-real-2.webp
+  - /img/progress-sinai-spaces-1.webp
 startingPrice: 17000000
 annualReturn: 7.1
 units:
@@ -85,17 +85,17 @@ matterportUrl: ""
 tourScenes:
   - id: exterior
     title: Exterior View
-    image: /img/sinai-spaces.jpg
+    image: /img/sinai-spaces.webp
   - id: lobby
     title: Resident Lobby
-    image: /img/about-aerial.jpg
+    image: /img/about-aerial.webp
   - id: studio
     title: Show Studio
-    image: /img/newsletter-portfolio.jpg
+    image: /img/newsletter-portfolio.webp
 useCases:
   - Live in it — your own Lagos address
   - Rent it out for steady annual income (₦2–6M/yr)
-  - Operate as shortlet/Airbnb for higher yields
+  - Explore shortlet/Airbnb use where permitted
 valuePillars:
   - Efficiency
   - Safety

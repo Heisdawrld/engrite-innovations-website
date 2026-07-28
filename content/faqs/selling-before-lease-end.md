@@ -4,11 +4,10 @@ question: Can I sell my property before the 17-year lease ends?
 category: investment
 order: 10
 answer: >-
-  Yes — you can sell at any time. The lease structure does not restrict resale.
-  Engrite offers a 'reselling assurance' program: if you choose to sell, we will
-  list the property through our buyer network first (typically achieving 8-12%
-  above market due to our pre-vetted buyer pool). If you prefer to sell
-  independently, you're free to do so with any realtor. The deed of assignment
-  transfer process takes 14-21 days.
+  A transfer may be possible, but the process, consent requirements, fees and
+  restrictions depend on the title and lease documents for the development.
+  Engrite can discuss resale support and introduce its buyer network, but no
+  resale price or completion timeline should be assumed. Review the transfer
+  provisions with an independent lawyer before purchasing.
 ---
 

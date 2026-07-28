@@ -9,7 +9,7 @@ category: market
 date: 2026-06-18T00:00:00.000Z
 readTime: 7 min read
 author: Engrite Research
-cover: /img/about-aerial.jpg
+cover: /img/about-aerial.webp
 ---
 Lagos real estate delivered a **23% average appreciation** in 2025, according to data from the Nigerian Bureau of Statistics and corroborated by independent valuations from three Lagos-based firms.
 

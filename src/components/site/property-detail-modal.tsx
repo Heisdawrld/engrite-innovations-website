@@ -80,7 +80,7 @@ export function PropertyDetailModal({ slug, onClose }: PropertyDetailModalProps)
               </span>
               <span className="flex items-center gap-1.5">
                 <TrendingUp className="h-3.5 w-3.5 text-[#7fd89a]" />
-                {property.annualReturn}% annual return
+                {property.annualReturn}% illustrative gross yield
               </span>
             </div>
           </div>
@@ -92,7 +92,7 @@ export function PropertyDetailModal({ slug, onClose }: PropertyDetailModalProps)
           >
             <Heart
               className={`h-5 w-5 transition-colors ${
-                fav ? "fill-[#2BA84A] text-[#2BA84A]" : "text-[#102357]"
+                fav ? "fill-[#1F7A3A] text-[#1F7A3A]" : "text-[#102357]"
               }`}
             />
           </button>
@@ -112,7 +112,7 @@ export function PropertyDetailModal({ slug, onClose }: PropertyDetailModalProps)
               key={i}
               onClick={() => setActiveImage(i)}
               className={`relative h-16 w-24 flex-shrink-0 overflow-hidden rounded border-2 transition-all ${
-                i === activeImage ? "border-[#2BA84A]" : "border-transparent opacity-60 hover:opacity-100"
+                i === activeImage ? "border-[#1F7A3A]" : "border-transparent opacity-60 hover:opacity-100"
               }`}
               aria-label={`View image ${i + 1}`}
             >
@@ -149,7 +149,7 @@ export function PropertyDetailModal({ slug, onClose }: PropertyDetailModalProps)
                   {property.features.map((f) => (
                     <span
                       key={f}
-                      className="border border-[rgba(43,168,74,0.3)] bg-[rgba(43,168,74,0.06)] px-3 py-1.5 text-[11px] uppercase tracking-wider text-[#2BA84A]"
+                      className="border border-[rgba(43,168,74,0.3)] bg-[rgba(43,168,74,0.06)] px-3 py-1.5 text-[11px] uppercase tracking-wider text-[#1F7A3A]"
                     >
                       {f}
                     </span>
@@ -164,7 +164,7 @@ export function PropertyDetailModal({ slug, onClose }: PropertyDetailModalProps)
                 <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
                   {property.amenities.map((a) => (
                     <div key={a} className="flex items-center gap-2 text-sm text-[#1a1f2e]">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#2BA84A]" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#1F7A3A]" />
                       {a}
                     </div>
                   ))}
@@ -216,7 +216,7 @@ export function PropertyDetailModal({ slug, onClose }: PropertyDetailModalProps)
                           <td className="px-4 py-3 font-serif text-base text-[#102357]">
                             {format(unit.price)}
                           </td>
-                          <td className="px-4 py-3 text-[#2BA84A]">{unit.rentalYield}</td>
+                          <td className="px-4 py-3 text-[#1F7A3A]">{unit.rentalYield}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -280,7 +280,7 @@ export function PropertyDetailModal({ slug, onClose }: PropertyDetailModalProps)
                   document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
                 });
               }}
-              className="flex-1 bg-[#2BA84A] px-6 py-4 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-[#239540]"
+              className="flex-1 bg-[#1F7A3A] px-6 py-4 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-[#239540]"
             >
               Enquire About {property.name}
             </a>

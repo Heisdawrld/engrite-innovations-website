@@ -31,7 +31,7 @@ export function FavoritesModal({
       <DialogContent className="max-h-[90vh] w-[95vw] max-w-2xl overflow-y-auto p-0 sm:rounded-md">
         <DialogHeader className="border-b border-[rgba(16,35,87,0.1)] p-5">
           <DialogTitle className="flex items-center gap-2 font-serif text-2xl text-[#102357]">
-            <Heart className="h-5 w-5 fill-[#2BA84A] text-[#2BA84A]" />
+            <Heart className="h-5 w-5 fill-[#1F7A3A] text-[#1F7A3A]" />
             Saved Properties
             <span className="text-sm text-[#6b7280]">({savedProperties.length})</span>
           </DialogTitle>
@@ -48,7 +48,7 @@ export function FavoritesModal({
             </div>
             <button
               onClick={onClose}
-              className="bg-[#2BA84A] px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white"
+              className="bg-[#1F7A3A] px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white"
             >
               Browse Properties
             </button>
@@ -72,7 +72,7 @@ export function FavoritesModal({
                 <div className="flex-1">
                   <div className="font-serif text-base text-[#102357]">{property.name}</div>
                   <div className="text-[11px] text-[#6b7280]">{property.location}</div>
-                  <div className="mt-1 font-serif text-sm text-[#2BA84A]">
+                  <div className="mt-1 font-serif text-sm text-[#1F7A3A]">
                     From {format(property.startingPrice)}
                   </div>
                 </div>

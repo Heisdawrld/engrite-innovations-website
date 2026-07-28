@@ -47,21 +47,21 @@ export function Contact() {
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
           <ScrollReveal>
-            <div className="flex items-center gap-3.5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#2BA84A]">
-              <span className="block h-[2px] w-9 bg-[#2BA84A]" aria-hidden="true" />
+            <div className="flex items-center gap-3.5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#1F7A3A]">
+              <span className="block h-[2px] w-9 bg-[#1F7A3A]" aria-hidden="true" />
               {t("contact.label")}
             </div>
             <h2 className="mt-4 font-serif text-[clamp(36px,4.4vw,60px)] font-normal leading-[1.12] text-[#102357]">
               {t("contact.title1")}
               <br />
-              <em className="italic text-[#2BA84A]">{t("contact.title2")}</em>
+              <em className="italic text-[#1F7A3A]">{t("contact.title2")}</em>
               <br />
               {t("contact.title3")}
             </h2>
 
             <div className="mt-9 flex flex-col gap-7">
               <div>
-                <div className="flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.24em] text-[#2BA84A]">
+                <div className="flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.24em] text-[#1F7A3A]">
                   <MapPin className="h-3 w-3" />
                   {t("contact.address")}
                 </div>
@@ -70,43 +70,42 @@ export function Contact() {
                 </div>
               </div>
               <div>
-                <div className="flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.24em] text-[#2BA84A]">
+                <div className="flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.24em] text-[#1F7A3A]">
                   <Mail className="h-3 w-3" />
                   {t("contact.email")}
                 </div>
                 <a
                   href="mailto:engriteinnovations@gmail.com"
-                  className="mt-1.5 block text-[15px] font-light text-[#1a1f2e] hover:text-[#2BA84A]"
+                  className="mt-1.5 block text-[15px] font-light text-[#1a1f2e] hover:text-[#1F7A3A]"
                 >
                   engriteinnovations@gmail.com
                 </a>
               </div>
               <div>
-                <div className="flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.24em] text-[#2BA84A]">
+                <div className="flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.24em] text-[#1F7A3A]">
                   <Phone className="h-3 w-3" />
                   {t("contact.phone")}
                 </div>
                 <a
                   href="tel:+2348130665862"
-                  className="mt-1.5 block text-[15px] font-light text-[#1a1f2e] hover:text-[#2BA84A]"
+                  className="mt-1.5 block text-[15px] font-light text-[#1a1f2e] hover:text-[#1F7A3A]"
                 >
                   +234 813 066 5862
                 </a>
                 <a
                   href="tel:+2349061753571"
-                  className="mt-1 block text-[13px] font-light text-[#6b7280] hover:text-[#2BA84A]"
+                  className="mt-1 block text-[13px] font-light text-[#6b7280] hover:text-[#1F7A3A]"
                 >
                   +234 906 175 3571 (Alt)
                 </a>
               </div>
               <div>
-                <div className="text-[9px] font-bold uppercase tracking-[0.24em] text-[#2BA84A]">
+                <div className="text-[9px] font-bold uppercase tracking-[0.24em] text-[#1F7A3A]">
                   {t("contact.follow")}
                 </div>
                 <div className="mt-2 flex flex-wrap gap-5 text-[15px] font-light text-[#1a1f2e]">
-                  <a href="https://instagram.com/engriteinnovations_" target="_blank" rel="noopener noreferrer" className="hover:text-[#2BA84A]">Instagram</a>
-                  <a href="https://ng.linkedin.com/company/engrite-innovations" target="_blank" rel="noopener noreferrer" className="hover:text-[#2BA84A]">LinkedIn</a>
-                  <a href="https://www.facebook.com/EduserveNG" target="_blank" rel="noopener noreferrer" className="hover:text-[#2BA84A]">Facebook</a>
+                  <a href="https://instagram.com/engriteinnovations_" target="_blank" rel="noopener noreferrer" className="hover:text-[#1F7A3A]">Instagram</a>
+                  <a href="https://ng.linkedin.com/company/engrite-innovations" target="_blank" rel="noopener noreferrer" className="hover:text-[#1F7A3A]">LinkedIn</a>
                 </div>
               </div>
             </div>
@@ -146,7 +145,7 @@ export function Contact() {
                     autoComplete="given-name"
                     value={form.firstName}
                     onChange={(e) => setField("firstName", e.target.value)}
-                    className="h-12 bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#2BA84A] focus:bg-white"
+                    className="h-12 bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#1F7A3A] focus:bg-white"
                   />
                 </div>
                 <div className="space-y-1.5">
@@ -161,7 +160,7 @@ export function Contact() {
                     autoComplete="family-name"
                     value={form.lastName}
                     onChange={(e) => setField("lastName", e.target.value)}
-                    className="h-12 bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#2BA84A] focus:bg-white"
+                    className="h-12 bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#1F7A3A] focus:bg-white"
                   />
                 </div>
               </div>
@@ -178,7 +177,7 @@ export function Contact() {
                   autoComplete="email"
                   value={form.email}
                   onChange={(e) => setField("email", e.target.value)}
-                  className="h-12 bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#2BA84A] focus:bg-white"
+                  className="h-12 bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#1F7A3A] focus:bg-white"
                 />
               </div>
 
@@ -193,7 +192,7 @@ export function Contact() {
                   autoComplete="tel"
                   value={form.phone}
                   onChange={(e) => setField("phone", e.target.value)}
-                  className="h-12 bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#2BA84A] focus:bg-white"
+                  className="h-12 bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#1F7A3A] focus:bg-white"
                 />
               </div>
 
@@ -202,7 +201,7 @@ export function Contact() {
                   {t("form.interest")}
                 </Label>
                 <Select value={form.interest} onValueChange={(v) => setField("interest", v)}>
-                  <SelectTrigger id="interest" className="h-12 bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#2BA84A]">
+                  <SelectTrigger id="interest" className="h-12 bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#1F7A3A]">
                     <SelectValue placeholder={t("form.interest")} />
                   </SelectTrigger>
                   <SelectContent>
@@ -228,17 +227,21 @@ export function Contact() {
                   rows={4}
                   value={form.message}
                   onChange={(e) => setField("message", e.target.value)}
-                  className="resize-none bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#2BA84A] focus:bg-white"
+                  className="resize-none bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#1F7A3A] focus:bg-white"
                 />
               </div>
 
               <Button
                 type="submit"
                 disabled={loading}
-                className="mt-3 h-12 w-full bg-[#2BA84A] text-[11px] font-bold uppercase tracking-[0.2em] text-white hover:bg-[#239540] disabled:opacity-50 sm:w-auto sm:self-start"
+                className="mt-3 h-12 w-full bg-[#1F7A3A] text-[11px] font-bold uppercase tracking-[0.2em] text-white hover:bg-[#239540] disabled:opacity-50 sm:w-auto sm:self-start"
               >
                 {loading ? "Sending…" : t("form.submit")}
               </Button>
+              <p className="max-w-md text-[10px] leading-relaxed text-[#6b7280]">
+                By submitting, you agree that Engrite may contact you about this
+                enquiry. See our <a href="/privacy" className="underline underline-offset-2 hover:text-[#102357]">privacy notice</a>.
+              </p>
             </form>
           </ScrollReveal>
         </div>

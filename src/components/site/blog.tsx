@@ -32,12 +32,12 @@ export function Blog() {
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
         <ScrollReveal className="mb-12 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <div className="flex items-center gap-3.5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#2BA84A]">
-              <span className="block h-[2px] w-9 bg-[#2BA84A]" aria-hidden="true" />
+            <div className="flex items-center gap-3.5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#1F7A3A]">
+              <span className="block h-[2px] w-9 bg-[#1F7A3A]" aria-hidden="true" />
               Insights
             </div>
             <h2 className="mt-4 font-serif text-[clamp(36px,4.4vw,60px)] font-normal leading-[1.12] text-[#102357]">
-              Market <em className="italic text-[#2BA84A]">Intelligence</em>
+              Market <em className="italic text-[#1F7A3A]">Intelligence</em>
             </h2>
             <p className="mt-4 max-w-[480px] text-[15px] font-light text-[#6b7280]">
               In-depth analysis of the Lagos real estate market, investment strategy, and diaspora buying guidance from the Engrite team.
@@ -89,7 +89,7 @@ export function Blog() {
                   <p className="mt-2 text-[13px] font-light leading-[1.7] text-[#6b7280] line-clamp-3">
                     {post.excerpt}
                   </p>
-                  <div className="mt-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#2BA84A]">
+                  <div className="mt-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#1F7A3A]">
                     Read Article
                     <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                   </div>
@@ -136,7 +136,7 @@ export function Blog() {
                 </DialogHeader>
               </div>
 
-              <div className="prose prose-sm max-w-none p-6 sm:p-8 prose-headings:font-serif prose-headings:text-[#102357] prose-a:text-[#2BA84A] prose-strong:text-[#102357] prose-table:overflow-hidden prose-th:bg-[#102357] prose-th:text-white">
+              <div className="prose prose-sm max-w-none p-6 sm:p-8 prose-headings:font-serif prose-headings:text-[#102357] prose-a:text-[#1F7A3A] prose-strong:text-[#102357] prose-table:overflow-hidden prose-th:bg-[#102357] prose-th:text-white">
                 <ReactMarkdown>{openPost.content}</ReactMarkdown>
               </div>
             </>

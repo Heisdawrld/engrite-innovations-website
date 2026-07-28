@@ -28,7 +28,7 @@ export function Newsletter() {
     <section id="newsletter" className="scroll-mt-[100px] grid min-h-[500px] grid-cols-1 lg:grid-cols-2">
       <div className="relative min-h-[220px] overflow-hidden">
         <Image
-          src="/img/newsletter-portfolio.jpg"
+          src="/img/newsletter-portfolio.webp"
           alt="Engrite property portfolio"
           fill
           sizes="(min-width: 1024px) 50vw, 100vw"
@@ -91,12 +91,15 @@ export function Newsletter() {
           <Button
             type="submit"
             disabled={loading}
-            className="mt-2 h-12 w-full bg-[#2BA84A] text-[11px] font-bold uppercase tracking-[0.2em] text-white hover:bg-[#239540] disabled:opacity-50 sm:w-auto sm:self-start"
+            className="mt-2 h-12 w-full bg-[#1F7A3A] text-[11px] font-bold uppercase tracking-[0.2em] text-white hover:bg-[#239540] disabled:opacity-50 sm:w-auto sm:self-start"
           >
             {loading ? "Subscribing…" : t("newsletter.button")}
           </Button>
         </form>
-        <p className="mt-3 text-[11px] text-white/40">No spam. Unsubscribe any time.</p>
+        <p className="mt-3 max-w-md text-[10px] leading-relaxed text-white/55">
+          By subscribing, you agree to receive property updates from Engrite.
+          You can opt out at any time. <a href="/privacy" className="underline underline-offset-2 hover:text-white">Privacy notice</a>.
+        </p>
       </ScrollReveal>
     </section>
   );

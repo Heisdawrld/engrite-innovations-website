@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import { Navbar } from "@/components/site/navbar";
 import { Footer } from "@/components/site/footer";
 import { Hero } from "@/components/site/hero";
@@ -8,9 +5,9 @@ import { StatsBar } from "@/components/site/stats-bar";
 import { Ticker } from "@/components/site/ticker";
 import { About } from "@/components/site/about";
 import { Projects } from "@/components/site/projects";
+import { ProgressGallery } from "@/components/site/progress-gallery";
 import { Invest } from "@/components/site/invest";
 import { WhyUs } from "@/components/site/why-us";
-import { Quote } from "@/components/site/quote";
 import { Newsletter } from "@/components/site/newsletter";
 import { Contact } from "@/components/site/contact";
 import { FAQ } from "@/components/site/faq";
@@ -18,15 +15,8 @@ import { Testimonials } from "@/components/site/testimonials";
 import { ClientTestimonials } from "@/components/site/client-testimonials";
 import { DiasporaSection } from "@/components/site/diaspora-section";
 import { WhatsAppFloat } from "@/components/site/whatsapp-float";
-import { PropertyDetailModal } from "@/components/site/property-detail-modal";
-import { VirtualTourModal } from "@/components/site/virtual-tour-modal";
-import { FavoritesModal } from "@/components/site/favorites-modal";
 
 export default function Home() {
-  const [selectedProperty, setSelectedProperty] = useState<string | null>(null);
-  const [tourProperty, setTourProperty] = useState<string | null>(null);
-  const [favoritesOpen, setFavoritesOpen] = useState(false);
-
   return (
     <>
       <a
@@ -36,20 +26,17 @@ export default function Home() {
         Skip to main content
       </a>
 
-      <Navbar onOpenFavorites={() => setFavoritesOpen(true)} />
+      <Navbar />
 
       <main id="main" className="flex-1">
         <Hero />
         <StatsBar />
         <Ticker />
+        <Projects />
+        <ProgressGallery />
         <About />
-        <Projects
-          onSelectProperty={setSelectedProperty}
-          onTakeTour={setTourProperty}
-        />
         <Invest />
         <WhyUs />
-        <Quote />
         <DiasporaSection />
         <Testimonials />
         <ClientTestimonials />
@@ -61,22 +48,6 @@ export default function Home() {
       <Footer />
 
       <WhatsAppFloat />
-
-      <PropertyDetailModal
-        slug={selectedProperty}
-        onClose={() => setSelectedProperty(null)}
-      />
-
-      <VirtualTourModal
-        slug={tourProperty}
-        onClose={() => setTourProperty(null)}
-      />
-
-      <FavoritesModal
-        open={favoritesOpen}
-        onClose={() => setFavoritesOpen(false)}
-        onSelectProperty={(slug) => setSelectedProperty(slug)}
-      />
     </>
   );
 }

@@ -32,14 +32,16 @@ export function Invest() {
               {t("invest.title3")}
             </h2>
             <p className="mt-6 max-w-[500px] text-[15px] font-light leading-[1.9] text-white/60">
-              Engrite Innovations offers a proven Live or Earn model — buy a property, move in, or let us generate rental income for you. Either way, you build wealth.
+              Engrite&apos;s Live or Earn framework lets eligible buyers choose
+              between personal use and managed rental income, subject to the
+              terms of the selected development and executed agreement.
             </p>
 
             <div className="mt-10 grid grid-cols-2 gap-2 sm:gap-3">
-              <div className="bg-[#2BA84A] border border-[#239540] p-6 col-span-2">
+              <div className="bg-[#1F7A3A] border border-[#239540] p-6 col-span-2">
                 <span className="font-serif text-[40px] font-normal leading-none text-white sm:text-[50px]">7.1%</span>
                 <div className="mt-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/80">
-                  Annual Investment Returns
+                  Illustrative Gross Yield
                 </div>
               </div>
               <div className="bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] p-5 sm:p-6 transition-colors hover:border-[rgba(127,216,154,0.3)]">
@@ -51,7 +53,7 @@ export function Invest() {
               <div className="bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] p-5 sm:p-6 transition-colors hover:border-[rgba(127,216,154,0.3)]">
                 <span className="font-serif text-[40px] font-normal leading-none text-white sm:text-[50px]">5%</span>
                 <div className="mt-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/60">
-                  Legal Fees Only
+                  Indicative Legal Package
                 </div>
               </div>
             </div>
@@ -62,6 +64,11 @@ export function Invest() {
             >
               Start Investing Today
             </a>
+            <p className="mt-5 max-w-[520px] text-[10px] leading-relaxed text-white/40">
+              Yield, rent and fee figures are illustrative and can vary with
+              occupancy, unit type, maintenance, taxes and the applicable offer
+              document. They are not guaranteed returns.
+            </p>
           </ScrollReveal>
 
           <ScrollReveal delay={150}>

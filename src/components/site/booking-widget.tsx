@@ -87,7 +87,7 @@ export function BookingWidget() {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <button className="group flex w-full items-center gap-3 text-left">
-          <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#2BA84A]/10 text-[#2BA84A]">
+          <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#1F7A3A]/10 text-[#1F7A3A]">
             <CalendarDays className="h-5 w-5" />
           </div>
           <div>
@@ -150,7 +150,7 @@ export function BookingWidget() {
                   autoComplete="name"
                   value={contact.name}
                   onChange={(e) => setContact({ ...contact, name: e.target.value })}
-                  className="h-12 bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#2BA84A] focus:bg-white"
+                  className="h-12 bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#1F7A3A] focus:bg-white"
                 />
               </div>
               <div className="space-y-1.5">
@@ -164,7 +164,7 @@ export function BookingWidget() {
                   autoComplete="email"
                   value={contact.email}
                   onChange={(e) => setContact({ ...contact, email: e.target.value })}
-                  className="h-12 bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#2BA84A] focus:bg-white"
+                  className="h-12 bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#1F7A3A] focus:bg-white"
                 />
               </div>
             </div>
@@ -178,7 +178,7 @@ export function BookingWidget() {
                 autoComplete="tel"
                 value={contact.phone}
                 onChange={(e) => setContact({ ...contact, phone: e.target.value })}
-                className="h-12 bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#2BA84A] focus:bg-white"
+                className="h-12 bg-[#f4f6fb] border-[rgba(16,35,87,0.1)] focus:border-[#1F7A3A] focus:bg-white"
               />
             </div>
           </div>
@@ -191,7 +191,7 @@ export function BookingWidget() {
               aria-pressed={mode === "in-person"}
               className={`flex items-center gap-2 border-2 p-3 text-left text-xs transition-all ${
                 mode === "in-person"
-                  ? "border-[#2BA84A] bg-[#2BA84A]/5 text-[#102357]"
+                  ? "border-[#1F7A3A] bg-[#1F7A3A]/5 text-[#102357]"
                   : "border-[rgba(16,35,87,0.1)] text-[#6b7280]"
               }`}
             >
@@ -207,7 +207,7 @@ export function BookingWidget() {
               aria-pressed={mode === "virtual"}
               className={`flex items-center gap-2 border-2 p-3 text-left text-xs transition-all ${
                 mode === "virtual"
-                  ? "border-[#2BA84A] bg-[#2BA84A]/5 text-[#102357]"
+                  ? "border-[#1F7A3A] bg-[#1F7A3A]/5 text-[#102357]"
                   : "border-[rgba(16,35,87,0.1)] text-[#6b7280]"
               }`}
             >
@@ -237,8 +237,8 @@ export function BookingWidget() {
                     onClick={() => setSelectedDate(d)}
                     className={`flex flex-col items-center border-2 py-2 text-xs transition-all ${
                       isSelected
-                        ? "border-[#2BA84A] bg-[#2BA84A] text-white"
-                        : "border-[rgba(16,35,87,0.1)] hover:border-[#2BA84A]/40"
+                        ? "border-[#1F7A3A] bg-[#1F7A3A] text-white"
+                        : "border-[rgba(16,35,87,0.1)] hover:border-[#1F7A3A]/40"
                     }`}
                   >
                     <span className="text-[9px] uppercase">{dayLabel}</span>
@@ -262,8 +262,8 @@ export function BookingWidget() {
                   onClick={() => setSelectedSlot(slot)}
                   className={`border-2 py-2.5 text-xs transition-all ${
                     selectedSlot === slot
-                      ? "border-[#2BA84A] bg-[#2BA84A] text-white"
-                      : "border-[rgba(16,35,87,0.1)] hover:border-[#2BA84A]/40"
+                      ? "border-[#1F7A3A] bg-[#1F7A3A] text-white"
+                      : "border-[rgba(16,35,87,0.1)] hover:border-[#1F7A3A]/40"
                   }`}
                 >
                   {slot}
@@ -280,7 +280,7 @@ export function BookingWidget() {
             <Button
               type="submit"
               disabled={loading || !selectedDate || !selectedSlot || !contact.name || !contact.email}
-              className="h-12 w-full bg-[#2BA84A] text-[11px] font-bold uppercase tracking-[0.2em] text-white hover:bg-[#239540] disabled:opacity-50 sm:w-auto"
+              className="h-12 w-full bg-[#1F7A3A] text-[11px] font-bold uppercase tracking-[0.2em] text-white hover:bg-[#239540] disabled:opacity-50 sm:w-auto"
             >
               {loading ? (
                 <>

@@ -1,7 +1,7 @@
 ---
 id: t4
 category: diaspora
-title: Invest from Abroad — Fully Remote
+title: Explore from Abroad
 scenario: Diaspora Buyer — Crest Residence
 outcomes:
   - label: Studio (Off-Plan)
@@ -10,13 +10,12 @@ outcomes:
     value: ₦60M
   - label: 2BR (Off-Plan)
     value: ₦80M
-  - label: Remote Closing
-    value: 21–30 days
+  - label: Consultation
+    value: Remote-friendly
 description: >-
-  Diaspora Nigerians can purchase Crest Residence (Gbagada Phase 1) entirely
-  remotely. Take the 360° virtual tour, video-call the sales team, sign
-  electronically, and wire funds in USD or GBP. Engrite's team handles document
-  verification, title registration, and ongoing property management — you
-  receive quarterly rental statements.
+  Diaspora buyers can explore Crest Residence through video calls, shared
+  project materials and a guided consultation. Appoint an independent Nigerian
+  property lawyer to verify the title, approvals, agreement and payment
+  instructions before completing a transaction.
 ---
 

@@ -19,7 +19,7 @@ export function CurrencyToggle() {
         <Button
           variant="outline"
           size="sm"
-          className="border-[rgba(16,35,87,0.15)] bg-white px-2.5 text-[11px] font-semibold tracking-wider text-[#102357] hover:border-[#2BA84A] hover:text-[#2BA84A]"
+          className="border-[rgba(16,35,87,0.15)] bg-white px-2.5 text-[11px] font-semibold tracking-wider text-[#102357] hover:border-[#1F7A3A] hover:text-[#1F7A3A]"
           aria-label={`Currency: ${currency}`}
         >
           {currency}
@@ -31,7 +31,7 @@ export function CurrencyToggle() {
             key={c}
             onClick={() => setCurrency(c)}
             className={`cursor-pointer text-xs ${
-              c === currency ? "font-bold text-[#2BA84A]" : ""
+              c === currency ? "font-bold text-[#1F7A3A]" : ""
             }`}
           >
             {c}
