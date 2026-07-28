@@ -3,7 +3,7 @@ slug: sinai-residence
 name: Sinai Residence
 tagline: Yaba's premium smart real estate development
 status: under-construction
-statusLabel: Roofing Level · Now Selling
+statusLabel: Under Construction · Now Selling
 image: /img/sinai-residence-cover-v2.webp
 gallery:
   - /img/sinai-residence-cover-v2.webp
@@ -14,12 +14,11 @@ location: 'Morocco Road, Yaba, Lagos'
 mapEmbed: 'https://www.google.com/maps?q=Morocco+Road+Yaba+Lagos+Nigeria&output=embed'
 shortDesc: >-
   Premium 1- and 2-bedroom apartments with dedicated Home Office layouts on
-  Morocco Road, Yaba. Now selling at roofing level with scheduled July 2026
-  delivery.
+  Morocco Road, Yaba. Now selling, with delivery scheduled for July 2026.
 tags:
   - Smart Home
   - Home Office
-  - Roofing Level
+  - Under Construction
   - July 2026 Delivery
 units:
   - name: 1 Bedroom + Home Office (Unfurnished)
@@ -73,7 +72,7 @@ features:
   - Home Office
   - Furnished and Unfurnished Options
   - Registered Conveyance
-  - Roofing Level
+  - Active Construction
 paymentSchedule:
   - milestone: Initial Deposit
     percentage: 30
@@ -108,4 +107,4 @@ valuePillars:
 matterportUrl: ''
 videoUrl: ''
 ---
-Sinai Residence is Engrite's flagship premium development on Morocco Road, Yaba — designed around three value pillars: Comfort, Convenience, and Lasting Value. The development offers 1- and 2-bedroom Home Office layouts for hybrid professionals and families, with furnished and unfurnished options. Features include smart finishings, fitted kitchens, personal inverter systems, designated parking and modern bathrooms. Construction is at roofing level, with delivery scheduled for July 2026. Book an inspection and request the current offer document before making a commitment.
+Sinai Residence is Engrite's flagship premium development on Morocco Road, Yaba — designed around three value pillars: Comfort, Convenience, and Lasting Value. The development offers 1- and 2-bedroom Home Office layouts for hybrid professionals and families, with furnished and unfurnished options. Features include smart finishings, fitted kitchens, personal inverter systems, designated parking and modern bathrooms. Construction is progressing, with delivery scheduled for July 2026. Book an inspection and request the current offer document before making a commitment.

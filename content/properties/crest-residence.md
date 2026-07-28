@@ -4,11 +4,12 @@ name: Crest Residence
 tagline: 'Live higher, elevated beyond the ordinary'
 status: off-plan
 statusLabel: Off-Plan · New Launch
-image: /img/crest-residence-real-1.webp
+image: /img/crest-residence-cover-v2.webp
 gallery:
-  - /img/crest-residence-real-1.webp
-  - /img/about-aerial.webp
-  - /img/newsletter-portfolio.webp
+  - /img/crest-residence-cover-v2.webp
+  - /img/crest-residence-front-v2.webp
+  - /img/crest-residence-aerial-v2.webp
+  - /img/crest-residence-rooftop-v2.webp
 location: 'Gbagada Phase 1, Lagos'
 mapEmbed: 'https://www.google.com/maps?q=Gbagada+Phase+1+Lagos+Nigeria&output=embed'
 shortDesc: >-
@@ -78,18 +79,18 @@ paymentSchedule:
     percentage: 100
     description: Complete the purchase price within three months
 tourScenes:
-  - id: exterior
-    title: Exterior Render
-    image: /img/crest-residence.webp
-  - id: lobby
-    title: Ground Lobby
-    image: /img/about-aerial.webp
-  - id: rooftop
-    title: 'Rooftop Pool, Gym & Lounge'
-    image: /img/newsletter-portfolio.webp
-  - id: unit
-    title: Show Unit
-    image: /img/sinai-spaces.webp
+  - id: evening-exterior
+    title: Evening Exterior
+    image: /img/crest-residence-cover-v2.webp
+  - id: front-elevation
+    title: Front Elevation
+    image: /img/crest-residence-front-v2.webp
+  - id: aerial-context
+    title: Aerial Context
+    image: /img/crest-residence-aerial-v2.webp
+  - id: rooftop-lounge
+    title: Rooftop Lounge
+    image: /img/crest-residence-rooftop-v2.webp
 completionDate: Off-Plan — Now Selling
 startingPrice: 40000000
 annualReturn: 14

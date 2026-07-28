@@ -40,9 +40,9 @@ export const PROGRESS_POSTS: ProgressPost[] = [
   {
     id: "p4",
     date: "2026-05-12",
-    title: "Sinai Residence — Roofing Level",
+    title: "Sinai Residence — Construction Update",
     description:
-      "Roofing-level update for Sinai Residence. The company has published a July 2026 delivery target; confirm the current programme and unit availability in the latest offer document.",
+      "Construction update for Sinai Residence. The company has published a July 2026 delivery target; confirm the current programme and unit availability in the latest offer document.",
     image: "/img/sinai-residence-front-v2.webp",
     category: "superstructure",
   },
@@ -52,7 +52,7 @@ export const PROGRESS_POSTS: ProgressPost[] = [
     title: "Crest Residence — Off-Plan Launch",
     description:
       "Early-stage project update for Crest Residence in Gbagada Phase 1. Pricing, planned amenities and availability are subject to the current offer document.",
-    image: "/img/crest-residence-real-1.webp",
+    image: "/img/crest-residence-cover-v2.webp",
     category: "foundation",
   },
   {
@@ -79,7 +79,7 @@ export const PROGRESS_POSTS: ProgressPost[] = [
     title: "Modern Living — Beyond Bright Lights",
     description:
       "A concept update for Crest Residence focused on convenience, wellness, accessibility, comfort and smart-living features.",
-    image: "/img/crest-residence-real-1.webp",
+    image: "/img/crest-residence-rooftop-v2.webp",
     category: "finishing",
   },
 ];
