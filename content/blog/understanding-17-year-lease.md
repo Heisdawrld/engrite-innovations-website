@@ -9,7 +9,7 @@ category: investment
 date: 2026-05-22T00:00:00.000Z
 readTime: 9 min read
 author: Engrite Innovations
-cover: /img/sinai-spaces.webp
+cover: /img/sinai-spaces-cover-v2.webp
 ---
 When buyers first hear "17-year lease," many assume it's a rental arrangement — that they don't actually own the property. This is the single biggest misconception we encounter.
 

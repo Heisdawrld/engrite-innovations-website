@@ -6,11 +6,11 @@ status: under-construction
 statusLabel: Active Selling
 location: Abule Ijesha, Akoka, Lagos
 completionDate: Active Selling — Units Available
-image: /img/sinai-spaces-real-1.webp
+image: /img/sinai-spaces-cover-v2.webp
 gallery:
-  - /img/sinai-spaces-real-1.webp
-  - /img/sinai-spaces-real-2.webp
-  - /img/progress-sinai-spaces-1.webp
+  - /img/sinai-spaces-cover-v2.webp
+  - /img/sinai-spaces-front-golden-v2.webp
+  - /img/sinai-spaces-front-dusk-v2.webp
 startingPrice: 17000000
 annualReturn: 14
 units:
@@ -84,14 +84,14 @@ videoUrl: ""
 matterportUrl: ""
 tourScenes:
   - id: exterior
-    title: Exterior View
-    image: /img/sinai-spaces.webp
-  - id: lobby
-    title: Resident Lobby
-    image: /img/about-aerial.webp
-  - id: studio
-    title: Show Studio
-    image: /img/newsletter-portfolio.webp
+    title: Angled Exterior
+    image: /img/sinai-spaces-cover-v2.webp
+  - id: front-golden
+    title: Golden-Hour Front Elevation
+    image: /img/sinai-spaces-front-golden-v2.webp
+  - id: front-dusk
+    title: Blue-Hour Front Elevation
+    image: /img/sinai-spaces-front-dusk-v2.webp
 useCases:
   - Live in it — your own Lagos address
   - Explore managed rental income using the 14% target gross-yield assumption

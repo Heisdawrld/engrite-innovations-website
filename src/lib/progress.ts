@@ -16,7 +16,7 @@ export const PROGRESS_POSTS: ProgressPost[] = [
     title: "Sinai Spaces — Site Update",
     description:
       "Construction is moving steadily and here's what has been completed. Interior work progressing with structural framework in place. Active selling — units still available.",
-    image: "/img/progress-sinai-spaces-1.webp",
+    image: "/img/sinai-spaces-front-dusk-v2.webp",
     category: "superstructure",
   },
   {
@@ -61,7 +61,7 @@ export const PROGRESS_POSTS: ProgressPost[] = [
     title: "Sinai Spaces — Now Selling",
     description:
       "Project update for Sinai Spaces in Abule Ijesha, Akoka. Confirm unit options, long-lease terms, permitted uses and current pricing before reservation.",
-    image: "/img/sinai-spaces-real-1.webp",
+    image: "/img/sinai-spaces-cover-v2.webp",
     category: "handover",
   },
   {
@@ -70,7 +70,7 @@ export const PROGRESS_POSTS: ProgressPost[] = [
     title: "Sinai Spaces — Premium Option Showcase",
     description:
       "A closer look at the Premium option and its planned fittings. Confirm the final specification and lease terms in the applicable agreement.",
-    image: "/img/sinai-spaces-real-2.webp",
+    image: "/img/sinai-spaces-front-golden-v2.webp",
     category: "finishing",
   },
   {
