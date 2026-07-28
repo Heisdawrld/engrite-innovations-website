@@ -34,7 +34,7 @@ export const PROGRESS_POSTS: ProgressPost[] = [
     title: "Sinai Residence — Site Inspection",
     description:
       "A dated site-inspection record showing the work in progress. Add the verified milestone and inspection notes supplied by the project team.",
-    image: "/img/progress-construction-2.webp",
+    image: "/img/sinai-residence-side-v2.webp",
     category: "finishing",
   },
   {
@@ -43,7 +43,7 @@ export const PROGRESS_POSTS: ProgressPost[] = [
     title: "Sinai Residence — Roofing Level",
     description:
       "Roofing-level update for Sinai Residence. The company has published a July 2026 delivery target; confirm the current programme and unit availability in the latest offer document.",
-    image: "/img/sinai-residence-real-1.webp",
+    image: "/img/sinai-residence-front-v2.webp",
     category: "superstructure",
   },
   {

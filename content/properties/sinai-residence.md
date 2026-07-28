@@ -4,11 +4,12 @@ name: Sinai Residence
 tagline: Yaba's premium smart real estate development
 status: under-construction
 statusLabel: Roofing Level · Now Selling
-image: /img/sinai-residence-real-1.webp
+image: /img/sinai-residence-cover-v2.webp
 gallery:
-  - /img/sinai-residence-real-1.webp
-  - /img/about-aerial.webp
-  - /img/newsletter-portfolio.webp
+  - /img/sinai-residence-cover-v2.webp
+  - /img/sinai-residence-front-v2.webp
+  - /img/sinai-residence-side-v2.webp
+  - /img/sinai-residence-aerial-v2.webp
 location: 'Morocco Road, Yaba, Lagos'
 mapEmbed: 'https://www.google.com/maps?q=Morocco+Road+Yaba+Lagos+Nigeria&output=embed'
 shortDesc: >-
@@ -81,18 +82,18 @@ paymentSchedule:
     percentage: 70
     description: Spread across the remaining construction period
 tourScenes:
-  - id: exterior
-    title: Exterior View
-    image: /img/sinai-residence.webp
-  - id: living
-    title: Living Room
-    image: /img/about-aerial.webp
-  - id: office
-    title: Home Office
-    image: /img/newsletter-portfolio.webp
-  - id: bedroom
-    title: Master Bedroom
-    image: /img/crest-residence.webp
+  - id: angled-exterior
+    title: Angled Exterior
+    image: /img/sinai-residence-cover-v2.webp
+  - id: front-elevation
+    title: Front Elevation
+    image: /img/sinai-residence-front-v2.webp
+  - id: side-elevation
+    title: Side Elevation
+    image: /img/sinai-residence-side-v2.webp
+  - id: aerial-view
+    title: Aerial View
+    image: /img/sinai-residence-aerial-v2.webp
 completionDate: Scheduled Delivery — July 2026
 startingPrice: 100000000
 annualReturn: 14
