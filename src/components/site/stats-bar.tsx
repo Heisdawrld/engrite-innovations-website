@@ -1,9 +1,9 @@
 export function StatsBar() {
   const stats = [
     { n: "3", suffix: "", label: "Signature developments", note: "Yaba · Akoka · Gbagada" },
-    { n: "7.1", suffix: "%", label: "Illustrative gross yield", note: "Subject to unit and occupancy" },
+    { n: "14", suffix: "%", label: "Target gross yield", note: "Illustrative, not guaranteed" },
     { n: "17", suffix: "yr", label: "Long-lease option", note: "Terms vary by development" },
-    { n: "₦17", suffix: "M", label: "Current entry point", note: "Pricing subject to availability" },
+    { n: "₦20", suffix: "M", label: "Premium entry point", note: "Sinai Spaces premium studio" },
   ];
 
   return (

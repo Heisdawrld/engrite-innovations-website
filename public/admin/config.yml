@@ -93,13 +93,13 @@ collections:
       # 💰 PRICING & UNITS
       # ===========================================================
       - { name: "startingPrice", label: "💰 Starting Price (₦)", widget: "number", value_type: "int", min: 0, hint: "The 'from' price shown on the card. Example: 17000000 for ₦17M" }
-      - { name: "annualReturn", label: "Annual Return %", widget: "number", value_type: "float", min: 0, max: 100, step: 0.1, hint: "Expected yearly return for investors. Example: 7.1", default: 7.1 }
+      - { name: "annualReturn", label: "Target Gross Yield %", widget: "number", value_type: "float", min: 0, max: 100, step: 0.1, hint: "Target gross yield assumption before costs. Example: 14", default: 14 }
       - name: "units"
         label: "Available Units (with prices)"
         widget: "list"
         hint: "List every unit type buyers can choose from. Click 'Add' to add a new unit type."
         fields:
-          - { name: "name", label: "Unit Name", widget: "string", hint: "Example: 'Studio Apartment — Basic'" }
+          - { name: "name", label: "Unit Name", widget: "string", hint: "Example: 'Studio Apartment — Standard'" }
           - { name: "price", label: "Price (₦)", widget: "number", value_type: "int", min: 0, hint: "Full price in naira. Example: 17000000" }
           - { name: "size", label: "Size / Layout", widget: "string", hint: "Example: 'Compact studio' or '1 bedroom'" }
           - { name: "rentalYield", label: "Rental Income Range", widget: "string", hint: "Example: '₦2–3M/yr'" }
@@ -249,7 +249,7 @@ collections:
         hint: "The impressive numbers buyers see. Click 'Add' for each one."
         fields:
           - { name: "label", label: "Label", widget: "string", hint: "Example: 'Annual Yield'" }
-          - { name: "value", label: "Value", widget: "string", hint: "Example: '7.1%'" }
+          - { name: "value", label: "Value", widget: "string", hint: "Example: '14%'" }
 
   # ============================================================
   # CLIENT TESTIMONIALS (real client quotes with photos)
@@ -366,8 +366,8 @@ collections:
             collapsed: true
             hint: "The four numbers shown below the homepage banner"
             fields:
-              - { name: "annualReturn", label: "Stat 1 — Value", widget: "string", hint: "Example: '7.1%'" }
-              - { name: "annualReturnLabel", label: "Stat 1 — Label", widget: "string", hint: "Example: 'Annual Return'" }
+              - { name: "annualReturn", label: "Stat 1 — Value", widget: "string", hint: "Example: '14%'" }
+              - { name: "annualReturnLabel", label: "Stat 1 — Label", widget: "string", hint: "Example: 'Target Gross Yield'" }
               - { name: "leaseTerm", label: "Stat 2 — Value", widget: "string" }
               - { name: "leaseTermLabel", label: "Stat 2 — Label", widget: "string" }
               - { name: "activeProjects", label: "Stat 3 — Value", widget: "string" }

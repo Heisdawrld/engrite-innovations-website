@@ -91,8 +91,8 @@ const FALLBACK: SiteSettings = {
     secondaryCta: "Investment Returns",
   },
   stats: {
-    annualReturn: "7.1%",
-    annualReturnLabel: "Illustrative Gross Yield",
+    annualReturn: "14%",
+    annualReturnLabel: "Target Gross Yield",
     leaseTerm: "17",
     leaseTermLabel: "Year Lease",
     activeProjects: "3+",

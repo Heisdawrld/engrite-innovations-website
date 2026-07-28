@@ -4,11 +4,11 @@ question: What are the payment plans for off-plan properties?
 category: property
 order: 5
 answer: >-
-  Off-plan properties (like Crest Residence) follow a milestone-based payment
-  schedule tied to construction progress, not arbitrary dates. A typical
-  schedule is: 10% reservation, 20% at foundation, 30% at superstructure, 25% at
-  finishing, 15% at handover. This means you only pay as the building physically
-  progresses — your capital is never sitting idle. The full schedule is
-  documented in your purchase agreement before any payment is made.
+  Payment terms vary by development. Engrite's current published Crest Residence
+  offer states outright purchase or completion within three months. Sinai
+  Residence currently uses a 30% initial deposit with the balance spread across
+  the construction period. Request the latest offer document for your selected
+  unit and independently confirm the payment account and signed terms before
+  sending funds.
 ---
 

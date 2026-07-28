@@ -104,7 +104,7 @@ export function Footer() {
             <ul className="flex flex-col gap-4 sm:gap-3">
               <li><Link href="/#about" className="text-[13px] font-light text-white/55 transition-colors hover:text-[#9be15d]">About Us</Link></li>
               <li><Link href="/#faq" className="text-[13px] font-light text-white/55 transition-colors hover:text-[#9be15d]">FAQ</Link></li>
-              <li><Link href="/#testimonials" className="text-[13px] font-light text-white/55 transition-colors hover:text-[#9be15d]">Ownership Paths</Link></li>
+              <li><Link href="/#invest" className="text-[13px] font-light text-white/55 transition-colors hover:text-[#9be15d]">Investment Scenario</Link></li>
               <li><Link href="/#contact" className="text-[13px] font-light text-white/55 transition-colors hover:text-[#9be15d]">Contact</Link></li>
               <li><Link href="/privacy" className="text-[13px] font-light text-white/55 transition-colors hover:text-[#9be15d]">Privacy</Link></li>
               <li><Link href="/terms" className="text-[13px] font-light text-white/55 transition-colors hover:text-[#9be15d]">Website Terms</Link></li>

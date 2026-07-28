@@ -228,9 +228,10 @@ export function PropertyDetailModal({ slug, onClose }: PropertyDetailModalProps)
             {/* Payment Plan */}
             <TabsContent value="payment">
               <div className="space-y-4">
-                <h3 className="font-serif text-xl text-[#102357]">Milestone Payment Schedule</h3>
+                <h3 className="font-serif text-xl text-[#102357]">Payment Options</h3>
                 <p className="text-sm text-[#6b7280]">
-                  Pay as construction progresses. No upfront full payment required.
+                  Available terms vary by development. Confirm the current offer
+                  document before making a payment.
                 </p>
                 <div className="space-y-2">
                   {property.paymentSchedule.map((tier, i) => (

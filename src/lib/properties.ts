@@ -81,7 +81,7 @@ function normalize(raw: RawProperty): Property {
     videoUrl: raw.videoUrl || undefined,
     completionDate: raw.completionDate,
     startingPrice: raw.startingPrice,
-    // Round to 2 decimals to avoid float precision noise (7.099999... → 7.1)
+    // Round to 2 decimals to avoid floating-point precision noise.
     annualReturn: Math.round((raw.annualReturn ?? 0) * 100) / 100,
     useCases: raw.useCases,
     valuePillars: raw.valuePillars,

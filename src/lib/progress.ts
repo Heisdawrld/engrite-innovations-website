@@ -40,11 +40,11 @@ export const PROGRESS_POSTS: ProgressPost[] = [
   {
     id: "p4",
     date: "2026-05-12",
-    title: "Sinai Residence — Handover Imminent",
+    title: "Sinai Residence — Roofing Level",
     description:
-      "Finishing-stage update for Sinai Residence. Confirm the current delivery programme and unit availability in the latest offer document.",
+      "Roofing-level update for Sinai Residence. The company has published a July 2026 delivery target; confirm the current programme and unit availability in the latest offer document.",
     image: "/img/sinai-residence-real-1.webp",
-    category: "handover",
+    category: "superstructure",
   },
   {
     id: "p5",

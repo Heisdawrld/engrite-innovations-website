@@ -2,8 +2,8 @@
 slug: sinai-residence
 name: Sinai Residence
 tagline: Yaba's premium smart real estate development
-status: sample-units-open
-statusLabel: Sample Units Open — Last Units Remaining
+status: under-construction
+statusLabel: Roofing Level · Now Selling
 image: /img/sinai-residence-real-1.webp
 gallery:
   - /img/sinai-residence-real-1.webp
@@ -12,76 +12,74 @@ gallery:
 location: 'Morocco Road, Yaba, Lagos'
 mapEmbed: 'https://www.google.com/maps?q=Morocco+Road+Yaba+Lagos+Nigeria&output=embed'
 shortDesc: >-
-  Premium apartments with optional Home Office layouts on Morocco Road, Yaba.
-  Sample units now open for inspection. Smart-home ready with inverter power.
+  Premium 1- and 2-bedroom apartments with dedicated Home Office layouts on
+  Morocco Road, Yaba. Now selling at roofing level with scheduled July 2026
+  delivery.
 tags:
   - Smart Home
-  - Home Office Option
-  - 24/7 Power
-  - 5% Legal Fees
+  - Home Office
+  - Roofing Level
+  - July 2026 Delivery
 units:
-  - name: Studio Apartment
-    price: 19990000
-    size: Studio
-    rentalYield: ₦2–3M/yr
-    features:
-      - Smart home ready
-      - Inverter power
-      - Premium location
-  - name: 1-Bedroom Apartment
-    price: 29990000
-    size: 1 bedroom
-    rentalYield: ₦3–5M/yr
-    features:
-      - Smart home ready
-      - Inverter power
-      - Modern fittings
   - name: 1 Bedroom + Home Office (Unfurnished)
     price: 100000000
     size: 1 bedroom + office
-    rentalYield: ₦6–8M/yr
+    rentalYield: 14% target gross yield
     features:
       - Home office
-      - Smart home
-      - Inverter power
-      - Premium fittings
+      - Smart finishings
+      - Personal inverter system
+      - Designated parking
   - name: 2 Bedroom + Home Office (Unfurnished)
     price: 120000000
     size: 2 bedroom + office
-    rentalYield: ₦8–10M/yr
+    rentalYield: 14% target gross yield
     features:
       - Home office
-      - Smart home
-      - Inverter power
-      - Premium fittings
+      - Smart finishings
+      - Personal inverter system
+      - Designated parking
+      - Family-sized
+  - name: 1 Bedroom + Home Office (Furnished)
+    price: 120000000
+    size: 1 bedroom + office
+    rentalYield: 14% target gross yield
+    features:
+      - Fully furnished kitchen
+      - Furnished home workspace
+      - Smart finishings
+      - Personal inverter system
+  - name: 2 Bedroom + Home Office (Furnished)
+    price: 150000000
+    size: 2 bedroom + office
+    rentalYield: 14% target gross yield
+    features:
+      - Fully furnished kitchen
+      - Furnished home workspace
+      - Smart finishings
+      - Personal inverter system
       - Family-sized
 amenities:
-  - 24/7 Power (Inverter)
-  - Smart Home Ready
-  - 24/7 Security
-  - Parking
-  - Premium Fittings
+  - Personal Inverter Systems
+  - Smart Home Features
+  - Designated Parking
+  - Fitted Kitchens
+  - Modern Bathrooms
   - Home Office Layouts
 features:
-  - Smart Home
-  - Inverter Power (24/7)
-  - Home Office Option
-  - 5% Legal Fees
-  - Premium Fittings
-  - Sample Units Open
+  - Smart Finishings
+  - Personal Inverter Systems
+  - Home Office
+  - Furnished and Unfurnished Options
+  - Registered Conveyance
+  - Roofing Level
 paymentSchedule:
   - milestone: Initial Deposit
-    percentage: 25
-    description: ₦5M minimum — secures your unit
-  - milestone: Construction Milestone 1
     percentage: 30
-    description: At superstructure
-  - milestone: Construction Milestone 2
-    percentage: 30
-    description: At finishing
-  - milestone: Handover
-    percentage: 15
-    description: On key collection
+    description: Secures the selected unit
+  - milestone: Construction-Period Balance
+    percentage: 70
+    description: Spread across the remaining construction period
 tourScenes:
   - id: exterior
     title: Exterior View
@@ -95,18 +93,18 @@ tourScenes:
   - id: bedroom
     title: Master Bedroom
     image: /img/crest-residence.webp
-completionDate: Sample Units Open — Book Inspection
-startingPrice: 19990000
-annualReturn: 7.1
+completionDate: Scheduled Delivery — July 2026
+startingPrice: 100000000
+annualReturn: 14
 useCases:
-  - Live in it — premium Yaba address with smart home features
-  - Earn rental income with Home Office premium (₦6–10M/yr)
+  - Live in it — premium Yaba address with smart-home features
+  - Explore managed rental income using the 14% target gross-yield assumption
   - Ideal for hybrid professionals and diaspora investors
 valuePillars:
   - Comfort
   - Convenience
-  - Lasting
+  - Lasting Value
 matterportUrl: ''
 videoUrl: ''
 ---
-Sinai Residence is Engrite's flagship premium development on Morocco Road, Yaba — designed around three value pillars: Comfort, Convenience, and Lasting value. The development offers both standard apartments (Studio and 1-Bedroom) and unique Home Office layouts (1BR + Home Office and 2BR + Home Office) for hybrid professionals and small families. Every unit is smart-home ready with inverter-backed 24/7 power supply. Sample units are now officially open for investors and realtors to inspect — book a private viewing. Only a handful of units remain in this near-complete development.
+Sinai Residence is Engrite's flagship premium development on Morocco Road, Yaba — designed around three value pillars: Comfort, Convenience, and Lasting Value. The development offers 1- and 2-bedroom Home Office layouts for hybrid professionals and families, with furnished and unfurnished options. Features include smart finishings, fitted kitchens, personal inverter systems, designated parking and modern bathrooms. Construction is at roofing level, with delivery scheduled for July 2026. Book an inspection and request the current offer document before making a commitment.

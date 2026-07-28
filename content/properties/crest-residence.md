@@ -25,7 +25,7 @@ units:
   - name: Studio Apartment — Off-Plan
     price: 40000000
     size: Studio
-    rentalYield: ₦3–4M/yr
+    rentalYield: 14% target gross yield
     features:
       - Fitted kitchen
       - Pool access
@@ -34,7 +34,7 @@ units:
   - name: 1 Bedroom Apartment — Off-Plan
     price: 60000000
     size: 1 bedroom
-    rentalYield: ₦5–7M/yr
+    rentalYield: 14% target gross yield
     features:
       - Fitted kitchen
       - Balcony
@@ -44,7 +44,7 @@ units:
   - name: 2 Bedroom Apartment — Off-Plan
     price: 80000000
     size: 2 bedroom
-    rentalYield: ₦7–10M/yr
+    rentalYield: 14% target gross yield
     features:
       - Fitted kitchen
       - Large balcony
@@ -71,21 +71,12 @@ features:
   - 24/7 Security
   - Off-Plan Pricing
 paymentSchedule:
-  - milestone: Reservation
-    percentage: 10
-    description: Off-plan reservation
-  - milestone: Foundation Complete
-    percentage: 20
-    description: Within 90 days
-  - milestone: Superstructure
-    percentage: 30
-    description: Within 6 months
-  - milestone: Finishing
-    percentage: 25
-    description: Within 9 months
-  - milestone: Handover
-    percentage: 15
-    description: Within 12 months
+  - milestone: Outright Purchase
+    percentage: 100
+    description: Complete payment at purchase
+  - milestone: Three-Month Plan
+    percentage: 100
+    description: Complete the purchase price within three months
 tourScenes:
   - id: exterior
     title: Exterior Render
@@ -99,12 +90,12 @@ tourScenes:
   - id: unit
     title: Show Unit
     image: /img/sinai-spaces.webp
-completionDate: Off-Plan — 12-Month Build Cycle
+completionDate: Off-Plan — Now Selling
 startingPrice: 40000000
-annualReturn: 7.1
+annualReturn: 14
 useCases:
   - Live in it — luxury Gbagada address with full amenities
-  - Earn premium rental income (₦3–10M/yr depending on unit)
+  - Explore managed rental income using the 14% target gross-yield assumption
   - Early-stage entry pricing, subject to availability
 valuePillars:
   - Elevation

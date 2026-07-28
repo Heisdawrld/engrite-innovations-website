@@ -6,9 +6,9 @@ import { useCurrency } from "@/components/providers/currency-provider";
 import { useLanguage } from "@/components/providers/language-provider";
 
 const leaseRows = [
-  { name: "Studio — Basic Option", location: "Sinai Spaces · Akoka, Yaba", price: 17_000_000, note: "₦2–4M/yr rental · 17yr lease" },
-  { name: "Studio Apartment", location: "Sinai Residence · Morocco Rd, Yaba", price: 19_990_000, note: "Smart home · Sample units open" },
-  { name: "1 Bedroom — Off-Plan", location: "Crest Residence · Gbagada Phase 1", price: 60_000_000, note: "Rooftop gym · Pool · Elevator" },
+  { name: "Studio — Premium Option", location: "Sinai Spaces · Akoka, Yaba", price: 20_000_000, note: "14% target gross yield · 17yr lease" },
+  { name: "1 Bedroom — Premium Option", location: "Sinai Spaces · Akoka, Yaba", price: 30_000_000, note: "14% target gross yield · 17yr lease" },
+  { name: "Studio — Off-Plan", location: "Crest Residence · Gbagada Phase 1", price: 40_000_000, note: "Rooftop gym · Pool · Elevator" },
 ];
 
 export function Invest() {
@@ -39,21 +39,21 @@ export function Invest() {
 
             <div className="mt-10 grid grid-cols-2 gap-2 sm:gap-3">
               <div className="bg-[#1F7A3A] border border-[#239540] p-6 col-span-2">
-                <span className="font-serif text-[40px] font-normal leading-none text-white sm:text-[50px]">7.1%</span>
+                <span className="font-serif text-[40px] font-normal leading-none text-white sm:text-[50px]">14%</span>
                 <div className="mt-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/80">
-                  Illustrative Gross Yield
+                  Target Gross Yield
                 </div>
               </div>
               <div className="bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] p-5 sm:p-6 transition-colors hover:border-[rgba(127,216,154,0.3)]">
-                <span className="font-serif text-[26px] font-normal leading-none text-white sm:text-[40px] lg:text-[50px]">{formatCompact(2_000_000)}–{formatCompact(6_000_000)}</span>
+                <span className="font-serif text-[26px] font-normal leading-none text-white sm:text-[40px] lg:text-[50px]">{formatCompact(20_000_000)}</span>
                 <div className="mt-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/60">
-                  Yearly Rental Revenue
+                  Premium Entry Price
                 </div>
               </div>
               <div className="bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] p-5 sm:p-6 transition-colors hover:border-[rgba(127,216,154,0.3)]">
-                <span className="font-serif text-[40px] font-normal leading-none text-white sm:text-[50px]">5%</span>
+                <span className="font-serif text-[40px] font-normal leading-none text-white sm:text-[50px]">17yr</span>
                 <div className="mt-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/60">
-                  Indicative Legal Package
+                  Sinai Spaces Lease
                 </div>
               </div>
             </div>
@@ -65,9 +65,10 @@ export function Invest() {
               Start Investing Today
             </a>
             <p className="mt-5 max-w-[520px] text-[10px] leading-relaxed text-white/40">
-              Yield, rent and fee figures are illustrative and can vary with
+              The 14% target is a gross-yield assumption, not a guaranteed
+              return. Income and costs can vary with
               occupancy, unit type, maintenance, taxes and the applicable offer
-              document. They are not guaranteed returns.
+              document.
             </p>
           </ScrollReveal>
 

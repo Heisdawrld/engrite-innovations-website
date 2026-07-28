@@ -7,12 +7,8 @@ import { About } from "@/components/site/about";
 import { Projects } from "@/components/site/projects";
 import { ProgressGallery } from "@/components/site/progress-gallery";
 import { Invest } from "@/components/site/invest";
-import { WhyUs } from "@/components/site/why-us";
-import { Newsletter } from "@/components/site/newsletter";
 import { Contact } from "@/components/site/contact";
 import { FAQ } from "@/components/site/faq";
-import { Testimonials } from "@/components/site/testimonials";
-import { ClientTestimonials } from "@/components/site/client-testimonials";
 import { DiasporaSection } from "@/components/site/diaspora-section";
 import { WhatsAppFloat } from "@/components/site/whatsapp-float";
 
@@ -36,12 +32,8 @@ export default function Home() {
         <ProgressGallery />
         <About />
         <Invest />
-        <WhyUs />
         <DiasporaSection />
-        <Testimonials />
-        <ClientTestimonials />
         <FAQ />
-        <Newsletter />
         <Contact />
       </main>
 
