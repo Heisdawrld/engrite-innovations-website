@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: "%s | Engrite Innovations Ltd.",
   },
   description:
-    "Explore thoughtfully designed residences by Engrite Innovations across Yaba, Akoka and Gbagada, Lagos. View current developments, ownership options and construction updates.",
+    "Explore thoughtfully designed residences by Engrite Innovations across Abule Ijesha, Yaba and Gbagada, Lagos. View current developments, ownership options and construction updates.",
   keywords: [
     "Lagos real estate",
     "Nigeria property investment",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: "Engrite Innovations — Own An Address That Pays You Back",
     description:
-      "Thoughtfully designed residences across Yaba, Akoka and Gbagada, Lagos. Explore current developments and book a private inspection.",
+      "Thoughtfully designed residences across Abule Ijesha, Yaba and Gbagada, Lagos. Explore current developments and book a private inspection.",
     siteName: "Engrite Innovations Ltd.",
     locale: "en_NG",
     images: [

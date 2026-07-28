@@ -4,7 +4,7 @@ slug: sinai-spaces
 tagline: Spaces For You! — Affordable entry-point to Lagos property ownership
 status: under-construction
 statusLabel: Active Selling
-location: Akoka, Yaba, Lagos
+location: Abule Ijesha, Akoka, Lagos
 completionDate: Active Selling — Units Available
 image: /img/sinai-spaces-real-1.webp
 gallery:
@@ -59,7 +59,7 @@ paymentSchedule:
   - milestone: Handover
     percentage: 15
     description: On key collection
-shortDesc: Studio and one-bedroom apartments in Akoka, Yaba — offering a 17-year
+shortDesc: Studio and one-bedroom apartments in Abule Ijesha, Akoka — offering a 17-year
   leasehold with Standard and Premium options. Live in it, rent it out, or run it
   as a shortlet/Airbnb.
 tags:
@@ -79,7 +79,7 @@ amenities:
   - Backup Power
   - Parking
   - Strategic Location
-mapEmbed: https://www.google.com/maps?q=Akoka+Yaba+Lagos+Nigeria&output=embed
+mapEmbed: https://www.google.com/maps?q=Abule+Ijesha+Akoka+Lagos+Nigeria&output=embed
 videoUrl: ""
 matterportUrl: ""
 tourScenes:
@@ -101,4 +101,4 @@ valuePillars:
   - Safety
   - Comfort
 ---
-Sinai Spaces is Engrite's affordable-luxury development in Akoka, Yaba — one of Lagos's most strategic neighborhoods, home to the University of Lagos and a thriving young-professional community. Designed around three value pillars — Efficiency, Safety, and Comfort — every unit is built for practical living with inverter-backed 24/7 power supply. Sinai Spaces pioneered Engrite's signature 17-year leasehold structure, giving buyers flexible ownership: move in (Live), rent it out for steady income (Earn), or operate it as a shortlet/Airbnb. With Standard and Premium pricing tiers, it's the most accessible entry point into Lagos property ownership.
+Sinai Spaces is Engrite's affordable-luxury development in Abule Ijesha, Akoka — one of Lagos's most strategic neighborhoods, close to the University of Lagos and a thriving young-professional community. Designed around three value pillars — Efficiency, Safety, and Comfort — every unit is built for practical living with inverter-backed 24/7 power supply. Sinai Spaces pioneered Engrite's signature 17-year leasehold structure, giving buyers flexible ownership: move in (Live), rent it out for steady income (Earn), or operate it as a shortlet/Airbnb. With Standard and Premium pricing tiers, it's the most accessible entry point into Lagos property ownership.

@@ -6,8 +6,8 @@ import { useCurrency } from "@/components/providers/currency-provider";
 import { useLanguage } from "@/components/providers/language-provider";
 
 const leaseRows = [
-  { name: "Studio — Premium Option", location: "Sinai Spaces · Akoka, Yaba", price: 20_000_000, note: "14% target gross yield · 17yr lease" },
-  { name: "1 Bedroom — Premium Option", location: "Sinai Spaces · Akoka, Yaba", price: 30_000_000, note: "14% target gross yield · 17yr lease" },
+  { name: "Studio — Premium Option", location: "Sinai Spaces · Abule Ijesha, Akoka", price: 20_000_000, note: "14% target gross yield · 17yr lease" },
+  { name: "1 Bedroom — Premium Option", location: "Sinai Spaces · Abule Ijesha, Akoka", price: 30_000_000, note: "14% target gross yield · 17yr lease" },
   { name: "Studio — Off-Plan", location: "Crest Residence · Gbagada Phase 1", price: 40_000_000, note: "Rooftop gym · Pool · Elevator" },
 ];
 

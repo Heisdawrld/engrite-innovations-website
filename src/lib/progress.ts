@@ -60,7 +60,7 @@ export const PROGRESS_POSTS: ProgressPost[] = [
     date: "2026-03-18",
     title: "Sinai Spaces — Now Selling",
     description:
-      "Project update for Sinai Spaces in Yaba, Lagos. Confirm unit options, long-lease terms, permitted uses and current pricing before reservation.",
+      "Project update for Sinai Spaces in Abule Ijesha, Akoka. Confirm unit options, long-lease terms, permitted uses and current pricing before reservation.",
     image: "/img/sinai-spaces-real-1.webp",
     category: "handover",
   },

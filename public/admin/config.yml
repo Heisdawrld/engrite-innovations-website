@@ -75,7 +75,7 @@ collections:
           - { label: "⏳ Last Units Remaining", value: "last-units" }
         default: "under-construction"
       - { name: "statusLabel", label: "Status Badge Text", widget: "string", hint: "Short text shown on the property card. Example: 'Active Selling' or 'Last 3 Units'", default: "Active Selling" }
-      - { name: "location", label: "Location", widget: "string", hint: "Full address or area. Example: 'Akoka, Yaba, Lagos'" }
+      - { name: "location", label: "Location", widget: "string", hint: "Full address or area. Example: 'Abule Ijesha, Akoka, Lagos'" }
       - { name: "completionDate", label: "Availability Note", widget: "string", hint: "What buyers see about timing. Example: 'Active Selling — Units Available' or 'Off-Plan — 12-Month Build Cycle'", default: "Active Selling — Units Available" }
 
       # ===========================================================
