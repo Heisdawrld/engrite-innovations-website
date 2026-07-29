@@ -6,6 +6,7 @@ import { ArrowLeft, ArrowUpRight, Check, MapPin } from "lucide-react";
 import { Navbar } from "@/components/site/navbar";
 import { Footer } from "@/components/site/footer";
 import { WhatsAppFloat } from "@/components/site/whatsapp-float";
+import { PropertyVirtualTourSection } from "@/components/site/property-virtual-tour-section";
 import { PROPERTIES, getProperty } from "@/lib/properties";
 
 export const dynamicParams = false;
@@ -117,6 +118,15 @@ export default async function PropertyPage({
                   Request offer document
                   <ArrowUpRight className="h-4 w-4" />
                 </a>
+                <Link
+                  href="#virtual-tour"
+                  className="mt-3 flex min-h-13 items-center justify-between border border-white/20 px-5 text-[10px] font-bold uppercase tracking-[0.18em] text-white transition-colors hover:border-[#9be15d] hover:text-[#9be15d]"
+                >
+                  360° virtual tour
+                  <span className="text-[8px] text-[#9be15d]">
+                    {property.matterportUrl ? "Open now" : "Coming soon"}
+                  </span>
+                </Link>
               </div>
             </div>
           </div>
@@ -208,6 +218,8 @@ export default async function PropertyPage({
             </div>
           </div>
         </section>
+
+        <PropertyVirtualTourSection slug={property.slug} />
 
         <section className="bg-[#071128] py-20 text-white sm:py-24 lg:py-28">
           <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10">

@@ -30,7 +30,7 @@ export function DiasporaSection() {
     <section id="diaspora" className="scroll-mt-[100px] relative overflow-hidden bg-[#081534] py-20 text-white sm:py-24 lg:py-32">
       <div className="absolute inset-0 opacity-30">
         <Image
-          src="/img/newsletter-portfolio.webp"
+          src="/img/crest-residence-aerial-v2.webp"
           alt=""
           fill
           sizes="100vw"
@@ -78,7 +78,7 @@ export function DiasporaSection() {
 
         <ScrollReveal delay={200} className="mt-12 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
           <a
-            href="#projects"
+            href="/properties/crest-residence#virtual-tour"
             className="inline-flex w-full items-center justify-center gap-2 bg-[#1F7A3A] px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:bg-[#239540] sm:w-auto"
           >
             Take a Virtual Tour

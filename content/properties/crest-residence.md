@@ -79,18 +79,9 @@ paymentSchedule:
     percentage: 100
     description: Complete the purchase price within three months
 tourScenes:
-  - id: evening-exterior
-    title: Evening Exterior
+  - id: matterport-preview
+    title: 360° Tour Preview
     image: /img/crest-residence-cover-v2.webp
-  - id: front-elevation
-    title: Front Elevation
-    image: /img/crest-residence-front-v2.webp
-  - id: aerial-context
-    title: Aerial Context
-    image: /img/crest-residence-aerial-v2.webp
-  - id: rooftop-lounge
-    title: Rooftop Lounge
-    image: /img/crest-residence-rooftop-v2.webp
 completionDate: Off-Plan — Now Selling
 startingPrice: 40000000
 annualReturn: 14

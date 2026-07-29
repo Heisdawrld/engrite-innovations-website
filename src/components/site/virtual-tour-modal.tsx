@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { X, Maximize2, ExternalLink, MapPin, Eye } from "lucide-react";
+import Image from "next/image";
+import { X, ScanLine, ExternalLink, MapPin, Eye } from "lucide-react";
 import { getProperty } from "@/lib/properties";
 
 type VirtualTourModalProps = {
@@ -60,6 +61,7 @@ export function VirtualTourModal({ slug, onClose }: VirtualTourModalProps) {
 
   const hasMatterport = !!property.matterportUrl;
   const hasVideo = !!property.videoUrl;
+  const previewImage = property.tourScenes[0]?.image ?? property.image;
 
   // Build Matterport embed URL with optimal params for embedded showcase
   let embedUrl = "";
@@ -110,7 +112,7 @@ export function VirtualTourModal({ slug, onClose }: VirtualTourModalProps) {
               <span className="truncate">{property.location}</span>
               <span className="text-white/30">·</span>
               <span className="flex-shrink-0 text-[#7fd89a]">
-                {hasMatterport ? "360° Tour" : hasVideo ? "Video Tour" : "Site Visit"}
+                {hasMatterport ? "360° Tour" : hasVideo ? "Video Tour" : "360° Coming Soon"}
               </span>
             </div>
           </div>
@@ -166,26 +168,47 @@ export function VirtualTourModal({ slug, onClose }: VirtualTourModalProps) {
               className="absolute inset-0 h-full w-full object-cover"
             />
           ) : (
-            <div className="absolute inset-0 flex h-full w-full flex-col items-center justify-center gap-3 px-6 text-center text-white/70">
-              <Maximize2 className="h-10 w-10 text-white/30" />
-              <p className="font-serif text-lg text-white/90">Walkthrough coming soon</p>
-              <p className="max-w-md text-sm text-white/55">
-                A live video walkthrough of {property.name} is being filmed.
-                In the meantime, book a site visit to see this property in person.
-              </p>
-              <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  onClose();
-                  requestAnimationFrame(() => {
-                    document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
-                  });
-                }}
-                className="mt-2 inline-block bg-[#1F7A3A] px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#239540]"
-              >
-                Book a Site Visit
-              </a>
+            <div className="absolute inset-0 h-full w-full">
+              <Image
+                src={previewImage}
+                alt={`${property.name} Matterport 360° preview`}
+                fill
+                sizes="100vw"
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-[#071128]/65" />
+              <div className="architectural-grid absolute inset-0 opacity-25" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-6 text-center text-white/70">
+                <div className="relative flex h-20 w-20 items-center justify-center rounded-full border border-[#9be15d]/45 bg-[#071128]/45 backdrop-blur">
+                  <span className="absolute inset-2 animate-ping rounded-full border border-white/15" />
+                  <ScanLine className="h-8 w-8 text-[#9be15d]" />
+                </div>
+                <div className="text-[9px] font-bold uppercase tracking-[0.24em] text-[#9be15d]">
+                  Matterport capture in preparation
+                </div>
+                <p className="font-serif text-2xl text-white sm:text-4xl">
+                  360° walkthrough coming soon
+                </p>
+                <p className="max-w-lg text-xs leading-[1.8] text-white/60 sm:text-sm">
+                  The immersive tour for {property.name} is being prepared.
+                  This single preview will be replaced automatically when the
+                  Matterport showcase is ready.
+                </p>
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onClose();
+                    requestAnimationFrame(() => {
+                      document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+                    });
+                  }}
+                  className="mt-2 inline-block bg-[#9be15d] px-6 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#071128] transition-colors hover:bg-white"
+                >
+                  Book a site visit
+                </a>
+              </div>
             </div>
           )}
 

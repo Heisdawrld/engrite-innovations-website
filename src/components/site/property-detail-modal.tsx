@@ -178,7 +178,9 @@ export function PropertyDetailModal({ slug, onClose }: PropertyDetailModalProps)
                 <div>
                   <h3 className="font-serif text-xl text-[#102357]">360° Virtual Tour</h3>
                   <p className="mt-1 text-sm text-[#6b7280]">
-                    Walk through {property.name} from your device. Drag to look around, click hotspots to navigate between rooms.
+                    {property.matterportUrl
+                      ? `Walk through ${property.name} from your device. Drag to look around and select the floorplan to navigate.`
+                      : `The Matterport walkthrough for ${property.name} is being prepared. One focused preview remains below until the 360° capture is ready.`}
                   </p>
                 </div>
                 <VirtualTour scenes={property.tourScenes} matterportUrl={property.matterportUrl} videoUrl={property.videoUrl} embedded />

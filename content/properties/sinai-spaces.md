@@ -83,15 +83,9 @@ mapEmbed: https://www.google.com/maps?q=Abule+Ijesha+Akoka+Lagos+Nigeria&output=
 videoUrl: ""
 matterportUrl: ""
 tourScenes:
-  - id: exterior
-    title: Angled Exterior
+  - id: matterport-preview
+    title: 360° Tour Preview
     image: /img/sinai-spaces-cover-v2.webp
-  - id: front-golden
-    title: Golden-Hour Front Elevation
-    image: /img/sinai-spaces-front-golden-v2.webp
-  - id: front-dusk
-    title: Blue-Hour Front Elevation
-    image: /img/sinai-spaces-front-dusk-v2.webp
 useCases:
   - Live in it — your own Lagos address
   - Explore managed rental income using the 14% target gross-yield assumption

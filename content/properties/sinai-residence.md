@@ -81,18 +81,9 @@ paymentSchedule:
     percentage: 70
     description: Spread across the remaining construction period
 tourScenes:
-  - id: angled-exterior
-    title: Angled Exterior
+  - id: matterport-preview
+    title: 360° Tour Preview
     image: /img/sinai-residence-cover-v2.webp
-  - id: front-elevation
-    title: Front Elevation
-    image: /img/sinai-residence-front-v2.webp
-  - id: side-elevation
-    title: Side Elevation
-    image: /img/sinai-residence-side-v2.webp
-  - id: aerial-view
-    title: Aerial View
-    image: /img/sinai-residence-aerial-v2.webp
 completionDate: Scheduled Delivery — July 2026
 startingPrice: 100000000
 annualReturn: 14

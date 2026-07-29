@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useCallback } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, X, Play, Maximize2 } from "lucide-react";
+import { X, Play, ScanLine } from "lucide-react";
 import type { PropertyTourScene } from "@/lib/properties";
 
 type VirtualTourProps = {
@@ -19,24 +18,12 @@ type VirtualTourProps = {
  * Priority of what gets shown:
  *   1. Matterport URL  → embeds 360° Matterport showcase (best quality)
  *   2. Video URL       → embeds MP4 / YouTube / Vimeo
- *   3. Image scenes    → clean carousel (no warping, works with any photo)
+ *   3. Image scene     → one focused preview until Matterport is ready
  *
  * To upgrade to true 360° later: paste a Matterport URL into the property's
  * `matterportUrl` field in src/lib/properties.ts. That's it — no code changes.
  */
 export function VirtualTour({ scenes, matterportUrl, videoUrl, onClose, embedded = false }: VirtualTourProps) {
-  const [currentScene, setCurrentScene] = useState(0);
-
-  const goToScene = useCallback(
-    (index: number) => {
-      setCurrentScene(((index % scenes.length) + scenes.length) % scenes.length);
-    },
-    [scenes.length],
-  );
-
-  const goPrev = () => goToScene(currentScene - 1);
-  const goNext = () => goToScene(currentScene + 1);
-
   // --- Priority 1: Matterport 360° embed ---
   if (matterportUrl) {
     const embedUrl = matterportUrl.includes("?")
@@ -119,7 +106,7 @@ export function VirtualTour({ scenes, matterportUrl, videoUrl, onClose, embedded
     }
   }
 
-  // --- Priority 3: Image carousel (clean, no warping) ---
+  // --- Priority 3: One image preview while the Matterport tour is prepared ---
   if (scenes.length === 0) {
     return (
       <div className="flex aspect-video w-full items-center justify-center rounded-md bg-[#0d1a40] text-white/60">
@@ -128,15 +115,15 @@ export function VirtualTour({ scenes, matterportUrl, videoUrl, onClose, embedded
     );
   }
 
-  const current = scenes[currentScene];
+  const preview = scenes[0];
 
   return (
     <div className="relative w-full overflow-hidden rounded-md bg-[#0d1a40]">
       {/* Main image */}
       <div className="relative aspect-video w-full overflow-hidden sm:aspect-[3/2]">
         <Image
-          src={current.image}
-          alt={current.title}
+          src={preview.image}
+          alt={preview.title}
           fill
           sizes="(min-width: 768px) 80vw, 95vw"
           className="object-cover"
@@ -144,9 +131,9 @@ export function VirtualTour({ scenes, matterportUrl, videoUrl, onClose, embedded
         <div className="absolute inset-0 bg-gradient-to-t from-[#081534]/80 via-transparent to-transparent" />
 
         {/* Top-left badge */}
-        <div className="absolute left-3 top-3 z-10 flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-[10px] uppercase tracking-wider text-white backdrop-blur">
-          <Maximize2 className="h-3 w-3" />
-          Virtual Tour · Scene {currentScene + 1} / {scenes.length}
+        <div className="absolute left-3 top-3 z-10 flex items-center gap-1.5 rounded-full bg-[#071128]/65 px-3 py-1.5 text-[10px] uppercase tracking-wider text-white backdrop-blur">
+          <ScanLine className="h-3 w-3 text-[#9be15d]" />
+          Matterport 360° · Coming soon
         </div>
 
         {/* Close button */}
@@ -160,63 +147,16 @@ export function VirtualTour({ scenes, matterportUrl, videoUrl, onClose, embedded
           </button>
         )}
 
-        {/* Bottom overlay with scene title + nav */}
+        {/* Focused preview state */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-[#081534]/90 to-transparent p-4">
-          <div className="pointer-events-auto flex items-center justify-between gap-3">
-            <button
-              onClick={goPrev}
-              className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition-colors hover:bg-white/20"
-              aria-label="Previous scene"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-            <div className="flex-1 text-center">
-              <div className="font-serif text-lg text-white">
-                {current.title}
-              </div>
-              {current.hotSpots && current.hotSpots.length > 0 && (
-                <div className="mt-1 text-[10px] uppercase tracking-wider text-[#7fd89a]">
-                  {current.hotSpots.length} highlight{current.hotSpots.length > 1 ? "s" : ""}
-                </div>
-              )}
+          <div className="text-center">
+            <div className="font-serif text-lg text-white">{preview.title}</div>
+            <div className="mt-1 text-[10px] uppercase tracking-wider text-[#7fd89a]">
+              Full immersive walkthrough in preparation
             </div>
-            <button
-              onClick={goNext}
-              className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition-colors hover:bg-white/20"
-              aria-label="Next scene"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </button>
           </div>
         </div>
       </div>
-
-      {/* Scene thumbnails */}
-      {scenes.length > 1 && (
-        <div className="flex gap-2 overflow-x-auto p-3">
-          {scenes.map((scene, i) => (
-            <button
-              key={scene.id}
-              onClick={() => goToScene(i)}
-              className={`relative h-16 w-24 flex-shrink-0 overflow-hidden rounded border-2 transition-all ${
-                i === currentScene
-                  ? "border-[#1F7A3A]"
-                  : "border-transparent opacity-60 hover:opacity-100"
-              }`}
-              aria-label={`View ${scene.title}`}
-              aria-pressed={i === currentScene}
-            >
-              <Image
-                src={scene.image}
-                alt=""
-                fill
-                sizes="96px"
-                className="object-cover"
-              />
-            </button>
-          ))}
-        </div>
-      )}
     </div>
   );
 }
