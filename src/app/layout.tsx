@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { CurrencyProvider } from "@/components/providers/currency-provider";
 import { LanguageProvider } from "@/components/providers/language-provider";
+import { MotionDirector } from "@/components/site/motion-director";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -189,6 +190,7 @@ export default function RootLayout({
       >
         <LanguageProvider>
           <CurrencyProvider>
+            <MotionDirector />
             {children}
             <Toaster />
           </CurrencyProvider>

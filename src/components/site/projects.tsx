@@ -13,7 +13,7 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="architectural-grid-dark scroll-mt-[90px] overflow-hidden bg-[#f7f7f2] py-24 sm:py-28 lg:py-36"
+      className="depth-surface architectural-grid-dark scroll-mt-[90px] overflow-hidden bg-[#f7f7f2] py-24 sm:py-28 lg:py-36"
     >
       <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10">
         <ScrollReveal className="mb-14 grid items-end gap-8 lg:grid-cols-[1fr_420px]">
@@ -22,7 +22,7 @@ export function Projects() {
             <h2 className="mt-5 max-w-[880px] font-serif text-[clamp(48px,6.6vw,96px)] font-normal leading-[0.9] tracking-[-0.04em] text-[#102357]">
               Three addresses.
               <br />
-              <em className="italic text-[#1f7f39]">One standard.</em>
+              <em className="kinetic-glow italic text-[#1f7f39]">One standard.</em>
             </h2>
           </div>
           <div className="border-l border-[#102357]/15 pl-6">
@@ -56,7 +56,7 @@ export function Projects() {
                       : "lg:col-span-5"
                 }`}
               >
-                <article className={`relative ${isWide ? "min-h-[620px] lg:min-h-[560px]" : "min-h-[640px] lg:min-h-[760px]"}`}>
+                <article className={`motion-card-surface relative ${isWide ? "min-h-[620px] lg:min-h-[560px]" : "min-h-[640px] lg:min-h-[760px]"}`}>
                   <Image
                     src={property.image}
                     alt={`${property.name} — ${property.tagline}`}
@@ -70,6 +70,7 @@ export function Projects() {
                   />
                   <div className="image-wash absolute inset-0 transition-opacity duration-500 group-hover:opacity-90" />
                   <div className="film-grain pointer-events-none absolute inset-0 opacity-30" />
+                  <div className="motion-card-sheen pointer-events-none absolute inset-0" aria-hidden="true" />
 
                   <div className="absolute inset-x-0 top-0 flex items-start p-5 sm:p-7">
                     <div className="flex items-center gap-3">

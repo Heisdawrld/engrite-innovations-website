@@ -27,7 +27,7 @@ export function Invest() {
             <h2 className="mt-4 font-serif text-[clamp(36px,4.4vw,60px)] font-normal leading-[1.12] text-white">
               {t("invest.title1")}
               <br />
-              <em className="italic text-[#7fd89a]">{t("invest.title2")}</em>
+              <em className="kinetic-glow kinetic-glow-light italic text-[#7fd89a]">{t("invest.title2")}</em>
               <br />
               {t("invest.title3")}
             </h2>

@@ -26,7 +26,7 @@ export function FAQ() {
   const filteredFaqs = activeCategory === "all" ? FAQS : FAQS.filter((f) => f.category === activeCategory);
 
   return (
-    <section id="faq" className="scroll-mt-[100px] py-20 sm:py-24 lg:py-32">
+    <section id="faq" className="depth-surface scroll-mt-[100px] overflow-hidden py-20 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-[900px] px-4 sm:px-6 lg:px-10">
         <ScrollReveal className="mb-10 text-center">
           <div className="flex items-center justify-center gap-3.5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#1F7A3A]">
@@ -34,7 +34,7 @@ export function FAQ() {
             Questions & Answers
           </div>
           <h2 className="mt-4 font-serif text-[clamp(36px,4.4vw,60px)] font-normal leading-[1.12] text-[#102357]">
-            Frequently Asked <em className="italic text-[#1F7A3A]">Questions</em>
+            Frequently Asked <em className="kinetic-glow italic text-[#1F7A3A]">Questions</em>
           </h2>
           <p className="mt-4 text-[15px] font-light text-[#6b7280]">
             Everything you need to know about investing with Engrite. Can&apos;t find your answer?

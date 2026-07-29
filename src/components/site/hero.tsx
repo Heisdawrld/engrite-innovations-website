@@ -75,7 +75,7 @@ export function Hero() {
             {t("hero.title1")}
             <br />
               <span className="text-outline italic">{t("hero.title2")}</span>{" "}
-              <em className="italic text-[#9be15d]">{t("hero.title3")}</em>
+              <em className="kinetic-glow kinetic-glow-light italic text-[#9be15d]">{t("hero.title3")}</em>
           </h1>
 
           <p

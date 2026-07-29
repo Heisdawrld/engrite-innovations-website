@@ -19,7 +19,7 @@ export function StatsBar() {
           }`}
         >
             <span className="absolute inset-x-0 top-0 h-[2px] origin-left scale-x-0 bg-[#9be15d] transition-transform duration-500 group-hover:scale-x-100" />
-            <div className="font-serif text-[34px] font-normal leading-none text-[#9be15d] sm:text-[46px]">
+            <div className="metric-glow font-serif text-[34px] font-normal leading-none text-[#9be15d] sm:text-[46px]">
               {s.n}<span className="ml-0.5 text-[0.58em]">{s.suffix}</span>
           </div>
             <div className="mt-4 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/85">

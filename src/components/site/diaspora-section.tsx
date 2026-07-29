@@ -46,7 +46,7 @@ export function DiasporaSection() {
             Invest From Abroad
           </div>
           <h2 className="mt-4 font-serif text-[clamp(36px,4.4vw,60px)] font-normal leading-[1.12] text-white">
-            Built for the <em className="italic text-[#7fd89a]">Diaspora</em>
+            Built for the <em className="kinetic-glow kinetic-glow-light italic text-[#7fd89a]">Diaspora</em>
           </h2>
           <p className="mt-6 text-[15px] font-light leading-[1.9] text-white/60">
             Explore from abroad with guided video calls, virtual walkthroughs,

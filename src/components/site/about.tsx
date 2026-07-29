@@ -36,7 +36,7 @@ const servicePromises = [
 
 export function About() {
   return (
-    <section id="about" className="scroll-mt-[100px] py-20 sm:py-24 lg:py-32">
+    <section id="about" className="depth-surface scroll-mt-[100px] overflow-hidden py-20 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
         {/* Founder + Story */}
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
@@ -48,7 +48,7 @@ export function About() {
             <h2 className="mt-4 font-serif text-[clamp(36px,4.4vw,60px)] font-normal leading-[1.12] text-[#102357]">
               Building Dreams,
               <br />
-              <em className="italic text-[#1F7A3A]">Shaping Cities.</em>
+              <em className="kinetic-glow italic text-[#1F7A3A]">Shaping Cities.</em>
             </h2>
             <p className="mt-6 text-[15px] font-light leading-[1.9] text-[#6b7280]">
               Engrite Innovations Ltd. is a Lagos-based real estate development and investment company headquartered in Yaba. We are dedicated to delivering excellent service in land survey and building construction — your trusted partner in the journey towards homeownership and real estate investment.

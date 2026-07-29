@@ -43,7 +43,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="scroll-mt-[100px] py-20 sm:py-24 lg:py-32">
+    <section id="contact" className="depth-surface scroll-mt-[100px] overflow-hidden py-20 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
           <ScrollReveal>
@@ -54,7 +54,7 @@ export function Contact() {
             <h2 className="mt-4 font-serif text-[clamp(36px,4.4vw,60px)] font-normal leading-[1.12] text-[#102357]">
               {t("contact.title1")}
               <br />
-              <em className="italic text-[#1F7A3A]">{t("contact.title2")}</em>
+              <em className="kinetic-glow italic text-[#1F7A3A]">{t("contact.title2")}</em>
               <br />
               {t("contact.title3")}
             </h2>
