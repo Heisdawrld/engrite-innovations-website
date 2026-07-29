@@ -1,9 +1,9 @@
 export function StatsBar() {
   const stats = [
-    { n: "3", suffix: "", label: "Signature developments", note: "Abule Ijesha · Yaba · Gbagada" },
+    { n: "15", suffix: "+", label: "Projects delivered", note: "Development, construction & property" },
+    { n: "500", suffix: "+", label: "Satisfied clients", note: "Homebuyers, investors & partners" },
     { n: "14", suffix: "%", label: "Target gross yield", note: "Illustrative, not guaranteed" },
     { n: "17", suffix: "yr", label: "Long-lease option", note: "Terms vary by development" },
-    { n: "₦20", suffix: "M", label: "Premium entry point", note: "Sinai Spaces premium studio" },
   ];
 
   return (

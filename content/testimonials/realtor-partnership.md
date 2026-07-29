@@ -7,7 +7,7 @@ outcomes:
   - label: Commission
     value: Competitive
   - label: Properties
-    value: 3 active projects
+    value: 15+ project portfolio
   - label: Marketing Kit
     value: Provided
   - label: Site Access

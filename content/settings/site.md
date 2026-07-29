@@ -38,8 +38,8 @@ stats:
   annualReturnLabel: "Target Gross Yield"
   leaseTerm: "17"
   leaseTermLabel: "Year Lease"
-  activeProjects: "3+"
-  activeProjectsLabel: "Active Projects"
+  activeProjects: "15+"
+  activeProjectsLabel: "Projects Delivered"
   legalFees: "5%"
   legalFeesLabel: "Legal Fees Only"
 

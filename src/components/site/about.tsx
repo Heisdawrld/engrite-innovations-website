@@ -114,10 +114,10 @@ export function About() {
             {/* Stats badge — placed below the photo (no overlap with founder image) */}
             <div className="absolute -bottom-5 right-4 z-10 hidden border-l-[3px] border-[#1F7A3A] bg-[#102357] px-6 py-5 shadow-[0_14px_40px_rgba(8,21,52,0.25)] sm:block">
               <span className="block font-serif text-[40px] font-normal leading-none text-[#7fd89a]">
-                3
+                15+
               </span>
               <div className="mt-1.5 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/55">
-                Active Developments
+                Projects Delivered
               </div>
             </div>
           </ScrollReveal>
@@ -126,9 +126,9 @@ export function About() {
         {/* Mobile-only inline stats badge */}
         <ScrollReveal delay={250} className="mt-8 sm:hidden">
           <div className="flex items-center gap-4 border-l-[3px] border-[#1F7A3A] bg-[#102357] px-6 py-5">
-            <span className="font-serif text-[40px] font-normal leading-none text-[#7fd89a]">3</span>
+            <span className="font-serif text-[40px] font-normal leading-none text-[#7fd89a]">15+</span>
             <div className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/55">
-              Active<br />Developments
+              Projects<br />Delivered
             </div>
           </div>
         </ScrollReveal>
