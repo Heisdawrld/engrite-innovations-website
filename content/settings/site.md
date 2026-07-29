@@ -1,17 +1,17 @@
 ---
 contact:
   phonePrimary: +234 906 175 3571
-  phoneSecondary: +234 813 066 5862
+  phoneSecondary: "+2347044397881"
   email: engriteinnovations@gmail.com
   address: 27, Montgomery Street, Yaba, Lagos, Nigeria
-  whatsappNumber: "2348130665862"
+  whatsappNumber: "+2347044397881"
   hours: Mon–Sat, 9am–6pm WAT
 social:
   instagram: https://instagram.com/engriteinnovations_
   linkedin: https://linkedin.com/company/engrite-innovations
   facebook: https://facebook.com/engriteinnovations
 hero:
-  eyebrow: Lagos-built. Future-facing. Since 2020.
+  eyebrow: Lagos-built. Future-facing. Since 2023
   titleLine1: Own An Address
   titleLine2: That Pays
   titleLine3: You Back.
