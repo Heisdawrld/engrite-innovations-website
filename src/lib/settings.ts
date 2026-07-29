@@ -32,14 +32,14 @@ export type SiteSettings = {
     secondaryCta: string;
   };
   stats: {
+    projects: string;
+    projectsLabel: string;
+    clients: string;
+    clientsLabel: string;
     annualReturn: string;
     annualReturnLabel: string;
     leaseTerm: string;
     leaseTermLabel: string;
-    activeProjects: string;
-    activeProjectsLabel: string;
-    legalFees: string;
-    legalFeesLabel: string;
   };
   founder: {
     name: string;
@@ -91,14 +91,14 @@ const FALLBACK: SiteSettings = {
     secondaryCta: "Investment Returns",
   },
   stats: {
+    projects: "15+",
+    projectsLabel: "Projects Delivered",
+    clients: "500+",
+    clientsLabel: "Satisfied Clients",
     annualReturn: "14%",
     annualReturnLabel: "Target Gross Yield",
-    leaseTerm: "17",
-    leaseTermLabel: "Year Lease",
-    activeProjects: "15+",
-    activeProjectsLabel: "Projects Delivered",
-    legalFees: "5%",
-    legalFeesLabel: "Legal Fees Only",
+    leaseTerm: "17yr",
+    leaseTermLabel: "Long-Lease Option",
   },
   founder: {
     name: "Victor Osinaike",

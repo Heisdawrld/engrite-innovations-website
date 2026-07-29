@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ScrollReveal } from "./scroll-reveal";
 import { MapPin, GraduationCap, Hammer, Clock, ShieldCheck, Search } from "lucide-react";
+import { SETTINGS } from "@/lib/settings";
 
 const values = [
   {
@@ -51,7 +52,7 @@ export function About() {
               <em className="kinetic-glow italic text-[#1F7A3A]">Shaping Cities.</em>
             </h2>
             <p className="mt-6 text-[15px] font-light leading-[1.9] text-[#6b7280]">
-              Engrite Innovations Ltd. is a Lagos-based real estate development and investment company headquartered in Yaba. We are dedicated to delivering excellent service in land survey and building construction — your trusted partner in the journey towards homeownership and real estate investment.
+              {SETTINGS.company.description}
             </p>
             <p className="mt-3.5 text-[15px] font-light leading-[1.9] text-[#6b7280]">
               Our services span the full property lifecycle: Sales, Rent, Lease, Development, Surveying, Construction, Shortlet/Airbnb management, and Investment Guidance. From groundbreaking to handover, every development is built on structural excellence, creative design, and an unwavering commitment to the futures of our investors and homeowners.
@@ -78,7 +79,7 @@ export function About() {
             <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#102357] sm:aspect-[3/4]">
               <Image
                 src="/img/founder-victor.webp"
-                alt="Victor Osinaike — CEO & Real Estate Developer, Engrite Innovations Ltd."
+                alt={`${SETTINGS.founder.name} — ${SETTINGS.founder.role}, ${SETTINGS.company.name}`}
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover object-[center_20%] sm:object-[center_25%]"
@@ -92,20 +93,20 @@ export function About() {
               />
               <div className="absolute bottom-0 left-0 right-0 p-5 text-white sm:p-6">
                 <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#7fd89a]">
-                  Founder & CEO
+                  {SETTINGS.founder.title}
                 </div>
-                <h3 className="mt-1.5 font-serif text-2xl">Victor Osinaike</h3>
+                <h3 className="mt-1.5 font-serif text-2xl">{SETTINGS.founder.name}</h3>
                 <p className="mt-1 text-[13px] font-light text-white/70">
-                  Real Estate Developer & Registered Surveyor
+                  {SETTINGS.founder.role}
                 </p>
                 <div className="mt-3 flex flex-wrap gap-3 text-[11px] text-white/60">
                   <span className="flex items-center gap-1.5">
                     <GraduationCap className="h-3.5 w-3.5 text-[#7fd89a]" />
-                    University of Lagos
+                    {SETTINGS.founder.education}
                   </span>
                   <span className="flex items-center gap-1.5">
                     <MapPin className="h-3.5 w-3.5 text-[#7fd89a]" />
-                    Lagos, Nigeria
+                    {SETTINGS.founder.location}
                   </span>
                 </div>
               </div>
@@ -114,10 +115,10 @@ export function About() {
             {/* Stats badge — placed below the photo (no overlap with founder image) */}
             <div className="absolute -bottom-5 right-4 z-10 hidden border-l-[3px] border-[#1F7A3A] bg-[#102357] px-6 py-5 shadow-[0_14px_40px_rgba(8,21,52,0.25)] sm:block">
               <span className="block font-serif text-[40px] font-normal leading-none text-[#7fd89a]">
-                15+
+                {SETTINGS.stats.projects}
               </span>
               <div className="mt-1.5 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/55">
-                Projects Delivered
+                {SETTINGS.stats.projectsLabel}
               </div>
             </div>
           </ScrollReveal>
@@ -126,9 +127,11 @@ export function About() {
         {/* Mobile-only inline stats badge */}
         <ScrollReveal delay={250} className="mt-8 sm:hidden">
           <div className="flex items-center gap-4 border-l-[3px] border-[#1F7A3A] bg-[#102357] px-6 py-5">
-            <span className="font-serif text-[40px] font-normal leading-none text-[#7fd89a]">15+</span>
+            <span className="font-serif text-[40px] font-normal leading-none text-[#7fd89a]">
+              {SETTINGS.stats.projects}
+            </span>
             <div className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/55">
-              Projects<br />Delivered
+              {SETTINGS.stats.projectsLabel}
             </div>
           </div>
         </ScrollReveal>

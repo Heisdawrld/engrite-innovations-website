@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/site/navbar";
 import { Footer } from "@/components/site/footer";
+import { SETTINGS } from "@/lib/settings";
 
 export const metadata: Metadata = {
   title: "Privacy Notice",
@@ -53,8 +54,8 @@ export default function PrivacyPage() {
               <p className="mt-3">
                 You may request access, correction or deletion of your submitted
                 information, or opt out of marketing updates, by emailing{" "}
-                <a className="text-[#102357] underline" href="mailto:engriteinnovations@gmail.com">
-                  engriteinnovations@gmail.com
+                <a className="text-[#102357] underline" href={`mailto:${SETTINGS.contact.email}`}>
+                  {SETTINGS.contact.email}
                 </a>.
               </p>
             </section>

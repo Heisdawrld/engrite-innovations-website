@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ScrollReveal } from "./scroll-reveal";
 import { Plane, Video, FileCheck, Wallet } from "lucide-react";
+import { SETTINGS } from "@/lib/settings";
 
 const steps = [
   {
@@ -26,6 +27,10 @@ const steps = [
 ];
 
 export function DiasporaSection() {
+  const titleWords = SETTINGS.diaspora.title.trim().split(/\s+/);
+  const highlightedWord = titleWords.pop() ?? "";
+  const titleLead = titleWords.join(" ");
+
   return (
     <section id="diaspora" className="scroll-mt-[100px] relative overflow-hidden bg-[#081534] py-20 text-white sm:py-24 lg:py-32">
       <div className="absolute inset-0 opacity-30">
@@ -46,12 +51,13 @@ export function DiasporaSection() {
             Invest From Abroad
           </div>
           <h2 className="mt-4 font-serif text-[clamp(36px,4.4vw,60px)] font-normal leading-[1.12] text-white">
-            Built for the <em className="kinetic-glow kinetic-glow-light italic text-[#7fd89a]">Diaspora</em>
+            {titleLead}{" "}
+            <em className="kinetic-glow kinetic-glow-light italic text-[#7fd89a]">
+              {highlightedWord}
+            </em>
           </h2>
           <p className="mt-6 text-[15px] font-light leading-[1.9] text-white/60">
-            Explore from abroad with guided video calls, virtual walkthroughs,
-            document sharing and a closing process designed to reduce unnecessary
-            travel. Independent legal review remains an essential step.
+            {SETTINGS.diaspora.description}
           </p>
         </ScrollReveal>
 
@@ -84,7 +90,7 @@ export function DiasporaSection() {
             Take a Virtual Tour
           </a>
           <a
-            href="https://wa.me/2348130665862?text=Hi%20Engrite%2C%20I%27m%20a%20diaspora%20investor%20interested%20in%20your%20properties."
+            href={`https://wa.me/${SETTINGS.contact.whatsappNumber}?text=Hi%20Engrite%2C%20I%27m%20a%20diaspora%20investor%20interested%20in%20your%20properties.`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex w-full items-center justify-center gap-2 border-2 border-white/30 px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:border-white sm:w-auto"

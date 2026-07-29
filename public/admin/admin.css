@@ -1,0 +1,374 @@
+:root {
+  --engrite-ink: #071128;
+  --engrite-navy: #102357;
+  --engrite-green: #1f7f39;
+  --engrite-lime: #9be15d;
+  --engrite-paper: #f7f7f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 18%, rgba(155, 225, 93, 0.1), transparent 24%),
+    radial-gradient(circle at 88% 82%, rgba(31, 127, 57, 0.16), transparent 28%),
+    var(--engrite-ink);
+}
+
+.cms-loading {
+  isolation: isolate;
+  overflow: hidden;
+  padding: 24px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+.cms-loading::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: -35%;
+  background: linear-gradient(
+    112deg,
+    transparent 38%,
+    rgba(255, 255, 255, 0.08) 49%,
+    rgba(155, 225, 93, 0.04) 54%,
+    transparent 65%
+  );
+  transform: translateX(-50%);
+  animation: admin-beam 6.5s ease-in-out infinite;
+}
+
+.cms-loading__orb {
+  position: absolute;
+  z-index: -1;
+  width: min(520px, 55vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.25;
+}
+
+.cms-loading__orb--one {
+  left: -16vw;
+  top: -14vh;
+  background: var(--engrite-lime);
+  animation: admin-orb-one 15s ease-in-out infinite;
+}
+
+.cms-loading__orb--two {
+  bottom: -28vh;
+  right: -12vw;
+  background: var(--engrite-green);
+  animation: admin-orb-two 18s ease-in-out infinite;
+}
+
+.cms-loading__panel {
+  position: relative;
+  width: min(620px, 100%);
+  padding: clamp(28px, 5vw, 56px);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: rgba(7, 17, 40, 0.72);
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(24px);
+}
+
+.cms-loading__panel::before,
+.cms-loading__panel::after {
+  content: "";
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  pointer-events: none;
+}
+
+.cms-loading__panel::before {
+  left: -1px;
+  top: -1px;
+  border-left: 2px solid var(--engrite-lime);
+  border-top: 2px solid var(--engrite-lime);
+}
+
+.cms-loading__panel::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid var(--engrite-lime);
+  border-right: 2px solid var(--engrite-lime);
+}
+
+.cms-loading__brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.cms-loading__brand img {
+  width: 44px;
+  height: 40px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 20px rgba(155, 225, 93, 0.12));
+}
+
+.cms-loading__brand strong,
+.cms-loading__brand span {
+  display: block;
+}
+
+.cms-loading__brand strong {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+}
+
+.cms-loading__brand span {
+  margin-top: 3px;
+  color: var(--engrite-lime);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+}
+
+.cms-loading__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: clamp(42px, 8vh, 74px);
+  color: var(--engrite-lime);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.cms-loading__eyebrow::before {
+  content: "";
+  width: 34px;
+  height: 2px;
+  background: currentColor;
+}
+
+.cms-loading h1 {
+  margin: 16px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 7vw, 76px);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+}
+
+.cms-loading h1 em {
+  display: block;
+  margin-top: 8px;
+  color: var(--engrite-lime);
+  font-weight: 400;
+}
+
+.cms-loading p {
+  max-width: 500px;
+  margin: 24px 0 0;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.cms-loading__progress {
+  height: 2px;
+  margin-top: 38px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.cms-loading__progress span {
+  display: block;
+  width: 38%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--engrite-lime), #fff);
+  animation: admin-progress 1.6s ease-in-out infinite;
+}
+
+.cms-loading__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.cms-loading__meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cms-loading__meta i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--engrite-lime);
+  box-shadow: 0 0 14px rgba(155, 225, 93, 0.55);
+}
+
+.cms-loading__site-link {
+  position: absolute;
+  bottom: 24px;
+  right: 28px;
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 180ms ease;
+}
+
+.cms-loading__site-link:hover {
+  color: var(--engrite-lime);
+}
+
+/* Decap workspace polish. Selectors are deliberately broad and non-destructive. */
+#nc-root {
+  min-height: 100vh;
+  color: var(--engrite-ink);
+}
+
+#nc-root [class*="AppHeader"] {
+  background: linear-gradient(110deg, var(--engrite-ink), var(--engrite-navy)) !important;
+  box-shadow: 0 10px 40px rgba(7, 17, 40, 0.18) !important;
+}
+
+#nc-root [class*="AppHeader"] a,
+#nc-root [class*="AppHeader"] button {
+  letter-spacing: 0.02em;
+}
+
+#nc-root [class*="Sidebar"] {
+  border-right-color: rgba(16, 35, 87, 0.08) !important;
+  background: #fbfcf8 !important;
+}
+
+#nc-root [class*="CollectionMain"],
+#nc-root [class*="EditorContainer"] {
+  background:
+    radial-gradient(circle at 88% 10%, rgba(155, 225, 93, 0.12), transparent 24%),
+    var(--engrite-paper) !important;
+}
+
+#nc-root [class*="Card"],
+#nc-root [class*="ObjectWidget"],
+#nc-root [class*="ListItem"] {
+  border-color: rgba(16, 35, 87, 0.1) !important;
+  box-shadow: 0 14px 40px rgba(7, 17, 40, 0.055) !important;
+}
+
+#nc-root input,
+#nc-root textarea,
+#nc-root select {
+  border-radius: 2px !important;
+  border-color: rgba(16, 35, 87, 0.18) !important;
+}
+
+#nc-root input:focus,
+#nc-root textarea:focus,
+#nc-root select:focus {
+  border-color: var(--engrite-green) !important;
+  box-shadow: 0 0 0 3px rgba(31, 127, 57, 0.1) !important;
+}
+
+#nc-root button {
+  border-radius: 2px !important;
+}
+
+#nc-root [class*="ToolbarButton"],
+#nc-root [class*="SaveButton"] {
+  background: var(--engrite-green) !important;
+  color: #fff !important;
+}
+
+#nc-root [class*="AuthenticationPage"] {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    var(--engrite-ink) !important;
+  background-size: 72px 72px !important;
+}
+
+@keyframes admin-progress {
+  from {
+    transform: translateX(-120%);
+  }
+  to {
+    transform: translateX(360%);
+  }
+}
+
+@keyframes admin-beam {
+  0%,
+  22% {
+    opacity: 0;
+    transform: translateX(-50%) rotate(0.001deg);
+  }
+  42% {
+    opacity: 1;
+  }
+  72%,
+  100% {
+    opacity: 0;
+    transform: translateX(50%) rotate(0.001deg);
+  }
+}
+
+@keyframes admin-orb-one {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(0.9);
+  }
+  50% {
+    transform: translate3d(26vw, 18vh, 0) scale(1.1);
+  }
+}
+
+@keyframes admin-orb-two {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-22vw, -16vh, 0) scale(0.82);
+  }
+}
+
+@media (max-width: 640px) {
+  .cms-loading {
+    justify-content: flex-start;
+    padding: 16px;
+  }
+
+  .cms-loading__panel {
+    margin-top: 8vh;
+    padding: 28px 24px 32px;
+  }
+
+  .cms-loading__site-link {
+    bottom: 18px;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cms-loading::before,
+  .cms-loading__orb,
+  .cms-loading__progress span {
+    animation: none !important;
+  }
+}

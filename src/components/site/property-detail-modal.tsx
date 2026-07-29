@@ -13,6 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Heart, MapPin, Calendar, TrendingUp, Eye, X } from "lucide-react";
 import { getProperty } from "@/lib/properties";
+import { SETTINGS } from "@/lib/settings";
 import { useCurrency } from "@/components/providers/currency-provider";
 import { useFavorites } from "@/components/providers/favorites-provider";
 import { VirtualTour } from "./virtual-tour";
@@ -288,7 +289,7 @@ export function PropertyDetailModal({ slug, onClose }: PropertyDetailModalProps)
               Enquire About {property.name}
             </a>
             <a
-              href={`https://wa.me/2348130665862?text=${encodeURIComponent(`Hi Engrite, I'm interested in ${property.name}`)}`}
+              href={`https://wa.me/${SETTINGS.contact.whatsappNumber}?text=${encodeURIComponent(`Hi Engrite, I'm interested in ${property.name}`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 border-2 border-[#102357] px-6 py-4 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-[#102357] transition-all hover:bg-[#102357] hover:text-white"

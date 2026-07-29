@@ -8,6 +8,7 @@ import {
   MapPinned,
 } from "lucide-react";
 import { ScrollReveal } from "./scroll-reveal";
+import { SETTINGS } from "@/lib/settings";
 
 export function ProgressGallery() {
   return (
@@ -105,7 +106,7 @@ export function ProgressGallery() {
           </div>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-7">
             <a
-              href="https://instagram.com/engriteinnovations_"
+              href={SETTINGS.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#9be15d] transition-colors hover:text-white"
@@ -113,7 +114,7 @@ export function ProgressGallery() {
               Follow live updates <ArrowUpRight className="h-4 w-4" />
             </a>
             <a
-              href="https://wa.me/2348130665862?text=Hi%20Engrite%2C%20please%20send%20me%20the%20latest%20verified%20construction%20update."
+              href={`https://wa.me/${SETTINGS.contact.whatsappNumber}?text=Hi%20Engrite%2C%20please%20send%20me%20the%20latest%20verified%20construction%20update.`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-white transition-colors hover:text-[#9be15d]"

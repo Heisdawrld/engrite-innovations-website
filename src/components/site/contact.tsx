@@ -16,10 +16,13 @@ import {
 import { useLanguage } from "@/components/providers/language-provider";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { BookingWidget } from "./booking-widget";
+import { SETTINGS } from "@/lib/settings";
 
 export function Contact() {
   const { t } = useLanguage();
   const [loading, setLoading] = useState(false);
+  const primaryPhoneHref = `tel:${SETTINGS.contact.phonePrimary.replace(/[^\d+]/g, "")}`;
+  const secondaryPhoneHref = `tel:${SETTINGS.contact.phoneSecondary.replace(/[^\d+]/g, "")}`;
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -66,7 +69,7 @@ export function Contact() {
                   {t("contact.address")}
                 </div>
                 <div className="mt-1.5 text-[15px] font-light text-[#1a1f2e]">
-                  27, Montgomery Street, Yaba, Lagos, Nigeria
+                  {SETTINGS.contact.address}
                 </div>
               </div>
               <div>
@@ -75,10 +78,10 @@ export function Contact() {
                   {t("contact.email")}
                 </div>
                 <a
-                  href="mailto:engriteinnovations@gmail.com"
+                  href={`mailto:${SETTINGS.contact.email}`}
                   className="mt-1.5 block text-[15px] font-light text-[#1a1f2e] hover:text-[#1F7A3A]"
                 >
-                  engriteinnovations@gmail.com
+                  {SETTINGS.contact.email}
                 </a>
               </div>
               <div>
@@ -87,16 +90,16 @@ export function Contact() {
                   {t("contact.phone")}
                 </div>
                 <a
-                  href="tel:+2348130665862"
+                  href={primaryPhoneHref}
                   className="mt-1.5 block text-[15px] font-light text-[#1a1f2e] hover:text-[#1F7A3A]"
                 >
-                  +234 813 066 5862
+                  {SETTINGS.contact.phonePrimary}
                 </a>
                 <a
-                  href="tel:+2349061753571"
+                  href={secondaryPhoneHref}
                   className="mt-1 block text-[13px] font-light text-[#6b7280] hover:text-[#1F7A3A]"
                 >
-                  +234 906 175 3571 (Alt)
+                  {SETTINGS.contact.phoneSecondary} (Alt)
                 </a>
               </div>
               <div>
@@ -104,8 +107,8 @@ export function Contact() {
                   {t("contact.follow")}
                 </div>
                 <div className="mt-2 flex flex-wrap gap-5 text-[15px] font-light text-[#1a1f2e]">
-                  <a href="https://instagram.com/engriteinnovations_" target="_blank" rel="noopener noreferrer" className="hover:text-[#1F7A3A]">Instagram</a>
-                  <a href="https://ng.linkedin.com/company/engrite-innovations" target="_blank" rel="noopener noreferrer" className="hover:text-[#1F7A3A]">LinkedIn</a>
+                  <a href={SETTINGS.social.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-[#1F7A3A]">Instagram</a>
+                  <a href={SETTINGS.social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-[#1F7A3A]">LinkedIn</a>
                 </div>
               </div>
             </div>

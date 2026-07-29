@@ -5,9 +5,10 @@ import Link from "next/link";
 import { useLanguage } from "@/components/providers/language-provider";
 import { ArrowDown, ArrowUpRight, Building2, MapPin } from "lucide-react";
 import { HeroMotionBackdrop } from "./hero-motion-backdrop";
+import { SETTINGS } from "@/lib/settings";
 
 export function Hero() {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -65,25 +66,26 @@ export function Hero() {
               className="animate-fade-up eyebrow mb-7 text-[#9be15d]"
             style={{ animationDelay: "0.1s" }}
           >
-              Lagos-built. Future-facing. Since 2020.
+              {SETTINGS.hero.eyebrow}
           </div>
 
           <h1
               className="animate-fade-up max-w-[830px] font-serif text-[clamp(54px,7.2vw,108px)] font-normal leading-[0.88] tracking-[-0.045em] text-white"
             style={{ animationDelay: "0.3s" }}
           >
-            {t("hero.title1")}
+            {lang === "en" ? SETTINGS.hero.titleLine1 : t("hero.title1")}
             <br />
-              <span className="text-outline italic">{t("hero.title2")}</span>{" "}
-              <em className="kinetic-glow kinetic-glow-light italic text-[#9be15d]">{t("hero.title3")}</em>
+              <span className="text-outline italic">{lang === "en" ? SETTINGS.hero.titleLine2 : t("hero.title2")}</span>{" "}
+              <em className="kinetic-glow kinetic-glow-light italic text-[#9be15d]">
+                {lang === "en" ? SETTINGS.hero.titleLine3 : t("hero.title3")}
+              </em>
           </h1>
 
           <p
               className="animate-fade-up mt-8 max-w-[560px] border-l border-white/25 pl-5 text-[15px] font-light leading-[1.85] text-white/75 sm:text-base"
             style={{ animationDelay: "0.5s" }}
           >
-              Thoughtfully designed residences in Lagos, backed by a team that
-              takes you from first inspection to final handover.
+              {SETTINGS.hero.subtitle}
           </p>
 
           <div
@@ -94,19 +96,19 @@ export function Hero() {
               href="#projects"
                 className="group inline-flex min-h-14 w-full items-center justify-center gap-4 bg-[#9be15d] px-8 text-[11px] font-bold uppercase tracking-[0.18em] text-[#071128] transition-all hover:bg-white sm:w-auto"
             >
-              {t("hero.cta1")}
+              {lang === "en" ? SETTINGS.hero.primaryCta : t("hero.cta1")}
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </Link>
             <Link
                 href="#contact"
                 className="inline-flex min-h-14 w-full items-center justify-center border border-white/30 px-8 text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all hover:border-white hover:bg-white/10 sm:w-auto"
             >
-                Book a private inspection
+                {lang === "en" ? SETTINGS.hero.secondaryCta : t("hero.cta2")}
             </Link>
           </div>
 
             <a
-              href="https://wa.me/2348130665862?text=Hi%20Engrite%2C%20I%20would%20like%20to%20become%20a%20realtor%20and%20learn%20about%20your%20property%20partnership%20programme."
+              href={`https://wa.me/${SETTINGS.contact.whatsappNumber}?text=Hi%20Engrite%2C%20I%20would%20like%20to%20become%20a%20realtor%20and%20learn%20about%20your%20property%20partnership%20programme.`}
               target="_blank"
               rel="noopener noreferrer"
               className="animate-fade-up mt-5 inline-flex items-center gap-3 text-[9px] font-bold uppercase tracking-[0.2em] text-white/70 transition-colors hover:text-[#9be15d]"

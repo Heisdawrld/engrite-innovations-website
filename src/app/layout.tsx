@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { CurrencyProvider } from "@/components/providers/currency-provider";
 import { LanguageProvider } from "@/components/providers/language-provider";
 import { MotionDirector } from "@/components/site/motion-director";
+import { SETTINGS } from "@/lib/settings";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -97,16 +98,16 @@ const jsonLd = {
     {
       "@type": "RealEstateAgent",
       "@id": `${SITE_URL}/#organization`,
-      name: "Engrite Innovations Ltd.",
-      alternateName: "Engrite Innovations",
+      name: SETTINGS.company.legalName,
+      alternateName: SETTINGS.company.name,
       url: SITE_URL,
       logo: `${SITE_URL}/img/og-image.webp`,
       image: `${SITE_URL}/img/og-image.webp`,
       description:
         "Engrite Innovations Ltd. — Building Dreams, Shaping Cities. A Lagos-based real estate development and investment company headquartered in Yaba, specializing in Sales, Rent, Lease, Development, Surveying, and Construction.",
-      slogan: "Building Dreams, Shaping Cities",
-      telephone: "+234-813-066-5862",
-      email: "engriteinnovations@gmail.com",
+      slogan: SETTINGS.company.tagline,
+      telephone: SETTINGS.contact.phonePrimary,
+      email: SETTINGS.contact.email,
       founder: {
         "@type": "Person",
         name: "Victor Osinaike",
@@ -116,7 +117,7 @@ const jsonLd = {
       },
       address: {
         "@type": "PostalAddress",
-        streetAddress: "27, Montgomery Street",
+        streetAddress: SETTINGS.contact.address,
         addressLocality: "Yaba",
         addressRegion: "Lagos",
         addressCountry: "NG",
@@ -131,8 +132,9 @@ const jsonLd = {
         "Shortlet Management",
       ],
       sameAs: [
-        "https://instagram.com/engriteinnovations_",
-        "https://ng.linkedin.com/company/engrite-innovations",
+        SETTINGS.social.instagram,
+        SETTINGS.social.linkedin,
+        SETTINGS.social.facebook,
       ],
     },
     {

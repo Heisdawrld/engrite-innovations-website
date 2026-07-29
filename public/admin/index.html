@@ -4,10 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
-    <title>Content Manager · Engrite Innovations</title>
-    <link rel="icon" href="/favicon.ico" />
+    <meta name="theme-color" content="#071128" />
+    <title>Engrite Content Studio</title>
+    <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/admin/admin.css" />
     <style>
-      /* Loading state — Decap CMS takes ~1 second to mount */
       body {
         margin: 0;
         background: #081534;
@@ -49,9 +50,38 @@
   <body>
     <div id="nc-root"></div>
     <div class="cms-loading" id="cms-loading">
-      <div class="cms-loading__logo">Engrite Admin</div>
-      <div class="cms-loading__spinner"></div>
-      <div class="cms-loading__hint">Loading content manager…</div>
+      <div class="cms-loading__orb cms-loading__orb--one"></div>
+      <div class="cms-loading__orb cms-loading__orb--two"></div>
+      <div class="cms-loading__panel">
+        <div class="cms-loading__brand">
+          <img src="/img/favicon.svg" width="44" height="40" alt="" />
+          <div>
+            <strong>ENGRITE</strong>
+            <span>CONTENT STUDIO</span>
+          </div>
+        </div>
+
+        <div class="cms-loading__eyebrow">Secure publishing workspace</div>
+        <h1>
+          Shape the site.
+          <em>Stay in control.</em>
+        </h1>
+        <p>
+          Manage developments, verified updates, client stories and company
+          information from one protected workspace.
+        </p>
+
+        <div class="cms-loading__progress" aria-hidden="true">
+          <span></span>
+        </div>
+        <div class="cms-loading__meta">
+          <span><i></i>Main branch</span>
+          <span><i></i>Automatic deployment</span>
+        </div>
+      </div>
+      <a class="cms-loading__site-link" href="/" target="_blank" rel="noopener">
+        View live website ↗
+      </a>
     </div>
 
     <!-- Netlify Identity widget — must load before Decap CMS -->

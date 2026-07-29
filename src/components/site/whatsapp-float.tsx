@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { SETTINGS } from "@/lib/settings";
 
 export function WhatsAppFloat() {
   const [show, setShow] = useState(false);
@@ -13,7 +14,7 @@ export function WhatsAppFloat() {
 
   return (
     <a
-      href="https://wa.me/2348130665862?text=Hi%20Engrite%20Innovations%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20properties."
+      href={`https://wa.me/${SETTINGS.contact.whatsappNumber}?text=Hi%20Engrite%20Innovations%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20properties.`}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with Engrite on WhatsApp"

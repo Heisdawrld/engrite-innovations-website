@@ -9,7 +9,7 @@ company:
   rcNumber: "7233410"
   tagline: Building Dreams, Shaping Cities.
   established: "2020"
-  description: Your trusted partner in the journey towards home ownership. Premium real estate development and investment opportunities across Lagos.
+  description: Engrite Innovations Ltd. is a Lagos-based real estate development and investment company headquartered in Yaba. We deliver property development, surveying and construction services for homeowners and investors.
 
 contact:
   phonePrimary: "+234 813 066 5862"
@@ -25,23 +25,23 @@ social:
   facebook: "https://facebook.com/engriteinnovations"
 
 hero:
-  eyebrow: "Own An Address"
+  eyebrow: "Lagos-built. Future-facing. Since 2020."
   titleLine1: "Own An Address"
   titleLine2: "That Pays"
   titleLine3: "You Back."
-  subtitle: "Your trusted partner in the journey towards home ownership. Premium real estate development and investment opportunities across Lagos."
+  subtitle: "Thoughtfully designed residences in Lagos, backed by a team that takes you from first inspection to final handover."
   primaryCta: "Explore Properties"
-  secondaryCta: "Investment Returns"
+  secondaryCta: "Book a Private Inspection"
 
 stats:
+  projects: "15+"
+  projectsLabel: "Projects Delivered"
+  clients: "500+"
+  clientsLabel: "Satisfied Clients"
   annualReturn: "14%"
   annualReturnLabel: "Target Gross Yield"
-  leaseTerm: "17"
-  leaseTermLabel: "Year Lease"
-  activeProjects: "15+"
-  activeProjectsLabel: "Projects Delivered"
-  legalFees: "5%"
-  legalFeesLabel: "Legal Fees Only"
+  leaseTerm: "17yr"
+  leaseTermLabel: "Long-Lease Option"
 
 founder:
   name: Victor Osinaike
@@ -52,7 +52,7 @@ founder:
 
 diaspora:
   title: "Built for the Diaspora"
-  description: "A guided remote buying experience for Nigerians abroad — from live video walkthroughs and document review to coordinated payments and construction updates."
+  description: "Explore from abroad with guided video calls, virtual walkthroughs, document sharing and a closing process designed to reduce unnecessary travel. Independent legal review remains an essential step."
   closingTime: "By appointment"
 
 footer:

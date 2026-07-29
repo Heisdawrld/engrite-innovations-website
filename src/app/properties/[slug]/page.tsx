@@ -8,6 +8,7 @@ import { Footer } from "@/components/site/footer";
 import { WhatsAppFloat } from "@/components/site/whatsapp-float";
 import { PropertyVirtualTourSection } from "@/components/site/property-virtual-tour-section";
 import { PROPERTIES, getProperty } from "@/lib/properties";
+import { SETTINGS } from "@/lib/settings";
 
 export const dynamicParams = false;
 
@@ -110,7 +111,7 @@ export default async function PropertyPage({
                   </div>
                 </div>
                 <a
-                  href={`https://wa.me/2348130665862?text=${whatsAppMessage}`}
+                  href={`https://wa.me/${SETTINGS.contact.whatsappNumber}?text=${whatsAppMessage}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-6 flex min-h-13 items-center justify-between bg-[#9be15d] px-5 text-[10px] font-bold uppercase tracking-[0.18em] text-[#071128] transition-colors hover:bg-white"
@@ -265,7 +266,7 @@ export default async function PropertyPage({
               </h2>
             </div>
             <a
-              href={`https://wa.me/2348130665862?text=${whatsAppMessage}`}
+              href={`https://wa.me/${SETTINGS.contact.whatsappNumber}?text=${whatsAppMessage}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex min-h-14 flex-shrink-0 items-center gap-4 bg-[#071128] px-7 text-[10px] font-bold uppercase tracking-[0.18em] text-white transition-colors hover:bg-[#102357]"

@@ -17,6 +17,9 @@ public_folder: "/uploads"
 
 # Live site URL (shown in CMS top bar)
 site_url: https://engriteinnovations.com
+display_url: https://engriteinnovations.com
+logo_url: /img/favicon.svg
+show_preview_links: true
 
 # Single Save = Publish (no draft workflow — keeps things simple for the client)
 # Removed: publish_mode: editorial_workflow
@@ -25,11 +28,6 @@ locale: en
 
 # Custom CSS to make the admin look more like the Engrite brand
 # (loaded from /admin/admin.css)
-media_library:
-  name: ''
-  config:
-    max_file_size: 5242880  # 5MB limit — prevents huge uploads breaking the build
-
 collections:
   # ============================================================
   # PROPERTIES — main collection, organized into friendly sections
@@ -40,6 +38,9 @@ collections:
     folder: "content/properties"
     create: true
     delete: true
+    description: "Manage the developments shown on the homepage and their full property pages. Saving publishes a new website version."
+    editor:
+      preview: false
     slug: "{{slug}}"
     summary: "{{name}} — {{location}}"
     sortable_fields: ["name", "status", "startingPrice"]
@@ -146,13 +147,14 @@ collections:
       # ===========================================================
       # 🎥 VIRTUAL TOUR & VIDEO (optional)
       # ===========================================================
-      - { name: "videoUrl", label: "🎥 Walkthrough Video Link (optional)", widget: "string", required: false, hint: "YouTube, Vimeo, or direct MP4 link. Leave blank if not yet filmed. The 'Tour' button only shows if this is filled." }
-      - { name: "matterportUrl", label: "360° Matterport Link (optional)", widget: "string", required: false, hint: "Only fill if you have a Matterport showcase URL. Most properties leave this blank." }
+      - { name: "videoUrl", label: "🎥 Walkthrough Video Link (optional)", widget: "string", required: false, hint: "YouTube, Vimeo, or direct MP4 link. Leave blank if not yet filmed." }
+      - { name: "matterportUrl", label: "360° Matterport Link (optional)", widget: "string", required: false, hint: "Paste the Matterport showcase URL here when it is ready. The website will automatically replace the coming-soon preview with the immersive tour." }
       - name: "tourScenes"
-        label: "Fallback 360° Photos (optional)"
+        label: "360° Tour Preview Image"
         widget: "list"
         required: false
-        hint: "Used only when no video/Matterport link is set. Each scene is a 360° panorama image."
+        max: 1
+        hint: "Keep one preview image here until the Matterport link is ready. Once Matterport is added, the real immersive tour takes over automatically."
         fields:
           - { name: "id", label: "Scene ID", widget: "string", hint: "Short name like 'exterior' or 'lobby'" }
           - { name: "title", label: "Scene Title", widget: "string", hint: "Shown to viewers" }
@@ -183,6 +185,9 @@ collections:
     folder: "content/faqs"
     create: true
     delete: true
+    description: "Add and update the answers shown in the website FAQ section."
+    editor:
+      preview: false
     summary: "{{question}}"
     sortable_fields: ["order", "category"]
     view_filters:
@@ -222,11 +227,14 @@ collections:
   # USE-CASE SCENARIOS
   # ============================================================
   - name: "testimonials"
-    label: "Use-Case Scenarios"
+    label: "Investment Scenarios"
     label_singular: "Scenario"
     folder: "content/testimonials"
     create: true
     delete: true
+    description: "Manage the illustrative Live, Earn, Shortlet, Diaspora and Realtor examples."
+    editor:
+      preview: false
     summary: "{{title}}"
     fields:
       - { name: "id", label: "ID (short)", widget: "string", hint: "Just a unique short label" }
@@ -260,6 +268,9 @@ collections:
     folder: "content/client-testimonials"
     create: true
     delete: true
+    description: "Publish approved client stories with real names, quotes and photographs."
+    editor:
+      preview: false
     summary: "{{name}} — {{role}}"
     fields:
       - { name: "name", label: "Client Name", widget: "string" }
@@ -280,6 +291,9 @@ collections:
     folder: "content/blog"
     create: true
     delete: true
+    description: "Create educational articles and company updates."
+    editor:
+      preview: false
     slug: "{{slug}}"
     summary: "{{title}} — {{date}}"
     sortable_fields: ["date", "title"]
@@ -366,14 +380,14 @@ collections:
             collapsed: true
             hint: "The four numbers shown below the homepage banner"
             fields:
-              - { name: "annualReturn", label: "Stat 1 — Value", widget: "string", hint: "Example: '14%'" }
-              - { name: "annualReturnLabel", label: "Stat 1 — Label", widget: "string", hint: "Example: 'Target Gross Yield'" }
-              - { name: "leaseTerm", label: "Stat 2 — Value", widget: "string" }
-              - { name: "leaseTermLabel", label: "Stat 2 — Label", widget: "string" }
-              - { name: "activeProjects", label: "Stat 3 — Value", widget: "string" }
-              - { name: "activeProjectsLabel", label: "Stat 3 — Label", widget: "string" }
-              - { name: "legalFees", label: "Stat 4 — Value", widget: "string" }
-              - { name: "legalFeesLabel", label: "Stat 4 — Label", widget: "string" }
+              - { name: "projects", label: "Projects — Value", widget: "string", hint: "Example: '15+'" }
+              - { name: "projectsLabel", label: "Projects — Label", widget: "string", hint: "Example: 'Projects Delivered'" }
+              - { name: "clients", label: "Clients — Value", widget: "string", hint: "Example: '500+'" }
+              - { name: "clientsLabel", label: "Clients — Label", widget: "string", hint: "Example: 'Satisfied Clients'" }
+              - { name: "annualReturn", label: "Yield — Value", widget: "string", hint: "Example: '14%'" }
+              - { name: "annualReturnLabel", label: "Yield — Label", widget: "string", hint: "Example: 'Target Gross Yield'" }
+              - { name: "leaseTerm", label: "Lease — Value", widget: "string", hint: "Example: '17yr'" }
+              - { name: "leaseTermLabel", label: "Lease — Label", widget: "string", hint: "Example: 'Long-Lease Option'" }
 
           # ---------- COMPANY INFO ----------
           - name: "company"

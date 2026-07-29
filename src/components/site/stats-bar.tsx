@@ -1,9 +1,11 @@
+import { SETTINGS } from "@/lib/settings";
+
 export function StatsBar() {
   const stats = [
-    { n: "15", suffix: "+", label: "Projects delivered", note: "Development, construction & property" },
-    { n: "500", suffix: "+", label: "Satisfied clients", note: "Homebuyers, investors & partners" },
-    { n: "14", suffix: "%", label: "Target gross yield", note: "Illustrative, not guaranteed" },
-    { n: "17", suffix: "yr", label: "Long-lease option", note: "Terms vary by development" },
+    { value: SETTINGS.stats.projects, label: SETTINGS.stats.projectsLabel, note: "Development, construction & property" },
+    { value: SETTINGS.stats.clients, label: SETTINGS.stats.clientsLabel, note: "Homebuyers, investors & partners" },
+    { value: SETTINGS.stats.annualReturn, label: SETTINGS.stats.annualReturnLabel, note: "Illustrative, not guaranteed" },
+    { value: SETTINGS.stats.leaseTerm, label: SETTINGS.stats.leaseTermLabel, note: "Terms vary by development" },
   ];
 
   return (
@@ -20,7 +22,7 @@ export function StatsBar() {
         >
             <span className="absolute inset-x-0 top-0 h-[2px] origin-left scale-x-0 bg-[#9be15d] transition-transform duration-500 group-hover:scale-x-100" />
             <div className="metric-glow font-serif text-[34px] font-normal leading-none text-[#9be15d] sm:text-[46px]">
-              {s.n}<span className="ml-0.5 text-[0.58em]">{s.suffix}</span>
+              {s.value}
           </div>
             <div className="mt-4 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/85">
             {s.label}

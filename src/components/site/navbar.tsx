@@ -9,6 +9,7 @@ import { LanguageToggle } from "./language-toggle";
 import { useLanguage } from "@/components/providers/language-provider";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetHeader } from "@/components/ui/sheet";
+import { SETTINGS } from "@/lib/settings";
 
 export function Navbar({ solid = false }: { solid?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
@@ -17,7 +18,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
   const { t } = useLanguage();
   const isSolid = solid || scrolled;
   const realtorUrl =
-    "https://wa.me/2348130665862?text=Hi%20Engrite%2C%20I%20would%20like%20to%20become%20a%20realtor%20and%20learn%20about%20your%20property%20partnership%20programme.";
+    `https://wa.me/${SETTINGS.contact.whatsappNumber}?text=Hi%20Engrite%2C%20I%20would%20like%20to%20become%20a%20realtor%20and%20learn%20about%20your%20property%20partnership%20programme.`;
 
   useEffect(() => {
     const onScroll = () => {
@@ -174,8 +175,8 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
                 </div>
 
                 <div className="mt-auto flex gap-4 border-t border-white/10 pt-6 text-[11px] uppercase tracking-[0.14em] text-white/60">
-                  <a href="https://instagram.com/engriteinnovations_" target="_blank" rel="noopener noreferrer">IG</a>
-                  <a href="https://ng.linkedin.com/company/engrite-innovations" target="_blank" rel="noopener noreferrer">LI</a>
+                  <a href={SETTINGS.social.instagram} target="_blank" rel="noopener noreferrer">IG</a>
+                  <a href={SETTINGS.social.linkedin} target="_blank" rel="noopener noreferrer">LI</a>
                 </div>
               </div>
             </SheetContent>
