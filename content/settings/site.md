@@ -1,6 +1,6 @@
 ---
 contact:
-  phonePrimary: +234 813 066 5862+234 906 175 3571
+  phonePrimary: +234 906 175 3571
   phoneSecondary: +234 813 066 5862
   email: engriteinnovations@gmail.com
   address: 27, Montgomery Street, Yaba, Lagos, Nigeria
