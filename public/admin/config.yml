@@ -21,8 +21,8 @@ display_url: https://engriteinnovations.com
 logo_url: /img/favicon.svg
 show_preview_links: true
 
-# Single Save = Publish (no draft workflow — keeps things simple for the client)
-# Removed: publish_mode: editorial_workflow
+# A save creates a protected commit and starts the live Netlify build.
+# The branded dashboard at /admin/ explains this workflow before editing.
 
 locale: en
 
@@ -38,7 +38,7 @@ collections:
     folder: "content/properties"
     create: true
     delete: true
-    description: "Manage the developments shown on the homepage and their full property pages. Saving publishes a new website version."
+    description: "Manage every development shown on the homepage and its full property page. Review names, figures and images carefully before saving; a save starts a new live website build."
     editor:
       preview: false
     slug: "{{slug}}"

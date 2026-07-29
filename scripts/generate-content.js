@@ -14,6 +14,10 @@ const matter = require("gray-matter");
 
 const ROOT = path.join(process.cwd(), "content");
 const OUT = path.join(process.cwd(), "src/lib/content-generated.ts");
+const ADMIN_MANIFEST = path.join(
+  process.cwd(),
+  "public/admin/content-manifest.json",
+);
 
 function loadCollection(dir) {
   const fullDir = path.join(ROOT, dir);
@@ -70,7 +74,38 @@ export const GENERATED_SETTINGS = ${JSON.stringify(data.settings, null, 2)};
 `;
 
 fs.writeFileSync(OUT, ts, "utf8");
+
+const adminManifest = {
+  generatedAt: new Date().toISOString(),
+  counts: {
+    properties: data.properties.length,
+    faqs: data.faqs.length,
+    testimonials: data.testimonials.length,
+    clientTestimonials: data.clientTestimonials.length,
+    blog: data.blog.length,
+  },
+  properties: data.properties.map((property) => ({
+    slug: property.slug,
+    name: property.name,
+    location: property.location,
+    statusLabel: property.statusLabel,
+    completionDate: property.completionDate,
+    startingPrice: Number(property.startingPrice || 0),
+    galleryCount: Array.isArray(property.gallery) ? property.gallery.length : 0,
+    unitCount: Array.isArray(property.units) ? property.units.length : 0,
+    hasMap: Boolean(property.mapEmbed),
+    hasMatterport: Boolean(property.matterportUrl),
+  })),
+};
+
+fs.writeFileSync(
+  ADMIN_MANIFEST,
+  `${JSON.stringify(adminManifest, null, 2)}\n`,
+  "utf8",
+);
+
 console.log(`✓ Generated ${path.relative(process.cwd(), OUT)}`);
+console.log(`✓ Generated ${path.relative(process.cwd(), ADMIN_MANIFEST)}`);
 console.log(`  - ${data.properties.length} properties`);
 console.log(`  - ${data.faqs.length} FAQs`);
 console.log(`  - ${data.testimonials.length} testimonials`);

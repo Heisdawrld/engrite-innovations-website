@@ -62,3 +62,4 @@ server.log
 
 # Auto-generated from content/ — do not commit
 src/lib/content-generated.ts
+public/admin/content-manifest.json

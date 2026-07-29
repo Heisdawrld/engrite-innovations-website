@@ -331,6 +331,21 @@
   transform: translateX(0);
 }
 
+.concierge-trigger::after {
+  content: "";
+  position: absolute;
+  inset: -100% auto -100% -35%;
+  width: 25%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.22),
+    transparent
+  );
+  transform: skewX(-18deg);
+  animation: concierge-sheen 7s ease-in-out infinite;
+}
+
 .image-wash {
   background:
     linear-gradient(180deg, transparent 20%, rgba(7, 17, 40, 0.88) 100%),
@@ -729,6 +744,22 @@
   0%, 34% { opacity: 0; transform: translateX(-160%) skewX(-15deg); }
   48% { opacity: 0.45; }
   66%, 100% { opacity: 0; transform: translateX(340%) skewX(-15deg); }
+}
+
+@keyframes concierge-sheen {
+  0%,
+  58% {
+    left: -35%;
+    opacity: 0;
+  }
+  68% {
+    opacity: 0.75;
+  }
+  84%,
+  100% {
+    left: 125%;
+    opacity: 0;
+  }
 }
 
 .animate-orbit {

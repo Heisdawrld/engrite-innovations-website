@@ -11,6 +11,8 @@ import { Contact } from "@/components/site/contact";
 import { FAQ } from "@/components/site/faq";
 import { DiasporaSection } from "@/components/site/diaspora-section";
 import { WhatsAppFloat } from "@/components/site/whatsapp-float";
+import { ExperienceRail } from "@/components/site/experience-rail";
+import { PropertyMatchmaker } from "@/components/site/property-matchmaker";
 
 export default function Home() {
   return (
@@ -39,6 +41,8 @@ export default function Home() {
 
       <Footer />
 
+      <ExperienceRail />
+      <PropertyMatchmaker />
       <WhatsAppFloat />
     </>
   );

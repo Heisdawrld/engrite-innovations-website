@@ -5,126 +5,242 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <meta name="theme-color" content="#071128" />
-    <title>Engrite Content Studio</title>
+    <title>Engrite Admin — Publishing Dashboard</title>
     <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/admin/admin.css" />
-    <style>
-      body {
-        margin: 0;
-        background: #081534;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        color: #fff;
-      }
-      .cms-loading {
-        position: fixed;
-        inset: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 16px;
-        z-index: 9999;
-      }
-      .cms-loading__logo {
-        font-size: 24px;
-        font-weight: 600;
-        letter-spacing: -0.02em;
-      }
-      .cms-loading__spinner {
-        width: 36px;
-        height: 36px;
-        border: 3px solid rgba(255, 255, 255, 0.15);
-        border-top-color: #2ba84a;
-        border-radius: 50%;
-        animation: spin 0.8s linear infinite;
-      }
-      .cms-loading__hint {
-        font-size: 13px;
-        color: rgba(255, 255, 255, 0.6);
-      }
-      @keyframes spin {
-        to { transform: rotate(360deg); }
-      }
-    </style>
+    <link rel="stylesheet" href="/admin/dashboard.css" />
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="/admin/dashboard.js" defer></script>
   </head>
   <body>
-    <div id="nc-root"></div>
-    <div class="cms-loading" id="cms-loading">
-      <div class="cms-loading__orb cms-loading__orb--one"></div>
-      <div class="cms-loading__orb cms-loading__orb--two"></div>
-      <div class="cms-loading__panel">
-        <div class="cms-loading__brand">
-          <img src="/img/favicon.svg" width="44" height="40" alt="" />
+    <div class="ambient ambient--one" aria-hidden="true"></div>
+    <div class="ambient ambient--two" aria-hidden="true"></div>
+    <div class="grid-floor" aria-hidden="true"></div>
+
+    <main class="auth-gate" id="auth-gate">
+      <section class="auth-card" aria-labelledby="auth-title">
+        <div class="corner corner--top" aria-hidden="true"></div>
+        <div class="corner corner--bottom" aria-hidden="true"></div>
+        <div class="brand">
+          <img src="/img/favicon.svg" width="48" height="44" alt="" />
           <div>
             <strong>ENGRITE</strong>
-            <span>CONTENT STUDIO</span>
+            <span>ADMIN WORKSPACE</span>
           </div>
         </div>
-
-        <div class="cms-loading__eyebrow">Secure publishing workspace</div>
-        <h1>
-          Shape the site.
-          <em>Stay in control.</em>
-        </h1>
-        <p>
-          Manage developments, verified updates, client stories and company
-          information from one protected workspace.
+        <p class="eyebrow">Protected company access</p>
+        <h1 id="auth-title">The website,<br /><em>under your control.</em></h1>
+        <p class="auth-copy">
+          Sign in to manage properties, company information, articles and the
+          content your clients see on the live website.
         </p>
+        <button class="button button--primary button--wide" id="login-button" type="button">
+          Sign in securely <span aria-hidden="true">→</span>
+        </button>
+        <p class="auth-status" id="auth-status" role="status">Checking your secure session…</p>
+        <a class="quiet-link" href="/" target="_blank" rel="noopener">View live website ↗</a>
+      </section>
+    </main>
 
-        <div class="cms-loading__progress" aria-hidden="true">
-          <span></span>
+    <div class="workspace" id="workspace" hidden>
+      <header class="topbar">
+        <a class="topbar__brand" href="/admin/" aria-label="Engrite admin dashboard">
+          <img src="/img/favicon.svg" width="34" height="31" alt="" />
+          <span>
+            <strong>ENGRITE</strong>
+            <small>ADMIN WORKSPACE</small>
+          </span>
+        </a>
+
+        <div class="topbar__actions">
+          <a class="topbar__live" href="/" target="_blank" rel="noopener">
+            <i aria-hidden="true"></i> Live website
+          </a>
+          <a class="button button--compact button--primary" href="/admin/studio.html">
+            Open Content Studio <span aria-hidden="true">↗</span>
+          </a>
+          <button class="profile" id="profile-button" type="button" aria-label="Sign out">
+            <span class="profile__initial" id="user-initial">E</span>
+            <span class="profile__copy">
+              <strong id="user-name">Engrite team</strong>
+              <small id="user-email">Secure account</small>
+            </span>
+            <span class="profile__logout">Sign out</span>
+          </button>
         </div>
-        <div class="cms-loading__meta">
-          <span><i></i>Main branch</span>
-          <span><i></i>Automatic deployment</span>
-        </div>
+      </header>
+
+      <div class="layout">
+        <aside class="sidebar">
+          <nav aria-label="Admin navigation">
+            <a class="sidebar__link is-active" href="/admin/">
+              <span>01</span> Overview
+            </a>
+            <a class="sidebar__link" href="/admin/studio.html#/collections/properties">
+              <span>02</span> Properties
+            </a>
+            <a class="sidebar__link" href="/admin/studio.html#/collections/settings/entries/site">
+              <span>03</span> Site settings
+            </a>
+            <a class="sidebar__link" href="/admin/studio.html#/collections/blog">
+              <span>04</span> Articles
+            </a>
+            <a class="sidebar__link" href="/admin/studio.html#/collections/faqs">
+              <span>05</span> FAQs
+            </a>
+            <a class="sidebar__link" href="/admin/studio.html#/collections/client-testimonials">
+              <span>06</span> Client stories
+            </a>
+          </nav>
+
+          <div class="sidebar__help">
+            <span>Publishing guide</span>
+            <strong>Edit → Save → Live</strong>
+            <p>Every saved change creates a new protected website version.</p>
+          </div>
+        </aside>
+
+        <main class="dashboard">
+          <section class="welcome">
+            <div>
+              <p class="eyebrow eyebrow--dark" id="today-label">Publishing dashboard</p>
+              <h1>Good <span id="day-period">day</span>.<br /><em>What are we shaping?</em></h1>
+              <p>
+                Everything important is one decision away. Update a development,
+                refresh company details or publish a verified story.
+              </p>
+            </div>
+            <div class="site-status" id="site-status">
+              <div class="site-status__top">
+                <span><i></i> Production</span>
+                <strong id="site-health">Checking…</strong>
+              </div>
+              <div class="site-status__pulse" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="site-status__bottom">
+                <span>Latest website version</span>
+                <strong id="last-published">Loading status…</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="metric-grid" aria-label="Content overview">
+            <article class="metric">
+              <span>Properties</span>
+              <strong id="property-count">—</strong>
+              <small>Live development pages</small>
+            </article>
+            <article class="metric">
+              <span>Buyer answers</span>
+              <strong id="faq-count">—</strong>
+              <small>Published FAQs</small>
+            </article>
+            <article class="metric">
+              <span>Insights</span>
+              <strong id="blog-count">—</strong>
+              <small>Published articles</small>
+            </article>
+            <article class="metric metric--accent">
+              <span>Client stories</span>
+              <strong id="story-count">—</strong>
+              <small id="story-note">Approved testimonials</small>
+            </article>
+          </section>
+
+          <section class="dashboard-grid">
+            <div class="panel panel--actions">
+              <div class="panel__heading">
+                <div>
+                  <p class="eyebrow eyebrow--dark">Quick actions</p>
+                  <h2>Make a change</h2>
+                </div>
+                <span>Most used</span>
+              </div>
+
+              <div class="action-grid">
+                <a class="action-card action-card--feature" href="/admin/studio.html#/collections/properties">
+                  <span class="action-card__number">01</span>
+                  <div>
+                    <strong>Update a property</strong>
+                    <p>Pricing, availability, progress, images and virtual-tour links.</p>
+                  </div>
+                  <b aria-hidden="true">↗</b>
+                </a>
+                <a class="action-card" href="/admin/studio.html#/collections/settings/entries/site">
+                  <span class="action-card__number">02</span>
+                  <div>
+                    <strong>Edit site details</strong>
+                    <p>Headline, statistics, contacts, social links and company information.</p>
+                  </div>
+                  <b aria-hidden="true">↗</b>
+                </a>
+                <a class="action-card" href="/admin/studio.html#/collections/blog/new">
+                  <span class="action-card__number">03</span>
+                  <div>
+                    <strong>Publish an insight</strong>
+                    <p>Add an educational article or verified company update.</p>
+                  </div>
+                  <b aria-hidden="true">↗</b>
+                </a>
+                <a class="action-card" href="/admin/studio.html#/collections/client-testimonials/new">
+                  <span class="action-card__number">04</span>
+                  <div>
+                    <strong>Add a client story</strong>
+                    <p>Publish an approved quote with the client’s consent and photograph.</p>
+                  </div>
+                  <b aria-hidden="true">↗</b>
+                </a>
+              </div>
+            </div>
+
+            <aside class="panel panel--process">
+              <p class="eyebrow">Safe publishing</p>
+              <h2>From edit<br /><em>to live.</em></h2>
+              <ol class="process-list">
+                <li>
+                  <span>01</span>
+                  <div><strong>Choose</strong><p>Open the content you want to update.</p></div>
+                </li>
+                <li>
+                  <span>02</span>
+                  <div><strong>Review</strong><p>Check names, figures and image framing.</p></div>
+                </li>
+                <li>
+                  <span>03</span>
+                  <div><strong>Save</strong><p>The protected live build starts automatically.</p></div>
+                </li>
+              </ol>
+              <a href="/admin/studio.html" class="button button--light button--wide">
+                Enter Content Studio <span aria-hidden="true">→</span>
+              </a>
+            </aside>
+          </section>
+
+          <section class="panel property-health">
+            <div class="panel__heading">
+              <div>
+                <p class="eyebrow eyebrow--dark">Portfolio health</p>
+                <h2>Property readiness</h2>
+              </div>
+              <a href="/admin/studio.html#/collections/properties">Manage portfolio ↗</a>
+            </div>
+            <div class="property-list" id="property-list">
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+              <div class="skeleton"></div>
+            </div>
+          </section>
+
+          <footer class="dashboard-footer">
+            <span>Engrite Innovations Ltd. · Protected publishing workspace</span>
+            <span>Changes deploy from the main website branch</span>
+          </footer>
+        </main>
       </div>
-      <a class="cms-loading__site-link" href="/" target="_blank" rel="noopener">
-        View live website ↗
-      </a>
     </div>
 
-    <!-- Netlify Identity widget — must load before Decap CMS -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-    <!-- Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@^3.6.0/dist/decap-cms.js"></script>
-
-    <!-- Hide loading spinner once CMS is ready -->
-    <script>
-      window.addEventListener('load', () => {
-        const checkReady = setInterval(() => {
-          // CMS is ready if EITHER the app header (logged-in dashboard)
-          // OR the authentication page (login screen) is rendered.
-          const isReady =
-            document.querySelector('.nc-app-header') ||
-            document.querySelector('[class*="AuthenticationPage"]') ||
-            document.querySelector('[class*="StyledAuthenticationPage"]') ||
-            (document.getElementById('nc-root') &&
-             document.getElementById('nc-root').innerHTML.length > 500);
-          if (isReady) {
-            const loading = document.getElementById('cms-loading');
-            if (loading) loading.remove();
-            clearInterval(checkReady);
-          }
-        }, 150);
-        // Safety: hide spinner after 6 seconds even if detection fails
-        setTimeout(() => {
-          const loading = document.getElementById('cms-loading');
-          if (loading) loading.remove();
-        }, 6000);
-      });
-
-      // Redirect to the site after login (Netlify Identity requires this)
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on('init', (user) => {
-          if (!user) {
-            window.netlifyIdentity.on('login', () => {
-              document.location.href = '/admin/';
-            });
-          }
-        });
-      }
-    </script>
+    <noscript>
+      <div class="noscript">JavaScript is required to use the Engrite admin workspace.</div>
+    </noscript>
   </body>
 </html>

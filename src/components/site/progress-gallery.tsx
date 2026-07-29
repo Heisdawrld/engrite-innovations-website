@@ -12,7 +12,10 @@ import { SETTINGS } from "@/lib/settings";
 
 export function ProgressGallery() {
   return (
-    <section className="overflow-hidden bg-[#102357] py-24 text-white sm:py-28 lg:py-36">
+    <section
+      id="progress"
+      className="scroll-mt-[100px] overflow-hidden bg-[#102357] py-24 text-white sm:py-28 lg:py-36"
+    >
       <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10">
         <ScrollReveal className="mb-12 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <div>
