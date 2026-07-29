@@ -5,7 +5,7 @@ tagline: Yaba's premium smart real estate development
 status: last-units
 statusLabel: Under Construction · Now Selling
 location: Morocco Road, Yaba, Lagos
-completionDate: Scheduled Delivery — July 2026
+completionDate: Scheduled Delivery — September 2026
 image: /img/sinai-residence-cover-v2.webp
 gallery:
   - /img/sinai-residence-cover-v2.webp
