@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { ArrowUpRight, Handshake, Menu, X } from "lucide-react";
 import { Logo } from "./logo";
 import { CurrencyToggle } from "./currency-toggle";
 import { LanguageToggle } from "./language-toggle";
@@ -16,6 +16,8 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { t } = useLanguage();
   const isSolid = solid || scrolled;
+  const realtorUrl =
+    "https://wa.me/2348130665862?text=Hi%20Engrite%2C%20I%20would%20like%20to%20become%20a%20realtor%20and%20learn%20about%20your%20property%20partnership%20programme.";
 
   useEffect(() => {
     const onScroll = () => {
@@ -43,6 +45,25 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
           : "border-b border-white/10 bg-[#071128]/35 backdrop-blur-md"
       }`}
     >
+      <div className="h-[34px] border-b border-[#071128]/10 bg-[#9be15d] text-[#071128]">
+        <div className="mx-auto flex h-full max-w-[1500px] items-center justify-between gap-4 px-4 sm:px-6 lg:px-10">
+          <div className="flex min-w-0 items-center gap-2 text-[8px] font-bold uppercase tracking-[0.16em] sm:text-[9px] sm:tracking-[0.2em]">
+            <Handshake className="h-3.5 w-3.5 shrink-0" />
+            <span className="truncate sm:hidden">Realtor partnership now open</span>
+            <span className="hidden sm:inline">Turn property opportunities into income with Engrite</span>
+          </div>
+          <a
+            href={realtorUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex shrink-0 items-center gap-2 text-[8px] font-black uppercase tracking-[0.18em] underline decoration-[#071128]/30 underline-offset-4 transition-colors hover:text-[#1f7f39] sm:text-[9px]"
+          >
+            Become a Realtor
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </a>
+        </div>
+      </div>
+
       <div className="mx-auto flex h-[74px] max-w-[1500px] items-center justify-between px-4 sm:px-6 lg:px-10">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
@@ -135,6 +156,17 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
                 >
                   Book inspection
                 </Link>
+
+                <a
+                  href={realtorUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileOpen(false)}
+                  className="mt-3 flex min-h-14 items-center justify-between bg-white px-5 text-xs font-bold uppercase tracking-[0.18em] text-[#102357] transition-colors hover:bg-[#9be15d]"
+                >
+                  Become a Realtor
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
 
                 <div className="mt-8 flex items-center justify-between">
                   <LanguageToggle />

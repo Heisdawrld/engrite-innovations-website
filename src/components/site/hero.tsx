@@ -1,14 +1,36 @@
 "use client";
 
-import { useRef, type PointerEvent } from "react";
+import { useEffect, useRef, type PointerEvent } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { useLanguage } from "@/components/providers/language-provider";
 import { ArrowDown, ArrowUpRight, Building2, MapPin } from "lucide-react";
+import { HeroMotionBackdrop } from "./hero-motion-backdrop";
 
 export function Hero() {
   const { t } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    let frame = 0;
+    const updateMotion = () => {
+      frame = 0;
+      const section = sectionRef.current;
+      if (!section) return;
+      const distance = Math.min(window.scrollY, section.offsetHeight);
+      section.style.setProperty("--hero-shift", `${distance * 0.11}px`);
+    };
+    const onScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(updateMotion);
+    };
+
+    updateMotion();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, []);
 
   const handlePointerMove = (event: PointerEvent<HTMLElement>) => {
     const rect = sectionRef.current?.getBoundingClientRect();
@@ -21,29 +43,20 @@ export function Hero() {
     <section
       ref={sectionRef}
       onPointerMove={handlePointerMove}
-      className="hero-spotlight relative isolate flex min-h-[760px] overflow-hidden bg-[#071128] pt-[74px] text-white lg:min-h-[860px] lg:h-screen"
+      className="hero-spotlight relative isolate flex min-h-[800px] overflow-hidden bg-[#071128] pt-[108px] text-white lg:min-h-[900px] lg:h-[max(900px,100svh)]"
     >
-      <div className="absolute inset-0">
-        <Image
-          src="/img/hero.webp"
-          alt="Contemporary apartment architecture representing Engrite Innovations developments in Lagos"
-          fill
-          priority
-          sizes="100vw"
-          className="animate-hero-zoom object-cover object-[62%_center] opacity-70 lg:object-center"
-        />
-      </div>
+      <HeroMotionBackdrop />
       <div
-        className="absolute inset-0"
+        className="pointer-events-none absolute inset-0"
         style={{
           background:
             "linear-gradient(90deg, rgba(7,17,40,0.99) 0%, rgba(7,17,40,0.9) 42%, rgba(7,17,40,0.36) 78%, rgba(7,17,40,0.2) 100%)",
         }}
         aria-hidden="true"
       />
-      <div className="architectural-grid absolute inset-0 opacity-45" aria-hidden="true" />
+      <div className="architectural-grid pointer-events-none absolute inset-0 opacity-45" aria-hidden="true" />
       <div className="film-grain pointer-events-none absolute inset-0 opacity-40" aria-hidden="true" />
-      <div className="absolute inset-x-0 bottom-0 h-[260px] bg-gradient-to-t from-[#071128] via-[#071128]/70 to-transparent" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[260px] bg-gradient-to-t from-[#071128] via-[#071128]/70 to-transparent" aria-hidden="true" />
 
       <div className="relative z-10 mx-auto flex w-full max-w-[1500px] flex-1 items-end px-4 pb-20 sm:px-6 sm:pb-24 lg:items-center lg:px-10 lg:pb-10">
         <div className="grid w-full items-end gap-14 lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-12">
@@ -91,6 +104,17 @@ export function Hero() {
                 Book a private inspection
             </Link>
           </div>
+
+            <a
+              href="https://wa.me/2348130665862?text=Hi%20Engrite%2C%20I%20would%20like%20to%20become%20a%20realtor%20and%20learn%20about%20your%20property%20partnership%20programme."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="animate-fade-up mt-5 inline-flex items-center gap-3 text-[9px] font-bold uppercase tracking-[0.2em] text-white/70 transition-colors hover:text-[#9be15d]"
+              style={{ animationDelay: "0.82s" }}
+            >
+              Earn with Engrite — Become a Realtor
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
 
             <div className="animate-line-grow mt-14 h-px w-full max-w-[620px] bg-gradient-to-r from-[#9be15d] via-white/40 to-transparent" />
           </div>
