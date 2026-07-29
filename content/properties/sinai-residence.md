@@ -1,25 +1,19 @@
 ---
-slug: sinai-residence
 name: Sinai Residence
+slug: sinai-residence
 tagline: Yaba's premium smart real estate development
-status: under-construction
+status: last-units
 statusLabel: Under Construction · Now Selling
+location: Morocco Road, Yaba, Lagos
+completionDate: Scheduled Delivery — July 2026
 image: /img/sinai-residence-cover-v2.webp
 gallery:
   - /img/sinai-residence-cover-v2.webp
   - /img/sinai-residence-front-v2.webp
   - /img/sinai-residence-side-v2.webp
   - /img/sinai-residence-aerial-v2.webp
-location: 'Morocco Road, Yaba, Lagos'
-mapEmbed: 'https://www.google.com/maps?q=Morocco+Road+Yaba+Lagos+Nigeria&output=embed'
-shortDesc: >-
-  Premium 1- and 2-bedroom apartments with dedicated Home Office layouts on
-  Morocco Road, Yaba. Now selling, with delivery scheduled for July 2026.
-tags:
-  - Smart Home
-  - Home Office
-  - Under Construction
-  - July 2026 Delivery
+startingPrice: 100000000
+annualReturn: 14
 units:
   - name: 1 Bedroom + Home Office (Unfurnished)
     price: 100000000
@@ -59,20 +53,6 @@ units:
       - Smart finishings
       - Personal inverter system
       - Family-sized
-amenities:
-  - Personal Inverter Systems
-  - Smart Home Features
-  - Designated Parking
-  - Fitted Kitchens
-  - Modern Bathrooms
-  - Home Office Layouts
-features:
-  - Smart Finishings
-  - Personal Inverter Systems
-  - Home Office
-  - Furnished and Unfurnished Options
-  - Registered Conveyance
-  - Active Construction
 paymentSchedule:
   - milestone: Initial Deposit
     percentage: 30
@@ -80,13 +60,35 @@ paymentSchedule:
   - milestone: Construction-Period Balance
     percentage: 70
     description: Spread across the remaining construction period
+shortDesc: Premium 1- and 2-bedroom apartments with dedicated Home Office
+  layouts on Morocco Road, Yaba. Now selling, with delivery scheduled for July
+  2026.
+tags:
+  - Smart Home
+  - Home Office
+  - Under Construction
+  - July 2026 Delivery
+features:
+  - Smart Finishings
+  - Personal Inverter Systems
+  - Home Office
+  - Furnished and Unfurnished Options
+  - Registered Conveyance
+  - Active Construction
+amenities:
+  - Personal Inverter Systems
+  - Smart Home Features
+  - Designated Parking
+  - Fitted Kitchens
+  - Modern Bathrooms
+  - Home Office Layouts
+mapEmbed: https://www.google.com/maps?q=Morocco+Road+Yaba+Lagos+Nigeria&output=embed
+videoUrl: ""
+matterportUrl: ""
 tourScenes:
   - id: matterport-preview
     title: 360° Tour Preview
     image: /img/sinai-residence-cover-v2.webp
-completionDate: Scheduled Delivery — July 2026
-startingPrice: 100000000
-annualReturn: 14
 useCases:
   - Live in it — premium Yaba address with smart-home features
   - Explore managed rental income using the 14% target gross-yield assumption
@@ -95,7 +97,5 @@ valuePillars:
   - Comfort
   - Convenience
   - Lasting Value
-matterportUrl: ''
-videoUrl: ''
 ---
 Sinai Residence is Engrite's flagship premium development on Morocco Road, Yaba — designed around three value pillars: Comfort, Convenience, and Lasting Value. The development offers 1- and 2-bedroom Home Office layouts for hybrid professionals and families, with furnished and unfurnished options. Features include smart finishings, fitted kitchens, personal inverter systems, designated parking and modern bathrooms. Construction is progressing, with delivery scheduled for July 2026. Book an inspection and request the current offer document before making a commitment.
